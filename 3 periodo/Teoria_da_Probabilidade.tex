@@ -1,0 +1,977 @@
+\documentclass[12pt]{article}
+
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage[pdftex,bookmarks=true,bookmarksopen=false,bookmarksnumbered=true,colorlinks=true,linkcolor=black]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{enumerate}
+
+
+\usepackage[brazilian]{babel}
+\usepackage[T1]{fontenc}
+
+
+\pagestyle{plain}
+
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}{Corolário}[theorem]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}{Definição}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\textbf{\LARGE Fundação Getulio Vargas}\\ 
+\textbf{\LARGE Escola de Matemática Aplicada}
+
+\par
+\vspace{170pt}
+\textbf{\Large Wellington José}\\
+\vspace{32pt}
+\textbf{\Large Resumo de Teoria da Probabilidade}\\
+\end{center}
+
+\par
+\vfill
+\begin{center}
+{{\normalsize Rio de Janeiro}\\
+{\normalsize \the\year}}
+\end{center}
+\end{titlepage}
+
+\section{Conceitos Básicos}
+\subsection*{1.2   Modelos de Probabilidade}
+\begin{definition}
+Dois eventos A e B são chamados de \textbf{mutuamente excludentes} se não podem ocorrer simultaneamente, isto é, se $A \cap B = \emptyset$.
+\end{definition}
+
+\begin{definition}
+Uma \textbf{probabilidade} é uma função que associa a cada evento \textbf{A} um número \textbf{P(A)} de forma que:
+\begin{enumerate}
+    \item Para todo evento A, $0 \leqslant Pr(A) \leqslant 1$;
+    \item $P(S) = 1$;
+    \item Se A e B são eventos mutuamente excludentes então
+    $$P(A \cup B) = P(A) + P(B)$$
+\end{enumerate}
+\end{definition}
+
+\begin{corollary}[Lei do Complemento]
+$$P(\overline{A}) = 1 - P(A)$$
+
+Em outras palavras, a probabilidade de um evento ocorrer mais a probabilidade de ele não ocorrer dá $100\%$
+\end{corollary}
+
+\begin{corollary}
+$P(\emptyset) = 0$, isto é se um evento é impossível, sua probabilidade deve ser 0.
+\end{corollary}
+
+\begin{corollary}[Lei da Adição]
+$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+\end{corollary}
+
+\subsection*{Probabilidade Condicional}
+\begin{definition}
+Sejam A e B dois eventos com $P(A) \neq 0$. A probabilidade condicional de B dado A é
+
+$$P(B|A) = \dfrac{P(A \cap B)}{P(A)}$$
+\end{definition}
+
+\begin{corollary}[Lei da Multiplicação]
+
+$$P(A \cap B) = P(B|A) \cdot P(A) = P(B|A) \cdot P(B)$$
+
+\end{corollary}
+
+\subsubsection*{Probabilidade Total e Teorema de Bayes}
+\begin{corollary}[Lei da Probabilidade Total]
+Suponha que $B_1, B_2, \dots, B_n$ formam uma partição de S. Então
+
+% $$P(A) = P(A \cap B_1) + \dotsb + P(A \cap B_n)$$
+
+\end{corollary}
+
+\begin{corollary}[Teorema de Bayes]
+Suponha que $B_1, B_2, \cdots, B_n$ formam uma partição de S. Então
+
+$$P(B_1|A) = \dfrac{P(A|B_1) P(B_1)}{P(A|B_1) P(B_1) + P(A|B_2) P(B_2) + \cdots + P(A|B_n) P(B_n)}$$
+
+\end{corollary}
+
+\subsubsection*{Independência}
+\begin{definition}
+Dois eventos (não impossíveis) A e B são ditos \textbf{independentes} se o conhecimento de um deles não afeta a probabilidade do outro ocorrer, isto é, se
+
+$$P(B|A) = P(B)$$
+\end{definition}
+
+\section{Variáveis Aleatórias Discretas}
+\subsection*{2.1 Função de Probabilidade e Função de Probabilidade Conjunta}
+\begin{definition}
+Se X é uma variáveis aleatórias discretas, definimos a \textbf{função de probabilidade de X} por
+
+$$p_{X} (x) = P(X = x)$$
+\end{definition}
+
+\begin{definition}
+Se X e Y são variáveis aleatórias discretas, definimos a \textbf{função de probabilidade conjunta de X e Y} por
+
+$$p_{X, Y} (x, y) = P(X = x \text{ e } Y = y)$$
+\end{definition}
+
+\subsubsection*{Independência de Variáveis Aleatórias Discretas}
+\begin{definition}
+Dizemos que X e Y são variáveis \textbf{independentes} exatamente quando
+
+$$P(X = i \text{ e } Y = j) = P(X = i) \cdot P(Y = j)$$
+\end{definition}
+
+\begin{corollary}
+X e Y são independentes se, e somente se, a distribuição condicional de X dado Y $= j$ é idêntica à distribuição marginal de X (qualquer que seja y possível). De fato, temos:
+
+$$P(X = i | Y = j) = \dfrac{P(X = i \text{ e }}{P(Y = j} = P(X = i)$$
+\end{corollary}
+
+\subsection*{Função de Probabilidade Acumulada}
+\subsubsection*{Definição}
+\begin{definition}
+A \textbf{função de distribuição} (ou \textbf{função de probabilidade acumulada}) de X é definida por
+
+$$F_X(x) = P(X \leq x)$$
+\end{definition}
+
+\begin{corollary}
+Se F é a função de distribuição acumulada de uma variável aleatória discreta:
+
+\begin{enumerate}[i.]
+    \item F é não-decrescente;
+    \item $F(- \infty) = 0$ e $F(+ \infty) = 1$ (ou seja, $\lim_{x\rightarrow{} - \infty} F(x) = 0$ e $\lim_{x\rightarrow{} + \infty} F(x) = 1$);
+    \item F é constante por partes (isto é, uma função-escada).
+\end{enumerate}
+\end{corollary}
+
+\begin{corollary}
+Se F é uma função de distribuição acumulada de uma variável aleatória, então
+
+$$P(a < X \leq b) = F(b) - F(a)$$
+\end{corollary}
+
+\subsubsection*{Quantis}
+\begin{definition}
+O q-quantil de uma variável aleatória X é qualquer valor $x_q$ onde a função acumulada "acerta" por q ou "passa" por p. Formalmente:
+
+$$F(x_q -) \leq q \leq F(x_q)$$
+\end{definition}
+
+\subsection*{2.3 Valor Esperança}
+\subsubsection*{Intuição e Definição}
+\begin{definition}
+Se X é uma variável aleatória discreta, definimos o \textbf{valor esperado} (ou esperança matemática, ou expectativa, ou média, ou valor médio) de X por
+
+$$E(X) = \sum_{x \in S} x \cdot p(x)$$
+
+isto é, $E(X)$ é uma média ponderada dos valores de X, com pesos iguais às respectivas probabilidades destes valores. Ocasionalmente, escrevemos $\mu_X = E(X)$
+
+A esperança é uma medida de posição ou de tendência central (valores grandes de X acarretam $E(X)$ grande; valores pequenos de X acarretam $E(X)$ pequeno).
+\end{definition}
+
+\subsubsection*{Propriedades (Caso Unidimensional)}
+\begin{corollary}
+Se $Y = f(X)$, temos
+
+$$E(Y) = E(f(X)) = \sum_{x \in S} f(x) \cdot p(x)$$
+\end{corollary}
+
+\begin{corollary}
+Sejam a e b constantes quaisquer. Então:
+
+$$E(a X + b) = a E(X) + b$$
+\end{corollary}
+
+\subsubsection*{Propriedades (Caso Bidimensional)}
+\begin{corollary}
+Se $Z = f(X, Y)$ então
+
+$$E(Z) = E(f(X, Y)) = \sum_{x, y} f(x, y) p_{X, Y} (x, y)$$
+\end{corollary}
+
+\begin{corollary}
+Sejam a, b e c constantes quaisquer. Então
+
+$$E(a X + b Y + c) = a E(X) + b E(Y) + c$$
+\end{corollary}
+
+\begin{corollary}
+Se X e Y são independentes, então $E(X Y) = E(X) E(Y)$.
+\end{corollary}
+
+\subsection*{2.4 Variância e Outras Medidas de Dispersão}
+\subsubsection*{Definição}
+
+\begin{definition}
+    Duas medidas de dispersão comuns são o \textbf{desvio médio}, definidos por
+    
+    $$D M (X) = E(|X - E(X)|)$$
+    
+    e a \textbf{variância}, definida por
+    
+    $$Var(X) = E[(X - E(X))^2]$$
+    
+    Ao invés da variância, podemos medir a dispersão de X pelo seu \textbf{desvio-padrão}
+    
+    $$\sigma (X) = \sqrt{Var(X)}$$
+\end{definition}
+
+\begin{corollary}
+    Sejam a e b constantes quaisquer. então
+    
+    $$Var(a X + b) = a^2 Var(X)$$
+    $$\sigma (a X + b) = |a| \cdot \sigma(X)$$
+    $$D M(a X + b) = |a| \cdot D M(X)$$
+\end{corollary}
+
+\begin{corollary}
+    $$Var(X) = E(X^2) - (E(X))^2$$
+\end{corollary}
+
+\begin{corollary}
+    Se X e Y são independentes, $Var(X + Y) = Var(X) + Var(Y)$
+\end{corollary}
+
+\subsubsection*{Desigualdade de Chebyshev}
+\begin{theorem}[Desigualdade de Chebyshev]
+    Seja X uma variavel aleatória com valor esperado $\mu = E(X)$ e desvio-padrão $\sigma = \sigma(X)$. Seja $P = \{ x \in \mathbb{R} | \ |x-\mu| < k \sigma \}$ (isto é, P é o intervalo aberto $(x - k \sigma, x + k \sigma)$, um conjunto de vlores de x que estão "perto da média" pelo menos k desvios-padrão). Então, para qualquer $k > 0$, tem-se
+    
+    $$P(X \notin P) \leq \dfrac{1}{k^2}$$
+    
+    ou seja
+    
+    $$P(|X - \mu| \geq k \sigma) \leq \dfrac{1}{k^2}$$
+    $$P(|X - \mu| < k \sigma) \geq 1 - \dfrac{1}{k^2}$$
+\end{theorem}
+
+\subsection*{2.5 Covariância e Correlação}
+\begin{definition}
+    A \textbf{covariância} entre duas variáveis X e Y é 
+    
+    $$Cov (X, Y) = E[(X - E(X)) \cdot(Y - E(Y))]$$
+\end{definition}
+
+\begin{corollary}
+    $$Cov(X, Y) = E(XY) - E(X) E(Y)$$
+\end{corollary}
+
+\begin{corollary}
+    Se X e Y são independentes, então $Cov(X, Y) = E(XY) - E(X) E(Y) = 0$
+\end{corollary}
+
+\begin{definition}
+    Outra medida de "variação conjunta" de duas variáveis X e Y é a \textbf{correlação}
+    
+    $$\rho (X, Y) = \dfrac{Cov (X, Y)}{\sigma (X) \sigma(Y)}$$
+\end{definition}
+
+\subsubsection*{Um pouco de Álgebra Linear}
+\begin{corollary}
+    Para quaisquer variáveis aleatórias X e Y:
+    
+    $$Var(X + Y) = Var(X) + Var(Y) + 2 Cov (X, Y)$$
+    
+    E se X e Y são independentes vale que $Var(X + Y) = Var(X) + Var(Y)$.
+\end{corollary}
+
+\begin{corollary}
+    $$Cov (aX + b, Y) = a Cov (X, Y)$$
+\end{corollary}
+
+\begin{corollary}
+    $$\rho (a X + b, Y) = \rho (X, Y) \text{ se } a > 0$$
+    
+    $$\rho (a X + b, Y) = - \rho (X, Y) \text{ se } a < 0$$
+\end{corollary}
+
+\section{Principais Distribuições Discretas}
+\subsection{Distribuição}
+Se os valores assumidos por uma certa variável aleatória X são equiprováveis dizemos que X tem um \textbf{distribuição uniforme}.
+
+\subsection{Brevíssima Revisão de Analise Combinatória}
+Aqui trata-se de conteúdo do ensino médio em caso de dúvida \href{https://pt.wikipedia.org/wiki/Combinat\%C3\%B3ria}{see}.
+
+\subsection{Processo de Bernoulli}
+
+\begin{definition}
+    Um \textbf{processo de Bernoulli} é uma sequencia de experimentos com as seguintes características:
+    
+    \begin{enumerate}
+        \item Cada experimento tem apenas dois resultados possíveis, denominados \textbf{sucesso} e \textbf{falha}
+        
+        \item Cada experimento tem a mesma probabilidade p de sucesso, e cada experimento é completamente independente de todos os outros.
+    \end{enumerate}
+\end{definition}
+
+\subsubsection*{Distribuição Binomial}
+
+\begin{definition}
+    Suponha que o número de experimentos a serem feitos é determinado digamos, n experimentos. Seja X a variável aleatória que representa o numero de sucessos obtidos nestes n experimentos. Dizemos que X tem uma \textbf{distribuição binomial de parâmetros n e p} (e escrevemos X $\backsim$ Bin(n, p)). Nesse caso a função de probabilidade de X passa a se chamar: BinomialDen.
+    
+    $$P(X = k) = BinomialDen (k; n, p)$$
+    
+    e chamaremos a função acumulada de BinomialDist:
+    
+    $$P(X \leq k) = BinomialDist (k; n, p)$$
+\end{definition}
+
+\begin{corollary}
+    $$BinomialDen (k;n, p) = P(X = k) = {n \choose k} p^k q^{n-k}$$
+    
+    $$BinomialDist (k;n, p) = P(X \leq k) = \sum_{i = 0}^k {n \choose k} p^k q^{n - k}$$
+\end{corollary}
+
+\begin{corollary}
+    Seja $X \backsim Bin (n, p)$. Então
+    
+    $$E(X) = n p$$
+    $$Var (X) = n p q$$
+\end{corollary}
+
+\subsubsection*{Distribuição Geométrica}
+\begin{definition}
+    Suponha que realizamos um processo de Bernoulli com probabilidade de sucesso de cada prova $p > 0$. Seja X o número de tentativas feitas até o primeiro sucesso (inclusive). Dizemos que X tem uma \textbf{distribuição geométrica de parâmetro} p, isto é, $X \backsim Geom (p)$
+\end{definition}
+
+\begin{corollary}
+    Se $X \backsim Geom (p)$, então
+    
+    $$P(X = k) = Geom (k; p) = q^{k-1} p$$
+    $$P(X \leq k) = 1 - q^k$$
+\end{corollary}
+
+\begin{corollary}
+    Se $X \backsim Geom (p)$, então
+    
+    $$E(X) = \frac{1}{p}$$
+    $$Var (X) = \frac{q}{p^2}$$
+\end{corollary}
+
+\subsubsection*{Distribuição Binomial Negativa}
+\begin{definition}
+    Suponha que o processo de Bernoulli é repetido até obter r sucessos. Seja X o número de tentativas feitas (incluindo o último sucesso). Dizemos que X tem uma \textbf{distribuição binomial negativa de parâmetros r e p}, isto é, $X \backsim NegBin(r, p)$. Note que, a distribuição geométrica é um caso particular dessa.
+\end{definition}
+
+\begin{corollary}
+    Se $X \backsim NegBin(r, p)$, então para $k \geq r$ (k inteiro).
+    
+    $$P(X = k) = p. \ BinomialDen(r-1; k-1, p) = {k-1 \choose r-1} p^r q^{k - r}$$
+    
+    $$E(X) = \dfrac{r}{p}$$
+    
+    $$Var(X) = \dfrac{r q}{p^2}$$
+\end{corollary}
+
+\subsection*{3.4 Processo de Poisson}
+\begin{definition}
+    A \textbf{distribuição de Poisson} dizemos $X \backsim Poi (\mu)$ que no geral é $\lim_{n \rightarrow{} \infty} Bin (k; n, \frac{\mu}{n}) = Poi (k; \mu)$
+\end{definition}
+
+\begin{corollary}
+    Se $X \backsim Poi (\mu)$, tem-se
+    
+    $$P(X = k) = \frac{\mu^k}{k!} e^{-\mu}$$
+    
+    $$E(X) = Var(X) = \mu$$
+\end{corollary}
+
+\subsection*{3.5 Distribuição Hipergeométrica}
+\begin{definition}
+    De uma caixa com r bolas "sucesso" e $N-r$ bolas "falha", extraímos sem reposição n bolas. Seja X o número de bolas sucesso. Dizemos que X tem \textbf{distribuição hipergeométrica com parâmetros n, r e N}, isto é, $X \backsim Hip (n, r, N)$.
+\end{definition}
+    
+\begin{corollary}
+    Se $X \backsim Hip (n, r, N)$, então
+    
+    $$P(X = k) = Hip (k; n, r, N) = \dfrac{{r \choose k}{N-r \choose n-k}}{{N \choose n}}$$
+    
+    $$E(X) = n p$$
+    
+    $$Var(X) = n p q \frac{N - m}{N -1}$$
+    
+    onde $p = \dfrac{r}{N}$
+\end{corollary}
+
+\section{Variáveis Aleatórias Continuas}
+\subsection*{4.1 Distribuições Contínuas}
+\subsubsection*{Função de Distribuição Acumulada}
+
+\begin{definition}
+    A \textbf{função de distribuição acumulada (função de distribuição; fda)} de uma variável aleatória X é
+    
+    $$F_X(x) = P(X \leq x)$$
+\end{definition}
+
+\begin{corollary}
+    Se $F(x)$ é a f.d.a. de uma variável real X, então
+    
+    $$F \text{ é não-decrescente}$$
+    
+    $$F(- \infty) = P(X \leq - \infty) = 0 \ \text{ e } \ F(+\infty) = P(X \in \mathbb{R)} = 1$$
+    
+    $$P(a \leq X \leq b) = F(b) - F(a)$$
+    
+    Note que, no caso continuo $P(a < X \leq b) = P(a \leq X \leq b)$, pois $P(X = a) = 0$.
+\end{corollary}
+
+\subsubsection*{Quantis}
+
+\begin{definition}
+    O q-quantil de uma variável aleatória X é qualquer valor $x_q$ onde a função acumulada "acerta" q. Formalmente $F(x_q) = q$
+\end{definition}
+
+\subsubsection*{Função Densidade de Probabilidade}
+
+\begin{definition}
+    A \textbf{função densidade de probabilidade (f.d.p.)} de X é a derivada da função acumulada:
+    
+    $$f_X(x) = \lim_{\Delta x \rightarrow{} 0} \dfrac{F(x + \Delta x) - F(x)}{\Delta x} = F'_X (x)$$
+\end{definition}
+
+\begin{corollary}
+    Dada a f.d.p. de uma variável aleatória contínua X, encontramos probabilidades pela fórmula
+    
+    $$P(a \leq X \leq) = F(b) - F(a) = \int_a^b f(t) d t$$
+    
+    Em particular, como $F(- \infty) = 0$, note que
+    
+    $$F(x) = P(X \leq x) = \int_{-\infty}^x f(t) d t$$
+\end{corollary}
+
+\begin{corollary}
+    Se f(x) é a f.d.p. de uma variável aleatória real X, então para todo x real:
+    
+    $$0 \leq f(x)$$
+    
+    $$\int_{- \infty}^{\infty} f(t) d t = 1$$
+\end{corollary}
+
+\begin{definition}
+    A \textbf{moda} de uma variável aleatória é o valor x onde a densidade f(x) é máxima.
+\end{definition}
+
+\subsubsection*{Funções de Variáveis Aleatórias Contínuas}
+
+Seja X uma variável aleatória de densidade f(x) e seja $Y = h(X)$ onde h é uma função crescente. Então a densidade g(y) da variável Y satisfaz
+
+$$g(y) = \dfrac{f(x)}{h'(x)} = \dfrac{f(x)}{\frac{d y}{d x}}$$
+
+onde $x = h^{-1} (y)$, ou seja,
+
+$$g(y) d y = f(x) d x$$
+
+\subsection*{4.2 Valor Esperado e Variância}
+\subsubsection*{Valor Esperado}
+
+\begin{definition}
+    Se X é uma variável aleatória com densidade f(x), definimos seu \textbf{valor esperado (valor médio, esperança)}, por
+    
+    $$\mu = E(X) = \int_{- \infty}^{\infty} x f(x) d x$$
+\end{definition}
+
+\begin{corollary}
+    Se $Y = h(X)$, então 
+    
+    $$E(Y) = E(h(X)) = \int_{- \infty}^{\infty} h(x) f(x) d x$$
+\end{corollary}
+
+\begin{corollary}
+    Sejam a e b constantes quaisquer. Então
+    
+    $$E(a X + b) = a E(X) + b$$
+\end{corollary}
+
+\subsubsection*{Variância}
+
+\begin{definition}
+    A \textbf{variância} e o \textbf{desvio-padrão} de uma variável aleatória X com densidade f(x) e média $E(X) = \mu$ são
+    
+    $$Var(X) = E \left ((X - \mu)^2 \right ) = \int_{- \infty}^{\infty} (x - \mu)^2 f(x) d x$$
+    
+    $$\sigma(X) = \sqrt{Var (X)}$$
+\end{definition}
+
+\begin{corollary}
+    $$Var(a X + b) = a^2 Var(X)$$
+    
+    $$Var(X) = E(X^2) - (E(X))^2$$
+\end{corollary}
+
+\begin{theorem}[Desigualdade de Chebyshev]
+    Esse teorema está definido em 2.4, de forma igual.
+\end{theorem}
+
+\section{Principais Distribuições Contínuas}
+\subsection*{5.1 Distribuição Uniforme}
+\begin{definition}
+    Dizemos que a variável aleatória X tem \textbf{distribuição uniforme no intervalo [a, b]} (denotada por $X \backsim U[a, b]$) quando sua densidade é dada por
+    
+    $$f(x) = \frac{1}{b - a}, \text{ se } a \leq x \leq b \text{ e } f(x) = 0 ,\text{ caso contrário}$$
+\end{definition}
+
+\begin{corollary}
+    $$E(X) = Med(X) = \frac{b + a}{2} \ \text{ e } \ Var(X) = \frac{(b - a)^2}{12}$$
+\end{corollary}
+
+\subsection*{5.2 Distribuição Exponencial}
+Suponha que eventos ocorram de acordo com um processo de Poisson à taxa média de $\lambda$ eventos por unidade de tempo. Dado um certo intervalo [0, t], seja X o número de eventos ocorridos neste intervalo.
+
+$$P(X = k) = \dfrac{(\lambda t)^k}{k!} e^{-\lambda t}$$
+
+\begin{definition}
+    Dizemos que a variável aleatória T tem \textbf{distribuição exponencial de parâmetro} $\lambda$ (denotada por $T \backsim Exp(\lambda))$ se sua densidade é dada por
+    
+    $$f(t) = \lambda e^{- \lambda t}, \ \text{ se } \ t \geq 0 \text{ e } f(t) = 0 \text{ caso contrário}$$
+    
+    e sua função de distribuição acumulada é
+    
+    $$F(t) = 1 - e^{- \lambda t}, \ \text{ se } \ t \geq 0 \text{ e } F(t) = 0 \text{ se } t < 0$$
+\end{definition}
+
+\begin{corollary}
+    Se $T \backsim Exp(\lambda)$, então
+    
+    $$E(T) = \dfrac{1}{\lambda}$$
+    
+    $$Var(T) = \dfrac{1}{\lambda^2}$$
+    
+    $$Med(T) = \dfrac{\ln 2}{\lambda}$$
+\end{corollary}
+                            
+\begin{corollary}
+    Se $T \backsim Exp(\lambda)$ e $Y = a T$, então $Y \backsim Exp(\frac{\lambda}{a})$
+
+\end{corollary}
+
+\begin{corollary}
+    Se $T \backsim Exp(\lambda)$, então $\lambda T \backsim Exp(1)$
+\end{corollary}
+
+\subsection*{5.3 Distribuição Gama}
+\begin{definition}
+    Para $\alpha > 0$, definimos a função $\Gamma(\alpha)$ como
+    
+    $$\Gamma(\alpha) = \int_0^\infty x^{\alpha - 1} e^{-x} d x$$
+\end{definition}
+
+\begin{corollary}
+    Sempre que $\Gamma(\alpha)$ convergir vale que
+    
+    $$\Gamma(p + 1) = p \Gamma(p)$$
+\end{corollary}
+
+\begin{corollary}
+    Se n é natural
+    
+    $$\Gamma(n) = (n-1)!$$
+\end{corollary}
+
+\begin{corollary}
+    $$\int_0^\infty e^{-x^2} d x = \frac{\sqrt{\pi}}{2}$$
+    $$\Gamma \left (\frac{1}{2} \right ) = \sqrt{\pi}$$
+\end{corollary}
+
+\subsubsection*{Distribuição Gama}
+Mantendo o processo de Poisson da Distribuição exponencial, seja Z o \textbf{tempo de ocorrência do n-ésimo evento} e X o número de ocorrências no intervalo $[0, t]$, temos
+
+$$P(Z \leq t) = 1 - P(X < n) = 1 - e^{- \lambda t} \sum_{k = 0}^{n-1} \frac{(\lambda t)^k}{k !}$$
+
+\begin{definition}
+    Seja $\alpha, \lambda > 0$. Dizemos que a variável Z tem \textbf{distribuição Gama de parâmetros} $\alpha$ e $\lambda$ (denotamos $Z \backsim \Gamma(\alpha, \lambda)$ se sua densidade é dada por
+    
+    $$GammaDen (t) = \frac{\lambda^\alpha}{\Gamma(\alpha)} t^{\alpha - 1}e^{- \lambda t}, \text{ se } t \geq 0$$
+    
+    $$GammaDen (t) = 0, \text{ caso contrário}$$
+\end{definition}
+
+\begin{corollary}
+    Se $Z \backsim Gamma(\alpha, \lambda)$, então $E(Z) = \frac{\alpha}{\lambda}, \ Var(Z) = \frac{\alpha}{\lambda^2}$ e $Moda(Z) = \frac{\alpha}{\lambda} - \frac{1}{\lambda}$
+\end{corollary}
+
+\begin{corollary}
+    Se $X \backsim Gamma(a, \lambda)$ e $Z = \lambda X$, então $Z \backsim Gamma(\alpha, 1)$.
+\end{corollary}
+
+\subsection*{5.4 Distribuição Normal}
+
+\begin{definition}
+    Dizemos que uma variável aleatória X tem distribuição normal com parâmetros $\mu$ e $\sigma^2$ (denotado por $X \backsim N(\mu, \sigma^2))$, quando sua f.d.p. é dada por 
+
+    $$f(x) = NormalDen(x) = \frac{1}{\sqrt{2 \pi} \sigma} e^{- \frac{(x - \mu)^2}{2 \sigma^2}}$$
+\end{definition}
+
+\begin{corollary}
+    Se $X \backsim N(\mu, \sigma^2)$, então $Z = \frac{X - \mu}{\sigma} \backsim N(0, 1)$.
+\end{corollary}
+
+\begin{corollary}
+    Se $X \backsim N(\mu, \sigma^2)$, então $E(X) = Moda(X) = Med(X) = \mu$ e $Var(X) = \sigma^2$.
+\end{corollary}
+
+\subsection*{5.5 Taxa de Falhas}
+
+\begin{definition}
+    Seja T o tempo de vida de um equipamento, isto é, o instante da sua primeira falha, cuja f.d.a é F(t). A \textbf{confiabilidade} deste equipamento é
+    
+    $$R(t) = P(T > t) = 1 - F(t)$$
+\end{definition}
+
+\begin{definition}
+    A \textbf{taxa média de falhas} de um equipamento em um intervalo $[t, t + \Delta t]$ é a chance de ele falhar nos próximos $\Delta t$ dado que ainda não falhou, dividido por $\Delta t$, isto é
+    
+    $$TMF = \dfrac{P(T \leq t + \Delta t | T > t)}{\Delta t} = \dfrac{F(t + \Delta t) - F(t)}{(1 - F(t)) \Delta t} = - \dfrac{R(t + \Delta t) - R(t)}{R(t).\Delta t}$$
+    
+    Tome o limite quando $\Delta t \rightarrow{} 0$ e temos então a \textbf{taxa instantânea de falhas}
+    
+    $$\lambda(t) = \lim_{\Delta t \rightarrow{} 0} TMF = \dfrac{F'(t)}{1 - F(t)} = - \dfrac{R'(t)}{R(t)}$$
+\end{definition}
+
+\section{Variáveis Aleatórias Contínuas Bidimensionais}
+
+\subsection*{6.1 Função de Densidade Conjunta}
+
+\begin{definition}
+    Uma \textbf{Função de Densidade Conjunta} f(x, y) das variáveis X e Y é uma função com a seguinte propriedade:
+    
+    $$P((X, Y) \in R) = \int \int_R f(x, y) d A$$
+    
+    onde R é um subconjunto qualquer do plano XY (isto é, uma região dentro do plano $\mathbb{R}^2$). Consequentemente, uma função de densidade conjunta tem de satisfazer as seguintes propriedades básicas:
+    
+    $$f(x, y) \geq 0 \ \forall (x, y) \in \mathbb{R}^2$$
+    
+    $$\int_{- \infty}^{+ \infty} \int_{- \infty}^{+ \infty} f(x, y) d A = 1$$
+\end{definition}
+
+\begin{definition}
+    Dada uma função de densidade conjunta f(x, y), definimos o \textbf{Valor Esperado, Variância} e \textbf{Desvio-Padrão} da variável X como
+    
+    $$E(X) = \iint_{\mathbb{R}^2} x f(x, y) dA$$
+    
+    $$Var(X) = E \left [ (X - E(X))^2 \right ] = E(X^2) - [E(X)]^2$$
+    
+    $$\sigma(X) = \sqrt{Var(X)}$$
+\end{definition}
+
+\begin{definition}
+    Quando a função de densidade conjunta é constante dentro de um certo conjunto R (e 0 fora dele), dizemos que a variável (x, y) é \textbf{distribuída uniformemente} em R. Neste caso, temos
+    
+    $$f(x, y) = \frac{1}{\acute{A}rea(R)} \text{ se } (x, y) \in R \text{ e } f(x, y) = 0, \text{ caso contrário}$$
+\end{definition}
+
+\subsection*{6.2 Distribuições Marginais e Condicionais; Covariância e Correlação}
+
+\begin{definition}
+    A \textbf{Distribuição Marginal} de X será
+    
+    $$f_X(x) = \int_{- \infty}^{+ \infty} f(x, y) d y$$
+    
+    e a \textbf{Distribuição Condicional} de X dado Y será
+    
+    $$f_{X | Y} (x | y) = \dfrac{f(x, y)}{f_Y(y)}$$
+\end{definition}
+
+\begin{definition}
+    A \textbf{Covariância} e a \textbf{Correlação} entre duas variáveis X e Y são respectivamente 
+    
+    $$Cov(X, Y) = E((X - E(X))(Y - E(Y))) = E(XY) - E(X) E(Y)$$
+    
+    $$\rho(X, Y) = \dfrac{Cov(X, Y)}{\sigma(X) \sigma(Y)}$$
+\end{definition}
+
+\begin{definition}
+    A \textbf{Esperança Condicional} de X na certeza de que Y = y é 
+    
+    $$E[X | Y = y] = \int_{- \infty}^{+ \infty} x f_{X | Y} (x | y) dx$$
+\end{definition}
+
+\begin{definition}
+    As variáveis X e Y são \textbf{independentes} quando a densidade conjunta é o produto das marginais, isto é,
+    
+    $$f(x, y) = f_X (x) f_Y (y)$$
+\end{definition}
+
+\begin{corollary}
+    X e Y são \textbf{independentes} se, e somente se, f(x, y) é da forma $g(x) h(y)$ num retângulo da forma $[a, b] \times [c, d]$ (e 0 caso contrario; note que este retângulo pode ser "infinito").
+\end{corollary}
+
+\begin{corollary}
+    Se X e Y são \textbf{independentes}, $\text{Cov} (X, Y) = 0$ e $E(X | y) = E(X)$ para valores validos de y (isto é, sempre que $f_Y (y) \neq 0$).
+\end{corollary}
+
+\begin{definition}
+    Os gráficos de $E[X|y]$ (uma função de y) e $E[Y|x]$ (uma função de x) são chamados de \textbf{curvas de regressão} (de X sobre y e vice-versa, respectivamente).
+\end{definition}
+
+\subsection*{6.3 Funções de Variáveis Contínuas}
+\begin{theorem}
+    Sejam X e Y variáveis aleatórias com densidade $f_{X, Y} (x, y)$. Sejam $W = g(X, Y)$ e $Z = h(X, Y)$ duas novas variáveis. Então a densidade conjunta de W e Z é dada por
+    
+    $$f_{W,Z} (w, z) = f_{X, Y} (x, y) \cdot |J|$$
+    
+    onde J é o Jacobiano da inversa da Transformada $T : (x, y) \rightarrow{} (g(x, y), h(x, y))$:
+    
+    $$J = \frac{\partial (x,y)}{\partial (w, z)} = \left | \begin{array}{cc}
+        \frac{\partial x}{\partial w} & \frac{\partial x}{\partial z} \\
+        \frac{\partial y}{\partial w} & \frac{\partial y}{\partial z}
+    \end{array} \right |$$
+\end{theorem}
+
+\section{Somas e Médias de Variáveis Aleatórias}
+\subsection*{7.1 Motivação}
+Se motive... e continue.
+
+\subsection*{7.2 Somas das Principais Distribuições Aleatórias}
+\begin{definition}
+    Seja ($X_1, X_2, \cdots, X_n$) uma AAS (Amostragem Aleatória Simples) tomada a partir de uma distribuição de uma v.a. X. Definimos a \textbf{soma da amostra} e a \textbf{média amostral} respectivamente por
+    
+    $$S_n = X_1 + X_2 + \cdots + X_n$$
+    
+    $$\overline{X} = \frac{S_n}{n} = \frac{X_1 + \cdots + X_n}{n}$$
+\end{definition}
+
+\begin{corollary}
+    Se $X_1 \backsim N(\mu_1, \sigma_1^2)$ e $X_2 \backsim N(\mu_2, \sigma_2^2)$ são independentes, então qualquer combinação linear não-nula $X = a X_1 + b X_2$, também terá distribuição normal, a saber, $X \backsim N(\mu, \sigma^2)$ onde $\mu = a \mu_1 + b \mu_2$ e $\sigma^2 = a^2 \sigma_1 + b^2 \sigma_2$. Em suma:
+    
+    $$
+    \left . \begin{array}{lll}
+        X_1 \backsim N (\mu_1, \sigma_1^2) \\
+        X_2 \backsim N (\mu_2, \sigma_2^2) \\
+        X_1 \text{ e } X_2 \text{ independentes}
+    \end{array} \right \} \Rightarrow a X_1 + b X_2 \backsim N(a \mu_1 + b \mu_2, a^2 \sigma_1 + b^2 \sigma_2)
+    $$
+\end{corollary}
+
+\begin{theorem}
+    Se $X_1, \cdots, X_n$ são amostras independentes da distribuição $N(\mu, \sigma^2)$ então
+    
+    $$\frac{S_n - n \mu}{\sqrt{n} \sigma} \backsim N(0, 1)$$
+    
+    $$\frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \backsim N(0, 1)$$
+\end{theorem}
+
+\subsection*{7.3 Lei dos Grandes Números}
+\begin{lemma}
+Se $X_1, X_2, \cdots, X_n$ são amostragens aleatórias simples de uma variável X com $E(X) = \mu$ e $\sigma(X) = \sigma$, então
+
+$$E(S_n) = n \mu; \ \text{Var}(S_n) = n \sigma^2; \ \sigma(S_n) = \sqrt{n} \sigma$$
+
+$$E(\overline{X}) = \mu; \ \text{Var}(\overline{X}) = \frac{\sigma^2}{n}; \ \sigma(\overline{X}) = \frac{\sigma}{\sqrt{n}}$$
+\end{lemma}
+
+\begin{theorem}[Lei dos Grandes Números, Bernoulli, 1713]
+Suponha que X tem uma distribuição tal que $\mu = E(X)$ e $\sigma^2 = \text{Var}(X)$ são finitos. Seja $\overline{X} = \frac{X_1 + X_2 + \cdots + X_n}{n}$ onde $X_1, X_2, \cdots, X_n$ são provas independentes com a distribuição X. Então, para qualquer $\varepsilon > 0$ fixo, temos:
+
+$$P(|\overline{X} - \mu| \geq \varepsilon) \rightarrow 0$$
+
+quando $n \rightarrow \infty$. E também quando $n \rightarrow \infty$:
+
+$$P(|\overline{X} - \mu| < \varepsilon) \rightarrow 1$$
+
+\end{theorem}
+
+\subsection*{7.4 Teorema Central do Limite (TCL)}
+\subsubsection*{TCL para Distribuição Binomial}
+\begin{theorem}[Aproximação Normal à Distribuição Binomial]
+Seja $X \backsim Bin(n, p)$. Então
+
+$$\lim_{n \rightarrow \infty} \sqrt{n p q} \text{BinomialDen}([np + a \sqrt{n p q} ]; n, p) = \phi(a)$$
+
+onde $\phi(\alpha) = \text{NormalDen}(\alpha)$ é a densidade da normal padronizada, isto é,
+
+$$\phi(\alpha) = \frac{1}{\sqrt{2 \pi}}e^{-\alpha^2/2}$$
+\end{theorem}
+
+\begin{theorem}[Aproximação Normal à Binomial]
+Seja $X \backsim Bin(n, p)$, e sejam a e b números inteiros fixos. Defina
+
+$$a^* = \frac{a - n p - \frac{1}{2}}{\sqrt{n p q}} \text{ e } b^* = \frac{b - n p + \frac{1}{2}}{\sqrt{n p q}}$$
+
+Então
+
+$$\lim_{n \rightarrow \infty} P(a \leq X \leq b) = \int_{a^*}^{b^*}\phi(t) d t$$
+\end{theorem}
+
+\subsubsection*{TCL (Caso Geral)}
+\begin{theorem}[Teorema Central do Limite]
+Sejam $X_1, X_2, \cdots, X_n$ amostras independentes de uma densidade com valor esperado $\mu$ e variância $\sigma^2$. Seja
+
+$$X^* = \sqrt{n} \frac{\overline{X} - \mu}{\sigma} = \frac{S_n - n \mu}{\sigma \sqrt{n}}$$
+
+Então
+
+$$\lim_{n \rightarrow \infty} P(a \leq X^* \leq b) = \int_a^b \phi(x) d x$$
+
+isto é, a distribuição $X^*$ se aproxima (em áreas) da distribuição normal padrão.
+\end{theorem}
+
+\subsection*{7.5 Aplicação á Estatística: Distribuição Amostral de uma Proporção}
+
+Não tem nada aqui (só aplicações) pode seguir...
+
+\section{Outras Distribuições Amostrais}
+\subsection*{8.1 Estimação de Parâmetros}
+
+\begin{definition}
+    Um \textbf{estimador} $\hat{\theta}$ de um parâmetro $\theta$ (da distribuição X, isto é, da população) é uma função das observações da amostra, isto é
+    
+    $$\hat{\theta} = \hat{\theta}(X_1, X_2, \cdots, X_n)$$
+\end{definition}
+
+\begin{definition}
+    Um estimador $\hat{\theta}$ é \textbf{não-viesado} quando
+    
+    $$E(\hat{\theta}) = \theta$$
+    
+    E o viés de um estimador é dado por
+    
+    $$\text{Viés} (\hat{\theta}) = E(\hat{\theta}) - \theta$$
+\end{definition}
+
+\begin{definition}
+    Um estimador $\hat{\theta}_1$ é dito \textbf{mais eficiente} do que $\hat{\theta}_2$ quando
+    
+    $$Var(\hat{\theta}_1) < Var(\hat{\theta}_2)$$
+\end{definition}
+
+\begin{definition}
+    Um(a sequencia de) estimador(es) $\hat{\theta}$ é dito \textbf{consistente} quando, $\forall \varepsilon > 0$ fixo,
+    
+    $$\lim_{n \rightarrow \infty} P(|\hat{\theta} - \theta| > \varepsilon) = 0$$
+\end{definition}
+
+\begin{definition}
+    Se 
+    
+    $$\lim_{n \rightarrow \infty} Vi\acute{e}s(\hat{\theta}) = 0 \text{ e } \lim_{n \rightarrow \infty} Var(\hat{\theta}) = 0$$
+    
+    então $\hat{\theta}$ é consistente.
+\end{definition}
+
+\subsection*{8.2 Estimadores pontuais da variância}
+\subsubsection*{Média Conhecida}
+Suponha que a média $\mu = E(X)$ é conhecida, e queremos saber o valor de $\sigma^2 = Var(X)$, um possível estimador para $E((X - \mu)^2)$ é
+
+$$\hat{\sigma} = \frac{\sum_{i = 1}^{n} (X_i - \mu)^2}{n}$$
+
+Este é um estimador não-viesado.
+
+\subsubsection*{Média Desconhecida}
+\begin{definition}
+    A \textbf{variância da amostra} é um estimador
+    
+    $$S^2 = \frac{\sum_{i = 1}^n (X_i - \overline{X})^2}{n - 1}$$
+\end{definition}
+
+\begin{corollary}
+    $S^2$ é um \textbf{estimador} não viesado de $\sigma^2$, isto é
+    
+    $$E(S^2) = \sigma^2$$
+\end{corollary}
+
+\begin{corollary}
+    $$Var(S^2) = \frac{(n-1) \mu_4 - (n-3) \sigma^2}{n (n-1)}$$
+    
+    onde
+    
+    $$\mu_4 = E((X - \mu)^4)$$
+\end{corollary}
+
+\begin{corollary}
+    Se $\mu_4 < \infty$, então $S^2$ e a variância verdadeira $\hat{\sigma}^2$ são ambos estimadores consistentes de $\sigma^2$
+\end{corollary}
+
+\subsection*{8.3 Erro Quadrático Médio}
+\begin{definition}
+    O \textbf{erro quadrático médio} de um estimador T de um parâmetro $\theta$ é
+    
+    $$EQM(T;\theta) = E((T - \theta)^2)$$
+\end{definition}
+
+\begin{corollary}
+    $$EQM(T; \theta) = Var(T) + (Vi\acute{e}s(T))^2$$
+\end{corollary}
+
+\subsection*{Distribuição Qui-quadrado}
+\begin{lemma}
+    Se $Z \backsim N(0, 1)$, então $\mu_4 (Z) = 3$.
+\end{lemma}
+
+\begin{lemma}
+    Se X é normal, então
+    
+    $$Var(S^2) = \frac{2 \sigma^4}{n - 1} \ \text{ e } \ Var(\sigma^2) = \frac{2 (n-1)}{n^2}\sigma^4$$
+\end{lemma}
+
+\begin{definition}
+    A distribuição $\Gamma(\frac{n}{2}, \frac{1}{2})$ é também chamada de \textbf{qui-quadrado com n graus de liberdade}, cuja notação é
+    
+    $$Y \backsim X^2(n)$$
+\end{definition}
+
+\begin{corollary}
+    A distribuição de $S^2$ é determinada por
+    
+    $$\frac{(n-1) S^2}{\sigma^2} \backsim X^2 (n-1)$$
+\end{corollary}
+
+\begin{corollary}
+    Se $Y \backsim X^2(n)$, então $Z = \sqrt{2 Y} - \sqrt{2 n - 1}$ é aproximadamente $N(0, 1)$ (especialmente para n grande).
+\end{corollary}
+
+\subsection*{8.5 Distribuição t de Student}
+\begin{definition}
+    Sejam $Z \backsim N(0, 1)$ e $X \backsim X^2(n)$ variáveis independentes. A distribuição da variável
+    
+    $$T = \frac{Z}{\sqrt{X/n}}$$
+    
+    É chamado de \textbf{t de Student com n graus de liberdade} (notação: $T \backsim t(n)$)
+\end{definition}
+
+\begin{corollary}
+    A densidade de $T \backsim t(n)$ é
+    
+    $$f(t) = TDen(t; n) = \frac{\Gamma(\frac{n+1}{2}}{\Gamma (\frac{n}{2}) \sqrt{\pi n}} \left (1 + \frac{t^2}{n} \right) ^{-(n+ 1)/2}$$
+\end{corollary}
+
+\begin{corollary}
+    Se $T \backsim t(n)$, então 
+    
+    $$E(T) = 0 \ \forall n \geq 2$$
+    
+    $$Var(T) = \frac{n}{n-2} \ \forall n \geq 3$$
+    
+    $$Med(T) = 0 \ \forall n \geq 1$$
+    
+    Nos demais casos não existe.
+\end{corollary}
+
+\begin{theorem}
+    Seja $X_1, X_2, \cdots, X_n$ uma AAS da variável aleatória normal X. Então $\overline{X}$ e $S^2$ são independentes, e
+    
+    $$T = \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \backsim t(n - 1)$$
+\end{theorem}
+
+\section{Dado em aula}
+\subsection*{Gerar variável aleatória}
+\begin{theorem}
+    Seja F uma função de distribuição cumulativa continua e estritamente crescente.
+    \begin{enumerate}
+        \item Se $U \backsim Unif(0, 1)$ e $X = F^{-1} (U)$. Então X é uma variável aleatória com função de distribuição cumulada F.
+        
+        \item Se X é uma variável aleatória com função de distribuição cumulativa F. Então $F(X) \backsim Unif(0, 1)$.
+    \end{enumerate}
+\end{theorem}
+
+\end{document}

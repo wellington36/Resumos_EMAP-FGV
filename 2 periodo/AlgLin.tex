@@ -1,0 +1,527 @@
+\documentclass[12pt]{article}
+
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage[pdftex,bookmarks=true,bookmarksopen=false,bookmarksnumbered=true,colorlinks=true,linkcolor=black]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage[pdftex]{hyperref}
+
+
+\usepackage[brazil]{babel}
+
+\pagestyle{plain}
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Corolário}[theorem]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}{Definição}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\textbf{\LARGE Fundação Getulio Vargas}\\ 
+\textbf{\LARGE Escola de Matemática Aplicada}
+
+\par
+\vspace{170pt}
+\textbf{\Large Wellington José}\\
+\vspace{32pt}
+\textbf{\Large Resumo Álgebra Linear}\\
+\end{center}
+
+\par
+\vfill
+\begin{center}
+{{\normalsize Rio de Janeiro}\\
+{\normalsize \the\year}}
+\end{center}
+\end{titlepage}
+
+\thispagestyle{empty}
+
+\section*{Ortogonalidade}
+    Seja E um espaço vetorial. Diremos que u e v são ortogonais se $v^Tu = 0$ e escrevemos $v \bot u$.
+    \begin{itemize}
+        \item $v^T u = v \cdot u$
+        \item $||v + u|| = ||v||^2 + ||u||^2$
+    \end{itemize}
+    Sejam V e U dois subespaços vetoriais de E. Diremos que $V \bot U$ se $v \bot u$, para todo $v \in V$ e $u \in U$
+    
+    \begin{itemize}
+        \item $w \in V \cap U \iff w = 0$
+    \end{itemize}
+
+\subsection*{Ortogonalidade e os espaços fundamentais}
+\begin{itemize}
+    \item $N(A) \bot C(A^T)$
+    \item $C(A) \bot N(A^T)$
+\end{itemize}
+
+\subsection*{Complemento Ortogonal}
+$V^\bot = \left\{w \in E ; w \bot V\right\}$
+\begin{itemize}
+    \item $V^T$ é um subespaço de E
+\end{itemize}
+Seja $\left\{v_1, \dots, v_k\right\}$ gera V. Então
+\begin{itemize}
+    \item $w \in V^\bot \iff w \bot v_i \, \forall i \in I_k$
+    \item Defina $A = \left[ \begin{array}{cc}
+    v_1^T \\
+    \vdots \\
+    v_k^T \end{array} \right]$. Então $V^T = N(A)$ e podemos achar uma base área $V^T$
+    \item $V \cap V^\bot = \left\{0\right\}$
+    \item dim V + dim $V^\bot = $ dim E
+    \item $V = (V^\bot)^\bot$
+\end{itemize}
+
+\subsection*{Decomposição Ortogonal}
+
+\begin{theorem}
+Todo vetor $x \in E$ pode ser escrito como $x = v + v^\bot$, onde $v \in V$ e $v^\bot \in V^\bot$, essa decomposição é única.
+\end{theorem}
+
+\subsection*{Projeção Ortogonal}
+\begin{itemize}
+    \item Seja a e b dois vetores num espaço vetorial E. A projeção de b em a:
+    $$p = \dfrac{a a^T}{a^T a} \cdot b$$
+\end{itemize}
+
+\subsection*{Matriz de Projeção}
+A matriz de projeção P pode ser escrita como
+
+$$P = \dfrac{a a^T}{a^T a}$$
+
+Com as propriedades:
+\begin{itemize}
+    \item P tem posto 1
+    \item P é simétrico
+    \item $P^2 = P$
+\end{itemize}
+
+\subsection*{Projeção no plano}
+Seja $a_1$ e $a_2$ uma base para o plano. Então queremos achar $x_1$ e $x_2$ tal que o vetor projetado p possa ser escrito como $x_1 a_1 + x_2 a_2$, podemos entender que o plano pode ser entendido como o espaço coluna de $A = \left[a_1 \, a_2\right]$, então temos que fazer a projeção no caso mais geral em $C(A)$
+
+\subsection*{Projeção em C(A)}
+Dado b, achar x tal que $a_i^T (b - Ax) = 0$ para todo i onde $a_i \in C(A)$, equivalente a $A^T Ax = A^t b$, se $A^T A$ é inversível (note que é quadrada), então $P = A(A^T A)^{-1} A^T$, se A for inversível então $P = I$.
+
+obs.: A projeção em $N(A^T)$ é $I - P$ onde P é a projeção em C(A).
+
+\subsection*{$A^T A$}
+\begin{theorem}
+$A^T A$ tem inversa se e somente se as colunas de A são LI.
+\end{theorem}
+
+\subsection*{Mínimos quadrados}
+Como nem sempre $Ax^* = b$ tem solução podemos projetar b em $C(A)$ e $Ax^* = b \xrightarrow{} A^T Ax^* = A^T b \xrightarrow{} x^* = (A^T A)^{-1} A^T b$ assim $x^*$ é uma solução em mínimos quadrados.
+
+\subsection*{Mínimos Quadrados - Caso Geral}
+Note que $x^* = (A^T A)^{-1} A^T b$, onde $A = \left[\begin{array}{c c} 1 & t_{1} \\ 1 & t_{2} \\ \vdots & \vdots \\ 1 & t_{m} \end{array} \right]$
+\\
+Além disso $A^T A = \left[ \begin{array}{c c} m & \sum t_i \\ \sum t_i & \sum t_i^2 \end{array} \right]$ e $A^T b = \left[ \begin{array}{c} \sum b_i \\ \sum t_i b_i \end{array} \right]$
+
+\subsection*{Vetores Ortonormais}
+Os vetores $q_1, \cdots, q_k$ são ditos ortogonais se $q_i^T q_j = 0, \text{ para } i \neq j$ diremos que são ortonormais se além de ortogonais, eles forem unitários, ou seja, $q_i^T q_i = 1$ para qualquer i.
+
+\begin{lemma}
+Vetores ortogonais são sempre LI
+\end{lemma}
+
+\subsection*{Matriz Ortogonais}
+Diremos que uma matriz é ortogonal se suas colunas são ortogonais ou $Q_{m \times n}$ é ortogonal se $Q^T Q = I_{n \times n}$. Se Q for quadrada então $Q^T = Q^{-1}$
+
+\begin{itemize}
+    \item Matrizes ortogonais preservam o comprimento: $|Qx| = |x|$
+\end{itemize}
+
+\subsection*{Processo de Gram-Schmidt com 2 vetores}
+Vamos começar com dois vetores LI $v_1$ e $v_2$. Queremos achar $u_1$ e $u_2$ tais que $u_1 \bot u_2$ e $span({v_1, v_2}) = span({u_1, u_2})$, podemos tomar $u_1 = v_1$ e $u_2 = v_2 - \text{proj}_{u_1} v_2$ e para criar vetores ortonormais basta fazer $q_i = \dfrac{u_i}{|u_i|}$
+
+$$v_1, v_2 \textbf{ (LI)} \xrightarrow{} u_1, u_2 \textbf{ (Ortogonal)} \xrightarrow{} q_1, q_2 \textbf{ (Ortonormal)}$$
+
+\subsection*{Processo de Gram-Schmit geral}
+Com 3 vetores $v_1, v_2$ e $v_3$ criamos $u_1$ e $u_2$ como acima e $u_3 = v_3 - \text{proj}_{u_1} v_3 - \text{proj}_{u_2} v_3$ e assim $u_1 \cdot u_3 = u_2 \cdot u_3 = 0$. E o processo se repete para $n$ vetores.
+
+\section*{Determinante}
+Se A é uma matriz $2 \times 2$ então $\det(A) = a_{11}a_{22} - a_{12}a_{21}$
+
+Propriedades:
+\begin{itemize}
+    \item Determinante de uma matriz permutação é 1 ou -1 dependendo se a matriz troca um número par ou ímpar de linhas.
+    
+    \item Se duas linhas da matriz são iguais, então o determinante é zero.
+    
+    \item Somar $\lambda \in \mathbf{R}$ vezes a linha i na linha j não muda o determinante.
+    
+    \item Se uma linha da matriz é de zeros então o determinante é zero.
+    
+    \item Determinante de uma matriz diagonal é o produto dos valores da diagonal.
+    
+    \item Determinante de uma matriz triangular é o produto dos valores na diagonal.
+    
+    \item Determinante de uma matriz é $\pm$ produto dos pivôs.
+    
+    \item $\det AB = \det A \det B$
+    
+    \item $\det A^{-1} = \dfrac{1}{\det A}$
+    
+    \item $\det A^T = \det A$
+    
+    \item $|\det Q| = 1$, se Q é uma matriz ortogonal.
+\end{itemize}
+
+\subsection*{Fórmula dos pivôs}
+Como $\det A = \pm \prod p_i$, onde $p_i$ é o i-ésimo pivô, $p_i$ pode ser escrito como (supondo que exista ao menos um pivô).
+
+$$p_i = \dfrac{\det A_i}{\det A_{i-1}}$$
+
+\subsection*{Co-fatores}
+Ver em \href{https://www.infoescola.com/matematica/matriz-de-cofatores}{Explicação Co-fator}.
+
+\subsection*{Inversa usando determinante}
+Se $\det A \neq 0$, então $A^{-1} = \frac{1}{\det A} C^T$, onde C é a matriz de cofatores de A.
+
+\subsection*{Regra de Cramer}
+Usando a fórmula acima temos que a solução de $Ax = b$ pode ser escrita como
+
+$$x = \dfrac{1}{\det A} C^T b$$
+
+A Regra de Cramer é outra forma de olhar a equação:
+
+$$x_j = \dfrac{\det B_j}{\det A}$$
+
+onde $B_j$ é a matriz A trocando a coluna j por $b$.
+
+\subsection*{Área de um triângulo em $\mathbb{R}^2$}
+A área de um triângulo em $\mathbb{R}^2$ é definida dadas as coordenadas dos vértices por:
+
+$$A = \dfrac{1}{2} \left| \begin{array}{ccc}
+    1 & 1 & 1 \\
+    x_1 & x_2 & x_3 \\
+    y_1 & y_2 & y_3
+\end{array} \right| $$
+
+\subsection*{Produto Vetorial em $\mathbb{R}^3$}
+O produto vetorial de dois vetores $u,v \in \mathbb{R}^3$ é definido como
+
+$$u \times v = \left| \begin{array}{ccc}
+    e_1 & e_2 & e_3 \\
+    u_1 & u_2 & u_3 \\
+    v_1 & v_2 & v_3
+\end{array} \right| = (u_2 v_3 - u_3 v_2)e_1 + (u_3 v_1 - u_1 v_3)e_2 + (u_1 v_2 - u_2 v_1)e_3$$
+
+Onde $e_i$ é um vetor unitário, e vale:
+
+\begin{itemize}
+    \item $v \times u = - (u \times v)$
+    
+    \item $u \cdot (u \times v) = v \cdot (u \times v) = 0$
+    
+    \item $u \times u = 0$
+    
+    \item $|u \times v| = |u||v||\sin{\theta}|$
+    
+    \item $(u \times v) \cdot w = 0 \Leftrightarrow u,v,w $ estão no mesmo plano.
+\end{itemize}
+
+\section*{Autovalores e Autovetores}
+\begin{definition}
+Diremos que $\lambda$ é um \textbf{autovalor} de A se existe x tal que $Ax = \lambda x$ e x é dito \textbf{autovetor} de A e por linearidade $\alpha x$ é autovetor para $\forall \alpha \in \mathbb{R}$.
+\end{definition}
+
+Se 0 é autovalor de A, os autovetores serão os elementos de N(A). Além disso, A é dito singular.
+
+\subsection*{Calculando Autovalores e Autovetores}
+$\lambda$ é um \textbf{autovalor} de A se e só se $A - \lambda I$ é singular, o que é equivalente a $\det(A - \lambda I) = 0$, onde
+
+$$p(\lambda) = \det(A - \lambda I)$$
+
+É dito o \textbf{polinômio característico} de A, e os autovalores são as raízes desse polinômio, p é de grau n e portanto toda matriz tem n autovalores (podendo ser repetidos ou complexos), daí os \textbf{autovetores} são calculados a partir do sistema $(A - \lambda I)x = 0$. Note que autovetor $\in N(A - \lambda I)$.
+
+\subsection*{Propriedades}
+\begin{itemize}
+    \item Se $Ax = \lambda x$ e $Bx = \mu x$, então $\lambda + \mu$ é autovalor de $A + B$.
+    
+    \item $A^kx = \lambda^kx$
+    
+    \item Se $\lambda \neq 0$ e $\lambda$ é autovalor de A, então $A^{-1} x = \frac{1}{\lambda} x$, ou seja $\frac{1}{\lambda}$ é autovalor da inversa.
+    
+    \item $E_{\lambda} = \{ x; Ax = \lambda x \}$ é um subespaço vetorial.
+    
+    \item $p(\lambda) = (-1)^n \det (\lambda I - A) = (-1)^n (\lambda^n + c_{n-1}\lambda^{n-1} + \cdots + c_1 \lambda + c_0)$
+    
+    \item $\det A = \lambda_1 \cdots \lambda_n$
+    
+    \item $\text{trace} (A) := a_{11} + \cdots + a_{nn} = \lambda_1 + \cdots + \lambda_n$
+\end{itemize}
+
+\subsection*{Diagonalização}
+\begin{theorem} Os autovetores são LI quando os seus respectivos autovalores são distintos.
+\end{theorem}
+
+Seja A matriz com n autovetores LI, {$x_1, \cdots, x_n$} e os respectivos autovalores {$\lambda_1, \cdots, \lambda_n$}. Tome $S = \left[ x_1 \cdots x_n \right]$, assim
+
+$$S^{-1} A S = \Lambda$$
+
+Onde $\Lambda$ é uma matriz diagonal com os termos $\lambda_i$ e $AS = S \Lambda$
+
+\subsection*{MA e MG}
+A \textbf{multiplicidade algébrica (MA)} de um autovalor $\lambda$ como multiplicidade da raiz no polinômio característico. Já a \textbf{multiplicidade geométrica (MG)} de um autovalor $\lambda$ é a $\dim(N(A - \lambda I)) = \dim(E_{\lambda})$. Se $MG = MA$ para todo autovalor, então A é diagonalizável.
+
+\subsection*{Potências de Matrizes}
+\begin{theorem} Se todo autovalor satisfaz $|\lambda| < 1$, então $A^k \rightarrow 0$, quando $k \rightarrow + \infty$.
+\end{theorem}
+
+\subsection*{Teorema Espectral}
+\begin{theorem} Se A é uma matriz simétrica ($A^T = A$), então existe uma matriz ortogonal Q tal que $A = Q \Lambda Q^T$, ou seja, A é diagonalizável.
+\end{theorem}
+
+\subsection*{Autovalores Reais}
+\begin{theorem} Se A é simétrica, então seus autovalores são reais.
+\end{theorem}
+
+\begin{corollary} Se $\lambda \in \mathbb{C}$ é autovalor de A e x é seu respectivo autovetor, então $\overline {\lambda}$ é um autovalor de A (onde $\overline {a + i b} = a - i b$) e $\overline{x}$ é seu respectivo autovetor. Ou seja, $A x = \lambda x$ e $A \overline{x} = \overline {\lambda} \overline {x}$ onde $\lambda \in \mathbb{C}$
+\end{corollary}
+
+\subsection*{Autovetores Ortogonais}
+\begin{theorem}
+Se A possui $\lambda_1 \neq \lambda_2$, com respectivos autovetores $x_1, x_2$, então $x_1 \bot x_2$
+\end{theorem}
+
+\subsection*{Autovalores e Pivôs}
+\begin{lemma}
+O número de pivôs é igual ao número de autovalores não nulos.
+\end{lemma}
+
+\begin{theorem}
+Se A é simétrica, então os sinais dos autovalores e pivôs são iguais.
+\end{theorem}
+
+\subsection*{Equações Diferenciais (Aplicação da diagonalização)}
+Suponha que $u(t)$ satisfaz a equação:
+
+$$u'(t) = \lambda u(t)$$
+
+A solução é $u(t) = C e^{\lambda t}$, onde C é uma constante definida usando o valor de $u(0)$, por exemplo.
+
+Podemos muitas equações então se escrevemos
+
+$$\textbf{u}(t) = \left[ \begin{array}{c}
+    u_1(t) \\
+    \vdots \\
+    u_n(t)
+\end{array} \right]$$
+
+E tomamos todas as equações na forma de matriz:
+
+$$\textbf{u}'(t) = A \textbf{u} (t)$$
+
+Onde A é uma matriz $n \times n$ e $\textbf{u(0)}$ é dado. Suponha que A é diagonal, então as equações são desacopladas (e fica mais fácil resolver). Então no caso em que A é diagonalizável, a ideia é mudar de base usando os autovetores de A e resolver as equações desacopladas.
+
+\subsection*{Exponencial de Matriz (Aplicação)}
+Sabemos que
+
+$$e^x = 1 + x + \dfrac{x^2}{2} + \cdots = \sum_{n = 0}^{+ \infty} \dfrac{x^n}{n!} \ \ \forall x \in \mathbb{R}$$
+
+A série (de Taylor) acima converge também se considerarmos uma matriz A:
+
+$$e^A = 1 + A + \dfrac{A^2}{2} + \cdots = \sum_{n = 0}^{+ \infty} \dfrac{A^n}{n!}$$
+
+\begin{lemma}
+    Se $A = S \Lambda S^{-1}$, então $e^A = S e^\Lambda S^{-1}$
+\end{lemma}
+
+\subsection*{$(I - A)^{-1}$ (Aplicação)}
+Suponha A é diagonalizável  e $|\lambda_i| < 1$ ($\lambda_i$ é o i-ésimo autovetor de A), assim $A^n \rightarrow 0$ quando $n \rightarrow + \infty$. Então
+
+$$(I-A)^{-1} = \sum_{n=0}^{+ \infty} A^n = I - A^{n-1} = I$$
+
+\subsection*{Equação de Segunda Ordem (Aplicação)}
+Considere a equação $y''(t) + b y'(t) + k y(t) = 0$. Tome:
+
+$$u(t) = \left[ \begin{array}{c}
+    y'(t)\\
+    y(t) 
+\end{array} \right], A = u'(t) = \left[ \begin{array}{c}
+    y''(t) \\
+    y'(t)
+\end{array} \right] = \left[ \begin{array}{cc}
+    -b & -k \\
+    1 & 0
+\end{array} \right] u(t)$$
+
+E tome o polinômio característico $p_A = \det(I - \lambda I) = \lambda^2 + b \lambda + k$. Se existem $\lambda_1, \lambda_2 \in \mathbb{R}$ raízes:
+
+$$u(t) = S e^{\Lambda t} S^{-1} u(0)$$
+
+Daí achamos $y(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}$, onde $c_1, c_2$ são constantes e dependem de A que depende de $b, k$.
+
+\subsection*{Formas Quadráticas}
+Uma forma quadrática em $\mathbb{R}^2$ é uma equação da forma
+
+$$a x^2 + 2b x y + c y^2 = 1$$
+
+\begin{definition}
+    Uma forma quadrática em $\mathbb{R}^n$ é definida como (supondo A simétrico)
+    
+    $$q(x) = x^T A x = \sum_{i,j = 1}^n a_{i j} x_i x_j$$
+\end{definition}
+
+E usando o Teorema Espectral $x^T A x = y^T \Lambda y = \sum_{i = 1}^n \lambda_i y_i^2$ onde $y = Q^T$ (ou $y_i = q_i^T x)$
+
+\subsection*{Positiva Definida}
+\begin{definition}
+    Diremos que A é \textbf{positiva definida} se $x^T A x > 0$. A matriz A é dita \textbf{positiva semi-definida} se $x^T A x \leq 0$
+\end{definition}
+
+\begin{theorem}
+    A é positiva definida se e somente se todos seus autovalores são estritamente positivos.
+\end{theorem}
+
+Propriedade: Se A e B são positivas definidas, então $A + B$ é positiva definida.
+
+\subsection*{Raiz Quadrada (Aplicação de matriz positiva definida)}
+Suponha que A é uma matriz positiva definida (A é simétrica). Diremos que R é raiz quadrada de A se $A = R^T R$. Se $A = Q \Lambda Q^T$, então $R = \sqrt{\Lambda} Q^T$.
+
+\subsection*{Decomposição de Cholesky}
+\begin{definition}
+    Dada uma matriz positiva definida A, a sua decomposição de Cholesky é uma raiz quadrada triangular inferior, $A = C C^T$.
+\end{definition}
+
+\subsection*{Matrizes Similares (generalização de diagonalização)}
+\begin{definition}
+    A e B são ditas \textbf{similares} se existe uma matriz invertível M tal que $A = M B M^{-1}$.
+\end{definition}
+
+\begin{theorem}
+    Matrizes similares tem os mesmos autovalores (maz autovetores mudam).
+\end{theorem}
+
+\begin{corollary}
+    Matrizes similares tem o mesmo determinante, o mesmo número de autovetores independentes e uma é diagonalizável se e só se a outra também é.
+\end{corollary}
+
+\section*{Decomposição em Valores Singulares - SVD}
+Pode ser entendido com uma generalização do Teorema Espectral para matrizes retangulares.
+
+\begin{theorem}
+    Sendo $A_{m \times n}$ existem matrizes ortogonais $U_{m \times m}$ e $V_{n \times n}$ e uma matriz diagonal ${\Sigma}_{m \times n} $com diagonal positiva tais que $A = U \Sigma V^T$.
+\end{theorem}
+
+Vamos definir $U, V$ e $\Sigma$.
+\begin{itemize}
+    \item Defina $\sigma_j = \sqrt{\lambda_j}$, que chamamos de valores singulares de A.
+    
+    \item Para $j = 1, \cdots, r$, definimos
+    
+    $$u_j = \dfrac{A q_j}{\sigma_j}$$
+    
+    \item Complete a base ortonormal com $u_{r + 1}, \cdots, u_n$
+    
+    \item $\Sigma$ é uma matriz diagonal com $\Sigma_{j j} = \sigma_j$
+    
+    \item E $V = Q$. Logo
+    
+    $$U \Sigma = \left[ \sigma_1 u_1 \ \ \cdots \ \ \sigma_r u_r \ \ 0 \ \ \cdots \ \ 0 \right] = \left[ A q_1 \ \ \cdots \ \ A q_r \ \ \cdots \ \ A q_n \right] = A V$$
+\end{itemize}
+
+\subsubsection*{Exemplo de SVD}
+Encontrar $U, V, \Sigma$ para a matriz $A = \left[ \begin{array}{cc}
+    1 & 1 \\
+    0 & 1 \\
+    1 & 0
+\end{array} \right]$.
+
+$$A^T A = \left[ \begin{array}{cc}
+    2 & 1 \\
+    1 & 2
+\end{array} \right]$$
+
+Calculando os autovalores fica $\lambda_1 = 3$ e $\lambda_2 = 1$ e então temos os valores singulares $\sigma_1 = \sqrt{3}$ e $\sigma_2 = 1$.
+
+Temos $V = Q = \left[ \begin{array}{cc}
+    \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
+    \frac{1}{\sqrt{2}} & - \frac{1}{\sqrt{2}}
+\end{array} \right]$, note que a posição dos autovetores $q_1$ e $q_2$ na matriz Q é de acordo com os autovalores.
+
+E $\Sigma = \left[ \begin{array}{cc}
+    \sqrt{3} & 0 \\
+    0 & 1 \\
+    0 & 0
+\end{array} \right]$, diagonal com os valores singulares.
+
+Como U é $3 \times 3$, vamos calcular $u_1, u_2$ e $u_3$
+
+$$u_1 = \dfrac{A q_1}{\sigma_1} = \left[ \begin{array}{c}
+    \frac{2}{\sqrt{6}} \\
+    \frac{1}{\sqrt{6}} \\
+    \frac{1}{\sqrt{6}}
+\end{array} \right]$$
+
+$$u_2 = \dfrac{A q_2}{\sigma_2} = \left[ \begin{array}{c}
+    0 \\
+    - \frac{1}{\sqrt{2}} \\
+    \frac{1}{\sqrt{2}}
+\end{array} \right]$$
+
+$$u_3 = e_1 - (e_1^T u_1) u_1 - (e_1^T u_2) u_2 = \left[ \begin{array}{c}
+    \frac{1}{3} \\
+    - \frac{1}{3} \\
+    - \frac{1}{3}
+\end{array} \right]$$
+
+Note que $u_3$ não está normalizado, então normalizando $u_3$ a matriz fica $U = \left[ \begin{array}{ccc}
+    \frac{2}{\sqrt{6}} & 0 & \frac{1}{\sqrt{3}} \\
+    \frac{1}{\sqrt{6}} & - \frac{1}{\sqrt{2}} & - \frac{1}{\sqrt{3}} \\
+    \frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & - \frac{1}{\sqrt{3}}
+\end{array} \right]$
+
+\subsection*{SVD - Bases dos Espaços Fundamentais}
+Sendo $A = U \Sigma V^T$
+
+\begin{itemize}
+    \item $v_1, \cdots, v_r$ é uma base ortonormal para $C(A^T)$.
+    
+    \item $u_1, \cdots, u_r$ é uma base ortonormal para $C(A)$.
+    
+    \item $v_{r+1}, \cdots, v_n$ é uma base ortonormal para $N(A)$.
+    
+    \item $u_{r+1}, \cdots, u_n$ é uma base ortonormal para $N(A^T)$
+\end{itemize}
+
+\subsection*{SVD - Mínimos Quadrados}
+Queremos calcular $\min_x = |A x - b|$, a solução em mínimos quadrados fica:
+
+$$x^* = \sum_{i = 1}^r \dfrac{u_i^T b}{\sigma_i} v_i$$
+
+\section*{Transformações Lineares}
+\begin{definition}
+    Sejam U e V dois espaços vetoriais. Diremos que $T: U \rightarrow V$ é uma \textbf{transformação linear} se
+    
+    \begin{itemize}
+        \item $T(u + v) = T(u) + T(v)$
+        
+        \item $T(\alpha u) = \alpha T(u)$
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}
+    Se $\dim U = n$, seja $\{u_1, \cdots, u \}$ uma base de U, então
+    
+    $$T(u) = x_1 T(u_1) + \cdots + x_n T(u_n)$$
+    
+    Onde $u = x_1 u_1 + \cdots + x_n u_n$
+\end{theorem}
+
+Podemos escrever uma certa 
+
+% IMPORTANTE:
+% A é dita singular se seu determinante é nulo.
+
+\end{document}

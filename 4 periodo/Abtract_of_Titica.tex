@@ -1,0 +1,357 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+
+\parindent0in
+\pagestyle{plain}
+\thispagestyle{plain}
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Corolário}[theorem]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}{Definição}
+
+\newcommand{\assignment}{Abstract of Titica}
+\newcommand{\duedate}{August 28, 2021}
+
+
+% \renewcommand\thesubsection{\arabic{subsection}}
+
+\title{Resumo Titica}
+\date{}
+
+\begin{document}
+
+Fundação Getúlio Vargas\hfill\\
+Inferência Estatística\hfill\textbf{\assignment}\\
+Wellington José\hfill\textbf{Due:} \duedate\\
+\smallskip\hrule\bigskip
+
+{\let\newpage\relax\maketitle}
+\maketitle
+
+\section*{Aula 1 - O que é e para que serve Inferência Estatística?}
+
+\begin{definition}[Modelo estatístico: informal]
+Um \textbf{modelo estatístico} consiste na identificação de variáveis aleatórias de interesse (observáveis e potencialmente observáveis), na especificação de uma distribuição conjunta para as variáveis aleatórias observáveis e na identificação dos parâmetros $(\theta)$ desta distribuição conjunta. Às vezes é conveniente assumir que os parâmetros são variáveis aleatórias também, mas para isso é preciso especificar uma distribuição conjunta para $\theta$.
+\end{definition}
+
+\begin{definition}[Modelo estatístico: formal]
+Seja $\mathcal{X}$ um espaço amostral qualquer, $\Theta$ um conjunto não-vazio arbitrário e $\mathcal{P(X)}$ o conjunto de todas as distribuições de probabilidade em $\mathcal{X}$. Um modelo estatístico \textbf{paramétrico} é uma função $P: \Theta \rightarrow \mathcal{P(X)}$ que associa a cada $\theta \in \Theta$ uma distribuição de probabilidade $P_\theta$ em $\mathcal{X}$.
+\end{definition}
+
+\begin{definition}[Afirmação probabilística]
+Dizemos que uma afirmação é \textbf{probabilística} quando ela utiliza conceitos da teoria de probabilidade para falar de um objeto.
+\end{definition}
+
+\begin{definition}[Inferência Estatística]
+Uma \textbf{inferência estatística} é uma \textbf{afirmação probabilística} sobre uma ou mais partes de um modelo estatístico.
+\end{definition}
+
+\begin{definition}[Estatística]
+Suponha que temos uma coleção de variáveis aleatórias $X_1, X_2, \ldots, X_n \subseteq \mathbf{R}^n$ e uma função $r: \mathbf{X} \rightarrow R^m$. Dizemos que a variável aleatória $T = r(X_1, X_2, \cdot, X_n)$ é uma estatística.
+\end{definition}
+
+\begin{definition}[Permutabilidade]
+Uma coleção finita de variáveis aleatórias $X_1, X_2, \ldots, X_n$ com densidade conjunta f é dita \textbf{permutável} se
+
+\begin{equation}
+f(x_1, x_2, \ldots, x_n) = f(x_{\pi(1)}, x_{\pi(2)}, \ldots, x_{\pi(n)})
+\end{equation}
+
+para qualquer permutação $\pi = \{\pi(1), \pi(2), \ldots, \pi(n)\}$ dos seus elementos. Uma coleção finita é permutável se qualquer subconjunto finito é permutável.
+\end{definition}
+
+\section*{Aula 2 - Distribuição a priori e a posteriori}
+\begin{definition}[Distribuição a priori]
+Se tratamos o parâmetro $\theta$ como uma variável aleatória, então a \textbf{distribuição a priori} é a distribuição que damos a $\theta$ antes de observarmos as outras variáveis aleatórias de interesse. Vamos denotar a função de densidade/massa de probabilidade da priori por $\xi(\theta)$.
+\end{definition}
+
+\begin{definition}[Distribuição a posteriori]
+Considere o problema estatístico com parâmetros $\theta$ e variáveis aleatórias observáveis $X_1, X_2, \ldots, X_n$. A distribuição condicional de $\theta$ dados os valores observados das variáveis aleatórias, $x := \{x_1, x_2, \ldots, x_n\}$ é a \textbf{distribuição a posteriori} de $\theta$, denotamos por $\xi(\theta \mid x)$ a f.d.p./f.m.p. condicional a $X_1 = x_1, X_2 = x_2, \ldots, X_n = x_n$.
+\end{definition}
+
+\begin{theorem}[Distribuição a posteriori: derivação]
+Considere a amostra aleatória $X_1, X_2, \ldots, X_n$ de uma distribuição com f.d.p./f.m.p. $f(x \mid \theta)$. Se a distribuição a priori é $\xi(\theta)$, temos
+
+\begin{equation}
+\xi(\theta \mid x) = \frac{\xi(\theta) \Pi_{i = 1}^{n} f(x_i \mid \theta)}{g_n(x)}, \ \theta \in \Omega
+\end{equation}
+
+Chamamos $g_n(x)$ de distribuição marginal de $X_1, X_2, \ldots, X_n$.
+\end{theorem}
+
+\begin{definition}[Função de verossimilhança]
+Quando encaramos a f.d.p./f.m.p. $f(x_1, x_2, \ldots, x_n \mid \theta)$ como uma função do parâmetro $\theta$, chamamos esta função de \textbf{função de verossimilhança}, e podemos denotá-la como $L(\theta; x)$ ou, quando a notação não criar ambiguidade, simplesmente $L(\theta)$.
+\end{definition}
+
+\section*{Aula 3 - Prioris conjugadas e função de perda}
+\begin{definition}[Hiper-parâmetros]
+Seja $\xi(\theta \mid \phi)$ a distribuição a priori para o parâmetro $\theta$, indexada por $\phi \in \Phi$. Dizemos que $\phi$ é(são) o(s) \textbf{hiper-parâmetros} da priori de $\theta$.
+\end{definition}
+
+\begin{definition}[Priori conjugada]
+Suponha que $X_1, X_2, \ldots$ sejam condicionalmente independentes dado $\theta$, com f.d.p./f.m.p. $f(x\mid\theta)$. Defina
+
+\begin{equation}
+\Psi = \left \{ f: \Omega \rightarrow (0, \infty), \int_\Omega f dx = 1 \right \}
+\end{equation}
+
+onde $\Omega$ é o espaço de parâmetros. Dizemos que $\Psi$ é uma \textbf{família de distribuições conjugadas} para $f(x \mid \theta)$ se $\forall f \in \Psi$ e toda realização x de $X = X_1, X_2, \ldots, X_n$
+
+\begin{equation}
+\frac{f(x\mid\theta)f(\theta)}{\int_\Omega f(x\mid\theta)f(\theta) d \theta} \in \Psi
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Distribuição a posteriori da média de uma normal]
+Suponha que $X_1, X_2, \ldots, X_n$ formam uma amostra aleatória com distribuição normal e com média desconhecida $\theta$ e variância $\sigma^2 > 0$, conhecida e fixa. Suponha que $\theta \backsim Normal(\mu_0, v_0^2)$ a priori. Então
+
+\begin{equation}
+\xi (\theta \mid x, \sigma^2) = \frac{1}{\sqrt{2 \pi \sigma^2}} exp \left (\frac{(\theta - \mu_1)^2}{2v_1^2}\right ),
+\end{equation}
+
+onde
+
+\begin{equation}
+\mu_1 := \frac{\sigma^2 \mu_0 + n v_0^2 \overline{x}_n}{\sigma^2 + n v_ 0^2} \ \text{e} \ v_1^2 := \frac{\sigma^2 v_0^2}{\sigma^2 + n v_0^2}
+\end{equation}
+\end{theorem}
+
+\begin{definition}[Priori imprópria]
+Seja $\xi : \Lambda \rightarrow (0, \infty), \Omega \subseteq \Lambda$, uma função tal que $\int_\Omega \xi(\theta) d \theta = \infty$. Se utilizamos $\xi$ como uma p.d.f.~\footnote{p.d.f. - ``probability density function'' ou função de densidade de probabilidade} para $\theta$, dizemos que $\xi$ é uma \textbf{priori imprópria} para $\theta$.
+\end{definition}
+
+\begin{definition}[Estimador]
+Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias com distribuição conjunta indexada por $\theta$. Um \textbf{estimador} de $\theta$ é qualquer função real $\delta$: $X_1, X_2, \ldots, X_n \rightarrow \mathbb{R}^d, d \geq 1$.
+\end{definition}
+
+\begin{definition}[Estimativa]
+Dizemos que o valor de $\delta$ avaliado nas realizações de $X_1, X_2, \ldots, X_n$, $\textbf{x} = \{x_1, x_2, \ldots, x_n\}, \ \delta(\textbf{x})\}$ é uma \textbf{estimativa} de $\theta$.
+\end{definition}
+
+\begin{definition}[Função de perda]
+Uma função de perda é uma função real em duas variáveis 
+\begin{equation}
+L: \Omega \times \mathbb{R}^d \rightarrow \mathbb{R},
+\end{equation}
+
+em que dizemos que o estatístico \textit{perde} $L(\theta, a)$ se o parâmetro vale $\theta$ e a estimativa dada vale a.
+\end{definition}
+
+\section*{Aula 4 - Estimadores de Bayes e EMV}
+
+\begin{definition}[Estimador de Bayes]
+Considere a perda esperada a posteriori:
+
+\begin{equation}
+E_{\theta \mid x} [L(\theta, a)] = E[L(\theta, a) \mid x] = \int_\Omega L(\theta, a) \xi (\theta \mid x) d \theta
+\end{equation}
+
+Dizemos que $\delta^*$ é um \textbf{estimador de Bayes} se, para toda realização $X = x$,
+
+\begin{equation}
+E[L(\theta, \delta^*(x)) \mid x] = \min_{a \in A} E[L(\theta, a) \mid x].
+\end{equation}
+\end{definition}
+
+\begin{theorem}[$\delta^*$ sob perda quadrática]
+Seja $\theta$ um parâmetro tomando valores reais. Sob perda quadrática,
+
+\begin{equation}
+\delta^*(x) = E[\theta \mid X = x] = \int_\Omega \theta \xi(\theta \mid x) d \theta
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[$\delta^*$ sob perda absoluta]
+Suponha que a função de perda é dada por
+
+\begin{equation}
+    L(\theta, \delta^*) = | \theta - \delta^*|.
+\end{equation}
+
+Dizemos que a função de perda é \textbf{absoluta}.
+Seja $\theta$ um parâmetro tomando valores na reta. Sob perda absoluta, $\delta^*(x)$ é a \textbf{mediana} a posteriori, isto é,
+
+\begin{equation}
+    \int_{\infty}^{\delta^*(x)} \xi(\theta \mid x) d \theta = \frac{1}{2}
+\end{equation}
+\end{theorem}
+
+\begin{definition}[Estimador consistente]
+Seja $\delta_1, \delta_2, \ldots, \delta_n$ uma sequência de estimadores de $\theta$. Se quando $n \rightarrow \infty$ a sequência convergente para $\theta$, dizemos que esta é uma \textbf{sequência consistente de estimadores}.
+\end{definition}
+
+\begin{definition}[Estimador de máxima verossimilhança]
+Para cada possível vetor (de observações) x, seja $\delta(x) \in \Omega$ um valor de $\theta \in \Omega$ de modo que a função de verossimilhança, $L(\theta) \propto f(x \mid \theta)$~\footnote{$\propto$ - é um operador matemático binário que indica que o valor esquerdo é proporcional ao valor direito.}, atinge o máximo.
+Dizemos que $\hat\theta = \delta(\textbf{X})$ é o \textbf{estimador de máximo verossimilhança} de $\theta$ (Fisher, 1922)\footnote{Ronald Aylmer Fisher (1890-1962), biólogo e estatístico inglês.}. Quando observamos $\textbf{X} = x$, dizemos que $\delta(x)$ é uma estimativa de $\theta$. Dito de outra forma:
+
+\begin{equation}
+    \max_{\theta \in \Omega} f(\textbf{X} \mid \theta) = f(\textbf{X} \mid \hat\theta).
+\end{equation}
+\end{definition}
+
+\subsection*{Famílias Conjugadas}
+
+Se $X_1,\ldots,X_n$ são iid e seguem a distribuição da coluna ``Dados'' na tabela~\ref{tab:1}.
+
+\textbf{Notações}: $\bar {x}_n= \frac{1}{n}\sum_{i=1}^n x_i;~~~
+y=\sum_{i=1}^nx_i$
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline \textbf{Dados} & \textbf{Priori} & \textbf{Posteriori}\\ \hline
+         $\operatorname{Bernoulli}(\theta)$&$\operatorname{Beta}(\alpha,\beta)$ & $\operatorname{Beta}(\alpha+y,\beta+n-y)$ \\ \hline
+         $\operatorname{Poisson}(\theta)$&$\operatorname{Gama}(\alpha,\beta)$&$\operatorname{Gama}(\alpha+y,\beta+n)$\\ \hline
+         $\operatorname{Normal}(\mu,\sigma^2)$ & $\operatorname{Normal}(\mu_0,v_0^2)$& $\operatorname{Normal}\left(\dfrac{\sigma^2\mu_0+nv_0^2\bar{x}_n}{\sigma^2+nv_0^2},\dfrac{\sigma^2v_0^2}{\sigma^2+nv_0^2}\right)$ \\ \hline
+         $\operatorname{Exp}(\theta)$ &$\operatorname{Gama(\alpha,\beta)}$ & $\operatorname{Gama}(\alpha+n,\beta+y)$ \\ \hline
+
+    \end{tabular}
+    \caption{Famílias Conjugadas}\label{tab:1}
+\end{table}
+
+\section*{Aula 5 - EMV (parte II)}
+
+\begin{theorem}[Invariância do EMV]
+Considere uma função $\phi: \Omega \rightarrow \mathbb{R}$. Se $\hat{\theta}$ é um EMV para $\theta$, então $\phi(\hat{\theta})$ é um EMV para $\omega = \phi(\theta)$.
+\end{theorem}
+
+\begin{theorem}[Consistência do EMV]
+Defina $l(\theta) := \log f_n(x \mid \theta)$ e assuma que $X_1, \ldots, X_n \backsim f(\theta_0)$, isto é, que $\theta_0$ é o valor verdadeiro do parâmetro.
+Denote $E_{\theta_0}[g] := \int_{\mathcal{X}} g(x, \theta_0) f(x \mid \theta_0)\, dx$. Suponha que
+
+\begin{itemize}
+    \item $f(x_i \mid \theta)$ tem o mesmo suporte;
+    \item $\theta_0$ é o ponto inferior de $\Omega$;
+    \item $I(\theta)$ é diferenciável;
+    \item $\hat{\theta}_{EMV}$ é única solução de $I'(\theta) = 0$.
+\end{itemize}
+
+Então
+
+$$\hat{\theta}_{EMV} \rightarrow \theta$$
+
+\end{theorem}
+
+\section*{Aula 6 - Método dos momentos e suficiência}
+
+\begin{definition}[Método dos momentos]
+Suponha que $X_1, \ldots, X_n$ formam uma sequânica aleatória com distribuição conjunta $f_n (X_1, \ldots, X_n \mid \theta), \theta \in \Omega \subseteq \mathbb{R}^k$ e que o k-ésimo momento existe. Defina $\mu_j (\theta) = E[X_1^j \mid \theta]$ e suponha que $\mu: \Omega \rightarrow \mathbb{R}^k$ é biunívoca, de modo que sua inversa é
+
+$$\theta = M(\mu_1(\theta), \ldots, \mu_k(\theta)).$$
+
+Dados os momentos amostrais $m_j := \frac{1}{n} \sum_{i=1}^n X_i^j, j = 1, \ldots, k$ o \textbf{estimador de momentos} (EMM) de $\theta$ é
+
+$$\hat{\theta}_{EMM} = M(m_1, \ldots, m_k).$$
+\end{definition}
+
+\begin{theorem}[Consistência do EMM]
+Suponha que $X_1, \ldots, X_n$ formam uma amostra aleatória com distribuição conjunta  $f_n (X_1, \ldots, X_n \mid \theta), \theta \in \Omega \subseteq \mathbb{R}^k$ e que o k-ésimo momento existe. Suponha que a inversa M existe e é continua. Então o EMM é \textbf{consistente} para $\theta$.
+\end{theorem}
+
+\begin{definition}[Estatística suficiente]
+Seja $X_1, \ldots, X_n$ uma amostra aleatória de uma distribuição indexada pelo parâmetro $\theta$. Seja $T = r(X_1, \ldots, X_n)$ uma estatística. Dizemos que T é uma \textbf{estatística suficiente} para $\theta$ se e somente se
+
+\begin{equation}
+    f(X_1, \ldots, X_n \mid T = t, \theta) = f(X_1, \ldots, X_n \mid T = t, \theta'), \forall \theta, \theta' \in \Omega,
+\end{equation}
+
+isto é, se a distribuição condicional da amostra dado o valor da estatística não depende de $\theta$.
+\end{definition}
+
+\begin{definition}[Aleatorização auxiliar]
+ Suponha que T é suficiente para $\theta$. O processo de simular $X_1', \ldots, X_n' \mid T = r(X_1, \ldots, X_n)$ de modo que 
+ 
+ \begin{equation}
+     f(X_1, \ldots, X_n \mid \theta) = f(X_1', \ldots, X_n' \mid \theta), \forall \theta \in \Omega,
+ \end{equation}
+ 
+ é chamado de \textbf{aleatorização auxiliar} (em inglês, auxiliary randomisation).
+\end{definition}
+
+\begin{theorem}[Teorema de fatorização]\label{teo:fatorizacao}
+Suponha que $X_1, \ldots, X_n$ perfazem uma amostra aleatória com f.d.p./f.m.p.$f(x \mid \theta), \theta \in \Omega$. Uma estatística $T = r(X_1, \ldots, X_n)$ é suficiente para $\theta$ se, e somente se, para todo $x \in \mathcal{X}$ e $\theta \in \Omega$ existem u e v não negativos tal que
+
+\begin{equation}
+    f_n(x \mid \theta) = u(x) v[r(x), \theta].
+\end{equation}
+\end{theorem}
+
+\begin{definition}[Suficiência conjunta]
+Dizemos que um conjunto de estatísticas $T = \{T_1, \ldots, T_n\}$ é \textbf{suficiente} (conjuntamente) se que a distribuição condicional conjunta de $X_1, \ldots, X_n$ dado $T_1 = t_1, \ldots, T_n = t_n$ não dependentes de $\theta$.
+\end{definition}
+
+\section*{Aula 7 - Suficiência conjunta e mínima, teorema de Rao-Blackwell}
+
+\begin{definition}[Estatísticas de ordem]
+Seja $\textbf{X} = X_1, \ldots, X_n$ uma amostra aleatória. Dizemos que $Y_1, \ldots, Y_n$ são \textbf{estatísticas de ordem} se $Y_1$ é o menor valor de \textbf{X}, $Y_2$ é o segundo menor valor e assim sucessivamente.
+\end{definition}
+
+\begin{theorem}[Estatísticas de ordem são suficientes conjuntas]
+Seja $X_1, \ldots, X_n$ uma amostra aleatória com f.d.p./f.m.p. $f(x \mid \theta)$. As estatísticas de ordem $Y_1, \ldots, Y_n$ são suficientes conjuntas para $\theta$.
+\end{theorem}
+
+\begin{definition}[Suficiência mínima]
+Uma estatística \textbf{T} é dita \textbf{mínima suficiente} se \textbf{T} é suficiente e é função de qualquer outra estatística suficiente. Um vetor $\textbf{T} = \{ T_1, \ldots, T_n \}$ é dito \textbf{minimamente suficiente conjunto} se é função de qualquer outro valor de estatísticas suficientes conjuntas.
+\end{definition}
+
+\begin{theorem}[EMV e Bayes são suficientes]
+Se a função de verossimilhança admite fatorização pelo Teorema~\ref{teo:fatorizacao}, os estimadores de Bayes e de máxima verossimilhança são estatísticas minimamente suficientes.
+\end{theorem}
+
+\begin{definition}[Notação conveniente]
+É conveniente definir que para $g : \mathcal{X}^n \rightarrow \mathbb{R}$, escrevemos
+
+\begin{equation}
+    E_\theta [g] = \int_\mathcal{X} \cdots \int_\mathcal{X} g(\textbf{x}) f_n (\textbf{x} \mid \theta) d x_1 \cdots d x_n = \int_\mathcal{X}^n g(\textbf{x}) f_n (\textbf{x} \mid \theta) d \textbf{x} 
+\end{equation}
+\end{definition}
+
+\begin{definition}[Erro quadrático médio]
+\begin{equation}
+    R(\theta, \delta) := E_\theta \left [ \{ \delta(\textbf{X}) - \theta \}^2 \right ].
+\end{equation}
+\end{definition}
+
+\begin{definition}[Estimador condicionado]\label{def:est. cond.}
+\begin{equation}
+    \delta_0 (\textbf{T}) := E_\theta \left [ \delta(\textbf{X}) \mid \textbf{T} \right ].
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Teorema de Rao-Blackwell]
+Seja $\delta(\textbf{X})$ um estimador, \textbf{T} uma estatística suficiente para $\theta$ e seja $\delta_0(\textbf{T})$ como na Definição~\ref{def:est. cond.}. Então vale que
+
+$$R(\theta, \delta_0) \leq R(\theta, \delta)$$
+\end{theorem}
+
+\section*{Aula 8 - Admissibilidade e viés}
+
+\begin{definition}[Admissibilidade]
+Um estimador $\delta$ é dito \textbf{inadmissível} se existe outro estimador $\delta_0$ tal que $R(\theta, \delta_0) \leq R(\theta, \delta), \forall \theta \in \Omega$ e existe $\theta' \in \Omega$ tal que $R(\theta', \delta_0) < R(\theta', \delta)$. Nesse caso, dizemos que $\delta_0$ domina $\delta$. O estimador $\delta_0$ é \textbf{admissível} se (e somente se) não há nenhum estimador que o domine.
+\end{definition}
+
+\begin{definition}[Estimador não-viesado]
+Um estimador $\delta(\textbf{X})$ de uma função $g(\theta)$ é dito \textbf{não-viesado} se $E_\theta[\delta(\textbf{X})] = g(\theta), \ \forall \theta \in \Omega$. Um estimador que não atende a essa condição é dito viesado. E o \textbf{víes} de $\delta$ é definido como $B_\delta(\theta) := E_\theta[\delta(\textbf{X})] - g(\theta)$.
+\end{definition}
+
+\begin{theorem}[Estimador não-viesado da variância]
+Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória, com $E[X_1] = m$ e $Var(X_1) = v < \infty$. Então
+
+$$\delta_1(\textbf{X}) = \frac{1}{n - 1}\sum_{i = 1}^n (X_i - \overline{X}_n)^2$$
+
+é um estimador não-viesado de v.
+\end{theorem}
+
+\end{document}

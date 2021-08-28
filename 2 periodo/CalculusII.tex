@@ -1,0 +1,333 @@
+\documentclass[12pt]{article}
+
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage[pdftex,bookmarks=true,bookmarksopen=false,bookmarksnumbered=true,colorlinks=true,linkcolor=black]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{pdfpages}
+
+
+\usepackage[brazil]{babel}
+
+\pagestyle{plain}
+
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}{Corolário}[theorem]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}{Definição}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\textbf{\LARGE Fundação Getulio Vargas}\\ 
+\textbf{\LARGE Escola de Matemática Aplicada}
+
+\par
+\vspace{170pt}
+\textbf{\Large Wellington José}\\
+\vspace{32pt}
+\textbf{\Large Resumo de CálculoII}\\
+\end{center}
+
+\par
+\vfill
+\begin{center}
+{{\normalsize Rio de Janeiro}\\
+{\normalsize \the\year}}
+\end{center}
+\end{titlepage}
+
+\section*{Capítulo 16 - Cálculo Vétorial}
+\subsection*{16.1 - Campos Vetoriais}
+\begin{definition}
+Seja $E$ um conjunto em $\mathbf{R}^n$. Um campo vetorial em $\mathbf{R}^n$ é uma função $F$ que associa a cada ponto $(x_1, x_2, \dots, x_n) \in E$ um vetor $F(x_1, x_2, \dots, x_n)$.
+\end{definition}
+
+\begin{definition}[Campo vetorial gradiente]
+Se $f: E \in \mathbf{R}^n \rightarrow{} \mathbf{R}^n$, o campo vetorial gradiente é dado por:
+
+$$\nabla f(x_1, x_2, \dots, x_n) = f_{x_1} (x_1, x_2, \dots, x_n)j_1 + \dots + f_{x_n} (x_1, x_2, \dots, x_n)j_n \ \ \footnote{Note que, $f_x$ é a derivada de f em relação a x}$$
+\end{definition}
+
+\subsection*{16.2 - Integrais de Linha}
+\begin{definition}[integral de linha sobre curva]
+Se $f$ é definida sobre uma curva suave $C$ dada por uma equação paramétrica da forma $x = x(t), y = y(t)$ com $a \leq t \leq b$. Então a integral de linha de $f$ sobre $C$ é:
+
+$$\int_{C} f(x, y) ds = \lim_{n \rightarrow{} \infty} \sum_{j=1} ^n f({x_i}^*, {y_i}^*) \Delta s_i$$
+
+ou usando a seção 10.2
+
+$$\int_{C} f(x, y) ds = \int_{a}^{b} f(x(t), y(t)) \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} dt$$
+\end{definition}
+
+\subsubsection*{Integral de linha com relação ao comprimento do arco}
+Podemos escrever integral de linha em função de $t: x = x(t), y = y(t), dx = x'(t)dt, dy = y'(t)dt$ ficando com:
+
+$$\int_{C} f(x, y) dx = \int_{a}^{b} f(x(t), y(t))x'(t)dt$$
+$$\int_{C} f(x, y) dy = \int_{a}^{b} f(x(t), y(t))y'(t)dt$$
+
+\subsubsection*{Integrais de Linha no Espaço}
+De forma análoga a integrais duplas
+$$\int_{C} f(x, y, z) ds = \int_{a}^{b} f(x(t), y(t), z(t)) \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 + \left(\frac{dz}{dt}\right)^2} dt$$
+
+e
+
+$$\int_{C} f(x, y, z) dz = \int_{a}^{b} f(x(t), y(t), z(t))z'(t)dt$$
+
+\subsubsection*{Integrais de Linha de Campos Vetorias}
+
+Seja $F$ um campo vetorial contínuo definido sobre uma curva suave $C$ dada pela função vetorial $r(t), a \leq t \leq b$. Então, a integral de linha de $F$ ao longo de $C$ é
+
+$$\int_C F dr = \int_{a}^{b} F(r(t)).r'(t) dt = \int_C F . T ds$$
+onde $T(x, y, z)$ é o vetor tangente unitário no ponto $(x, y, z) \in C$.
+
+\subsection*{16.3 - O Teorema Fundamental das Integrais de Linha}
+\begin{theorem}
+    Seja C uma curva suave dada pela função vetorial $r(t), a \leq t \leq b$. Seja $f$ uma função diferenciável de duas ou três variáveis cujo vetor gradiente $\nabla f$ é contínuo em C. Então
+
+    $$\int_C \nabla f . dr = f(r(b)) - f(r(a))$$
+\end{theorem}
+
+obs.: Lembre-se que, $\nabla f = \textbf{F}$
+
+\subsubsection*{Independência do Caminho}
+
+Suponha que $C_1$ e $C_2$ sejam curvas suaves por partes que tem mesmos pontos iniciais e finais A e B, se $\nabla f$ é contínua então
+
+$$\int_{C_1} \nabla f . dr = \int_{C_2} \nabla f . dr$$
+
+\begin{theorem}
+    $\int_C F.dr$ é independente do caminho em D se e somente se $\int_C F . dr = 0$ para todo caminho fechado $C \in D$.
+\end{theorem}
+
+\begin{theorem}
+    Suponha que F seja um campo vetorial contínuo em uma região aberta conexa por caminhos D. Se $\int_C F . dr$ for independente do caminho em D, então F é um campo vetorial conservativo em D, ou seja, existe uma função $f$ tal que $\nabla f = F$.
+\end{theorem}
+
+\begin{theorem}
+    Se $F(x, y) = P(x, y)i + Q(x, y)j$ é um campo vetorial conservativo, onde P e Q têm derivadas parciais de primeira ordem contínuas em um domínio D, então em todos os pontos de D temos
+
+    $$\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$$
+\end{theorem}
+
+\begin{theorem}
+    Seja $F = Pi + Qj$ um campo vetorial em uma região aberta simplesmente conexa D. Suponha que P e Q tenham derivadas contínuas de primeira ordem e que
+
+    $$\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$$
+
+    Em todo D, então F é conservativo.
+\end{theorem}
+
+\subsection*{16.4 - Teorema de Green}
+O teorema de Green fornece a relação entre uma integral de linha ao redor de uma curva fechada simples C e uma integral sobre a região do plano D delimitada de C.
+
+\begin{theorem}[Teorema de Green]
+    Seja C uma curva plana simples, fechada, contínua por partes, orientada positivamente, e seja D a região delimitada por C. Se $F_1$ e $F_2$ têm derivadas parciais de primeira ordem contínuas sobre uma região aberta que contenha D, então
+    
+    $$\int_{C} F_1 d x + F_2 d y = \iint_D \left( \dfrac{\partial F_2}{\partial x} - \dfrac{\partial F_1}{\partial y} \right) d A$$
+\end{theorem}
+
+\begin{corollary}
+    Do Teorema de Green podemos tirar a área de D
+    
+    $$A = \dfrac{1}{2} \oint_C x d y - y d x$$
+\end{corollary}
+
+obs.: $\oint_C F_1 d x + F_2 d y$ indica que a integral de linha é calculada usando a orientação positiva da curva fechada C.
+
+\subsection*{16.5 - Rotacional e Divergente}
+\subsubsection*{Rotacional}
+Se $F = F_1 \textbf{i} + F_2 \textbf{j} + F_3 \textbf{k}$ é um campo vetorial em $\mathbb{R}^3$ e as derivadas parciais de $F_1, F_2$ e $F_3$ existem, então o \textbf{rotacional} de \textbf{F} é o campo vetorial em $\mathbb{R}^3$ definido por
+
+$$\text{rot } \textbf{F} = \left( \dfrac{\partial F_3}{\partial y} - \dfrac{\partial F_2}{\partial z} \right) \textbf{i} + \left( \dfrac{\partial F_1}{\partial z} - \dfrac{\partial F_3}{\partial x} \right) \textbf{j} + \left( \dfrac{\partial F_2}{\partial x} - \dfrac{\partial F_1}{\partial y} \right) \textbf{k}$$
+
+Ou,
+
+$$\text{rot } \textbf{F} = \left| \begin{array}{ccc}
+    i & j & k \\
+    \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+    F_1 & F_2 & F_3
+\end{array} \right|$$
+
+\begin{theorem}
+    Se $f$ é uma função de três variáveis e tem derivadas parciais de segunda ordem contínuas, então
+
+    $$\text{rot} (\nabla f) = 0$$
+\end{theorem}
+
+\begin{theorem}
+    Se \textbf{F} for um campo vetorial definido sobre todo $\mathbb{R}^3$ cujas funções $F_1, F_2$ e $F_3$ possuem derivadas de segunda ordem contínuas e rot \textbf{F} $ = 0$, então \textbf{F} será um campo vetorial consecutivo.
+\end{theorem}
+
+\subsubsection*{Divergente}
+Se $F = F_1 i + F_2 j + F_3 k$ é um campo vetorial em $\mathbb{R}^3$ e $F_1, F_2, F_3$ possuem derivadas, então o \textbf{divergente} de F é
+
+$$\text{div } F = \dfrac{\partial F_1}{\partial x} + \dfrac{\partial F_2}{\partial y} + \dfrac{\partial F_3}{\partial z}$$
+
+\begin{theorem}
+    Se $F = F_1 i + F_2 j + F_3 k$ é campo vetorial sobre $\mathbb{R}^3$ e $F_1, F_2, F_3$ têm derivadas parciais de segunda ordem contínuas, então
+
+    $$\text{div rot } F = 0$$
+\end{theorem}
+
+\subsection*{16.6 - Superfícies Parametrizadas e suas Áreas}
+
+Podemos descrever uma superfície por uma função vetorial de dois parâmetros u e v, em vez de apenas um único t.
+
+$$r(u, v) = x(u, v)i + y(u, v)j + z(u, v)k$$
+
+\subsubsection*{Superfícies de Revolução}
+
+Uma superfície de revolução num certo eixo x, com uma função $f$:
+
+$$x = x, y = f(x) \cos{\theta}, z = f(x) \sin{\theta}$$
+
+\subsubsection*{Planos Tangentes}
+
+O plano tangente de uma certa função vetorial $r(u, v) = x(u, v)i + y(u, v)j + z(u, v)k$, no ponto $P_0$ com vetor posição $r(u_0, v_0)$ é dada por:
+
+$$r_v = \dfrac{\partial x}{\partial v}(u_0, v_0)i + \dfrac{\partial y}{\partial v}(u_0, v_0)j + \dfrac{\partial z}{\partial v}(u_0, v_0)k$$
+
+$$r_u = \dfrac{\partial x}{\partial u}(u_0, v_0)i + \dfrac{\partial y}{\partial u}(u_0, v_0)j + \dfrac{\partial z}{\partial u}(u_0, v_0)k$$
+
+Onde o vetor normal do plano tangente é dado por $|r_v \times r_u| = \alpha i + \beta j + \gamma k$, note que $\alpha, \beta, \gamma$ estão em função de $u, v$.
+
+E a equação do plano num ponto $(x_0, y_0, z_0)$:
+
+$$\alpha(u_0, v_0)(x - x_0) + \beta(u_0, v_0)(y - y_0) + \gamma(u_0, v_0)(z - z_0) = 0$$
+
+\subsubsection*{Área da Superfície}
+\subsubsection*{Definição}
+Se uma superfície parametrizada suave S é dada pela equação $r(u, v) = x(u, v)i + y(u, v)j + z(u, v)k$, com $(u, v) \in D$ e S é coberta uma única vez quando $(u, v)$ abrange todo o domínio D parâmetros, então a área da superfície de S é:
+
+$$A(S) = \iint_D |r_u \times r_v| dA$$
+
+onde 
+
+$$r_u = \dfrac{\partial x}{\partial u}(u_0, v_0)i + \dfrac{\partial y}{\partial u}(u_0, v_0)j + \dfrac{\partial z}{\partial u}(u_0, v_0)k$$ 
+
+$$r_v = \dfrac{\partial x}{\partial v}(u_0, v_0)i + \dfrac{\partial y}{\partial v}(u_0, v_0)j + \dfrac{\partial z}{\partial v}(u_0, v_0)k$$
+
+\subsubsection*{Exemplo - Determine a área da esfera de raio a}
+
+Como foi visto no capítulo 15 temos as equações paramétricas:
+
+$$ x = a \sin{\phi} \cos{\theta}, y = a \sin{\phi} \sin{\theta}, z = a \cos{\phi}$$
+
+O produto cruzado dos vetores tangentes:
+
+$$r_\phi \times r_\theta = \left| \begin{array}{rcr}
+i & j  & k \\\\
+ \dfrac{\partial x}{\partial \phi} & \dfrac{\partial y}{\partial \phi} & \dfrac{\partial z}{\partial \phi}\\\\
+ \dfrac{\partial x}{\partial \theta} & \dfrac{\partial y}{\partial \theta}  & \dfrac{\partial z}{\partial \theta}
+\end{array} \right| = \left| \begin{array}{rcr}
+i & j  & k \\ 
+ a \cos{\phi} \sin{\theta} & a \sin{\phi} \cos{\theta} & -a \sin{\phi}\\
+ -a \sin{\phi} \sin{\theta} & a \sin{\phi} \cos{\theta}  & 0
+\end{array} \right|$$
+
+$$ = a^2 \sin{\phi}^2 \cos{\theta}i + a^2 \sin{\phi}^2 \sin{\theta}j + a^2 \sin{\phi} \cos{\phi}k$$
+
+Logo,
+
+$$|r_\phi \times r_\theta| = \sqrt{a^4 \sin{\phi}^4 \cos{\theta}^2 + a^4 \sin{\phi}^4 \sin{\theta}^2 + a^4 \sin{\phi}^2 \cos{\phi}^2} = a^2 \sin{\phi}$$
+
+Uma vez que $\sin{\phi} \geq 0$ para $0 \leq \phi \leq \pi$. Portanto, a área da esfera é
+
+$$A = \iint_D |r_u \times r_v| dA = \int_0 ^{2 \pi} \int_0 ^\pi a^2 \sin{\phi} d \phi d \theta = 4 \pi a^2$$
+
+\subsubsection*{Área de Superfície do Gráfico de uma Função}
+
+Para o caso especial de uma superfície S com equação $z = f(x, y)$, onde $(x, y) \in D$ e $f$
+tem derivadas parciais contínuas, tomamos x e y como parâmetros. As equações paramétricas são
+
+$$x = x, y = y, z = f(x, y)$$
+
+Então a área fica
+
+$$A(S) = \iint_D \sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} dA$$
+
+\subsection*{16.7 - Integrais de Superfície}
+\subsubsection*{Superfícies parametrizadas}
+
+Dada uma superfície $r(u, v) = x(u, v)i + y(u, v)j + z(u, v)k$ com $(u, v) \in D$, a superfície é dada por:
+
+$$\iint_S f(x, y, z) dS = \iint_D f(r(u, v)) |r_u \times r_v| dA$$
+
+\subsubsection*{Gráficos}
+Como caso particular se $z = f(x, y)$ podemos calcular a superfície com equações parametrizadas
+
+$$x = x, y = y, z = f(x, y)$$
+
+E a superfície fica:
+
+$$\iint_S f(x, y, z) dS = \iint_D f(x, y, f(x, y)) \sqrt{\left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2 + 1} dA$$
+
+\subsubsection*{Superfícies Orientadas}
+Dada uma superfície $z = g(x, y)$ orientada, onde sua orientação é dada pelo vetor unitário
+
+$$n = \dfrac{-\dfrac{\partial g}{\partial x}i - \dfrac{\partial g}{\partial y}j + k}{\sqrt{1 + \left(\dfrac{\partial g}{\partial x}\right)^2 + \left(\dfrac{\partial g}{\partial y}\right)^2}}$$
+
+E se S for uma superfície orientada suave com parametrização vetorial $r(u, v)$, então pode ser associada à orientação do vetor normal unitário.
+
+$$n = \dfrac{r_u \times r_v}{|r_u \times r_v|}$$
+
+\subsubsection*{Integrais de Superfície de Campos Vetoriais}
+
+Se F for um campo vetorial contínuo definido sobre uma superfície orientada S com vetor normal unitário n, então a superfície integral de F sobre S é
+
+$$\iint_S F d S = \iint_S F \cdot n d S$$
+
+obs.: A integral de superfície de um campo vetorial sobre S é igual à superfície de sua componente normal em S.
+
+Se S é uma função vetorial dada por $r(u, v)$, então tomando D o domínio dos parâmetros:
+
+$$\iint_S F dS = \iint_D F \cdot (r_u \times r_v) d A$$
+
+\subsection*{16.8 - Teorema de Stokes}
+Sejam S uma superfície orientável de classe $C^1$, com bordo e orientado coerentemente e $\Vec{F}$ um campo vetorial de classe $C^1$ definido em um domínio que contém S. Então
+
+$$\int_{\partial S} F d r = \iint_S \text{rot} F \cdot d S =  \iint_S \text{rot} F \cdot n d A$$
+
+\subsection*{16.9 - Teorema do Divergente (ou Teorema de Gauss)}
+O Teorema do Divergente é uma generalização do Teorema de Green (16.5) para o espaço com certas hipóteses, para que vala 
+
+$$\iint_S F \cdot n d S = \iiint_E \ \text{div} \ F(x, y, z) d V$$
+
+Onde S é a superfície fronteira da região sólida E.
+
+\begin{theorem}[O Teorema do Divergente]
+    Seja E uma região sólida simples e seja S a superfície fronteira de E, orientada positivamente (para fora). Seja F um espaço vetorial cujas funções componentes tenham derivadas parciais contínuas em uma região aberta que contenha E. Então
+    
+    $$\iint_S F \cdot d S = \iiint_E \ \text{div} \ F d V$$
+\end{theorem}
+
+\subsection*{16.10 - Resumo resumido do resumo}
+
+\begin{theorem}[Teorema Fundamental do Cálculo]
+    $$\int_a^b F'(x) d x = F(b) - F(a)$$
+\end{theorem}
+
+\begin{theorem}[Teorema Fundamental para as Integrais de Linha]
+    $$\int_C \nabla f \cdot d r = f(r(b)) - f(r(a))$$
+\end{theorem}
+
+\begin{theorem}[Teorema de Green]
+    $$\iint_D \left( \dfrac{\partial Q}{\partial x} - \dfrac{\partial P}{\partial y} \right) \ d A = \int_C P d x + Q d y$$
+\end{theorem},
+
+\begin{theorem}[Teorema de Stokes]
+    $$\iint_S \text{ rot } F \cdot d S = \int_C F \cdot d r$$
+\end{theorem}
+
+\begin{theorem}[Teorema de Gauss]
+    $$\iiint_E \text{ div } F \ d V = \iint_S F \cdot d S$$
+\end{theorem}
+
+\end{document}

@@ -1,0 +1,325 @@
+\documentclass[12pt]{article}
+
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage[pdftex,bookmarks=true,bookmarksopen=false,bookmarksnumbered=true,colorlinks=true,linkcolor=black]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{pdfpages}
+
+
+\usepackage[brazil]{babel}
+
+\pagestyle{plain}
+
+
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}{Corolário}[theorem]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}{Definição}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\textbf{\LARGE Fundação Getulio Vargas}\\ 
+\textbf{\LARGE Escola de Matemática Aplicada}
+
+\par
+\vspace{170pt}
+\textbf{\Large Wellington José}\\
+\vspace{32pt}
+\textbf{\Large Resumo de Analise na Reta - Parte 2}\\
+\end{center}
+
+\par
+\vfill
+\begin{center}
+{{\normalsize Rio de Janeiro}\\
+{\normalsize \the\year}}
+\end{center}
+\end{titlepage}
+
+\thispagestyle{empty}
+
+\begin{center}
+    ``Provas ficam a cargo do leitor"
+\end{center}
+
+\section{Funções Contínuas}
+
+Seja $f: I \rightarrow{} \mathbb{R}$ definida no intervalo I, se $c \in I$, dizemos que $f$ é contínua em c quando $\lim_{x \rightarrow{} c} f(x) = f(c)$. A função é contínua em I quando for contínua em todos os pontos.
+
+\begin{theorem}
+ Seja $f: [a, b] \rightarrow{} \mathbb{R}$ contínua. Então $f$ é limitada.
+\end{theorem}
+
+\begin{theorem}
+  Seja $f: [a, b] \rightarrow{} \mathbb{R}$ contínua, $A = \inf \left\{ f(t); t \in [a, b] \right\}$ e $B = \sup \left\{ f(t) ; t \in [a, b] \right\}$. Existem então $c, d \in [a, b]$ de modo que $f(c) = A \text{ e } f(d) = B$.
+\end{theorem}
+
+\begin{definition}
+    Uma partição $\mathcal{B}$ de $[a, b]$ é uma sequência finita de pontos $a = a_0 < a_1 < \dots < a_{k-1} < a_k = b$. Dado $n \in \mathbb{N}$, consideramos a partição $\mathcal{B}_n$ formada por intervalos de mesmo comprimento $\dfrac{b-a}{n}$.
+\end{definition}
+
+\begin{theorem}
+  Seja $f: [a, b] \rightarrow{} \mathbb{R}$ contínua e $\varepsilon > 0$ qualquer. Então $\exists n \in \mathbb{N}$ de modo que se x, y estão num certo intervalo de $\mathcal{P}_n$ temos que $|f(x) - f(y)| < \varepsilon$.
+\end{theorem}
+
+Dizemos que $f: [a, b] \rightarrow{} \mathbb{R}$ contínua é uniformemente contínua quando, dado $\varepsilon > 0$ qualquer, $\exists \delta > 0$ tal que se $|x-y| < \delta$ então $f(x) - f(y)| < \varepsilon$.
+
+\subsection{T.V.I.}
+\begin{lemma} 
+    Seja $f: I \rightarrow{} \mathbb{R}$ contínua e $c \in I$. Se $f(c) > 0$, $\exists \delta > 0$ tal que se $|x - c| < \delta$ e $x \in I$ então $f(x) > 0$.
+\end{lemma}
+
+\begin{theorem}
+    Seja $f: [a, b] \rightarrow{} \mathbb{R}$ contínua. Tome $L \in (f(a), f(b)), \exists c \in (a, b)$ de modo que $f(c) = L$.
+\end{theorem}
+
+\begin{corollary}
+    Seja $f: [a, b] \rightarrow{} \mathbb{R}$ contínua, com $f(a) < 0$ e $f(b) > 0$. Existe então $c \in (a, b)$ tal que $f(c) = 0$.
+\end{corollary}
+
+\begin{corollary}
+    Tome $g(x) = x^n$, com $x \geq 0$ $(n \in \mathbb{N}$. Para qualquer $L > 0, \exists c > 0$ de modo que $g(c) = L$, ou seja, $c^n = L$ (c é raiz n-ésima de L).
+\end{corollary}
+
+\section{Derivadas e Integrais}
+
+\begin{definition}
+    Dizemos que $f: I \rightarrow{} \mathbb{R}$ é derivável em $a \in I$ quando existe $\lim_{x \rightarrow{} a} \dfrac{f(x) - f(a)}{x-a}$, neste caso $f'(a) = \lim_{x \rightarrow{} a} \dfrac{f(x) - f(a)}{x-a}$
+\end{definition}
+
+obs.: se $f$ é derivável em $a$, então $f$ é contínua em $a$. E a inclinação da função no ponto $a$ é dada por:
+
+$$\dfrac{f(x) - f(a)}{x - a}$$
+
+Propriedades Operacionais:
+\begin{enumerate}
+    \item Se $f, g : I \rightarrow{} \mathbb{R}$, $c \in I$, $f$ e $g$ deriváveis em $c$ então $(f+g)$ é derivável em $c$ e $(f+g)'(c) = f'(c) + g'(c)$ e $f . g$ é derivável em $c$ e $(f . g)'(c) = f'(c) g(c) + g'(c) f(c)$.
+    
+    \item Suponhamos $g: I \rightarrow{} \mathbb{R}$, $g(x) \neq 0$ se $x \in I$ e $g$ é derivável em $c$ então $f(x) = \dfrac{1}{g(x)}$ é derivável em $c$ e $f'(x) = \dfrac{- g'(x)}{g(c)^2}$.
+    
+    \item Seja $f: (a, b) \rightarrow{} (A, B)$ função injetiva e sobrejetiva, e denotaremos por $g: (A, B) \rightarrow{} (a, b)$ sua inversa. Se f é derivável e $f'(x) \neq 0$ para todo $x \in (a, b)$, então g é derivável em $(A, B)$ e $g'(y) = \dfrac{1}{f'(g(y))}$.
+    
+    \item (A Regra da Cadeia) Sejam $f: I \rightarrow{} j$ e $g: j \rightarrow{} \mathbb{R}$ deriváveis, I e j intervalos abertos e $f(I) \subset j$. Definimos a composta $g \circ f: I \rightarrow{} \mathbb{R}$ como $(g \circ f)(x):=g(f(x))$. Então $(g \circ f)$ é derivável e $(g \circ f)'(x) = g'(f(x)).f'(x)$.
+\end{enumerate}
+
+\subsection{Relações Com Máximos e Mínimos de Funções}
+
+Consideremos uma função $f: I \rightarrow{} \mathbb{R}$ derivável num ponto interior $c \in I$. Suponhamos que exista $\delta > 0$ de modo que $(c - \delta, c + \delta) \subset I$ e $f(x) \leq f(c)$. Sempre que $x \in (c - \delta, c + \delta)$ então diremos que c é um ponto de máximo local de $f$ (análogo para o mínimo).
+
+\begin{theorem}
+    Se $c \in I$ é ponto de máximo local, então $f'(c) = 0$ (análogo para o mínimo).
+\end{theorem}
+
+\begin{theorem}[Rolle] Seja $f: [a, b] \rightarrow{} \mathbb{R}$ contínua tal que $f$ seja derivável em $(a, b)$. Caso $f(a) = f(b)$, então $\exists c \in (a, b)$ tal que $f'(c) = 0$
+\end{theorem}
+
+\begin{theorem}[Valor Médio]
+Seja $f: [a, b] \rightarrow{} \mathbb{R}$ contínua e derivável em $(a, b)$. $\exists c \in (a, b)$ de modo que $f'(c) = \dfrac{f(b) - f(a)}{b - a}$.
+\end{theorem}
+
+\begin{corollary}
+    Seja $f: I \rightarrow{} \mathbb{R}$ função localmente constante. Então $f$ é constante.
+\end{corollary}
+
+\begin{corollary}[Monotonicidade]
+    Seja $g: I \rightarrow{} \mathbb{R}$ uma função derivável.
+    \begin{itemize}
+        \item se $g'(x) \geq 0$ para todo $x \in I$, então $g$ é crescente.
+        
+        se $g'(x) > 0$ para todo $x \in I$, então $g$ é estritamente crescente.
+        
+        \item se $g'(x) \leq 0$ para todo $x \in I$, então $g$ é decrescente.
+        
+        se $g'(x) < 0$ para todo $x \in I$, então $g$ é estritamente decrescente.
+    \end{itemize}
+\end{corollary}
+
+\subsection{Áreas e Derivadas}
+Vamos usar a noção intuitiva de área para regiões associada ao gráfico de uma função contínua e positiva $f: [a, b] \rightarrow{} \mathbb{R}$. A região em questão está limitada pelo eixo horizontal, o gráfico de $f$ e as verticais pelos pontos $(a, 0)$ e $(x, 0)$ denotamos por $A(x)$ sua área.
+
+\begin{definition}
+    $A(x)$ é derivável e $A'(x) = f(x)$.(a formulação rigorosa será apresentada a frente)
+\end{definition}
+
+\begin{definition}[Função logaritmo]
+    Consideremos $g: \mathbb{R}_{>0} \rightarrow{} \mathbb{R}$ , $g(x) = \dfrac{1}{x}$, e tomemos a região delimitada pelo gráfico de g, o eixo horizontal e os verticais por $(1, 0)$ e $(x, 0)$, seja $A(x)$ sua área. Se $x \geq 1$, $\log x := A(x)$, se $0 < x \leq 1$, $\log x := -A(x)$
+\end{definition}
+
+\begin{definition}[Função exponencial]
+    Seja $a > 0$, então $a^x := e^{x\log a}$
+\end{definition}
+
+\subsection{Derivadas Sucessivas}
+Se a função $f$ é derivável k vezes podemos escrever a i-ésima derivada de $f$ em x como $f^{(i)}(x)$.
+
+\begin{theorem}
+    As funções apresentadas (polinômios, funções trigonométricas, racionais, logaritmo, exponencial) são infinitamente deriváveis em seu domínio de definição.
+\end{theorem}
+
+\begin{lemma}
+    Seja $f: (a, b) \rightarrow{} \mathbb{R}$ derivável e duas vezes derivável em $c \in (a, b)$. Suponhamos $f'(c) = 0$ e $f''(c) > 0$ ($f''(c) < 0$).Então c é ponto de mínimo local (máximo local).
+\end{lemma}
+
+\subsection{Convexidade de Função}
+\begin{definition}
+    Dizemos que $f: I \rightarrow{} \mathbb{R}$ é estritamente convexa para cima quando para quaisquer $a < b \in I$ temos que $f(x) < f(a) + \dfrac{f(b) - f(a)}{b - a}(x - a)$ para todo $x \in (a, b)$. E $f$ é estritamente convexa para baixo quando para quaisquer $a < b \in I$ temos que $f(x) > f(a) + \dfrac{f(b) - f(a)}{b - a}(x - a)$ para todo $x \in (a, b)$.
+\end{definition}
+
+\begin{theorem}
+    Suponhamos que $f: I \rightarrow{} \mathbb{R}$ seja duas vezes derivável. Se $f''(x) > 0$ $(f''(x) < 0)$ para todo $x \in I$ então $f$ é estritamente convexa para cima (estritamente convexa para baixo).
+\end{theorem}
+
+\begin{lemma}
+    Seja $\varphi: [a, b] \rightarrow{} \mathbb{R}$ duas vezes derivável. Suponhamos $\varphi (a) = \varphi (b) = 0$ e $\varphi'' (x) > 0$ $\forall x \in [a, b]$. Então $\varphi (x) < 0$ $\forall x \in (a, b).$
+\end{lemma}
+
+\section{Integral de Riemann}
+Consideremos uma função $f: [a, b] \rightarrow{} \mathbb{R}$ limitada e uma partição $\mathcal{P}: a = t_0 < \cdots < t_{i-1} < t_i < \cdots < t_n = b$ do intervalo $[a, b], 1 \leq i \leq n$.
+
+\begin{definition}
+    A \textbf{soma inferior de f relativa à partição} $\mathcal{P}$ é $s(f, \mathcal{P}) :=\ \sum_{i = 1}^n\ (\inf \{ f(t);\ t_{i-1} \leq t \leq t_i \}) (t_i - t_{i-1})$ e a \textbf{soma superior de f relativa à partição} $\mathcal{P}$ é $S(f, \mathcal{P}) :=\ \sum_{i = 1}^n\ (\sup \{ f(t);\ t_{i-1} \leq t \leq t_i \}) (t_i - t_{i-1})$
+\end{definition}
+
+Temos $s(f, \mathcal{P}) \leq S(f, \mathcal{P})$
+
+\begin{definition}
+    $\exists \ \underline{\int_{a}^b} f := \sup \{s(f, \mathcal{P}) ;\ \mathcal{P} \text{partição} \}$ e $\exists \ \overline{\int_{a}^b} f := \inf \{S(f, \mathcal{P}) ;\ \mathcal{P} \text{partição} \}$ \textbf{integral inferior} de f em $[a, b]$ e \textbf{integral superior} de f em $[a, b]$, respectivamente.
+\end{definition}
+
+\begin{lemma}
+    $\underline{\int_{a}^b} f \leq \overline{\int_{a}^b} f$
+\end{lemma}
+
+\begin{definition}
+    f é \textbf{integrável} quando $\underline{\int_{a}^b} f = \overline{\int_{a}^b} f$ o valor comum é denotado por $\int_a^b f$ e convencionamos $\int_a^b f := - \int_b^a f$.
+\end{definition}
+
+\begin{theorem}
+    Funções contínuas são integráveis.
+\end{theorem}
+
+\subsection{Teorema Fundamental do Cálculo}
+\begin{lemma}
+    Seja $f: [a, b] \rightarrow{} \mathbb{R}$ integrável. $\forall x \in (a, b), f|_{[a, b]}$ e $f|_{[c, b]}$ são integráveis. Além disso, $\int_a^b f = \int_a^c f + \int_c^b f$.
+\end{lemma}
+
+\begin{theorem}[Teorema Fundamental do Cálculo]
+    Seja $f:[a, b] \rightarrow{} \mathbb{R}$ integrável e $F(x):= \int_a^x f$. Se f é contínua em $c \in [a, b]$, então F é derivável em c e $F'(c) = f(c)$.
+\end{theorem}
+
+\begin{definition}
+    $G: [a, b] \rightarrow{} \mathbb{R}$ é \textbf{primitiva} de g quando $G'(x) = g(x)$ em $[a, b]$.
+\end{definition}
+
+\begin{lemma}
+    Se f é contínua, pelo Teorema Fundamental do Cálculo, então f possui primitiva $F(x) = \int_a^b f$. Tomando $\overline{F}$ qualquer outra primitiva (acrescentando uma constante), temos que $\overline{F} (x) = F(x) + \overline{F} (0)$, e portanto $\overline{F} (b) - \overline{F} (a) = \int_a^b f$.
+\end{lemma}
+
+\subsection{Operações com Integrais}
+Proposições:
+Sejam $f, g: [a, b] \rightarrow{} \mathbb{R}$ integráveis.
+\begin{itemize}
+    \item $f +g$ e $f \cdot g$ são integráveis e $\int_a^b (f +g) = \int_a^b f + \int_a^b g$
+    
+    \item Se $|f(x)| \geq k > 0 \ \forall x \in [a, b]$ e algum $k > 0$, então $\dfrac{1}{f(x)}$ é integrável.
+    
+    \item $|f|$ é integrável e $|\int_a^b f(x) dx|\ \leq\ \int_a^b |f(x)|\ dx$
+\end{itemize}
+
+\begin{definition}
+    Quando $\int_0^\infty |f(x)| dx$ (ou $\int_a^b |f(x)| dx$) existe, dizemos que a integral é \textbf{absolutamente convergente}. E a integral também é \textbf{convergente}.
+\end{definition}
+
+\subsection{Fórmula de Taylor (versão infinitesimal)}
+Consideremos $f: (a, b) \rightarrow{} \mathbb{R}$ função $n-1$ vezes derivável em $(a, b)$ e n vezes derivável em $c \in (a, b)$.
+
+\begin{definition}
+    Definimos o \textbf{polinômio de Taylor de f de ordem n} centrado em c como
+    
+    $$T_{f, c}^n (x) = \sum_{j=0}^n \dfrac{f^{(j)} (c)}{j!} (x-c)^j$$
+\end{definition}
+
+\begin{theorem}
+    Seja $r(x) := f(x) - T_{f,c}^n (x)$. Então $\lim_{x \rightarrow{} c} \dfrac{r(x)}{(x-c)^n} = 0$
+\end{theorem}
+
+\subsection{Fórmula de Taylor, versão integral}
+\begin{theorem}
+    Seja $f: [a, b] \mathbb{R} n+1$ vezes derivável, e $c \in [a, b]$. Então $f(x) = T_{f,c}^n (x) + r_n (x)$, onde $r_n (x) = \dfrac{1}{n!} \int_c^x (x - t)^n f^{(n+1)} (t) d t$.
+\end{theorem}
+
+\begin{corollary}
+    Seja $f: [a, b] \rightarrow{} \mathbb{R} n$ vezes derivável no ponto $c \in [a, b]$. Se $p(x)$ é polinômio de grau n t.q. $f(x) = p(x) + S(x)$ com $\lim_{x \rightarrow{} c} \dfrac{S(x)}{(x-c)^n} = 0$, então $T_{f,c}^n (x) = p(x)$.
+\end{corollary}
+
+\section{Séries}
+\begin{definition}
+    Consideremos a sequência $(a_j)$ e formemos a nova sequência $s_n := \sum_{j = 1}^n a_j$ ela se denomina \textbf{série}, e caso seja convergente, escrevemos $\sum_{j = 1}^\infty a_j := \lim_{n \rightarrow{} \infty} s_n$.
+\end{definition}
+
+\begin{theorem}
+    Se $\sum |a_j|$ é convergente então $\sum a_j$ é também convergente.
+\end{theorem}
+
+\begin{definition}
+    $\sum a_n$ \textbf{converge absolutamente} quando $\sum |a_n|$ for convergente.
+\end{definition}
+
+\begin{theorem}[Critério de d'Alewbert]
+    Se existe $0 \leq c \leq 1$ t.q. $|a_{n+1}| \leq c |a_n|$ a partir de algum $n_0$, então $\sum a_n$ é absolutamente convergente.
+\end{theorem}
+
+\subsection{Séries de Potências}
+Vamos tratar o caso particular de séries do tipo $\sum a_n (x-c)^n$, diremos que está é uma \textbf{série de potências} centrada em c. Queremos encontrar valores de x para os quais a série converge, no caso $c = 0$ observe que $\sum a_n x^n$ é sempre convergente em 0.
+
+\begin{theorem}
+    Suponhamos que $\exists x_0 \neq 0$ t.q. $\sum a_n x_0^n$ seja convergente. $\exists R > 0$ de modo que $\sum a_n x^n$ converge em $(-R, R)$ e diverge em $(- \infty, -R) \cup (R, \infty)$ (podendo sem $R = \infty$). 
+\end{theorem}
+
+\begin{theorem}
+    Seja $[-b, b] \subset (-R, R)$. Dado $\varepsilon > 0, \ \ \exists n \in \mathbb{N}$ t. q. $n_0 > n \Rightarrow |\sum_{j = n_0 + 1}^\infty a_j x^j| < \varepsilon$ para $x \in [-b. b]$.
+\end{theorem}
+
+\begin{definition}
+    Tomando $s(x):= \sum_{j=0}^\infty a_j x^j, s_m(x):= \sum_{j=0}^m a_j x^j$ para $x \in (-R, R)$, temos que $\forall x \in (-R, R): \lim_{m \rightarrow{} \infty} s_m(x) = s(x)$, então a série $s_m$ \textbf{converge uniformemente para s} em um intervalo $[-b, b] \subset (-R, R)$, ou seja, dado $\varepsilon > 0$ qualquer, $\exists N \in \mathbb{N}$ t.q. $|s(x) - s_m(x)| < \varepsilon$ se $m > N$ e $x \in [-b, b]$ (intervalo limitado fechado de $(-R, R)$.
+\end{definition}
+
+\begin{theorem}
+    Da definição 15, temos que, $s(x)$ é contínua em $(-R, R)$.
+\end{theorem}
+
+\begin{theorem}[Integração termo a termo]
+    $\int_0^x s(t) d t = \sum_{j=0}^\infty \int_0^x a_j t^j d t$ para $x \in (-R, R)$.
+\end{theorem}
+
+\begin{theorem}[Derivação termo a termo]
+    $s'(x) = \sum_{j=1}^\infty j a_j x^{j-1}$ para $x \in (-R, R)$.
+\end{theorem}
+
+\begin{definition}[geral]
+    Sejam $f_n: I \rightarrow{} \mathbb{R}$ sequência de função e $f: I \rightarrow{} \mathbb{R}$, dizemos que $f_n$ \textbf{converge uniformemente} para f quando dado $\varepsilon > 0$ qualquer, $\exists N \in \mathbb{N}$ de modo que $|f_n(x) - f(x)| < \varepsilon$ se $n > N$ e para todo $x \in I$.
+\end{definition}
+
+Temos os seguintes teoremas correspondentes ao caso das séries. Suponhamos então $f_n \rightarrow{}f $ em $I$.
+
+\begin{theorem}
+    Se $f_n$ é contínua $\forall n \in \mathbb{N}$, então $f$ é contínua.
+\end{theorem}
+
+\begin{theorem}
+    Fixemos $a \in I, f_n$ contínua $\forall n \in \mathbb{N}$. Então $\int_a^x f_n(t) d t \rightarrow{} \int_a^x f(t) d t \ \forall x \in I$. 
+\end{theorem}
+
+\begin{theorem}
+    Suponhamos $f_n$ deriváveis, e que $f'_n$ sejam contínuas. Se $f'_n \rightarrow{} g$ converge uniformemente, então $g = f'$, isto é, $\dfrac{d}{d x} f_n(x) \rightarrow{} \dfrac{d}{d x} f(X)$.
+\end{theorem}
+
+\end{document}
