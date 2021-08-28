@@ -1,6 +1,3 @@
-# Resumos terceiro período
-  Por favor, comunique qualquer problema ou erro nos resumos para [mim](https://github.com/wellington36) :)
-
 #### Resumos gerais:
 
 - EDO 			    (Até dia 02 de junho)
