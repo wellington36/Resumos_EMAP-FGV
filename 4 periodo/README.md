@@ -1,4 +1,4 @@
 #### Resumos gerais:
 
-- Infertencia statictica (pelas aulas)
+- Infertencia statistica (pelas aulas)
 - Analise real (na pasta do 2 periodo)
