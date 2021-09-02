@@ -314,7 +314,7 @@ Se a função de verossimilhança admite fatorização pelo Teorema~\ref{teo:fat
 É conveniente definir que para $g : \mathcal{X}^n \rightarrow \mathbb{R}$, escrevemos
 
 \begin{equation}
-    E_\theta [g] = \int_\mathcal{X} \cdots \int_\mathcal{X} g(\textbf{x}) f_n (\textbf{x} \mid \theta) d x_1 \cdots d x_n = \int_\mathcal{X}^n g(\textbf{x}) f_n (\textbf{x} \mid \theta) d \textbf{x} 
+    E_\theta [g] = \int_\mathcal{X} \cdots \int_\mathcal{X} g(\textbf{x}) f_n (\textbf{x} \mid \theta) d x_1 \cdots d x_n = \int_\mathcal{X} g(\textbf{x}) f_n (\textbf{x} \mid \theta) d \textbf{x} 
 \end{equation}
 \end{definition}
 
@@ -356,6 +356,68 @@ Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória, com $E[X_1] =
 $$\delta_1(\textbf{X}) = \frac{1}{n - 1}\sum_{i = 1}^n (X_i - \overline{X}_n)^2$$
 
 é um estimador não-viesado de v.
+\end{theorem}
+
+\section*{Aula 9 - Eficiência}
+
+\begin{definition}[Informação de Fisher]\label{def:fis}
+Seja X uma variável aleatória com f.d.p./f.m.p. $f(x \mid \theta), \ \theta \in \Omega \subseteq \mathbb{R}$. Suponha que $f(x \mid \theta)$ é duas vezes diferenciável com respeito a $\theta$. Defina $\lambda (x \mid \theta) = \log f(x \mid \theta)$ e
+
+\begin{equation}
+    \lambda' (x \mid \theta) = \frac{\partial \lambda (x \mid \theta)}{\partial \theta} \quad \text{e} \quad \lambda'' (x \mid \theta) = \frac{\partial^2 \lambda(x \mid \theta)}{\partial \theta^2}
+\end{equation}
+
+Definimos a \textbf{informação de Fisher} como
+
+\begin{equation}
+    I(\theta) = E_\theta \left [ \{ \lambda'(x \mid \theta) \}^2 \right ] \stackrel{\text{(1)}}{=} -E_\theta\left[\lambda^{\prime\prime}(x \mid \theta)\right] = Var_\theta\left(\lambda^{\prime}(x\mid \theta) \right).
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Informação de Fisher em uma amostra aleatória]
+Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória e seja $I_n = E_\theta [- \lambda''_n (\textbf{X} \mid \theta)]$ a \textbf{informação de Fisher} da amostra. Então
+
+$$I_n(\theta) = n I(\theta)$$
+\end{theorem}
+
+\begin{theorem}[Teorema de Cramér-Rao]
+Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória, onde f.d.p./f.m.p. tem as mesmas premissas da Definição~\ref{def:fis}. Supondo que $T = r(\textbf{X})$ é uma estatística com variância finita. Seja $m(\theta) = E_\theta(T)$ uma função diferenciável de $\theta$. Então,
+
+\begin{equation}
+    Var_\theta(T) \geq \frac{[m'(\theta)]^2}{n I(\theta)},
+\end{equation}
+
+com igualdade apenas se existem u e v tal que
+
+$$T = u(\theta) \lambda'_n (\textbf{X} \mid \theta) + v(\theta).$$
+\end{theorem}
+
+\begin{definition}[Estimador eficiente]
+Um estimador $\delta(\textbf{X})$ é dito \textbf{eficiente} de (sua esperança) $m(\theta)$ se
+
+$$Var_\theta(\delta) = \frac{[m'(\theta)]^2}{n I(\theta)}.$$
+\end{definition}
+
+\section*{Aula 10 - Distribuição de uma estatística amostral e qui-quadrado}
+
+\begin{definition}[Distribuição qui-quadrado]
+Dizemos que uma variável aleatória Y tem distribuição \textbf{qui-quadrado} com m graus de liberdade quando
+
+\begin{equation}
+    f_Y(y) = \frac{1}{2^{m/2} \Gamma(m/2)} y^{m/2 - 1} e^{-y/2}, y > 0
+\end{equation}
+
+Vemos que Y tem função geradora de momentos:
+
+$$\psi (t) = \left ( \frac{1}{1 - 2t} \right )^{m/2}, t < 1/2.$$
+\end{definition}
+
+\begin{theorem}[Soma de variáveis aleatórias qui-quadrado]
+Se $X_1, \ldots, X_n$ são variáveis aleatórias independentes com graus de liberdade $m_i$, então $W = \sum_{i = 1}^n X_i$ tem distribuição qui-quadrado com graus de liberdade $m = \sum_{i = 1}^n m_i$.
+\end{theorem}
+
+\begin{theorem}[Distribuição do quadrado de uma variável aleatória Normal padrão]
+Se $X \backsim Normal(0, 1), \ Y = X^2$ tem distribuição qui-quadrado com $m = 1$.
 \end{theorem}
 
 \end{document}
