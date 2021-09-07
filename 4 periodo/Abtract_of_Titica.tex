@@ -60,7 +60,7 @@ Uma \textbf{inferência estatística} é uma \textbf{afirmação probabilística
 \end{definition}
 
 \begin{definition}[Estatística]
-Suponha que temos uma coleção de variáveis aleatórias $X_1, X_2, \ldots, X_n \subseteq \mathbf{R}^n$ e uma função $r: \mathbf{X} \rightarrow R^m$. Dizemos que a variável aleatória $T = r(X_1, X_2, \cdot, X_n)$ é uma estatística.
+Suponha que temos uma coleção de variáveis aleatórias $X_1, X_2, \ldots, X_n \subseteq \mathbf{R}^n$ e uma função $r: \mathbf{X} \rightarrow R^m$. Dizemos que a variável aleatória $T = r(X_1, X_2, \ldots, X_n)$ é uma \textbf{estatística}.
 \end{definition}
 
 \begin{definition}[Permutabilidade]
@@ -79,7 +79,7 @@ Se tratamos o parâmetro $\theta$ como uma variável aleatória, então a \textb
 \end{definition}
 
 \begin{definition}[Distribuição a posteriori]
-Considere o problema estatístico com parâmetros $\theta$ e variáveis aleatórias observáveis $X_1, X_2, \ldots, X_n$. A distribuição condicional de $\theta$ dados os valores observados das variáveis aleatórias, $x := \{x_1, x_2, \ldots, x_n\}$ é a \textbf{distribuição a posteriori} de $\theta$, denotamos por $\xi(\theta \mid x)$ a f.d.p./f.m.p. condicional a $X_1 = x_1, X_2 = x_2, \ldots, X_n = x_n$.
+Considere o problema estatístico com parâmetros $\theta$ e variáveis aleatórias observáveis $X_1, X_2, \ldots, X_n$. A distribuição condicional de $\theta$ dados os valores observados das variáveis aleatórias, $\textbf{x} := \{x_1, x_2, \ldots, x_n\}$ é a \textbf{distribuição a posteriori} de $\theta$, denotamos por $\xi(\theta \mid \textbf{x})$ a f.d.p./f.m.p. condicional a $X_1 = x_1, X_2 = x_2, \ldots, X_n = x_n$.
 \end{definition}
 
 \begin{theorem}[Distribuição a posteriori: derivação]
@@ -98,7 +98,7 @@ Quando encaramos a f.d.p./f.m.p. $f(x_1, x_2, \ldots, x_n \mid \theta)$ como uma
 
 \section*{Aula 3 - Prioris conjugadas e função de perda}
 \begin{definition}[Hiper-parâmetros]
-Seja $\xi(\theta \mid \phi)$ a distribuição a priori para o parâmetro $\theta$, indexada por $\phi \in \Phi$. Dizemos que $\phi$ é(são) o(s) \textbf{hiper-parâmetros} da priori de $\theta$.
+Seja $\xi(\theta \mid \phi)$ a distribuição a priori para o parâmetro $\theta$, indexada por $\phi \in \Phi$. Dizemos que $\phi$ é(são) o(s) \textbf{hiper-parâmetro(s)} da priori de $\theta$.
 \end{definition}
 
 \begin{definition}[Priori conjugada]
@@ -108,10 +108,10 @@ Suponha que $X_1, X_2, \ldots$ sejam condicionalmente independentes dado $\theta
 \Psi = \left \{ f: \Omega \rightarrow (0, \infty), \int_\Omega f dx = 1 \right \}
 \end{equation}
 
-onde $\Omega$ é o espaço de parâmetros. Dizemos que $\Psi$ é uma \textbf{família de distribuições conjugadas} para $f(x \mid \theta)$ se $\forall f \in \Psi$ e toda realização x de $X = X_1, X_2, \ldots, X_n$
+onde $\Omega$ é o espaço de parâmetros. Dizemos que $\Psi$ é uma \textbf{família de distribuições conjugadas} para $f(x \mid \theta)$ se $\forall f \in \Psi$ e toda realização \textbf{x} de $X = X_1, X_2, \ldots, X_n$
 
 \begin{equation}
-\frac{f(x\mid\theta)f(\theta)}{\int_\Omega f(x\mid\theta)f(\theta) d \theta} \in \Psi
+\frac{f(\textbf{x} \mid \theta) f(\theta)}{\int_\Omega f(\textbf{x} \mid \theta)f(\theta) d \theta} \in \Psi
 \end{equation}
 \end{definition}
 
@@ -164,6 +164,8 @@ Dizemos que $\delta^*$ é um \textbf{estimador de Bayes} se, para toda realizaç
 \begin{equation}
 E[L(\theta, \delta^*(x)) \mid x] = \min_{a \in A} E[L(\theta, a) \mid x].
 \end{equation}
+
+Em outras palavras, um estimador de Bayes é uma função real dos dados que minimiza a perda esperada com respeito à posteriori dos parâmetros.
 \end{definition}
 
 \begin{theorem}[$\delta^*$ sob perda quadrática]
@@ -271,7 +273,7 @@ isto é, se a distribuição condicional da amostra dado o valor da estatística
 \end{definition}
 
 \begin{definition}[Aleatorização auxiliar]
- Suponha que T é suficiente para $\theta$. O processo de simular $X_1', \ldots, X_n' \mid T = r(X_1, \ldots, X_n)$ de modo que 
+ Suponha que T é suficiente para $\theta$. O processo de simular $X_1', \ldots, X_n'$ dado que $T = r(X_1, \ldots, X_n)$ de modo que 
  
  \begin{equation}
      f(X_1, \ldots, X_n \mid \theta) = f(X_1', \ldots, X_n' \mid \theta), \forall \theta \in \Omega,
@@ -417,7 +419,11 @@ Se $X_1, \ldots, X_n$ são variáveis aleatórias independentes com graus de lib
 \end{theorem}
 
 \begin{theorem}[Distribuição do quadrado de uma variável aleatória Normal padrão]
-Se $X \backsim Normal(0, 1), \ Y = X^2$ tem distribuição qui-quadrado com $m = 1$.
+Se 
+
+$$X \backsim Normal(0, 1), Y = X^2$$ 
+
+então, tem distribuição qui-quadrado com $m = 1$.
 \end{theorem}
 
 \end{document}
