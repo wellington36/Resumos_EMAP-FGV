@@ -17,7 +17,7 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para
   <img align="right" alt="Welly-Homer" height="200" width="300" src="https://media.giphy.com/media/IPbS5R4fSUl5S/giphy.gif?cid=ecf05e47sfsfvr5retcjqimh3dp0m69r3x6s1rmoavg147i8&rid=giphy.gif&ct=g">
 </div>
 
-### 📗 Segundo período
+### 📙 Segundo período
   - [Álgebra Linear](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/AlgLin.pdf)
   - [Análise Real](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/Analise.pdf)
   - [Cálculo em Várias Variáveis](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/CalculusII.pdf)
@@ -30,5 +30,5 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para
       - [A1 de EDO](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/3%20periodo/resumos_de_provas/Resumo_A1_EDO.pdf)
       - [A1 de Téoria da Probabilidade](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/3%20periodo/resumos_de_provas/Resumo_A1_Prob.pdf)
 
-### 📙 Quarto período
+### 📗 Quarto período
   - [Inferencia Estatistica](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/4%20periodo/Abstract_of_Titica.pdf)
