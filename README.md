@@ -24,10 +24,11 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro nos resumos para
 
 ### 📘 Terceiro período
   - [EDO](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/CalculusII.pdf)
-  - Resumo b
+  - [Téoria da Probabilidade](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/3%20periodo/Teoria_da_Probabilidade.pdf)
   - Resumo para provas:
-      - 
+      - [A1 de EDA](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/3%20periodo/resumos_de_provas/Resumo_A1_EDA.pdf)
+      - [A1 de EDO](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/3%20periodo/resumos_de_provas/Resumo_A1_EDO.pdf)
+      - [A1 de Téoria da Probabilidade](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/3%20periodo/resumos_de_provas/Resumo_A1_Prob.pdf)
 
 ### 📙 Quarto período
-  - Resumo X
-  - Resumo Y
+  - [Inferencia Estatistica](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/4%20periodo/Abstract_of_Titica.pdf)
