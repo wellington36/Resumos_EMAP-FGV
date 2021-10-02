@@ -29,13 +29,14 @@
 % \renewcommand\thesubsection{\arabic{subsection}}
 
 \title{Resumo Titica}
+\author{}
 \date{}
 
 \begin{document}
 
 Fundação Getúlio Vargas\hfill\\
 Inferência Estatística\hfill\textbf{\assignment}\\
-Wellington José\hfill\textbf{Due:} \duedate\\
+Wellington Silva\hfill\textbf{Due:} \duedate\\
 \smallskip\hrule\bigskip
 
 {\let\newpage\relax\maketitle}
@@ -125,7 +126,7 @@ Suponha que $X_1, X_2, \ldots, X_n$ formam uma amostra aleatória com distribui�
 onde
 
 \begin{equation}
-\mu_1 := \frac{\sigma^2 \mu_0 + n v_0^2 \overline{x}_n}{\sigma^2 + n v_ 0^2} \ \text{e} \ v_1^2 := \frac{\sigma^2 v_0^2}{\sigma^2 + n v_0^2}
+\mu_1 := \frac{\sigma^2 \mu_0 + n v_0^2 \overline{x}_n}{\sigma^2 + n v_ 0^2} \ \mathrm{e} \ v_1^2 := \frac{\sigma^2 v_0^2}{\sigma^2 + n v_0^2}
 \end{equation}
 \end{theorem}
 
@@ -214,10 +215,10 @@ y=\sum_{i=1}^nx_i$
     \centering
     \begin{tabular}{|c|c|c|}
         \hline \textbf{Dados} & \textbf{Priori} & \textbf{Posteriori}\\ \hline
-         $\operatorname{Bernoulli}(\theta)$&$\operatorname{Beta}(\alpha,\beta)$ & $\operatorname{Beta}(\alpha+y,\beta+n-y)$ \\ \hline
-         $\operatorname{Poisson}(\theta)$&$\operatorname{Gama}(\alpha,\beta)$&$\operatorname{Gama}(\alpha+y,\beta+n)$\\ \hline
-         $\operatorname{Normal}(\mu,\sigma^2)$ & $\operatorname{Normal}(\mu_0,v_0^2)$& $\operatorname{Normal}\left(\dfrac{\sigma^2\mu_0+nv_0^2\bar{x}_n}{\sigma^2+nv_0^2},\dfrac{\sigma^2v_0^2}{\sigma^2+nv_0^2}\right)$ \\ \hline
-         $\operatorname{Exp}(\theta)$ &$\operatorname{Gama(\alpha,\beta)}$ & $\operatorname{Gama}(\alpha+n,\beta+y)$ \\ \hline
+         $\mathrm{Bernoulli}(\theta)$&$\mathrm{Beta}(\alpha,\beta)$ & $\mathrm{Beta}(\alpha+y,\beta+n-y)$ \\ \hline
+         $\mathrm{Poisson}(\theta)$&$\mathrm{Gama}(\alpha,\beta)$&$\mathrm{Gama}(\alpha+y,\beta+n)$\\ \hline 
+         $\mathrm{Normal}(\mu,\sigma^2)$ & $\mathrm{Normal}(\mu_0,v_0^2)$& $\mathrm{Normal}\left(\frac{\sigma^2\mu_0+nv_0^2\bar{x}_n}{\sigma^2+nv_0^2},\frac{\sigma^2v_0^2}{\sigma^2+nv_0^2}\right)$ \\ \hline
+         $\mathrm{Exp}(\theta)$ &$\mathrm{Gama(\alpha,\beta)}$ & $\mathrm{Gama}(\alpha+n,\beta+y)$ \\ \hline
 
     \end{tabular}
     \caption{Famílias Conjugadas}\label{tab:1}
@@ -366,13 +367,13 @@ $$\delta_1(\textbf{X}) = \frac{1}{n - 1}\sum_{i = 1}^n (X_i - \overline{X}_n)^2$
 Seja X uma variável aleatória com f.d.p./f.m.p. $f(x \mid \theta), \ \theta \in \Omega \subseteq \mathbb{R}$. Suponha que $f(x \mid \theta)$ é duas vezes diferenciável com respeito a $\theta$. Defina $\lambda (x \mid \theta) = \log f(x \mid \theta)$ e
 
 \begin{equation}
-    \lambda' (x \mid \theta) = \frac{\partial \lambda (x \mid \theta)}{\partial \theta} \quad \text{e} \quad \lambda'' (x \mid \theta) = \frac{\partial^2 \lambda(x \mid \theta)}{\partial \theta^2}
+    \lambda' (x \mid \theta) = \frac{\partial \lambda (x \mid \theta)}{\partial \theta} \quad \mathrm{e} \quad \lambda'' (x \mid \theta) = \frac{\partial^2 \lambda(x \mid \theta)}{\partial \theta^2}
 \end{equation}
 
 Definimos a \textbf{informação de Fisher} como
 
 \begin{equation}
-    I(\theta) = E_\theta \left [ \{ \lambda'(x \mid \theta) \}^2 \right ] \stackrel{\text{(1)}}{=} -E_\theta\left[\lambda^{\prime\prime}(x \mid \theta)\right] = Var_\theta\left(\lambda^{\prime}(x\mid \theta) \right).
+    I(\theta) = E_\theta \left [ \{ \lambda'(x \mid \theta) \}^2 \right ] \stackrel{\mathrm{(1)}}{=} -E_\theta\left[\lambda^{\prime\prime}(x \mid \theta)\right] = Var_\theta\left(\lambda^{\prime}(x\mid \theta) \right).
 \end{equation}
 \end{definition}
 
@@ -432,8 +433,37 @@ então, tem distribuição qui-quadrado com $m = 1$.
 Seja $X_1, \ldots, X_n$ uma amostra aleatória de uma distribuição Normal com parâmetros $\mu$ e $\sigma^2$, $\overline{X}_n$ e a variância amostral $\overline{S}_n^2$, são independentes. Ademais, $\overline{X}_n \backsim Normal \left ( \mu, \sigma^2 \right )$ e $\overline{S}_n^2 \backsim Gama \left ( \frac{n - 1}{2}, \frac{n}{2 n^2} \right )$
 \end{theorem}
 
-
-
 \section*{Aula 12 - Distribuição t de Student  e intervalos de confiança}
+
+\begin{definition}[A distribuição t de Student]
+Tome, $Y \backsim \mathrm{Qui-quadrado}(m)$ e $Z \backsim \mathrm{Normal}(0, 1)$ e defina a variável aleatória
+
+$$X = \frac{Z}{\sqrt{\frac{Y}{m}}}.$$
+
+Dizemos que X tem distribuição \textbf{t de Student com m graus de liberdade}. E sabemos que
+
+$$f_X = \frac{\Gamma(\frac{m + 1}{2})}{\sqrt{m \pi} \Gamma(\frac{m}{2})} \left ( 1 + \frac{x^2}{m} \right )^{-\frac{m + 1}{2}}, \quad x \in (-\infty, + \infty).$$
+\end{definition}
+
+\begin{theorem}[Distribuição amostral do estimador não-viesado da variância]
+
+Considere o estimador
+
+$$\hat{\sigma}' = \sqrt{\frac{\Delta^2}{n - 1}},$$
+
+onde $\Delta^2 = \sum_{i = 1}^n (X_i - \overline{X_n})^2$. Então, vale que
+
+$$\frac{\sqrt{n} (\overline{X}_n - \mu)}{\hat{\sigma}'} \backsim \mathrm{Student}(n - 1)$$
+\end{theorem}
+
+\begin{theorem}[Intervalo de confiança]
+Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória, onde cada uma tem p.d.f. $f(x \mid \theta)$, e considere uma função real $g(\theta)$. Sejam $A(\textbf{X})$ e $B(\textbf{X})$ duas estatísticas de modo de valha
+
+\begin{equation}
+    P(A(\textbf{X}) < g(\theta) < B(\textbf{X})) \geq \gamma.
+\end{equation}
+
+Dizemos que $I(\textbf{X}) = (A(\textbf{X},B(\textbf{X}))$ é um \textbf{intervalo de confiança} de $100 \gamma \%$ para $g(\theta)$. Se a desigualdade for uma igualdade para todo $\theta \in \Omega$, dizemos que o intervalo é \textbf{exato}.
+\end{theorem}
 
 \end{document}
