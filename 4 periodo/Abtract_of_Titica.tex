@@ -466,4 +466,32 @@ Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória, onde cada uma
 Dizemos que $I(\textbf{X}) = (A(\textbf{X},B(\textbf{X}))$ é um \textbf{intervalo de confiança} de $100 \gamma \%$ para $g(\theta)$. Se a desigualdade for uma igualdade para todo $\theta \in \Omega$, dizemos que o intervalo é \textbf{exato}.
 \end{theorem}
 
+\section*{Aula 13 - Quantidades Pivotais e Intervalos de confiança}
+
+\begin{definition}[Intervalo de confiança unilateral]
+Seja $\textbf{X} = \{ X_1. \ldots, X_n \}$ uma amostra aleatória, onde cada uma tem p.d.f. $f(x \mid \theta)$, e considere uma função real $g(\theta)$. Seja $A( \textbf{X})$ uma estatística que
+
+$$P(A(\textbf{X}) < g(\theta)) \geq \gamma, \quad \forall \theta \in \Omega$$
+
+dizemos que o intervalo aleatório $( A(\textbf{X}), \infty)$ é chamado de intervalo de confiança \textbf{unilateral} de $100\gamma \%$ para $g(\theta)$ (ou ainda, de intervalo de confiança \textbf{inferior} de $100\gamma \%$ para $g(\theta)$). O intervalo $(-\infty, B(\textbf{X})$, com
+
+$$P(g(\theta) < B(\textbf{X})) \geq \gamma, \quad \forall \theta \in \Omega$$
+
+é definido de forma análoga, e é chamado de intervalo de confiança \textbf{superior} de $100\gamma \%$ para $g(\theta)$. Se a desigualdade é uma igualdade para todo $\theta \in \Omega$, os intervalos são chamados \textbf{exatos}.
+\end{definition}
+
+\begin{definition}[Quantidade pivotal]
+Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória com p.d.f. $f(x \mid \theta)$. Seja $V(\textbf{X}, \theta)$ uma variável aleatória cuja distribuição é a mesma para todo $\theta \in \Omega$. Dizemos que $V(\textbf{X}, \theta)$ é uma \textbf{quantidade pivotal}.
+\end{definition}
+
+\begin{theorem}[Intervalo de confiança unilateral]
+Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória com p.d.f. $f(x \mid \theta)$. Suponha que existe uma quantidade pivotal V, com c.d.f.~\footnote{c.d.f. - cumulative distribution function} continua G. Assuma que existe $r(v, \textbf{x})$ estritamente crescente em $v \ \forall \textbf{x}$. Finalmente, tome $0 < \gamma < 1$ e $\gamma_1 < \gamma_2$ de modo que $\gamma_2 - \gamma_1 = \gamma$. Então as estatísticas
+
+$$A(\textbf{X}) = r(G^{-1}(\gamma_1), \textbf{X}),$$
+
+$$B(\textbf{X}) = r(G^{-1}(\gamma_2), \textbf{X}),$$
+
+são os limites de um intervalo de confiança de $100\gamma \%$ para $g(\theta)$.
+\end{theorem}
+
 \end{document}
