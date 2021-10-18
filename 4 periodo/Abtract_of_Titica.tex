@@ -23,7 +23,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of Titica}
-\newcommand{\duedate}{October 1, 2021}
+\newcommand{\duedate}{October 18, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -466,14 +466,14 @@ Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória, onde cada uma
 Dizemos que $I(\textbf{X}) = (A(\textbf{X},B(\textbf{X}))$ é um \textbf{intervalo de confiança} de $100 \gamma \%$ para $g(\theta)$. Se a desigualdade for uma igualdade para todo $\theta \in \Omega$, dizemos que o intervalo é \textbf{exato}.
 \end{theorem}
 
-\section*{Aula 13: Quantidades Pivotais e Intervalos de confiança}
+\section*{Aula 13: Intervalos de confiança e Quantidades Pivotais}
 
 \begin{definition}[Intervalo de confiança unilateral]
 Seja $\textbf{X} = \{ X_1. \ldots, X_n \}$ uma amostra aleatória, onde cada uma tem p.d.f. $f(x \mid \theta)$, e considere uma função real $g(\theta)$. Seja $A( \textbf{X})$ uma estatística que
 
 $$P(A(\textbf{X}) < g(\theta)) \geq \gamma, \quad \forall \theta \in \Omega$$
 
-dizemos que o intervalo aleatório $( A(\textbf{X}), \infty)$ é chamado de intervalo de confiança \textbf{unilateral} de $100\gamma \%$ para $g(\theta)$ (ou ainda, de intervalo de confiança \textbf{inferior} de $100\gamma \%$ para $g(\theta)$). O intervalo $(-\infty, B(\textbf{X})$, com
+dizemos que o intervalo aleatório $( A(\textbf{X}), \infty)$ é chamado de intervalo de confiança \textbf{unilateral} de $100\gamma \%$ para $g(\theta)$ (ou ainda, de intervalo de confiança \textbf{inferior} de $100\gamma \%$ para $g(\theta)$). O intervalo $(-\infty, B(\textbf{X}))$, com
 
 $$P(g(\theta) < B(\textbf{X})) \geq \gamma, \quad \forall \theta \in \Omega$$
 
@@ -495,7 +495,7 @@ são os limites de um intervalo de confiança de $100\gamma \%$ para $g(\theta)$
 \end{theorem}
 
 
-\section*{Aula 14: Testes de hipótese}
+\section*{Aula 14: Testes de hipótese Part I}
 
 \begin{definition}[Hipótese nula e hipótese alternativa]
 Considere o espaço de parâmetros $\Omega$ e defina $\Omega_0, \Omega_1 \ \subset \Omega$ de modo que $\Omega_0 \cup \Omega_1 = \Omega$ e $\Omega_0 \cap \Omega_1 = \emptyset$. Definimos
@@ -514,6 +514,47 @@ Dizemos que uma hipótese $H_i$, é \textbf{simples}, se $\Omega_i = \{ \theta_i
 
 \begin{definition}[Hipótese unilateral e hipótese bilateral]
 Uma hipótese da forma $H_0 : \theta \leq \theta_0$ é dita \textbf{unilateral} (``one-sided''), enquanto hipóteses da forma $H_0 : \theta \neq \theta_0$ são ditas \textbf{bilaterais} (``two-sided'').
+\end{definition}
+
+\section*{Aula 15: Testes de hipótese Part II}
+
+\begin{definition}[Região crítica]
+O conjunto
+
+$$S_1 := \{ \textbf{x} : | \overline{X}_n - \mu_0 | \geq c \}$$
+
+é chamado de \textbf{região crítica} do teste.
+\end{definition}
+
+\begin{definition}[Região de rejeição]
+Se $R \subseteq \mathbb{R}$ é tal que ``rejeitamos $H_0$ se $T \in \mathbb{R}$'', então R é chamada uma \textbf{região de rejeição} para a estatística T e o teste associado.
+\end{definition}
+
+\begin{definition}[Função poder]
+Seja $\delta$ um procedimento de aceitação/rejeição como visto anteriormente. A \textbf{função poder} é definida como
+
+\begin{equation}
+    \pi(\theta \mid \delta) := P(\textbf{X} \in S_1 \mid \theta) = P(T \in R \mid \theta), \ \theta \in \Omega
+\end{equation}
+\end{definition}
+
+\begin{definition}[Tipos de erros]
+Tipos de erros que podem ser cometidos
+
+$$
+\begin{tabular}{c|c}
+   Nome & Erro cometido\\
+   \hline
+   Erro tipo I & Rejeitar $H_0$ quando ela é~\textbf{verdadeira}.\\
+   Erro tipo II & Falhar em rejeitar $H_0$ quando ela é~\textbf{falsa}.\\
+\end{tabular}
+$$
+\end{definition}
+
+\begin{definition}[Tamanho/nível de um teste]
+Dizemos que um teste, $\delta$, tem \textbf{tamanho} ou \textbf{nível de significância} $\alpha(\delta)$, com 
+
+$$\alpha(\delta) := \mathrm{sup}_{\theta \in \Omega_0} \pi (\theta \mid \delta).$$
 \end{definition}
 
 \end{document}
