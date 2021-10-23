@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass{article}
 
 \usepackage{ setspace }
 \usepackage{ amssymb }
@@ -13,11 +13,17 @@
 \usepackage{ pdfpages }
 \usepackage{ mathrsfs }
 \usepackage{ parselines }
+\usepackage{ hyperref }
 
 
 \usepackage[brazil]{ babel }
 
 \pagestyle{plain}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    urlcolor=cyan}
 
 \newtheorem{theorem}{Teorema}[section]
 \newtheorem{corollary}{Corolário}[theorem]
@@ -46,7 +52,70 @@
 \end{center}
 \end{titlepage}
 
-\section{Equações Diferenciais de Primeira Ordem (22/02)}
+\section*{Summary}
+
+\hspace{5mm}\textbf{\nameref{s1}}
+\vspace{4mm}
+
+\textbf{\nameref{s2}}
+\vspace{4mm}
+
+\textbf{\nameref{s3}}
+\vspace{4mm}
+
+\textbf{\nameref{s4}}
+\vspace{4mm}
+
+\textbf{\nameref{s5}}
+\vspace{4mm}
+
+\textbf{\nameref{s6}}
+\vspace{4mm}
+
+\textbf{\nameref{s7}}
+\vspace{4mm}
+
+\textbf{\nameref{s8}}
+\vspace{4mm}
+
+\textbf{\nameref{s9}}
+\vspace{4mm}
+
+\textbf{\nameref{s10}}
+\vspace{4mm}
+
+\textbf{\nameref{s11}}
+\vspace{4mm}
+
+\textbf{\nameref{s12}}
+\vspace{4mm}
+
+\textbf{\nameref{s13}}
+\vspace{4mm}
+
+\textbf{\nameref{s14}}
+\vspace{4mm}
+
+\textbf{\nameref{s15}}
+\vspace{4mm}
+
+\textbf{\nameref{s16}}
+\vspace{4mm}
+
+\textbf{\nameref{s17}}
+\vspace{4mm}
+
+\textbf{\nameref{s18}}
+\vspace{4mm}
+
+\textbf{\nameref{s19}}
+\vspace{4mm}
+
+\textbf{\nameref{s20}}
+\vspace{4mm}
+
+\section*{Equações Diferenciais de Primeira Ordem (22/02)}
+\label{s1}
 Vamos considerar a equação diferencial linear de Primeira ordem com $p(x)$ e $g(x)$ funções contínuas em $I \subset \mathbb{R}$:
 
 $$y' + p(x) y = g(x)$$
@@ -67,14 +136,13 @@ e
 
 $$u(x) = e^{\int p(x) d x}$$
 
-\section{Equação de Bernoulli e Equações separáveis (24/02)}
-
+\section*{Equação de Bernoulli e Equações separáveis (24/02)}
+\label{s2}
 Um exemplo de equação de Primeira ordem que não é linear é a \textbf{equação de Bernoulli}:
 
 $$y' + p(x) y = q(x) y^\alpha, \ \alpha \in \mathbb{R}$$
 
 \subsection*{Equações separáveis}
-
 São equações diferenciais do tipo
 
 $$M(x) + N(x) \dfrac{d y}{d x} = 0$$
@@ -89,7 +157,8 @@ $$H_1(x) + H_2 (y) = c$$
 
 que geralmente está na forma implícita.
 
-\section{Equações Diferenciais Exatas e Equações Diferenciais Não Exatas (01/03)}
+\section*{Equações Diferenciais Exatas e Equações Diferenciais Não Exatas (01/03)}
+\label{s3}
 \subsection*{Equações Diferenciais Exatas}
 Considere a equação diferencial
 
@@ -131,7 +200,8 @@ Logo, a nova equação
 
 $$\dfrac{y}{x^2} d x - \dfrac{1}{x} d y = 0 \text{ é exata}$$
 
-\section{Problemas de diluição, Resfriamento de um corpo e Juros compostos (03/03)}
+\section*{Problemas de diluição, Resfriamento de um corpo e Juros compostos (03/03)}
+\label{s4}
 \subsection*{Problemas de diluição}
 Considere um tanque contendo no estado inicial $V_0$ litros de salmoura com \textbf{$\alpha$ kg} de sal (pode ser $\alpha = 0$).
 Uma outra solução de salmoura contendo \textbf{c kg} quilos de sal por litro é derramada nesse tanque a uma taxa \textbf{a l/min}, enquanto simultaneamente a mistura bem agitada deixa o tanque a uma taxa de \textbf{b l/min}. Queremos determinar (Q(t)) a quantidade de sal (em quilos) no tempo t dentro do tanque. Temos que
@@ -160,19 +230,22 @@ $$T(t) = \left ( \dfrac{T_0 - T_{a, 0}}{1 + A} \right ) e^{k (1 + A) t} + \dfrac
 
 $$S(t) = S_0 e^{r t} + \dfrac{k}{r} (e^{r t} - 1)$$
 
-\section{Equações autônomas (08/03)}
+\section*{Equações autônomas (08/03)}
+\label{s5}
 Uma classe de EDO importante são as quais não aparece a variável independente explicitamente. São as \textbf{equações autônomas}:
 
 $$\dfrac{d y}{d t} = f(y)$$
 
 Tais equações tem solução análoga as que já vimos.
 
-\section{Existência e Unicidade (10/03)}
+\section*{Existência e Unicidade (10/03)}
+\label{s6}
 Uma EDO sempre possui solução e ela é única (não é necessário provar aqui).
 
 \href{https://www.youtube.com/watch?v=01FK-H7Kbpk&t=1s}{Video explicativo}
 
-\section{Equações diferenciais lineares de segunda ordem (17/03)}
+\section*{Equações diferenciais lineares de segunda ordem (17/03)}
+\label{s7}
 Uma equação diferencial linear de segunda ordem, com condições iniciais é um equação do tipo
 
 \begin{equation}\label{segOrd}
@@ -232,8 +305,8 @@ Uma equação do tipo $ay'' + by' + cy = 0$ possui solução de acordo com as ra
     $$y(t) = e^{\alpha t} (c_1 \cos \beta t + c_2 \sin \beta t)$$
 \end{enumerate}
 
-\section{Equações diferenciais de segunda ordem não homogêneas (24/03)}
-
+\section*{Equações diferenciais de segunda ordem não homogêneas (24/03)}
+\label{s8}
 Considerando equações diferenciais de segunda ordem, não homogêneas e com coeficientes constantes: 
 
 \begin{equation}\label{difSegOrd}
@@ -254,8 +327,8 @@ Precisamos encontrar uma solução particular temos 2 métodos para isso "métod
 
 Vamos pensar como uma solução particular: $y_p(t) = $ polinômio, $e^{k t}$ ou $A \cos \alpha t + B \sin t$, dai podemos substituir na equação inicial, encontrando as constantes. Temos a $y_p(t)$. E então também temos $y(t)$.
 
-\section{Método de variação de parâmetros (29/03)}
-
+\section*{Método de variação de parâmetros (29/03)}
+\label{s9}
 Tome $a y'' + b y' + c y = g(x)$, onde a, b e c são constantes e g(x) é continua.
 
 Sejam $y_1(x), y_2(x)$ soluções linearmente independentes da equação diferencial homogênea. Este sugere encontrar funções $u_1(x), u_2(x)$ tais que $y(x) = u_1(x) y_1(x) + u_2(x) y_2(x)$ seja uma solução da equação diferencial. Adicionando condições a $u_1(x), u_2(x)$:
@@ -280,7 +353,8 @@ $$u_2 = \int \dfrac{\frac{g}{a} y_1}{y_1 y_2' - y_2 y_1} d x$$
 
 A solução destas integrais, nos dará uma solução particular da equação diferencial não homogênea de segunda ordem.
 
-\section{A Transformada de Laplace (14/04)}
+\section*{A Transformada de Laplace (14/04)}
+\label{s10}
 Uma Transformada de Laplace é da forma
 
 $$F(s) = \int_\alpha^\beta K(s, t) d t$$
@@ -321,8 +395,8 @@ onde se $c \geq 0$ a integral diverge e caso contrario a integral converge.
     \end{enumerate}
 \end{theorem}
 
-\section{A Transformada de Laplace como uma aplicação linear (19/04)}
-
+\section*{A Transformada de Laplace como uma aplicação linear (19/04)}
+\label{s11}
 Seja U = {conjunto das funções seccionalmente contínuas em $[0, \infty )$ e de ordem exponencial}, U é um espaço vetorial real com as operações de adição e produto por um escalar. V = {conjunto das funções definidas em intervalos da forma ($s_0, \ \infty$) ou [$s_0, \ \infty$), $s_0 \geq - \infty$}, V também é um espaço vetorial real cujas operações são adição e produto por um escalar.
 
 Seja $\mathscr{L}:\ U \ \xrightarrow{} V$, $\mathscr{L}$ é linear pela definição de Transformada de Laplace. Vale que:
@@ -354,7 +428,8 @@ Caso Geral: $a y'' + b y' + c y = f(t)$, temos $y(s) - \dfrac{(as + b)y(0) + a y
     Se f é uma função contínua cuja transformada de laplace é F(s), não existe outra função contínua tendo a mesma transformada. 
 \end{corollary}
 
-\section{Funções Degrau (26/04)}
+\section*{Funções Degrau (26/04)}
+\label{s12}
 Uma função degrau é do tipo $u_c (t) = 0$ se $t < c$ e $u_c (t) = 1$ se $t \geq c$. A transformada de Laplace de $u_c(t)$ é
 
 $$\mathscr{L}(u_c (t)) = \int_0^\infty e^{-s t} u_c(t) d t = \frac{e^{-c s}}{s}, \ s > 0$$
@@ -381,11 +456,8 @@ $$g(t) = u_c(t) f(t-c)$$
     $$e^{c t} f(t) = \mathscr{L}^{-1} (F(s - c))$$
 \end{theorem}
 
-\section{Equações Diferenciais sob a ação de funções descontínuas (28/04)}
-
-Aula de exercícios.
-
-\section{Funções impulso (03/05)}
+\section*{Funções impulso (03/05)}
+\label{s13}
 Queremos representar forças que agem por um período de tempo muito curto. Por exemplo $ay'' + by' + c y = g(t)$ onde g(t) é grande em um intervalo pequeno $t_0 - t < t < t_0 + t$, e é zero fora deste. 
 
 \begin{definition}
@@ -410,7 +482,8 @@ E o produto de $\delta$ por uma função f contínua é
 
 $$\int_{- \infty}^{+ \infty} \delta (t - t_0) f(t) d t = \lim_{t \xrightarrow{} t_0} \int_{- \infty}^{+ \infty} d_\tau (t - t_0) f(t) d t = f(t_0)$$
 
-\section{Convolução (05/05)}
+\section*{Convolução (05/05)}
+\label{s14}
 Pôde-se pensar em certas circunstancias a transformada de Laplace como produto de 2 outras transformadas.
 
 \begin{theorem}
@@ -440,7 +513,8 @@ Pelo teorema, vale que
 
 $$F(s) G(s) = \int_0^\infty e^{- st} h(t) d t = \mathscr{L}(h(t))$$
 
-\section{Sistemas Lineares (10/05)}
+\section*{Sistemas Lineares (10/05)}
+\label{s15}
 \begin{definition}
     Definimos como a exponencial da matriz A
     
@@ -477,8 +551,8 @@ $$F(s) G(s) = \int_0^\infty e^{- st} h(t) d t = \mathscr{L}(h(t))$$
     \end{enumerate}
 \end{corollary}
 
-\section{Existência e unicidade (12/05)}
-
+\section*{Existência e unicidade (12/05)}
+\label{s16}
 \begin{lemma}
     $$\dfrac{d}{d t} e^{t A} = A e^{t A} = e^{t A} . A$$
 \end{lemma}
@@ -487,7 +561,8 @@ $$F(s) G(s) = \int_0^\infty e^{- st} h(t) d t = \mathscr{L}(h(t))$$
     Seja A um operador em $\mathbb{R}^n$. A única solução do problema do problema $X' = A X, \ X(0) = X_0 \in \mathbb{R}^n$ é $X(t) = e^{tA} X_0$, ou $X(t) = e^{t (P B P^{-1})} X(0)$, onde $A = P B P^{-1}$ (B é a matriz com os autovalores e P dos autovetores).
 \end{theorem}
 
-\section{Autovalores repetidos (17/05)}
+\section*{Autovalores repetidos (17/05)}
+\label{s17}
 Quando os autovalores são repetidos devemos escrever B, como (no caso $n = 2$):
 
 $$
@@ -507,7 +582,8 @@ E para encontrar o outro autovetor respectivo podemos tomas um genérico $v_2 = 
 \end{array}
 \right ]$, e usamos que $v_1 + v_2$ é um autovetor. Para encontrar valores para a e b.
 
-\section{Autovalores complexos e Plano Traço-Determinante (19/05)}
+\section*{Autovalores complexos e Plano Traço-Determinante (19/05)}
+\label{s18}
 Se temos $X' = AX$, tal que os autovalores de A são $\lambda_1 = \alpha + \beta i$, $\lambda_2 = \alpha - \beta i$, com autovalores $\varphi_1, \ \varphi_2$, então tome:
 
 $$u = \frac{\varphi_1 + \varphi_2}{2}, \ v = \frac{\varphi_1 - \varphi_2}{2 i}$$
@@ -540,7 +616,8 @@ Dado $A = \left [ \begin{array}{cc}
 \end{figure}
 
 
-\section{Sistemas Lineares não homogêneos (26/05)}
+\section*{Sistemas Lineares não homogêneos (26/05)}
+\label{s19}
 \begin{theorem}
     Dado o sistema não homogêneo $X' = AX + B(t)$, a solução do sistema é $X(t) = X_h(t) + X_p(t)$ onde $X_h(t)$ é solução da equação homogênea ($X' = A X$) e $X_p(t)$ é uma solução particular do sistema.
     
@@ -549,7 +626,8 @@ Dado $A = \left [ \begin{array}{cc}
     $$X_p(t) = e^{t A} \left [ \int_0^t e^{- A s} B(s) d s + K \right ], \ K \in \mathbb{R}^n$$
 \end{theorem}
 
-\section{Sistema não linear (31/05)}
+\section*{Sistema não linear (31/05)}
+\label{s20}
 \begin{lemma}
     Os pontos de equilíbrio do sistema não linear
     
@@ -587,10 +665,5 @@ Dado $A = \left [ \begin{array}{cc}
         c & d
     \end{array} \right ]$ é Jacobiano de $F(x, y)$ e $G(x, y)$ no ponto $(x_0, y_0)$
 \end{theorem}
-
-\section{Pendulo e Predador x Presa (02/06)}
-Aula de aplicações.
-
-\subsubsection*{Obs.:} As 2 últimas aulas sobre método de Euler não estão aqui pois não serão cobradas na prova.
 
 \end{document}
