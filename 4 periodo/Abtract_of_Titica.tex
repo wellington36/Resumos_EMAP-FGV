@@ -9,9 +9,14 @@
 \usepackage{enumitem}
 \usepackage{mathrsfs}
 \usepackage{amssymb}
-
+\usepackage{hyperref}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    urlcolor=cyan}
 
 \parindent0in
 \pagestyle{plain}
@@ -42,7 +47,62 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 {\let\newpage\relax\maketitle}
 \maketitle
 
+\section*{Summary}
+
+\textbf{\nameref{s1}}
+\vspace{5mm}
+
+\textbf{\nameref{s2}}
+\vspace{5mm}
+
+\textbf{\nameref{s3}}
+\vspace{5mm}
+
+\textbf{\nameref{s4}}
+\vspace{5mm}
+
+\textbf{\nameref{s5}}
+\vspace{5mm}
+
+\textbf{\nameref{s6}}
+\vspace{5mm}
+
+\textbf{\nameref{s7}}
+\vspace{5mm}
+
+\textbf{\nameref{s8}}
+\vspace{5mm}
+
+\textbf{\nameref{s9}}
+\vspace{5mm}
+
+\textbf{\nameref{s10}}
+\vspace{5mm}
+
+\textbf{\nameref{s11}}
+\vspace{5mm}
+
+\textbf{\nameref{s12}}
+\vspace{5mm}
+
+\textbf{\nameref{s13}}
+\vspace{5mm}
+
+\textbf{\nameref{s14}}
+\vspace{5mm}
+
+\textbf{\nameref{s15}}
+\vspace{5mm}
+
+\textbf{\nameref{s16}}
+\vspace{5mm}
+
+\textbf{\nameref{s17}}
+
+\newpage
+
 \section*{Aula 1: O que é e para que serve Inferência Estatística?}
+\label{s1}
 
 \begin{definition}[Modelo estatístico: informal]
 Um \textbf{modelo estatístico} consiste na identificação de variáveis aleatórias de interesse (observáveis e potencialmente observáveis), na especificação de uma distribuição conjunta para as variáveis aleatórias observáveis e na identificação dos parâmetros $(\theta)$ desta distribuição conjunta. Às vezes é conveniente assumir que os parâmetros são variáveis aleatórias também, mas para isso é preciso especificar uma distribuição conjunta para $\theta$.
@@ -75,6 +135,7 @@ para qualquer permutação $\pi = \{\pi(1), \pi(2), \ldots, \pi(n)\}$ dos seus e
 \end{definition}
 
 \section*{Aula 2:  Distribuição a priori e a posteriori}
+\label{s2}
 \begin{definition}[Distribuição a priori]
 Se tratamos o parâmetro $\theta$ como uma variável aleatória, então a \textbf{distribuição a priori} é a distribuição que damos a $\theta$ antes de observarmos as outras variáveis aleatórias de interesse. Vamos denotar a função de densidade/massa de probabilidade da priori por $\xi(\theta)$.
 \end{definition}
@@ -98,6 +159,7 @@ Quando encaramos a f.d.p./f.m.p. $f(x_1, x_2, \ldots, x_n \mid \theta)$ como uma
 \end{definition}
 
 \section*{Aula 3: Prioris conjugadas e função de perda}
+\label{s3}
 \begin{definition}[Hiper-parâmetros]
 Seja $\xi(\theta \mid \phi)$ a distribuição a priori para o parâmetro $\theta$, indexada por $\phi \in \Phi$. Dizemos que $\phi$ é(são) o(s) \textbf{hiper-parâmetro(s)} da priori de $\theta$.
 \end{definition}
@@ -152,7 +214,7 @@ em que dizemos que o estatístico \textit{perde} $L(\theta, a)$ se o parâmetro 
 \end{definition}
 
 \section*{Aula 4: Estimadores de Bayes e EMV}
-
+\label{s4}
 \begin{definition}[Estimador de Bayes]
 Considere a perda esperada a posteriori:
 
@@ -225,7 +287,7 @@ y=\sum_{i=1}^nx_i$
 \end{table}
 
 \section*{Aula 5: EMV}
-
+\label{s5}
 \begin{theorem}[Invariância do EMV]
 Considere uma função $\phi: \Omega \rightarrow \mathbb{R}$. Se $\hat{\theta}$ é um EMV para $\theta$, então $\phi(\hat{\theta})$ é um EMV para $\omega = \phi(\theta)$.
 \end{theorem}
@@ -248,7 +310,7 @@ $$\hat{\theta}_{EMV} \rightarrow \theta$$
 \end{theorem}
 
 \section*{Aula 6: Método dos momentos e suficiência}
-
+\label{s6}
 \begin{definition}[Método dos momentos]
 Suponha que $X_1, \ldots, X_n$ formam uma sequânica aleatória com distribuição conjunta $f_n (X_1, \ldots, X_n \mid \theta), \theta \in \Omega \subseteq \mathbb{R}^k$ e que o k-ésimo momento existe. Defina $\mu_j (\theta) = E[X_1^j \mid \theta]$ e suponha que $\mu: \Omega \rightarrow \mathbb{R}^k$ é biunívoca, de modo que sua inversa é
 
@@ -296,7 +358,7 @@ Dizemos que um conjunto de estatísticas $T = \{T_1, \ldots, T_n\}$ é \textbf{s
 \end{definition}
 
 \section*{Aula 7: Suficiência conjunta e mínima, teorema de Rao-Blackwell}
-
+\label{s7}
 \begin{definition}[Estatísticas de ordem]
 Seja $\textbf{X} = X_1, \ldots, X_n$ uma amostra aleatória. Dizemos que $Y_1, \ldots, Y_n$ são \textbf{estatísticas de ordem} se $Y_1$ é o menor valor de \textbf{X}, $Y_2$ é o segundo menor valor e assim sucessivamente.
 \end{definition}
@@ -344,7 +406,7 @@ $$R(\theta, \delta_0) < R(\theta, \delta)$$
 \end{theorem}
 
 \section*{Aula 8: Admissibilidade e viés}
-
+\label{s8}
 \begin{definition}[Admissibilidade]
 Um estimador $\delta$ é dito \textbf{inadmissível} se existe outro estimador $\delta_0$ tal que $R(\theta, \delta_0) \leq R(\theta, \delta), \forall \theta \in \Omega$ e existe $\theta' \in \Omega$ tal que $R(\theta', \delta_0) < R(\theta', \delta)$. Nesse caso, dizemos que $\delta_0$ domina $\delta$. O estimador $\delta_0$ é \textbf{admissível} se (e somente se) não há nenhum estimador que o domine.
 \end{definition}
@@ -362,7 +424,7 @@ $$\delta_1(\textbf{X}) = \frac{1}{n - 1}\sum_{i = 1}^n (X_i - \overline{X}_n)^2$
 \end{theorem}
 
 \section*{Aula 9: Eficiência}
-
+\label{s9}
 \begin{definition}[Informação de Fisher]\label{def:fis}
 Seja X uma variável aleatória com f.d.p./f.m.p. $f(x \mid \theta), \ \theta \in \Omega \subseteq \mathbb{R}$. Suponha que $f(x \mid \theta)$ é duas vezes diferenciável com respeito a $\theta$. Defina $\lambda (x \mid \theta) = \log f(x \mid \theta)$ e
 
@@ -402,7 +464,7 @@ $$Var_\theta(\delta) = \frac{[m'(\theta)]^2}{n I(\theta)}.$$
 \end{definition}
 
 \section*{Aula 10: Distribuição de uma estatística amostral e qui-quadrado}
-
+\label{s10}
 \begin{definition}[Distribuição qui-quadrado]
 Dizemos que uma variável aleatória Y tem distribuição \textbf{qui-quadrado} com m graus de liberdade quando
 
@@ -428,13 +490,13 @@ então, tem distribuição qui-quadrado com $m = 1$.
 \end{theorem}
 
 \section*{Aula 11: Distribuição da média e variância amostrais}
-
+\label{s11}
 \begin{theorem}[Independência da média e variância amostrais na Normal]
 Seja $X_1, \ldots, X_n$ uma amostra aleatória de uma distribuição Normal com parâmetros $\mu$ e $\sigma^2$, $\overline{X}_n$ e a variância amostral $\overline{S}_n^2$, são independentes. Ademais, $\overline{X}_n \backsim Normal \left ( \mu, \sigma^2 \right )$ e $\overline{S}_n^2 \backsim Gama \left ( \frac{n - 1}{2}, \frac{n}{2 n^2} \right )$
 \end{theorem}
 
 \section*{Aula 12: Distribuição t de Student  e intervalos de confiança}
-
+\label{s12}
 \begin{definition}[A distribuição t de Student]
 Tome, $Y \backsim \mathrm{Qui-quadrado}(m)$ e $Z \backsim \mathrm{Normal}(0, 1)$ e defina a variável aleatória
 
@@ -467,7 +529,7 @@ Dizemos que $I(\textbf{X}) = (A(\textbf{X},B(\textbf{X}))$ é um \textbf{interva
 \end{theorem}
 
 \section*{Aula 13: Intervalos de confiança e Quantidades Pivotais}
-
+\label{s13}
 \begin{definition}[Intervalo de confiança unilateral]
 Seja $\textbf{X} = \{ X_1. \ldots, X_n \}$ uma amostra aleatória, onde cada uma tem p.d.f. $f(x \mid \theta)$, e considere uma função real $g(\theta)$. Seja $A( \textbf{X})$ uma estatística que
 
@@ -496,7 +558,7 @@ são os limites de um intervalo de confiança de $100\gamma \%$ para $g(\theta)$
 
 
 \section*{Aula 14: Testes de hipótese Part I}
-
+\label{s14}
 \begin{definition}[Hipótese nula e hipótese alternativa]
 Considere o espaço de parâmetros $\Omega$ e defina $\Omega_0, \Omega_1 \ \subset \Omega$ de modo que $\Omega_0 \cup \Omega_1 = \Omega$ e $\Omega_0 \cap \Omega_1 = \emptyset$. Definimos
 
@@ -517,7 +579,7 @@ Uma hipótese da forma $H_0 : \theta \leq \theta_0$ é dita \textbf{unilateral} 
 \end{definition}
 
 \section*{Aula 15: Testes de hipótese Part II}
-
+\label{s15}
 \begin{definition}[Região crítica]
 O conjunto
 
@@ -558,7 +620,7 @@ $$\alpha(\delta) := \mathrm{sup}_{\theta \in \Omega_0} \pi (\theta \mid \delta).
 \end{definition}
 
 \section*{Aula 16: Testes de hipótese Part III}
-
+\label{s16}
 \begin{definition}[O p-valor]
 Para cada t, seja $\delta_t$ o teste que rejeita $H_0$ se $T \geq t$. Então, quando $T = t$, o \textbf{p-valor} vale
 
@@ -570,7 +632,7 @@ ou seja, o \textbf{p-valor} é o tamanho do teste $\delta_t$.
 \end{definition}
 
 \section*{Aula 17: Testes e conjuntos de confiança}
-
+\label{s17}
 \begin{definition}[Intervalos de confiança e testes são equivalentes]
 
 Suponha que dispomos de dados $\textbf{X} = \{ X_1, \ldots, X_n \}$ com f.d.p. comum $f(x \mid \theta)$, e estamos interessados em testar as hipóteses:
@@ -592,7 +654,7 @@ Se um conjunto aleatório $w(\textbf{X}$ satisfaz
 
 $$P(g(\theta_0) \in w(\textbf{X}) \mid \theta = \theta_0) \geq \gamma,$$
 
-para todo $\theta_0 in \Omega$, então chamamos $w(\textbf{X})$ de um \textbf{conjunto de confiança} para $\g(\theta)$.
+para todo $\theta_0 in \Omega$, então chamamos $w(\textbf{X})$ de um \textbf{conjunto de confiança} para $g(\theta)$.
 \end{definition}
 
 \begin{theorem}[Testando hipóteses a partir de conjuntos de confiança]
