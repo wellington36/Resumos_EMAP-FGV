@@ -16,6 +16,11 @@
 
 \pagestyle{plain}
 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    urlcolor=cyan}
+
 \newtheorem{theorem}{Teorema}[section]
 \newtheorem{corollary}{Corolário}[theorem]
 \newtheorem{lemma}[theorem]{Lema}
@@ -43,8 +48,48 @@
 \end{center}
 \end{titlepage}
 
+\section*{Sumário}
+
+\textbf{\nameref{s1}}
+\vspace{4mm}
+
+\textbf{\nameref{s2}}
+\vspace{4mm}
+
+\textbf{\nameref{s3}}
+\vspace{4mm}
+
+\textbf{\nameref{s4}}
+\vspace{4mm}
+
+\textbf{\nameref{s5}}
+\vspace{4mm}
+
+\textbf{\nameref{s6}}
+\vspace{4mm}
+
+\textbf{\nameref{s7}}
+\vspace{4mm}
+
+\textbf{\nameref{s8}}
+\vspace{4mm}
+
+\textbf{\nameref{s9}}
+\vspace{4mm}
+
+\textbf{\nameref{s10}}
+\vspace{4mm}
+
+\textbf{\nameref{s11}}
+
+\newpage
+
 \section*{Capítulo 16 - Cálculo Vétorial}
+\label{s1}
+
 \subsection*{16.1 - Campos Vetoriais}
+\label{s2}
+
 \begin{definition}
 Seja $E$ um conjunto em $\mathbf{R}^n$. Um campo vetorial em $\mathbf{R}^n$ é uma função $F$ que associa a cada ponto $(x_1, x_2, \dots, x_n) \in E$ um vetor $F(x_1, x_2, \dots, x_n)$.
 \end{definition}
@@ -56,6 +101,8 @@ $$\nabla f(x_1, x_2, \dots, x_n) = f_{x_1} (x_1, x_2, \dots, x_n)j_1 + \dots + f
 \end{definition}
 
 \subsection*{16.2 - Integrais de Linha}
+\label{s3}
+
 \begin{definition}[integral de linha sobre curva]
 Se $f$ é definida sobre uma curva suave $C$ dada por uma equação paramétrica da forma $x = x(t), y = y(t)$ com $a \leq t \leq b$. Então a integral de linha de $f$ sobre $C$ é:
 
@@ -88,6 +135,8 @@ $$\int_C F dr = \int_{a}^{b} F(r(t)).r'(t) dt = \int_C F . T ds$$
 onde $T(x, y, z)$ é o vetor tangente unitário no ponto $(x, y, z) \in C$.
 
 \subsection*{16.3 - O Teorema Fundamental das Integrais de Linha}
+\label{s4}
+
 \begin{theorem}
     Seja C uma curva suave dada pela função vetorial $r(t), a \leq t \leq b$. Seja $f$ uma função diferenciável de duas ou três variáveis cujo vetor gradiente $\nabla f$ é contínuo em C. Então
 
@@ -125,6 +174,8 @@ $$\int_{C_1} \nabla f . dr = \int_{C_2} \nabla f . dr$$
 \end{theorem}
 
 \subsection*{16.4 - Teorema de Green}
+\label{s5}
+
 O teorema de Green fornece a relação entre uma integral de linha ao redor de uma curva fechada simples C e uma integral sobre a região do plano D delimitada de C.
 
 \begin{theorem}[Teorema de Green]
@@ -142,6 +193,8 @@ O teorema de Green fornece a relação entre uma integral de linha ao redor de u
 obs.: $\oint_C F_1 d x + F_2 d y$ indica que a integral de linha é calculada usando a orientação positiva da curva fechada C.
 
 \subsection*{16.5 - Rotacional e Divergente}
+\label{s6}
+
 \subsubsection*{Rotacional}
 Se $F = F_1 \textbf{i} + F_2 \textbf{j} + F_3 \textbf{k}$ é um campo vetorial em $\mathbb{R}^3$ e as derivadas parciais de $F_1, F_2$ e $F_3$ existem, então o \textbf{rotacional} de \textbf{F} é o campo vetorial em $\mathbb{R}^3$ definido por
 
@@ -177,6 +230,7 @@ $$\text{div } F = \dfrac{\partial F_1}{\partial x} + \dfrac{\partial F_2}{\parti
 \end{theorem}
 
 \subsection*{16.6 - Superfícies Parametrizadas e suas Áreas}
+\label{s7}
 
 Podemos descrever uma superfície por uma função vetorial de dois parâmetros u e v, em vez de apenas um único t.
 
@@ -254,6 +308,8 @@ Então a área fica
 $$A(S) = \iint_D \sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} dA$$
 
 \subsection*{16.7 - Integrais de Superfície}
+\label{s8}
+
 \subsubsection*{Superfícies parametrizadas}
 
 Dada uma superfície $r(u, v) = x(u, v)i + y(u, v)j + z(u, v)k$ com $(u, v) \in D$, a superfície é dada por:
@@ -291,11 +347,15 @@ Se S é uma função vetorial dada por $r(u, v)$, então tomando D o domínio do
 $$\iint_S F dS = \iint_D F \cdot (r_u \times r_v) d A$$
 
 \subsection*{16.8 - Teorema de Stokes}
+\label{s9}
+
 Sejam S uma superfície orientável de classe $C^1$, com bordo e orientado coerentemente e $\Vec{F}$ um campo vetorial de classe $C^1$ definido em um domínio que contém S. Então
 
 $$\int_{\partial S} F d r = \iint_S \text{rot} F \cdot d S =  \iint_S \text{rot} F \cdot n d A$$
 
 \subsection*{16.9 - Teorema do Divergente (ou Teorema de Gauss)}
+\label{s10}
+
 O Teorema do Divergente é uma generalização do Teorema de Green (16.5) para o espaço com certas hipóteses, para que vala 
 
 $$\iint_S F \cdot n d S = \iiint_E \ \text{div} \ F(x, y, z) d V$$
@@ -309,6 +369,7 @@ Onde S é a superfície fronteira da região sólida E.
 \end{theorem}
 
 \subsection*{16.10 - Resumo resumido do resumo}
+\label{s11}
 
 \begin{theorem}[Teorema Fundamental do Cálculo]
     $$\int_a^b F'(x) d x = F(b) - F(a)$$

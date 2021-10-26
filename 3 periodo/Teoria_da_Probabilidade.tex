@@ -19,6 +19,11 @@
 
 \pagestyle{plain}
 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    urlcolor=cyan}
+
 \newtheorem{theorem}{Teorema}[section]
 \newtheorem{corollary}{Corolário}[theorem]
 \newtheorem{lemma}[theorem]{Lema}
@@ -46,8 +51,128 @@
 \end{center}
 \end{titlepage}
 
-\section{Conceitos Básicos}
-\subsection*{1.2   Modelos de Probabilidade}
+\section*{Sumário}
+
+\textbf{\nameref{s1}}
+\vspace{3mm}
+
+\textbf{\nameref{s2}}
+\vspace{3mm}
+
+\textbf{\nameref{s3}}
+\vspace{3mm} \\
+\textbf{\nameref{s4}}
+\vspace{3mm}
+
+\textbf{\nameref{s5}}
+\vspace{3mm}
+
+\textbf{\nameref{s6}}
+\vspace{3mm}
+
+\textbf{\nameref{s7}}
+\vspace{3mm}
+
+\textbf{\nameref{s8}}
+\vspace{3mm}
+
+\textbf{\nameref{s9}}
+\vspace{3mm} \\
+\textbf{\nameref{s10}}
+\vspace{3mm}
+
+\textbf{\nameref{s11}}
+\vspace{3mm}
+
+\textbf{\nameref{s12}}
+\vspace{3mm}
+
+\textbf{\nameref{s13}}
+\vspace{3mm}
+
+\textbf{\nameref{s14}}
+\vspace{3mm}
+
+\textbf{\nameref{s15}}
+\vspace{3mm}
+
+\textbf{\nameref{s16}}
+\vspace{3mm} \\
+\textbf{\nameref{s17}}
+\vspace{3mm}
+
+\textbf{\nameref{s18}}
+\vspace{3mm}
+
+\textbf{\nameref{s19}}
+\vspace{3mm} \\
+\textbf{\nameref{s20}}
+\vspace{3mm}
+
+\textbf{\nameref{s21}}
+\vspace{3mm}
+
+\textbf{\nameref{s22}}
+\vspace{3mm}
+
+\textbf{\nameref{s23}}
+\vspace{3mm}
+
+\textbf{\nameref{s24}}
+\vspace{3mm}
+
+\textbf{\nameref{s25}}
+\vspace{3mm} \\
+\textbf{\nameref{s26}}
+\vspace{3mm}
+
+\textbf{\nameref{s27}}
+\vspace{3mm}
+
+\textbf{\nameref{s28}}
+\vspace{3mm}
+
+\textbf{\nameref{s29}}
+\vspace{3mm} \\
+\textbf{\nameref{s30}}
+\vspace{3mm}
+
+\textbf{\nameref{s31}}
+\vspace{3mm}
+
+\textbf{\nameref{s32}}
+\vspace{3mm}
+
+\textbf{\nameref{s33}}
+\vspace{3mm}
+
+\textbf{\nameref{s34}}
+\vspace{3mm} \\
+\textbf{\nameref{s35}}
+\vspace{3mm}
+
+\textbf{\nameref{s36}}
+\vspace{3mm}
+
+\textbf{\nameref{s37}}
+\vspace{3mm}
+
+\textbf{\nameref{s38}}
+\vspace{3mm}
+
+\textbf{\nameref{s39}}
+\vspace{3mm}
+
+\textbf{\nameref{s40}}
+
+\newpage
+
+\section*{1 Conceitos Básicos}
+\label{s1}
+
+\subsection*{1.1 Modelos de Probabilidade}
+\label{s2}
+
 \begin{definition}
 Dois eventos A e B são chamados de \textbf{mutuamente excludentes} se não podem ocorrer simultaneamente, isto é, se $A \cap B = \emptyset$.
 \end{definition}
@@ -76,7 +201,9 @@ $P(\emptyset) = 0$, isto é se um evento é impossível, sua probabilidade deve 
 $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
 \end{corollary}
 
-\subsection*{Probabilidade Condicional}
+\subsection*{1.2 Probabilidade Condicional}
+\label{s3}
+
 \begin{definition}
 Sejam A e B dois eventos com $P(A) \neq 0$. A probabilidade condicional de B dado A é
 
@@ -111,8 +238,12 @@ Dois eventos (não impossíveis) A e B são ditos \textbf{independentes} se o co
 $$P(B|A) = P(B)$$
 \end{definition}
 
-\section{Variáveis Aleatórias Discretas}
+\section{2 Variáveis Aleatórias Discretas}
+\label{s4}
+
 \subsection*{2.1 Função de Probabilidade e Função de Probabilidade Conjunta}
+\label{s5}
+
 \begin{definition}
 Se X é uma variáveis aleatórias discretas, definimos a \textbf{função de probabilidade de X} por
 
@@ -138,7 +269,9 @@ X e Y são independentes se, e somente se, a distribuição condicional de X dad
 $$P(X = i | Y = j) = \dfrac{P(X = i \text{ e }}{P(Y = j} = P(X = i)$$
 \end{corollary}
 
-\subsection*{Função de Probabilidade Acumulada}
+\subsection*{2.2 Função de Probabilidade Acumulada}
+\label{s6}
+
 \subsubsection*{Definição}
 \begin{definition}
 A \textbf{função de distribuição} (ou \textbf{função de probabilidade acumulada}) de X é definida por
@@ -170,6 +303,8 @@ $$F(x_q -) \leq q \leq F(x_q)$$
 \end{definition}
 
 \subsection*{2.3 Valor Esperança}
+\label{s7}
+
 \subsubsection*{Intuição e Definição}
 \begin{definition}
 Se X é uma variável aleatória discreta, definimos o \textbf{valor esperado} (ou esperança matemática, ou expectativa, ou média, ou valor médio) de X por
@@ -212,6 +347,8 @@ Se X e Y são independentes, então $E(X Y) = E(X) E(Y)$.
 \end{corollary}
 
 \subsection*{2.4 Variância e Outras Medidas de Dispersão}
+\label{s8}
+
 \subsubsection*{Definição}
 
 \begin{definition}
@@ -257,6 +394,8 @@ Se X e Y são independentes, então $E(X Y) = E(X) E(Y)$.
 \end{theorem}
 
 \subsection*{2.5 Covariância e Correlação}
+\label{s9}
+
 \begin{definition}
     A \textbf{covariância} entre duas variáveis X e Y é 
     
@@ -296,14 +435,17 @@ Se X e Y são independentes, então $E(X Y) = E(X) E(Y)$.
     $$\rho (a X + b, Y) = - \rho (X, Y) \text{ se } a < 0$$
 \end{corollary}
 
-\section{Principais Distribuições Discretas}
+\section{3 Principais Distribuições Discretas}
+\label{s10}
+
 \subsection{Distribuição}
 Se os valores assumidos por uma certa variável aleatória X são equiprováveis dizemos que X tem um \textbf{distribuição uniforme}.
 
 \subsection{Brevíssima Revisão de Analise Combinatória}
 Aqui trata-se de conteúdo do ensino médio em caso de dúvida \href{https://pt.wikipedia.org/wiki/Combinat\%C3\%B3ria}{see}.
 
-\subsection{Processo de Bernoulli}
+\subsection{3.1 Processo de Bernoulli}
+\label{s11}
 
 \begin{definition}
     Um \textbf{processo de Bernoulli} é uma sequencia de experimentos com as seguintes características:
@@ -315,7 +457,8 @@ Aqui trata-se de conteúdo do ensino médio em caso de dúvida \href{https://pt.
     \end{enumerate}
 \end{definition}
 
-\subsubsection*{Distribuição Binomial}
+\subsubsection*{3.2 Distribuição Binomial}
+\label{s12}
 
 \begin{definition}
     Suponha que o número de experimentos a serem feitos é determinado digamos, n experimentos. Seja X a variável aleatória que representa o numero de sucessos obtidos nestes n experimentos. Dizemos que X tem uma \textbf{distribuição binomial de parâmetros n e p} (e escrevemos X $\backsim$ Bin(n, p)). Nesse caso a função de probabilidade de X passa a se chamar: BinomialDen.
@@ -340,7 +483,9 @@ Aqui trata-se de conteúdo do ensino médio em caso de dúvida \href{https://pt.
     $$Var (X) = n p q$$
 \end{corollary}
 
-\subsubsection*{Distribuição Geométrica}
+\subsubsection*{3.3 Distribuição Geométrica}
+\label{s13}
+
 \begin{definition}
     Suponha que realizamos um processo de Bernoulli com probabilidade de sucesso de cada prova $p > 0$. Seja X o número de tentativas feitas até o primeiro sucesso (inclusive). Dizemos que X tem uma \textbf{distribuição geométrica de parâmetro} p, isto é, $X \backsim Geom (p)$
 \end{definition}
@@ -359,7 +504,9 @@ Aqui trata-se de conteúdo do ensino médio em caso de dúvida \href{https://pt.
     $$Var (X) = \frac{q}{p^2}$$
 \end{corollary}
 
-\subsubsection*{Distribuição Binomial Negativa}
+\subsubsection*{3.4 Distribuição Binomial Negativa}
+\label{s14}
+
 \begin{definition}
     Suponha que o processo de Bernoulli é repetido até obter r sucessos. Seja X o número de tentativas feitas (incluindo o último sucesso). Dizemos que X tem uma \textbf{distribuição binomial negativa de parâmetros r e p}, isto é, $X \backsim NegBin(r, p)$. Note que, a distribuição geométrica é um caso particular dessa.
 \end{definition}
@@ -374,7 +521,9 @@ Aqui trata-se de conteúdo do ensino médio em caso de dúvida \href{https://pt.
     $$Var(X) = \dfrac{r q}{p^2}$$
 \end{corollary}
 
-\subsection*{3.4 Processo de Poisson}
+\subsection*{3.5 Processo de Poisson}
+\label{s15}
+
 \begin{definition}
     A \textbf{distribuição de Poisson} dizemos $X \backsim Poi (\mu)$ que no geral é $\lim_{n \rightarrow{} \infty} Bin (k; n, \frac{\mu}{n}) = Poi (k; \mu)$
 \end{definition}
@@ -387,7 +536,9 @@ Aqui trata-se de conteúdo do ensino médio em caso de dúvida \href{https://pt.
     $$E(X) = Var(X) = \mu$$
 \end{corollary}
 
-\subsection*{3.5 Distribuição Hipergeométrica}
+\subsection*{3.6 Distribuição Hipergeométrica}
+\label{s16}
+
 \begin{definition}
     De uma caixa com r bolas "sucesso" e $N-r$ bolas "falha", extraímos sem reposição n bolas. Seja X o número de bolas sucesso. Dizemos que X tem \textbf{distribuição hipergeométrica com parâmetros n, r e N}, isto é, $X \backsim Hip (n, r, N)$.
 \end{definition}
@@ -404,8 +555,12 @@ Aqui trata-se de conteúdo do ensino médio em caso de dúvida \href{https://pt.
     onde $p = \dfrac{r}{N}$
 \end{corollary}
 
-\section{Variáveis Aleatórias Continuas}
+\section{4 Variáveis Aleatórias Continuas}
+\label{s17}
+
 \subsection*{4.1 Distribuições Contínuas}
+\label{s18}
+
 \subsubsection*{Função de Distribuição Acumulada}
 
 \begin{definition}
@@ -473,6 +628,8 @@ onde $x = h^{-1} (y)$, ou seja,
 $$g(y) d y = f(x) d x$$
 
 \subsection*{4.2 Valor Esperado e Variância}
+\label{s19}
+
 \subsubsection*{Valor Esperado}
 
 \begin{definition}
@@ -513,8 +670,12 @@ $$g(y) d y = f(x) d x$$
     Esse teorema está definido em 2.4, de forma igual.
 \end{theorem}
 
-\section{Principais Distribuições Contínuas}
+\section{5 Principais Distribuições Contínuas}
+\label{s20}
+
 \subsection*{5.1 Distribuição Uniforme}
+\label{s21}
+
 \begin{definition}
     Dizemos que a variável aleatória X tem \textbf{distribuição uniforme no intervalo [a, b]} (denotada por $X \backsim U[a, b]$) quando sua densidade é dada por
     
@@ -526,6 +687,8 @@ $$g(y) d y = f(x) d x$$
 \end{corollary}
 
 \subsection*{5.2 Distribuição Exponencial}
+\label{s22}
+
 Suponha que eventos ocorram de acordo com um processo de Poisson à taxa média de $\lambda$ eventos por unidade de tempo. Dado um certo intervalo [0, t], seja X o número de eventos ocorridos neste intervalo.
 
 $$P(X = k) = \dfrac{(\lambda t)^k}{k!} e^{-\lambda t}$$
@@ -560,6 +723,8 @@ $$P(X = k) = \dfrac{(\lambda t)^k}{k!} e^{-\lambda t}$$
 \end{corollary}
 
 \subsection*{5.3 Distribuição Gama}
+\label{s23}
+
 \begin{definition}
     Para $\alpha > 0$, definimos a função $\Gamma(\alpha)$ como
     
@@ -584,6 +749,7 @@ $$P(X = k) = \dfrac{(\lambda t)^k}{k!} e^{-\lambda t}$$
 \end{corollary}
 
 \subsubsection*{Distribuição Gama}
+
 Mantendo o processo de Poisson da Distribuição exponencial, seja Z o \textbf{tempo de ocorrência do n-ésimo evento} e X o número de ocorrências no intervalo $[0, t]$, temos
 
 $$P(Z \leq t) = 1 - P(X < n) = 1 - e^{- \lambda t} \sum_{k = 0}^{n-1} \frac{(\lambda t)^k}{k !}$$
@@ -605,6 +771,7 @@ $$P(Z \leq t) = 1 - P(X < n) = 1 - e^{- \lambda t} \sum_{k = 0}^{n-1} \frac{(\la
 \end{corollary}
 
 \subsection*{5.4 Distribuição Normal}
+\label{s24}
 
 \begin{definition}
     Dizemos que uma variável aleatória X tem distribuição normal com parâmetros $\mu$ e $\sigma^2$ (denotado por $X \backsim N(\mu, \sigma^2))$, quando sua f.d.p. é dada por 
@@ -621,6 +788,7 @@ $$P(Z \leq t) = 1 - P(X < n) = 1 - e^{- \lambda t} \sum_{k = 0}^{n-1} \frac{(\la
 \end{corollary}
 
 \subsection*{5.5 Taxa de Falhas}
+\label{s25}
 
 \begin{definition}
     Seja T o tempo de vida de um equipamento, isto é, o instante da sua primeira falha, cuja f.d.a é F(t). A \textbf{confiabilidade} deste equipamento é
@@ -638,9 +806,11 @@ $$P(Z \leq t) = 1 - P(X < n) = 1 - e^{- \lambda t} \sum_{k = 0}^{n-1} \frac{(\la
     $$\lambda(t) = \lim_{\Delta t \rightarrow{} 0} TMF = \dfrac{F'(t)}{1 - F(t)} = - \dfrac{R'(t)}{R(t)}$$
 \end{definition}
 
-\section{Variáveis Aleatórias Contínuas Bidimensionais}
+\section{6 Variáveis Aleatórias Contínuas Bidimensionais}
+\label{s26}
 
 \subsection*{6.1 Função de Densidade Conjunta}
+\label{s27}
 
 \begin{definition}
     Uma \textbf{Função de Densidade Conjunta} f(x, y) das variáveis X e Y é uma função com a seguinte propriedade:
@@ -671,6 +841,7 @@ $$P(Z \leq t) = 1 - P(X < n) = 1 - e^{- \lambda t} \sum_{k = 0}^{n-1} \frac{(\la
 \end{definition}
 
 \subsection*{6.2 Distribuições Marginais e Condicionais; Covariância e Correlação}
+\label{s28}
 
 \begin{definition}
     A \textbf{Distribuição Marginal} de X será
@@ -715,6 +886,8 @@ $$P(Z \leq t) = 1 - P(X < n) = 1 - e^{- \lambda t} \sum_{k = 0}^{n-1} \frac{(\la
 \end{definition}
 
 \subsection*{6.3 Funções de Variáveis Contínuas}
+\label{s29}
+
 \begin{theorem}
     Sejam X e Y variáveis aleatórias com densidade $f_{X, Y} (x, y)$. Sejam $W = g(X, Y)$ e $Z = h(X, Y)$ duas novas variáveis. Então a densidade conjunta de W e Z é dada por
     
@@ -728,11 +901,15 @@ $$P(Z \leq t) = 1 - P(X < n) = 1 - e^{- \lambda t} \sum_{k = 0}^{n-1} \frac{(\la
     \end{array} \right |$$
 \end{theorem}
 
-\section{Somas e Médias de Variáveis Aleatórias}
-\subsection*{7.1 Motivação}
+\section{7 Somas e Médias de Variáveis Aleatórias}
+\label{s30}
+
+\subsection*{7.0 Motivação}
 Se motive... e continue.
 
-\subsection*{7.2 Somas das Principais Distribuições Aleatórias}
+\subsection*{7.1 Somas das Principais Distribuições Aleatórias}
+\label{s31}
+
 \begin{definition}
     Seja ($X_1, X_2, \cdots, X_n$) uma AAS (Amostragem Aleatória Simples) tomada a partir de uma distribuição de uma v.a. X. Definimos a \textbf{soma da amostra} e a \textbf{média amostral} respectivamente por
     
@@ -761,7 +938,9 @@ Se motive... e continue.
     $$\frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \backsim N(0, 1)$$
 \end{theorem}
 
-\subsection*{7.3 Lei dos Grandes Números}
+\subsection*{7.2 Lei dos Grandes Números}
+\label{s32}
+
 \begin{lemma}
 Se $X_1, X_2, \cdots, X_n$ são amostragens aleatórias simples de uma variável X com $E(X) = \mu$ e $\sigma(X) = \sigma$, então
 
@@ -781,7 +960,9 @@ $$P(|\overline{X} - \mu| < \varepsilon) \rightarrow 1$$
 
 \end{theorem}
 
-\subsection*{7.4 Teorema Central do Limite (TCL)}
+\subsection*{7.3 Teorema Central do Limite (TCL)}
+\label{s33}
+
 \subsubsection*{TCL para Distribuição Binomial}
 \begin{theorem}[Aproximação Normal à Distribuição Binomial]
 Seja $X \backsim Bin(n, p)$. Então
@@ -816,12 +997,16 @@ $$\lim_{n \rightarrow \infty} P(a \leq X^* \leq b) = \int_a^b \phi(x) d x$$
 isto é, a distribuição $X^*$ se aproxima (em áreas) da distribuição normal padrão.
 \end{theorem}
 
-\subsection*{7.5 Aplicação á Estatística: Distribuição Amostral de uma Proporção}
+\subsection*{7.4 Aplicação á Estatística: Distribuição Amostral de uma Proporção}
+\label{s34}
 
 Não tem nada aqui (só aplicações) pode seguir...
 
-\section{Outras Distribuições Amostrais}
+\section{8 Outras Distribuições Amostrais}
+\label{s35}
+
 \subsection*{8.1 Estimação de Parâmetros}
+\label{s36}
 
 \begin{definition}
     Um \textbf{estimador} $\hat{\theta}$ de um parâmetro $\theta$ (da distribuição X, isto é, da população) é uma função das observações da amostra, isto é
@@ -860,6 +1045,8 @@ Não tem nada aqui (só aplicações) pode seguir...
 \end{definition}
 
 \subsection*{8.2 Estimadores pontuais da variância}
+\label{s37}
+
 \subsubsection*{Média Conhecida}
 Suponha que a média $\mu = E(X)$ é conhecida, e queremos saber o valor de $\sigma^2 = Var(X)$, um possível estimador para $E((X - \mu)^2)$ é
 
@@ -893,6 +1080,8 @@ Este é um estimador não-viesado.
 \end{corollary}
 
 \subsection*{8.3 Erro Quadrático Médio}
+\label{s38}
+
 \begin{definition}
     O \textbf{erro quadrático médio} de um estimador T de um parâmetro $\theta$ é
     
@@ -903,7 +1092,9 @@ Este é um estimador não-viesado.
     $$EQM(T; \theta) = Var(T) + (Vi\acute{e}s(T))^2$$
 \end{corollary}
 
-\subsection*{Distribuição Qui-quadrado}
+\subsection*{8.4 Distribuição Qui-quadrado}
+\label{s39}
+
 \begin{lemma}
     Se $Z \backsim N(0, 1)$, então $\mu_4 (Z) = 3$.
 \end{lemma}
@@ -931,6 +1122,8 @@ Este é um estimador não-viesado.
 \end{corollary}
 
 \subsection*{8.5 Distribuição t de Student}
+\label{s40}
+
 \begin{definition}
     Sejam $Z \backsim N(0, 1)$ e $X \backsim X^2(n)$ variáveis independentes. A distribuição da variável
     

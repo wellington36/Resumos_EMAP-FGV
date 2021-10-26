@@ -11,11 +11,14 @@
 \usepackage{float}
 \usepackage{pdfpages}
 
-
 \usepackage[brazil]{babel}
 
 \pagestyle{plain}
 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    urlcolor=cyan}
 
 \newtheorem{theorem}{Teorema}[section]
 \newtheorem{corollary}{Corolário}[theorem]
@@ -46,11 +49,56 @@
 
 \thispagestyle{empty}
 
+\section*{Sumário}
+
+\textbf{\nameref{s1}}
+\vspace{4mm}
+
+\textbf{\nameref{s2}}
+\vspace{4mm} \\
+\textbf{\nameref{s3}}
+\vspace{4mm}
+
+\textbf{\nameref{s4}}
+\vspace{4mm}
+
+\textbf{\nameref{s5}}
+\vspace{4mm}
+
+\textbf{\nameref{s6}}
+\vspace{4mm}
+
+\textbf{\nameref{s7}}
+\vspace{4mm} \\
+\textbf{\nameref{s8}}
+\vspace{4mm}
+
+\textbf{\nameref{s9}}
+\vspace{4mm}
+
+\textbf{\nameref{s10}}
+\vspace{4mm}
+
+\textbf{\nameref{s11}}
+\vspace{4mm}
+
+\textbf{\nameref{s12}}
+\vspace{4mm} \\
+\textbf{\nameref{s13}}
+\vspace{4mm}
+
+\textbf{\nameref{s14}}
+\vspace{4mm}
+
+
+\newpage
+
 \begin{center}
     ``Provas ficam a cargo do leitor"
 \end{center}
 
 \section{Funções Contínuas}
+\label{s1}
 
 Seja $f: I \rightarrow{} \mathbb{R}$ definida no intervalo I, se $c \in I$, dizemos que $f$ é contínua em c quando $\lim_{x \rightarrow{} c} f(x) = f(c)$. A função é contínua em I quando for contínua em todos os pontos.
 
@@ -73,6 +121,8 @@ Seja $f: I \rightarrow{} \mathbb{R}$ definida no intervalo I, se $c \in I$, dize
 Dizemos que $f: [a, b] \rightarrow{} \mathbb{R}$ contínua é uniformemente contínua quando, dado $\varepsilon > 0$ qualquer, $\exists \delta > 0$ tal que se $|x-y| < \delta$ então $f(x) - f(y)| < \varepsilon$.
 
 \subsection{T.V.I.}
+\label{s2}
+
 \begin{lemma} 
     Seja $f: I \rightarrow{} \mathbb{R}$ contínua e $c \in I$. Se $f(c) > 0$, $\exists \delta > 0$ tal que se $|x - c| < \delta$ e $x \in I$ então $f(x) > 0$.
 \end{lemma}
@@ -90,6 +140,7 @@ Dizemos que $f: [a, b] \rightarrow{} \mathbb{R}$ contínua é uniformemente cont
 \end{corollary}
 
 \section{Derivadas e Integrais}
+\label{s3}
 
 \begin{definition}
     Dizemos que $f: I \rightarrow{} \mathbb{R}$ é derivável em $a \in I$ quando existe $\lim_{x \rightarrow{} a} \dfrac{f(x) - f(a)}{x-a}$, neste caso $f'(a) = \lim_{x \rightarrow{} a} \dfrac{f(x) - f(a)}{x-a}$
@@ -111,6 +162,7 @@ Propriedades Operacionais:
 \end{enumerate}
 
 \subsection{Relações Com Máximos e Mínimos de Funções}
+\label{s4}
 
 Consideremos uma função $f: I \rightarrow{} \mathbb{R}$ derivável num ponto interior $c \in I$. Suponhamos que exista $\delta > 0$ de modo que $(c - \delta, c + \delta) \subset I$ e $f(x) \leq f(c)$. Sempre que $x \in (c - \delta, c + \delta)$ então diremos que c é um ponto de máximo local de $f$ (análogo para o mínimo).
 
@@ -143,6 +195,8 @@ Seja $f: [a, b] \rightarrow{} \mathbb{R}$ contínua e derivável em $(a, b)$. $\
 \end{corollary}
 
 \subsection{Áreas e Derivadas}
+\label{s5}
+
 Vamos usar a noção intuitiva de área para regiões associada ao gráfico de uma função contínua e positiva $f: [a, b] \rightarrow{} \mathbb{R}$. A região em questão está limitada pelo eixo horizontal, o gráfico de $f$ e as verticais pelos pontos $(a, 0)$ e $(x, 0)$ denotamos por $A(x)$ sua área.
 
 \begin{definition}
@@ -158,6 +212,8 @@ Vamos usar a noção intuitiva de área para regiões associada ao gráfico de u
 \end{definition}
 
 \subsection{Derivadas Sucessivas}
+\label{s6}
+
 Se a função $f$ é derivável k vezes podemos escrever a i-ésima derivada de $f$ em x como $f^{(i)}(x)$.
 
 \begin{theorem}
@@ -169,6 +225,8 @@ Se a função $f$ é derivável k vezes podemos escrever a i-ésima derivada de 
 \end{lemma}
 
 \subsection{Convexidade de Função}
+\label{s7}
+
 \begin{definition}
     Dizemos que $f: I \rightarrow{} \mathbb{R}$ é estritamente convexa para cima quando para quaisquer $a < b \in I$ temos que $f(x) < f(a) + \dfrac{f(b) - f(a)}{b - a}(x - a)$ para todo $x \in (a, b)$. E $f$ é estritamente convexa para baixo quando para quaisquer $a < b \in I$ temos que $f(x) > f(a) + \dfrac{f(b) - f(a)}{b - a}(x - a)$ para todo $x \in (a, b)$.
 \end{definition}
@@ -182,6 +240,8 @@ Se a função $f$ é derivável k vezes podemos escrever a i-ésima derivada de 
 \end{lemma}
 
 \section{Integral de Riemann}
+\label{s8}
+
 Consideremos uma função $f: [a, b] \rightarrow{} \mathbb{R}$ limitada e uma partição $\mathcal{P}: a = t_0 < \cdots < t_{i-1} < t_i < \cdots < t_n = b$ do intervalo $[a, b], 1 \leq i \leq n$.
 
 \begin{definition}
@@ -207,6 +267,8 @@ Temos $s(f, \mathcal{P}) \leq S(f, \mathcal{P})$
 \end{theorem}
 
 \subsection{Teorema Fundamental do Cálculo}
+\label{s9}
+
 \begin{lemma}
     Seja $f: [a, b] \rightarrow{} \mathbb{R}$ integrável. $\forall x \in (a, b), f|_{[a, b]}$ e $f|_{[c, b]}$ são integráveis. Além disso, $\int_a^b f = \int_a^c f + \int_c^b f$.
 \end{lemma}
@@ -224,6 +286,8 @@ Temos $s(f, \mathcal{P}) \leq S(f, \mathcal{P})$
 \end{lemma}
 
 \subsection{Operações com Integrais}
+\label{s10}
+
 Proposições:
 Sejam $f, g: [a, b] \rightarrow{} \mathbb{R}$ integráveis.
 \begin{itemize}
@@ -239,6 +303,8 @@ Sejam $f, g: [a, b] \rightarrow{} \mathbb{R}$ integráveis.
 \end{definition}
 
 \subsection{Fórmula de Taylor (versão infinitesimal)}
+\label{s11}
+
 Consideremos $f: (a, b) \rightarrow{} \mathbb{R}$ função $n-1$ vezes derivável em $(a, b)$ e n vezes derivável em $c \in (a, b)$.
 
 \begin{definition}
@@ -251,7 +317,9 @@ Consideremos $f: (a, b) \rightarrow{} \mathbb{R}$ função $n-1$ vezes deriváve
     Seja $r(x) := f(x) - T_{f,c}^n (x)$. Então $\lim_{x \rightarrow{} c} \dfrac{r(x)}{(x-c)^n} = 0$
 \end{theorem}
 
-\subsection{Fórmula de Taylor, versão integral}
+\subsection{Fórmula de Taylor (versão integral)}
+\label{s12}
+
 \begin{theorem}
     Seja $f: [a, b] \mathbb{R} n+1$ vezes derivável, e $c \in [a, b]$. Então $f(x) = T_{f,c}^n (x) + r_n (x)$, onde $r_n (x) = \dfrac{1}{n!} \int_c^x (x - t)^n f^{(n+1)} (t) d t$.
 \end{theorem}
@@ -261,6 +329,8 @@ Consideremos $f: (a, b) \rightarrow{} \mathbb{R}$ função $n-1$ vezes deriváve
 \end{corollary}
 
 \section{Séries}
+\label{s13}
+
 \begin{definition}
     Consideremos a sequência $(a_j)$ e formemos a nova sequência $s_n := \sum_{j = 1}^n a_j$ ela se denomina \textbf{série}, e caso seja convergente, escrevemos $\sum_{j = 1}^\infty a_j := \lim_{n \rightarrow{} \infty} s_n$.
 \end{definition}
@@ -278,6 +348,8 @@ Consideremos $f: (a, b) \rightarrow{} \mathbb{R}$ função $n-1$ vezes deriváve
 \end{theorem}
 
 \subsection{Séries de Potências}
+\label{s14}
+
 Vamos tratar o caso particular de séries do tipo $\sum a_n (x-c)^n$, diremos que está é uma \textbf{série de potências} centrada em c. Queremos encontrar valores de x para os quais a série converge, no caso $c = 0$ observe que $\sum a_n x^n$ é sempre convergente em 0.
 
 \begin{theorem}
