@@ -17,6 +17,11 @@
 
 \pagestyle{plain}
 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    urlcolor=cyan}
+
 \newtheorem{theorem}{Teorema}
 \newtheorem{corollary}{Corolário}[theorem]
 \newtheorem{lemma}[theorem]{Lema}
@@ -46,7 +51,26 @@
 
 \thispagestyle{empty}
 
+\section*{Sumário}
+
+\hspace{6mm}\textbf{\nameref{s1}}
+\vspace{4mm}
+
+\textbf{\nameref{s2}}
+\vspace{4mm}
+
+\textbf{\nameref{s3}}
+\vspace{4mm}
+
+\textbf{\nameref{s4}}
+\vspace{4mm}
+
+\textbf{\nameref{s5}}
+
+\newpage
+
 \section*{Ortogonalidade}
+\label{s1}
     Seja E um espaço vetorial. Diremos que u e v são ortogonais se $v^Tu = 0$ e escrevemos $v \bot u$.
     \begin{itemize}
         \item $v^T u = v \cdot u$
@@ -149,6 +173,7 @@ $$v_1, v_2 \textbf{ (LI)} \xrightarrow{} u_1, u_2 \textbf{ (Ortogonal)} \xrighta
 Com 3 vetores $v_1, v_2$ e $v_3$ criamos $u_1$ e $u_2$ como acima e $u_3 = v_3 - \text{proj}_{u_1} v_3 - \text{proj}_{u_2} v_3$ e assim $u_1 \cdot u_3 = u_2 \cdot u_3 = 0$. E o processo se repete para $n$ vetores.
 
 \section*{Determinante}
+\label{s2}
 Se A é uma matriz $2 \times 2$ então $\det(A) = a_{11}a_{22} - a_{12}a_{21}$
 
 Propriedades:
@@ -231,6 +256,7 @@ Onde $e_i$ é um vetor unitário, e vale:
 \end{itemize}
 
 \section*{Autovalores e Autovetores}
+\label{s3}
 \begin{definition}
 Diremos que $\lambda$ é um \textbf{autovalor} de A se existe x tal que $Ax = \lambda x$ e x é dito \textbf{autovetor} de A e por linearidade $\alpha x$ é autovetor para $\forall \alpha \in \mathbb{R}$.
 \end{definition}
@@ -408,6 +434,7 @@ Suponha que A é uma matriz positiva definida (A é simétrica). Diremos que R �
 \end{corollary}
 
 \section*{Decomposição em Valores Singulares - SVD}
+\label{s4}
 Pode ser entendido com uma generalização do Teorema Espectral para matrizes retangulares.
 
 \begin{theorem}
@@ -501,6 +528,7 @@ Queremos calcular $\min_x = |A x - b|$, a solução em mínimos quadrados fica:
 $$x^* = \sum_{i = 1}^r \dfrac{u_i^T b}{\sigma_i} v_i$$
 
 \section*{Transformações Lineares}
+\label{s5}
 \begin{definition}
     Sejam U e V dois espaços vetoriais. Diremos que $T: U \rightarrow V$ é uma \textbf{transformação linear} se
     
