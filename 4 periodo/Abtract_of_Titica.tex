@@ -28,7 +28,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of Titica}
-\newcommand{\duedate}{October 23, 2021}
+\newcommand{\duedate}{October 26, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -50,54 +50,57 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \section*{Sumário}
 
 \textbf{\nameref{s1}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s2}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s3}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s4}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s5}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s6}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s7}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s8}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s9}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s10}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s11}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s12}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s13}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s14}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s15}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s16}}
-\vspace{5mm}
+\vspace{4.5mm}
 
 \textbf{\nameref{s17}}
+\vspace{4.5mm}
+
+\textbf{\nameref{s18}}
 
 \newpage
 
@@ -346,7 +349,7 @@ isto é, se a distribuição condicional da amostra dado o valor da estatística
 \end{definition}
 
 \begin{theorem}[Teorema de fatorização]\label{teo:fatorizacao}
-Suponha que $X_1, \ldots, X_n$ perfazem uma amostra aleatória com f.d.p./f.m.p.$f(x \mid \theta), \theta \in \Omega$. Uma estatística $T = r(X_1, \ldots, X_n)$ é suficiente para $\theta$ se, e somente se, para todo $x \in \mathcal{X}$ e $\theta \in \Omega$ existem u e v não negativos tal que
+Suponha que $X_1, \ldots, X_n$ perfazem uma amostra aleatória com f.d.p./f.m.p. $f(x \mid \theta), \theta \in \Omega$. Uma estatística $T = r(X_1, \ldots, X_n)$ é suficiente para $\theta$ se, e somente se, para todo $x \in \mathcal{X}$ e $\theta \in \Omega$ existem u e v não negativos tal que
 
 \begin{equation}
     f_n(x \mid \theta) = u(x) v[r(x), \theta].
@@ -678,7 +681,56 @@ $$H_1 : \theta_j \neq \theta_0^j, \ j = 1, \ldots, k.$$
 Então, sob condições de regularidade, temos que, à medida que $n \rightarrow \infty$,
 
 $$-2 \log \wedge(\textbf{x}) \stackrel{\mathrm{d}}{\rightarrow} X^2 (k)$$
+\end{theorem}
 
+\section*{Aula 18: Teste t}\label{s18}
+\begin{definition}[Teste não viesado]
+Suponha que desejamos testar a hipótese
+
+$$H_0 : \theta \in \Omega_0,$$
+$$H_1 : \theta \in \Omega_1,$$
+
+através do teste $\delta$. Dizemos que $\delta$ é \textbf{não-viesado} se (e somente se) para $\theta \in \Omega_0$ e $\theta' \in \Omega_1$, vale
+
+$$\pi (\theta \mid \delta) \leq \pi (\theta' \mid \delta),$$
+
+ou seja, se a função poder é pelo menos tão grande no espaço onde $H_0$ é falsa ($\Omega_1$) quando no espaço em que $H_0$ é verdadeira ($\Omega_0$).
+\end{definition}
+
+\begin{definition}[Teste t]
+Um teste $\delta_c$ que rejeita $H_0$ se $U \geq c$ (equiv. $U \leq c$), com $c = T^{-1}(1 - \alpha_0; n - 1)$ é chamado de um \textbf{teste t} (unicaudal) de tamanho $\alpha_0$.
+\end{definition}
+
+\begin{theorem}[Propriedades do teste t]
+Suponha que $\delta_c$ rejeita $H_0$ se $U \geq c$. Então
+
+\begin{itemize}
+    \item $\mu = \mu_0 \rightarrow \pi(\mu, \sigma^2 \mid \delta_c) = \alpha_0$
+    
+    \item $\mu < \mu_0 \rightarrow \pi(\mu, \sigma^2 \mid \delta_c) < \alpha_0$
+    
+    \item $\mu > \mu_0 \rightarrow \pi(\mu, \sigma^2 \mid \delta_c) > \alpha_0$
+    
+    \item $\lim_{\mu \rightarrow -\infty} \pi(\mu, \sigma^2 \mid \delta_c) = 0$
+    
+    \item $\lim_{\mu \rightarrow +\infty} \pi(\mu, \sigma^2 \mid \delta_c) = 1$
+    
+    \item $\delta_c$ é não-viesado e tem tamanho $\alpha_0$.
+\end{itemize}
+\end{theorem}
+
+\begin{theorem}[P-valor para um teste t unicaudal]
+Suponha que observarmos $U = u$ e seja $T(\cdot. n - 1)$ a f.d.a. de uma distribuição t de Student com n - 1 graus de liberdade. Para a hipótese
+
+$$H_0 : \mu \geq \mu_0,$$
+$$H_1 : \mu < \mu_0,$$
+
+o p-valor vale $T(u; n-1)$, enquanto para a hipótese
+
+$$H_0 : \mu \leq \mu_0,$$
+$$H_1 : \mu > \mu_0,$$
+
+o p-valor vale $1 - T(u; n-1)$.
 \end{theorem}
 
 \end{document}
