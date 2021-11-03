@@ -50,57 +50,60 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \section*{Sumário}
 
 \textbf{\nameref{s1}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s2}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s3}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s4}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s5}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s6}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s7}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s8}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s9}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s10}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s11}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s12}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s13}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s14}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s15}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s16}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s17}}
-\vspace{4.5mm}
+\vspace{4mm}
 
 \textbf{\nameref{s18}}
+\vspace{4mm}
+
+\textbf{\nameref{s19}}
 
 \newpage
 
@@ -516,7 +519,7 @@ Considere o estimador
 
 $$\hat{\sigma}' = \sqrt{\frac{\Delta^2}{n - 1}},$$
 
-onde $\Delta^2 = \sum_{i = 1}^n (X_i - \overline{X_n})^2$. Então, vale que
+onde $\Delta^2 = \sum_{i = 1}^n (X_i - \overline{X}_n)^2$. Então, vale que
 
 $$\frac{\sqrt{n} (\overline{X}_n - \mu)}{\hat{\sigma}'} \backsim \mathrm{Student}(n - 1)$$
 \end{theorem}
@@ -550,7 +553,7 @@ Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória com p.d.f. $f(
 \end{definition}
 
 \begin{theorem}[Intervalo de confiança unilateral]
-Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória com p.d.f. $f(x \mid \theta)$. Suponha que existe uma quantidade pivotal V, com c.d.f.~\footnote{c.d.f. - cumulative distribution function} continua G. Assuma que existe $r(v, \textbf{x})$ estritamente crescente em $v \ \forall \textbf{x}$. Finalmente, tome $0 < \gamma < 1$ e $\gamma_1 < \gamma_2$ de modo que $\gamma_2 - \gamma_1 = \gamma$. Então as estatísticas
+Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória com p.d.f. $f(x \mid \theta)$. Suponha que existe uma quantidade pivotal V, com c.d.f.~\footnote{c.d.f. - cumulative distribution function} continua G. Assuma que existe $r(v, \textbf{x})$ estritamente crescente em v para todo $\textbf{x}$. Finalmente, tome $0 < \gamma < 1$ e $\gamma_1 < \gamma_2$ de modo que $\gamma_2 - \gamma_1 = \gamma$. Então as estatísticas
 
 $$A(\textbf{X}) = r(G^{-1}(\gamma_1), \textbf{X}),$$
 
@@ -560,14 +563,13 @@ são os limites de um intervalo de confiança de $100\gamma \%$ para $g(\theta)$
 \end{theorem}
 
 
-\section*{Aula 14: Testes de hipótese Part I}
+\section*{Aula 14: Testes de hipótese I}
 \label{s14}
 \begin{definition}[Hipótese nula e hipótese alternativa]
-Considere o espaço de parâmetros $\Omega$ e defina $\Omega_0, \Omega_1 \ \subset \Omega$ de modo que $\Omega_0 \cup \Omega_1 = \Omega$ e $\Omega_0 \cap \Omega_1 = \emptyset$. Definimos
+Considere o espaço de parâmetros $\Omega$ e defina $\Omega_0, \Omega_1 \subset \Omega$ de modo que $\Omega_0 \cup \Omega_1 = \Omega$ e $\Omega_0 \cap \Omega_1 = \emptyset$. Definimos
 
-$$H_0 := \theta \in \Omega_0$$
-
-$$H_1 := \theta \in \Omega_1$$
+$$H_0 := \theta \in \Omega_0,$$
+$$H_1 := \theta \in \Omega_1,$$
 
 E dizemos que $H_0$ é a \textbf{hipótese nula} e $H_1$ é a \textbf{hipótese alternativa}.
 Se $\theta \in \Omega_1$, então dizemos que rejeitamos a hipótese nula. Por outro lado, se $\theta \in \Omega_0$, então dizemos que não rejeitamos ou falhamos em rejeitar $H_0$.
@@ -578,10 +580,10 @@ Dizemos que uma hipótese $H_i$, é \textbf{simples}, se $\Omega_i = \{ \theta_i
 \end{definition}
 
 \begin{definition}[Hipótese unilateral e hipótese bilateral]
-Uma hipótese da forma $H_0 : \theta \leq \theta_0$ é dita \textbf{unilateral} (``one-sided''), enquanto hipóteses da forma $H_0 : \theta \neq \theta_0$ são ditas \textbf{bilaterais} (``two-sided'').
+Uma hipótese da forma $H_0 : \theta \leq \theta_0$ ou $H_0 : \theta \geq \theta_0$ é dita \textbf{unilateral} (``one-sided''), enquanto hipóteses da forma $H_0 : \theta \neq \theta_0$ são ditas \textbf{bilaterais} (``two-sided'').
 \end{definition}
 
-\section*{Aula 15: Testes de hipótese Part II}
+\section*{Aula 15: Testes de hipótese II}
 \label{s15}
 \begin{definition}[Região crítica]
 O conjunto
@@ -622,7 +624,7 @@ Dizemos que um teste, $\delta$, tem \textbf{tamanho} ou \textbf{nível de signif
 $$\alpha(\delta) := \mathrm{sup}_{\theta \in \Omega_0} \pi (\theta \mid \delta).$$
 \end{definition}
 
-\section*{Aula 16: Testes de hipótese Part III}
+\section*{Aula 16: Testes de hipótese III}
 \label{s16}
 \begin{definition}[O p-valor]
 Para cada t, seja $\delta_t$ o teste que rejeita $H_0$ se $T \geq t$. Então, quando $T = t$, o \textbf{p-valor} vale
@@ -653,15 +655,15 @@ $$P(g(\theta_0) \in w(\textbf{X}) \mid \theta = \theta_0) \geq \gamma, \ \forall
 \end{definition}
 
 \begin{definition}[Conjunto de confiança]
-Se um conjunto aleatório $w(\textbf{X}$ satisfaz
+Se um conjunto aleatório $w(\textbf{X})$ satisfaz
 
 $$P(g(\theta_0) \in w(\textbf{X}) \mid \theta = \theta_0) \geq \gamma,$$
 
-para todo $\theta_0 in \Omega$, então chamamos $w(\textbf{X})$ de um \textbf{conjunto de confiança} para $g(\theta)$.
+para todo $\theta_0 \in \Omega$, então chamamos $w(\textbf{X})$ de um \textbf{conjunto de confiança} para $g(\theta)$.
 \end{definition}
 
 \begin{theorem}[Testando hipóteses a partir de conjuntos de confiança]
-Suponha que dispomos de dados $\textbf{X} = \{ X_1, \ldots. X_n \}$ com f.d.p. comum $f(x \mid \theta)$ e que $w(\textbf{X})$ é um conjunto de confiança para uma função de interesse $g(\theta)$. Então para todo valor $g_0$ existe um teste $\delta_{g_0}$, de nível $\alpha_0$ que rejeita $H_0 : g(\theta) = g_0$ se e somente se $g(\theta_0) = g_0 \notin w(\textbf{X})$.
+Suponha que dispomos de dados $\textbf{X} = \{ X_1, \ldots. X_n \}$ com f.d.p. comum $f(x \mid \theta)$ e que $w(\textbf{X})$ é um conjunto de confiança para uma função de interesse $g(\theta)$. Então para todo valor $g_0$ assumido por $g(\theta)$ existe um teste $\delta_{g_0}$, de nível $\alpha_0$ que rejeita $H_0 : g(\theta) = g_0$ se e somente se $g(\theta_0) = g_0 \notin w(\textbf{X})$.
 \end{theorem}
 
 \begin{theorem}[Teste de razão de verossimilhanças]
@@ -683,7 +685,7 @@ Então, sob condições de regularidade, temos que, à medida que $n \rightarrow
 $$-2 \log \wedge(\textbf{x}) \stackrel{\mathrm{d}}{\rightarrow} X^2 (k)$$
 \end{theorem}
 
-\section*{Aula 18: Teste t}\label{s18}
+\section*{Aula 18: Teste t I}\label{s18}
 \begin{definition}[Teste não viesado]
 Suponha que desejamos testar a hipótese
 
@@ -705,11 +707,11 @@ Um teste $\delta_c$ que rejeita $H_0$ se $U \geq c$ (equiv. $U \leq c$), com $c 
 Suponha que $\delta_c$ rejeita $H_0$ se $U \geq c$. Então
 
 \begin{itemize}
-    \item $\mu = \mu_0 \rightarrow \pi(\mu, \sigma^2 \mid \delta_c) = \alpha_0$
+    \item $\mu = \mu_0 \Longrightarrow \pi(\mu, \sigma^2 \mid \delta_c) = \alpha_0$
     
-    \item $\mu < \mu_0 \rightarrow \pi(\mu, \sigma^2 \mid \delta_c) < \alpha_0$
+    \item $\mu < \mu_0 \Longrightarrow \pi(\mu, \sigma^2 \mid \delta_c) < \alpha_0$
     
-    \item $\mu > \mu_0 \rightarrow \pi(\mu, \sigma^2 \mid \delta_c) > \alpha_0$
+    \item $\mu > \mu_0 \Longrightarrow \pi(\mu, \sigma^2 \mid \delta_c) > \alpha_0$
     
     \item $\lim_{\mu \rightarrow -\infty} \pi(\mu, \sigma^2 \mid \delta_c) = 0$
     
@@ -731,6 +733,38 @@ $$H_0 : \mu \leq \mu_0,$$
 $$H_1 : \mu > \mu_0,$$
 
 o p-valor vale $1 - T(u; n-1)$.
+\end{theorem}
+
+\section*{Aula 19: Teste t II}\label{s19}
+\begin{theorem}[Teste pareado]
+Sejam amostras \textbf{X} e \textbf{Y} (antes e depois), tais que $X_i \backsim \mathrm{Normal}(\mu_1, \sigma^2)$ e $Y_i \backsim \mathbb{Normal}(\mu_2, \sigma^2)$, a hipótese
+
+$$H_0 : \mu_1 \leq \mu_2$$
+$$H_1 : \mu_1 > \mu_2$$
+
+Pode ser modelada com a variável $Z_i = X_i - Y_i$ ($Z_i \backsim \mathrm{Normal}(\mu_Z = \mu_1 - \mu_2, 2 \sigma^2)$), então podemos testar hipóteses sobre $\mu_Z$ a partir de \textbf{Z}
+
+$$H_0 : \mu_Z \leq 0$$
+$$H_1 : \mu_Z > 0$$
+\end{theorem}
+
+\begin{theorem}[Teste t para duas amostras]
+Considere $\textbf{X} = \{ X_1, \ldots, X_m \}$ e $\textbf{Y} = \{ Y_1, \ldots, Y_n \}$, queremos estudar a diferença das médias. Modelando em distribuição normal $X_i \backsim \mathrm{Normal}(\mu_1, \sigma_1^2), \ i = 1, \ldots, m$ e $Y_j \backsim \mathrm{Normal}(\mu_2, \sigma_2^2), \ j = 1, \ldots, n$. Sob a premissa de homogeneidade $\sigma_1^2 = \sigma_2^2 = \sigma^2$, podemos testar a hipótese
+
+$$H_0 : \mu_1 \leq \mu2$$
+$$H_1 : \mu_1 > \mu_2$$
+
+computando a estatística
+
+$$U = \frac{\sqrt{m + n - 2} (\overline{X}_m - \overline{Y}_n)}{\sqrt{(\frac{1}{m} + \frac{1}{n})(S_X^2 + S_Y^2)}}$$
+
+onde $\overline{X}_m$ e $\overline{X}_m$ são as médias e $S_X^2$ e $S_X^2$ são a soma das variâncias.
+\end{theorem}
+
+\begin{theorem}[Relaxando a premissa de homogeneidade]
+Do teorema acima, podemos relaxar a premissa de igualdade das variâncias assumindo que $\sigma_2^2 = k \sigma_1^2$, então a estatística teste vale
+
+$$U = \frac{\sqrt{m + n - 2} (\overline{X}_m - \overline{Y}_n)}{\sqrt{(\frac{1}{m} + \frac{k}{n})(S_X^2 + \frac{S_Y^2}{n})}}$$
 \end{theorem}
 
 \end{document}
