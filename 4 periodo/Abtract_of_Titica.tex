@@ -50,60 +50,63 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \section*{Sumário}
 
 \textbf{\nameref{s1}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s2}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s3}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s4}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s5}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s6}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s7}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s8}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s9}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s10}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s11}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s12}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s13}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s14}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s15}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s16}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s17}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s18}}
-\vspace{4mm}
+\vspace{3.5mm}
 
 \textbf{\nameref{s19}}
+\vspace{3.5mm}
+
+\textbf{\nameref{s20}}
 
 \newpage
 
@@ -185,7 +188,7 @@ onde $\Omega$ é o espaço de parâmetros. Dizemos que $\Psi$ é uma \textbf{fam
 \end{definition}
 
 \begin{theorem}[Distribuição a posteriori da média de uma normal]
-Suponha que $X_1, X_2, \ldots, X_n$ formam uma amostra aleatória com distribuição normal e com média desconhecida $\theta$ e variância $\sigma^2 > 0$, conhecida e fixa. Suponha que $\theta \backsim Normal(\mu_0, v_0^2)$ a priori. Então
+Suponha que $X_1, X_2, \ldots, X_n$ formam uma amostra aleatória com distribuição normal e com média desconhecida $\theta$ e variância $\sigma^2 > 0$, conhecida e fixa. Suponha que $\theta \sim Normal(\mu_0, v_0^2)$ a priori. Então
 
 \begin{equation}
 \xi (\theta \mid x, \sigma^2) = \frac{1}{\sqrt{2 \pi \sigma^2}} exp \left (\frac{(\theta - \mu_1)^2}{2v_1^2}\right ),
@@ -299,7 +302,7 @@ Considere uma função $\phi: \Omega \rightarrow \mathbb{R}$. Se $\hat{\theta}$ 
 \end{theorem}
 
 \begin{theorem}[Consistência do EMV]
-Defina $l(\theta) := \log f_n(x \mid \theta)$ e assuma que $X_1, \ldots, X_n \backsim f(\theta_0)$, isto é, que $\theta_0$ é o valor verdadeiro do parâmetro.
+Defina $l(\theta) := \log f_n(x \mid \theta)$ e assuma que $X_1, \ldots, X_n \sim f(\theta_0)$, isto é, que $\theta_0$ é o valor verdadeiro do parâmetro.
 Denote $E_{\theta_0}[g] := \int_{\mathcal{X}} g(x, \theta_0) f(x \mid \theta_0)\, dx$. Suponha que
 
 \begin{itemize}
@@ -490,7 +493,7 @@ Se $X_1, \ldots, X_n$ são variáveis aleatórias independentes com graus de lib
 \begin{theorem}[Distribuição do quadrado de uma variável aleatória Normal padrão]
 Se 
 
-$$X \backsim Normal(0, 1), Y = X^2$$ 
+$$X \sim Normal(0, 1), Y = X^2$$ 
 
 então, tem distribuição qui-quadrado com $m = 1$.
 \end{theorem}
@@ -498,13 +501,13 @@ então, tem distribuição qui-quadrado com $m = 1$.
 \section*{Aula 11: Distribuição da média e variância amostrais}
 \label{s11}
 \begin{theorem}[Independência da média e variância amostrais na Normal]
-Seja $X_1, \ldots, X_n$ uma amostra aleatória de uma distribuição Normal com parâmetros $\mu$ e $\sigma^2$, $\overline{X}_n$ e a variância amostral $\overline{S}_n^2$, são independentes. Ademais, $\overline{X}_n \backsim Normal \left ( \mu, \sigma^2 \right )$ e $\overline{S}_n^2 \backsim Gama \left ( \frac{n - 1}{2}, \frac{n}{2 n^2} \right )$
+Seja $X_1, \ldots, X_n$ uma amostra aleatória de uma distribuição Normal com parâmetros $\mu$ e $\sigma^2$, $\overline{X}_n$ e a variância amostral $\overline{S}_n^2$, são independentes. Ademais, $\overline{X}_n \sim Normal \left ( \mu, \sigma^2 \right )$ e $\overline{S}_n^2 \sim Gama \left ( \frac{n - 1}{2}, \frac{n}{2 n^2} \right )$
 \end{theorem}
 
 \section*{Aula 12: Distribuição t de Student  e intervalos de confiança}
 \label{s12}
 \begin{definition}[A distribuição t de Student]
-Tome, $Y \backsim \mathrm{Qui-quadrado}(m)$ e $Z \backsim \mathrm{Normal}(0, 1)$ e defina a variável aleatória
+Tome, $Y \sim \mathrm{Qui-quadrado}(m)$ e $Z \sim \mathrm{Normal}(0, 1)$ e defina a variável aleatória
 
 $$X = \frac{Z}{\sqrt{\frac{Y}{m}}}.$$
 
@@ -521,7 +524,7 @@ $$\hat{\sigma}' = \sqrt{\frac{\Delta^2}{n - 1}},$$
 
 onde $\Delta^2 = \sum_{i = 1}^n (X_i - \overline{X}_n)^2$. Então, vale que
 
-$$\frac{\sqrt{n} (\overline{X}_n - \mu)}{\hat{\sigma}'} \backsim \mathrm{Student}(n - 1)$$
+$$\frac{\sqrt{n} (\overline{X}_n - \mu)}{\hat{\sigma}'} \sim \mathrm{Student}(n - 1)$$
 \end{theorem}
 
 \begin{theorem}[Intervalo de confiança]
@@ -594,7 +597,7 @@ $$S_1 := \{ \textbf{x} : | \overline{X}_n - \mu_0 | \geq c \}$$
 \end{definition}
 
 \begin{definition}[Região de rejeição]
-Se $R \subseteq \mathbb{R}$ é tal que ``rejeitamos $H_0$ se $T \in \mathbb{R}$'', então R é chamada uma \textbf{região de rejeição} para a estatística T e o teste associado.
+Se $R \subseteq \mathbb{R}$ é tal que ``rejeitamos $H_0$ se $T \in R$'', então R é chamada uma \textbf{região de rejeição} para a estatística T e o teste associado.
 \end{definition}
 
 \begin{definition}[Função poder]
@@ -737,19 +740,19 @@ o p-valor vale $1 - T(u; n-1)$.
 
 \section*{Aula 19: Teste t II}\label{s19}
 \begin{theorem}[Teste pareado]
-Sejam amostras \textbf{X} e \textbf{Y} (antes e depois), tais que $X_i \backsim \mathrm{Normal}(\mu_1, \sigma^2)$ e $Y_i \backsim \mathbb{Normal}(\mu_2, \sigma^2)$, a hipótese
+Sejam amostras \textbf{X} e \textbf{Y} (antes e depois), tais que $X_i \sim \mathrm{Normal}(\mu_1, \sigma^2)$ e $Y_i \sim \mathbb{Normal}(\mu_2, \sigma^2)$, a hipótese
 
 $$H_0 : \mu_1 \leq \mu_2$$
 $$H_1 : \mu_1 > \mu_2$$
 
-Pode ser modelada com a variável $Z_i = X_i - Y_i$ ($Z_i \backsim \mathrm{Normal}(\mu_Z = \mu_1 - \mu_2, 2 \sigma^2)$), então podemos testar hipóteses sobre $\mu_Z$ a partir de \textbf{Z}
+Pode ser modelada com a variável $Z_i = X_i - Y_i$ ($Z_i \sim \mathrm{Normal}(\mu_Z = \mu_1 - \mu_2, 2 \sigma^2)$), então podemos testar hipóteses sobre $\mu_Z$ a partir de \textbf{Z}
 
 $$H_0 : \mu_Z \leq 0$$
 $$H_1 : \mu_Z > 0$$
 \end{theorem}
 
 \begin{theorem}[Teste t para duas amostras]
-Considere $\textbf{X} = \{ X_1, \ldots, X_m \}$ e $\textbf{Y} = \{ Y_1, \ldots, Y_n \}$, queremos estudar a diferença das médias. Modelando em distribuição normal $X_i \backsim \mathrm{Normal}(\mu_1, \sigma_1^2), \ i = 1, \ldots, m$ e $Y_j \backsim \mathrm{Normal}(\mu_2, \sigma_2^2), \ j = 1, \ldots, n$. Sob a premissa de homogeneidade $\sigma_1^2 = \sigma_2^2 = \sigma^2$, podemos testar a hipótese
+Considere $\textbf{X} = \{ X_1, \ldots, X_m \}$ e $\textbf{Y} = \{ Y_1, \ldots, Y_n \}$, queremos estudar a diferença das médias. Modelando em distribuição normal $X_i \sim \mathrm{Normal}(\mu_1, \sigma_1^2), \ i = 1, \ldots, m$ e $Y_j \sim \mathrm{Normal}(\mu_2, \sigma_2^2), \ j = 1, \ldots, n$. Sob a premissa de homogeneidade $\sigma_1^2 = \sigma_2^2 = \sigma^2$, podemos testar a hipótese
 
 $$H_0 : \mu_1 \leq \mu2$$
 $$H_1 : \mu_1 > \mu_2$$
@@ -765,6 +768,51 @@ onde $\overline{X}_m$ e $\overline{X}_m$ são as médias e $S_X^2$ e $S_X^2$ sã
 Do teorema acima, podemos relaxar a premissa de igualdade das variâncias assumindo que $\sigma_2^2 = k \sigma_1^2$, então a estatística teste vale
 
 $$U = \frac{\sqrt{m + n - 2} (\overline{X}_m - \overline{Y}_n)}{\sqrt{(\frac{1}{m} + \frac{k}{n})(S_X^2 + \frac{S_Y^2}{n})}}$$
+\end{theorem}
+
+\section*{Aula 20: Teste f}\label{s20}
+\begin{definition}[A distribuição F]
+Sejam $Y \sim \mathrm{Qui-quadrado}(m)$ e $W \sim \mathrm{Qui-quadrado}(n)$. Então
+
+$$X = \frac{Y / m}{W / n},$$
+
+tem distribuição F com m e n graus de liberdade, com f.d.p.
+
+$$f_X (x) = \frac{\Gamma(\frac{m + n}{2}) m^{m/2} n^{n/2}}{\Gamma(\frac{n}{2}) \Gamma(\frac{m}{2})} \cdot \frac{x^{m / 2 - 1}}{(mx + n)^{(m + n)/2}}, \ x > 0,$$
+\end{definition}
+
+\begin{theorem}[Propriedades da distribuição F]
+
+\begin{enumerate}
+    \item Se $X \sim F(m, n)$, então $\frac{1}{X} \sim F(m, n)$;
+    
+    \item Se $Y \sim \mathrm{Student}(n)$, então $Y^2 \sim F(1, n)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Igualdade de duas variâncias]
+Suponha $X_i \sim \mathrm{Normal}(\mu_1, \sigma_1^2), \ i = 1, \ldots, m$ e $Y_j \sim \mathrm{Normal}(\mu_2, \sigma_2^2), \ j = 1, \ldots, n$. Queremos testar
+
+$$H_0 : \sigma_1^2 \leq \sigma_2^2$$
+$$H_1 : \sigma_1^2 > \sigma_2^2$$
+
+Para isso, vamos computar a estatística de teste
+
+$$V = \frac{S_X^2 / (m - 1)}{S_Y^2 / (n - 1)}$$
+
+onde $S_X^2 = \sum_{i = 1}^m (X_i - \overline{X}_m)^2$ e $S_Y^2 = \sum_{j = 1}^m (Y_j - \overline{Y}_m)^2$
+\end{theorem}
+
+\begin{definition}[O teste F]
+O teste F de homogeneidade (igualdade de variâncias) é o teste $\delta_c$ que rejeita $H_0$ de $V \geq c$, para uma constante positiva c.
+\end{definition}
+
+\begin{theorem}[A distribuição de V]
+Seja $V = \frac{S_X^2 / (m - 1)}{S_Y^2 / (n - 1)}$, então:
+
+$$\frac{\sigma_2^2}{\sigma_1^2} V \sim F(m - 1, n - 1).$$
+
+Além disso, se $\sigma_1^2 = \sigma_2^2$, $V \sim F(m - 1, n - 1)$.
 \end{theorem}
 
 \end{document}
