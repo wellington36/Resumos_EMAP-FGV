@@ -50,66 +50,69 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \section*{Sumário}
 
 \textbf{\nameref{s1}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s2}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s3}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s4}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s5}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s6}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s7}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s8}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s9}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s10}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s11}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s12}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s13}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s14}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s15}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s16}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s17}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s18}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s19}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s20}}
-\vspace{3.3mm}
+\vspace{2.9mm}
 
 \textbf{\nameref{s21}}
+\vspace{2.9mm}
+
+\textbf{\nameref{s22}}
 
 \newpage
 
@@ -653,7 +656,7 @@ $$H_1 : g(\theta) \neq g_0,$$
 
 de modo que existe um teste $\delta_{g_0}$ com nível $\alpha_0$ destas hipóteses. Para cada $\textbf{X} = \textbf{x}$, defina
 
-$$w(\textbf{x}) = \left\{g_0: \delta_{g_0} \text{\:n\tilde{a}o\:rejeita\:} H_0 \text{\:dado\:que\:} \textbf{X} = \textbf{x} \right\}.$$
+$$w(\textbf{x}) = \left\{g_0: \delta_{g_0} \:n\tilde{a}o\:rejeita\: H_0 \:dado\:que\: \textbf{X} = \textbf{x} \right\}.$$
 
 Fazendo o nível de confiança do intervalo $\gamma = 1 - \alpha_0$, temos
 
@@ -844,5 +847,62 @@ Podemos então idealizar o seguinte modelo
 
 $$Y_i = \beta_0 \sum_{j = 1}^P \beta_j x_{ij} + \varepsilon_i, \ \varepsilon \sim \mathrm{Normal}(0, \sigma^2).$$
 \end{definition}
+
+\section*{Aula 22: Regressão Linear II}\label{s22}
+\begin{theorem}[EMV para os coeficientes de uma regressão linear (simples)]
+Sob as premissas já listadas, os estimadores de máxima verossimilhança para $\theta = (\beta_0, \beta_1, \sigma^2)$ são
+
+$$\hat{\beta}_{0 EMV} = \overline{y} - \hat{\beta}_{1 EMV} \overline{x},$$
+
+$$\hat{\beta}_{1 EMV} = \frac{\sum_{i = 1}^n (y_i - \overline{y})(x_i - \overline{x})}{\sum_{i = 1}^n (x_i - \overline{x})^2},$$
+
+$$\hat{\sigma^2}_{EMV} = \frac{1}{n} \sum_{i = 1}^n \left ( y_i - (\hat{\beta}_{0 EMV} + \hat{\beta}_{1 EMV} x_i) \right )^2,$$
+
+ou seja, os estimadores de máxima verossimilhança dos coeficientes minimizam a soma de quadrados da reta estimada.
+\end{theorem}
+
+\begin{theorem}[Distribuição amostral dos estimadores dos coeficientes]
+$$\hat{\beta}_{0 EMV} \sim \mathrm{Normal} \left ( \beta_0, \sigma^2 \left ( \frac{1}{n} + \frac{\overline{x}^2}{s_X^2} \right ) \right ),$$
+
+$$\hat{\beta}_{1 EMV} \sim \mathrm{Normal} \left ( \beta_0, \frac{\sigma^ 2}{s_X^2} \right ),$$
+
+$$\mathrm{Cov} (\hat{\beta}_{0 EMV}, \hat{\beta}_{1 EMV}) = - \frac{\overline{x} \sigma^2}{s_X^2},$$
+
+onde $s_x = \sqrt{\sum_{i = 1}^n (x_i - \overline{x})^2}.$
+\end{theorem}
+
+\begin{theorem}[Intervalos de confiança para os coeficientes de uma regressão linear]
+Podemos computar intervalos de confiança para os coeficientes da regressão linear
+de maneira muito similar ao que já vimos para o caso da média da Normal
+
+$$\hat{\beta_0} \pm \hat{\sigma}' c\sqrt{\frac{1}{n} + \frac{\bar{x}^2}{s_x^2}}\quad \mathrm{e}\quad \hat{\beta_1} \pm c\frac{\hat{\sigma}'}{s_x},$$
+
+$$\hat{\beta_0} + \hat{\beta_1}x_{pred} \pm c \hat{\sigma}' \sqrt{\frac{1}{n} + \frac{\left(x_{pred}-\bar{x}\right)^2}{s_x^2} }$$
+
+onde $c = T^{-1}(1-\frac{\alpha_0}{2}; n-2)$ e 
+
+$$\hat{\sigma}' := \sqrt{\frac{\sum_{i=1}^n \left(Y_i - \hat{\beta_0} - \hat{\beta_1}x_i \right)^2}{n-2}}.
+$$
+\end{theorem}
+
+\begin{theorem}[Predição pontual]
+Suponha que queremos prever o valor de Y para um certo $x_{pred}$ que não foi observado no experimento. Podemos compor nossa predição (pontual) como
+
+\begin{equation}
+    \hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 x_{pred}.
+\end{equation}
+
+Onde a predição tem erro quadrático médio (EQM) igual a
+
+$$E \left [ (\hat{Y} - Y)^2 \right ] = \sigma^2 \left ( 1 + \frac{1}{n} + \frac{(x_{pred} - \overline{x})^2}{s_X^2} \right ).$$
+\end{theorem}
+
+\begin{theorem}[Intervalos de \textbf{predição} para $\hat{Y}$]
+A probabilidade de $\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 x_{pred}$ estar no intervalo
+
+$$\hat{Y} \pm T^{-1} (1 - \frac{\alpha_0}{2}; n - 2) \hat{\sigma}' \sqrt{\left [ 1 + \frac{1}{n} + \frac{(x_{pred} - \overline{x})^2}{s_X^2} \right ]},$$
+
+é $1 - \alpha_0$.
+\end{theorem}
 
 \end{document}
