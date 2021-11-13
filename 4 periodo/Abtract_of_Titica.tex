@@ -28,7 +28,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of Titica}
-\newcommand{\duedate}{October 26, 2021}
+\newcommand{\duedate}{November 7, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -50,63 +50,66 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \section*{Sumário}
 
 \textbf{\nameref{s1}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s2}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s3}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s4}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s5}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s6}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s7}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s8}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s9}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s10}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s11}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s12}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s13}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s14}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s15}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s16}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s17}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s18}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s19}}
-\vspace{3.5mm}
+\vspace{3.3mm}
 
 \textbf{\nameref{s20}}
+\vspace{3.3mm}
+
+\textbf{\nameref{s21}}
 
 \newpage
 
@@ -814,5 +817,32 @@ $$\frac{\sigma_2^2}{\sigma_1^2} V \sim F(m - 1, n - 1).$$
 
 Além disso, se $\sigma_1^2 = \sigma_2^2$, $V \sim F(m - 1, n - 1)$.
 \end{theorem}
+
+\section*{Aula 21: Regressão Linear I}\label{s21}
+\begin{theorem}[A linha de mínimos quadrados]
+Sejam $(x_1, y_1), \ldots, (x_n, y_n)$ uma coleção de n pontos. Suponha que estamos interessados na reta
+
+\begin{equation}
+    y_i = \beta_0 + \beta_1 x_i.
+\end{equation}
+
+Os valores dos coeficientes que minimizam a  soma de quadrados são
+
+$$\hat{\beta}_0 = \overline{y} - \hat{\beta}_1 \overline{x},$$
+
+$$\hat{\beta}_1 = \frac{\sum_{i = 1}^n (y_i - \overline{y}) (x_i - \overline{x})}{\sum_{i = 1}^n (x_i - \overline{x})^2}.$$
+\end{theorem}
+
+\begin{definition}[Modelo linear]
+Podemos construir um modelo estatístico explícito para a relação entre as variáveis X e Y:
+
+\begin{equation}
+    E[Y \mid X = x_1, \ldots, x_P] = \beta_0 + \beta_1 x_1 + \ldots + \beta_P x_P
+\end{equation}
+
+Podemos então idealizar o seguinte modelo
+
+$$Y_i = \beta_0 \sum_{j = 1}^P \beta_j x_{ij} + \varepsilon_i, \ \varepsilon \sim \mathrm{Normal}(0, \sigma^2).$$
+\end{definition}
 
 \end{document}
