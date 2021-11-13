@@ -885,6 +885,27 @@ $$\hat{\sigma}' := \sqrt{\frac{\sum_{i=1}^n \left(Y_i - \hat{\beta_0} - \hat{\be
 $$
 \end{theorem}
 
+\begin{definition}[Testes de hipóteses para o coeficiente angular]
+Em geral, estamos interessados em testar a hipótese
+$$H_0 : \beta_1 = \beta^\star,$$
+$$H_1 : \beta_1 \neq \beta^\star.$$
+
+Para tanto, podemos computar a estatística
+
+\begin{equation}
+ U_1 = s_x \frac{\hat{\beta_1}-\beta^\star}{\hat{\sigma}'},
+\end{equation}
+
+e computar o p-valor como 
+
+\begin{equation}
+ P(U_1 \geq |u_1|) + P(U_1 \leq -|u_1|).
+\end{equation}
+Notando que $U_1$ tem distribuição t de Student com $n-2$ graus de liberdade sob $H_0$, podemos computar o p-valor exatamente.
+
+Resultados bem similares valem para testar hipóteses sobre $\beta_0$ ou $\hat{Y}$.
+\end{definition}
+
 \begin{theorem}[Predição pontual]
 Suponha que queremos prever o valor de Y para um certo $x_{pred}$ que não foi observado no experimento. Podemos compor nossa predição (pontual) como
 
