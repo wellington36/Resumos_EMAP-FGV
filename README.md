@@ -23,7 +23,7 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para
 </div>
 
 ### 📘 Terceiro período
-  - [EDO](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/CalculusII.pdf)
+  - [EDO](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/3%20periodo/Equacoes_diferenciais_ordinarias.pdf)
   - [Téoria da Probabilidade](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/3%20periodo/Teoria_da_Probabilidade.pdf)
   - Resumos para provas:
       - [A1 de EDA](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/3%20periodo/resumos_de_provas/Resumo_A1_EDA.pdf)
