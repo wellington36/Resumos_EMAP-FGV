@@ -14,7 +14,7 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para
 # 🔗 Links para os resumos
 
 ### 📙 Segundo período
-  - [Álgebra Linear](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/AlgLin.pdf)
+  - [Álgebra Linear](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/Algebra_linear.pdf)
   - [Análise Real](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/Analise.pdf)
   - [Cálculo em Várias Variáveis](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/CalculusII.pdf)
 
