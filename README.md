@@ -16,7 +16,7 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para
 ### 📙 Segundo período
   - [Álgebra Linear](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/Algebra_linear.pdf)
   - [Análise Real](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/Analise_real.pdf)
-  - [Cálculo em Várias Variáveis](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/CalculusII.pdf)
+  - [Cálculo em Várias Variáveis](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/Calculo_em_varias_variaveis.pdf)
 
 <div style="display: inline_block"><br>
   <img align="right" alt="Welly-Homer" height="200" width="300" src="https://media.giphy.com/media/IPbS5R4fSUl5S/giphy.gif?cid=ecf05e47sfsfvr5retcjqimh3dp0m69r3x6s1rmoavg147i8&rid=giphy.gif&ct=g">
