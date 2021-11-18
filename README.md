@@ -35,4 +35,4 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para
 </div>
 
 ### 📗 Quarto período
-  - [Inferência Estatística](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/4%20periodo/Abstract_of_Titica.pdf)
+  - [Inferência Estatística](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/4%20periodo/Inferencia_estatistica.pdf)
