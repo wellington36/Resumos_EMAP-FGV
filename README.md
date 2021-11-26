@@ -36,3 +36,4 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para
 
 ### 📗 Quarto período
   - [Inferência Estatística](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/4%20periodo/Inferencia_estatistica.pdf)
+  - [Notas para A2 de Inferência Estatística](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/4%20periodo/notas_A2_Inferencia_estatistica.pdf)
