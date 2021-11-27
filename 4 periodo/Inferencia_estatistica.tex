@@ -675,7 +675,7 @@ para todo $\theta_0 \in \Omega$, então chamamos $w(\textbf{X})$ de um \textbf{c
 Suponha que dispomos de dados $\textbf{X} = \{ X_1, \ldots. X_n \}$ com f.d.p. comum $f(x \mid \theta)$ e que $w(\textbf{X})$ é um conjunto de confiança para uma função de interesse $g(\theta)$. Então para todo valor $g_0$ assumido por $g(\theta)$ existe um teste $\delta_{g_0}$, de nível $\alpha_0$ que rejeita $H_0 : g(\theta) = g_0$ se e somente se $g(\theta_0) = g_0 \notin w(\textbf{X})$.
 \end{theorem}
 
-\begin{theorem}[Teste de razão de verossimilhanças]
+\begin{theorem}[Teste de razão de verossimilhanças (para o Teo. de Wilks)]
 A estatística
 
 $$\wedge(\textbf{x}) = \frac{\sup_{\theta \in \Omega_0 f_n (\textbf{x} \mid \theta)}}{\sup_{\theta \in \Omega f_n (\textbf{x} \mid \theta)}}$$
@@ -787,7 +787,7 @@ tem distribuição F com m e n graus de liberdade, com f.d.p.
 $$f_X (x) = \frac{\Gamma(\frac{m + n}{2}) m^{m/2} n^{n/2}}{\Gamma(\frac{n}{2}) \Gamma(\frac{m}{2})} \cdot \frac{x^{m / 2 - 1}}{(mx + n)^{(m + n)/2}}, \ x > 0,$$
 \end{definition}
 
-\begin{theorem}[Propriedades da distribuição F]
+\begin{theorem}[Propriedades da distribuição F] Propriedades para a distribuição F:
 
 \begin{enumerate}
     \item Se $X \sim F(m, n)$, então $\frac{1}{X} \sim F(m, n)$;
