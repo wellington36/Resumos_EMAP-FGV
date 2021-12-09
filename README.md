@@ -37,12 +37,13 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para
 ### 📗 Quarto período
   - [Inferência Estatística](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/4%20periodo/Inferencia_estatistica.pdf)
   - Resumos para provas:
+      - [A1 e A2 Inferência Estatistica (@lucasmoschen)](https://github.com/lucasmoschen/ta-sessions/tree/master/Statistical_Inference/pdf_source)
       - [A2 de Inferência Estatística](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/4%20periodo/notas_A2_Inferencia_estatistica.pdf)
 
 <div style="display: inline_block"><br>
   <img align="right" alt="Welly-Boy" height="180" width="260" src="https://media.giphy.com/media/H48YKEw3fXrcvIF2xE/giphy.gif?cid=ecf05e477wnly0jro7oy1ebh1x7rho7lha8cmcxzjvax4nki&rid=giphy.gif&ct=g">
 </div>
 
-### 📒 Quinto periodo
+### 📒 Quinto período
   - materia 1
   - materia 2
