@@ -8,7 +8,7 @@ Meu respositorio de resumos do curso de matemática aplicada.
 Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para [mim](https://github.com/wellington36) 😉.
 
 <div style="display: inline_block"><br>
-  <img alt="Welly-Dog" height="200" width="300" src="https://media.giphy.com/media/YFFGUPTPTRqIhwepA4/giphy.gif?cid=ecf05e47z7ju22xylp0rbziar6ty3n1e81kbokf4mz2rhp0l&rid=giphy.gif&ct=g">
+  <img alt="Welly-Dog" height="180" width="260" src="https://media.giphy.com/media/YFFGUPTPTRqIhwepA4/giphy.gif?cid=ecf05e47z7ju22xylp0rbziar6ty3n1e81kbokf4mz2rhp0l&rid=giphy.gif&ct=g">
 </div>
 
 # 🔗 Links para os resumos
@@ -19,7 +19,7 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para
   - [Cálculo em Várias Variáveis](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/2%20periodo/Calculo_em_varias_variaveis.pdf)
 
 <div style="display: inline_block"><br>
-  <img align="right" alt="Welly-Homer" height="200" width="300" src="https://media.giphy.com/media/IPbS5R4fSUl5S/giphy.gif?cid=ecf05e47sfsfvr5retcjqimh3dp0m69r3x6s1rmoavg147i8&rid=giphy.gif&ct=g">
+  <img align="right" alt="Welly-Homer" height="180" width="260" src="https://media.giphy.com/media/IPbS5R4fSUl5S/giphy.gif?cid=ecf05e47sfsfvr5retcjqimh3dp0m69r3x6s1rmoavg147i8&rid=giphy.gif&ct=g">
 </div>
 
 ### 📘 Terceiro período
@@ -39,3 +39,11 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para
   - Resumos para provas:
       - [A1 e A2 Inferência Estatistica (@lucasmoschen)](https://github.com/lucasmoschen/ta-sessions/tree/master/Statistical_Inference/pdf_source)
       - [A2 de Inferência Estatística](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/4%20periodo/notas_A2_Inferencia_estatistica.pdf)
+
+<div style="display: inline_block"><br>
+  <img align="right" alt="Welly-Boy" height="180" width="260" src="https://media.giphy.com/media/H48YKEw3fXrcvIF2xE/giphy.gif?cid=ecf05e477wnly0jro7oy1ebh1x7rho7lha8cmcxzjvax4nki&rid=giphy.gif&ct=g">
+</div>
+
+### 📒 Quinto período
+  - materia 1
+  - materia 2
