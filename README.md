@@ -31,7 +31,7 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para
       - [A1 de Téoria da Probabilidade](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/3%20periodo/resumos_de_provas/Resumo_A1_Prob.pdf)
 
 <div style="display: inline_block"><br>
-  <img align="right" alt="Welly-Boy" height="200" width="300" src="https://media.giphy.com/media/H48YKEw3fXrcvIF2xE/giphy.gif?cid=ecf05e477wnly0jro7oy1ebh1x7rho7lha8cmcxzjvax4nki&rid=giphy.gif&ct=g">
+  <img align="right" alt="Welly-Boy" height="180" width="260" src="https://media.giphy.com/media/H48YKEw3fXrcvIF2xE/giphy.gif?cid=ecf05e477wnly0jro7oy1ebh1x7rho7lha8cmcxzjvax4nki&rid=giphy.gif&ct=g">
 </div>
 
 ### 📗 Quarto período
