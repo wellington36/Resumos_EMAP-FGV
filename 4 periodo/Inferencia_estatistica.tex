@@ -228,6 +228,25 @@ L: \Omega \times \mathbb{R}^d \rightarrow \mathbb{R},
 em que dizemos que o estatístico \textit{perde} $L(\theta, a)$ se o parâmetro vale $\theta$ e a estimativa dada vale a.
 \end{definition}
 
+\subsection*{Famílias Conjugadas}
+
+Se $X_1,\ldots,X_n$ são iid e seguem a distribuição da coluna ``Dados'' na tabela~\ref{tab:1}.
+
+\textbf{Notações}: $\bar {x}_n= \frac{1}{n}\sum_{i=1}^n x_i;~~~
+y=\sum_{i=1}^nx_i$
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline \textbf{Dados} & \textbf{Priori} & \textbf{Posteriori}\\ \hline
+         $\mathrm{Bernoulli}(\theta)$&$\mathrm{Beta}(\alpha,\beta)$ & $\mathrm{Beta}(\alpha+y,\beta+n-y)$ \\ \hline
+         $\mathrm{Poisson}(\theta)$&$\mathrm{Gama}(\alpha,\beta)$&$\mathrm{Gama}(\alpha+y,\beta+n)$\\ \hline 
+         $\mathrm{Normal}(\mu,\sigma^2)$ & $\mathrm{Normal}(\mu_0,v_0^2)$& $\mathrm{Normal}\left(\frac{\sigma^2\mu_0+nv_0^2\bar{x}_n}{\sigma^2+nv_0^2},\frac{\sigma^2v_0^2}{\sigma^2+nv_0^2}\right)$ \\ \hline
+         $\mathrm{Exp}(\theta)$ &$\mathrm{Gama(\alpha,\beta)}$ & $\mathrm{Gama}(\alpha+n,\beta+y)$ \\ \hline
+
+    \end{tabular}
+    \caption{Famílias Conjugadas}\label{tab:1}
+\end{table}
+
 \section*{Aula 4: Estimadores de Bayes e EMV}
 \label{s4}
 \begin{definition}[Estimador de Bayes]
@@ -282,24 +301,6 @@ Dizemos que $\hat\theta = \delta(\textbf{X})$ é o \textbf{estimador de máximo 
 \end{equation}
 \end{definition}
 
-\subsection*{Famílias Conjugadas}
-
-Se $X_1,\ldots,X_n$ são iid e seguem a distribuição da coluna ``Dados'' na tabela~\ref{tab:1}.
-
-\textbf{Notações}: $\bar {x}_n= \frac{1}{n}\sum_{i=1}^n x_i;~~~
-y=\sum_{i=1}^nx_i$
-\begin{table}[!htb]
-    \centering
-    \begin{tabular}{|c|c|c|}
-        \hline \textbf{Dados} & \textbf{Priori} & \textbf{Posteriori}\\ \hline
-         $\mathrm{Bernoulli}(\theta)$&$\mathrm{Beta}(\alpha,\beta)$ & $\mathrm{Beta}(\alpha+y,\beta+n-y)$ \\ \hline
-         $\mathrm{Poisson}(\theta)$&$\mathrm{Gama}(\alpha,\beta)$&$\mathrm{Gama}(\alpha+y,\beta+n)$\\ \hline 
-         $\mathrm{Normal}(\mu,\sigma^2)$ & $\mathrm{Normal}(\mu_0,v_0^2)$& $\mathrm{Normal}\left(\frac{\sigma^2\mu_0+nv_0^2\bar{x}_n}{\sigma^2+nv_0^2},\frac{\sigma^2v_0^2}{\sigma^2+nv_0^2}\right)$ \\ \hline
-         $\mathrm{Exp}(\theta)$ &$\mathrm{Gama(\alpha,\beta)}$ & $\mathrm{Gama}(\alpha+n,\beta+y)$ \\ \hline
-
-    \end{tabular}
-    \caption{Famílias Conjugadas}\label{tab:1}
-\end{table}
 
 \section*{Aula 5: EMV}
 \label{s5}
@@ -327,7 +328,7 @@ $$\hat{\theta}_{EMV} \rightarrow \theta$$
 \section*{Aula 6: Método dos momentos e suficiência}
 \label{s6}
 \begin{definition}[Método dos momentos]
-Suponha que $X_1, \ldots, X_n$ formam uma sequânica aleatória com distribuição conjunta $f_n (X_1, \ldots, X_n \mid \theta), \theta \in \Omega \subseteq \mathbb{R}^k$ e que o k-ésimo momento existe. Defina $\mu_j (\theta) = E[X_1^j \mid \theta]$ e suponha que $\mu: \Omega \rightarrow \mathbb{R}^k$ é biunívoca, de modo que sua inversa é
+Suponha que $X_1, \ldots, X_n$ formam uma sequência aleatória com distribuição conjunta $f_n (X_1, \ldots, X_n \mid \theta), \theta \in \Omega \subseteq \mathbb{R}^k$ e que o k-ésimo momento existe. Defina $\mu_j (\theta) = E[X_1^j \mid \theta]$ e suponha que $\mu: \Omega \rightarrow \mathbb{R}^k$ é biunívoca, de modo que sua inversa é
 
 $$\theta = M(\mu_1(\theta), \ldots, \mu_k(\theta)).$$
 
