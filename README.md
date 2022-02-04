@@ -45,5 +45,5 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para
 </div>
 
 ### 📒 Quinto período
-  - materia 1
-  - materia 2
+  - matéria 1
+  - matéria 2
