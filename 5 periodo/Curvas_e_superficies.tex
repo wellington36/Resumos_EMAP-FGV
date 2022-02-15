@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    urlcolor=cyan}
+
+\parindent0in
+\pagestyle{plain}
+\thispagestyle{plain}
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Corolário}[theorem]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}{Definição}
+
+\newcommand{\assignment}{Abstract of surves and surfaces}
+\newcommand{\duedate}{February 15, 2021}
+
+
+% \renewcommand\thesubsection{\arabic{subsection}}
+
+\title{Resumo de Curvas e Superfícies}
+\author{}
+\date{}
+
+\begin{document}
+
+Fundação Getúlio Vargas\hfill\\
+Curvas e Superfícies\hfill\textbf{\assignment}\\
+Wellington Silva\hfill\textbf{Due:} \duedate\\
+\smallskip\hrule\bigskip
+
+{\let\newpage\relax\maketitle}
+\maketitle
+
+\section*{Sumário}
+
+\textbf{\nameref{s1}}
+\vspace{4.0mm}
+
+\newpage
+
+\section*{Aula 2}
+\label{s1}
+
+\begin{definition}
+Uma \textbf{curva parametrizada} em $\mathbb{R}^n$ é uma aplicação $\gamma: I \rightarrow \mathbb{R}^n$ sendo $I \subset \mathbb{R}$ aberto.
+\end{definition}
+
+\begin{definition}
+O conjunto imagem de $\gamma$, $\gamma(I) \subset \mathbb{R}^n$ é dito o \textbf{traço} de $\gamma$.
+\end{definition}
+
+\begin{definition}[Vetor tangente]
+Seja $\gamma: I \rightarrow \mathbb{R}^n$ com $\gamma(t) = (\gamma_1 (t), \ldots, \gamma_n (t))$ com $\gamma_i (y)$ diferenciáveis $\forall i, i = 1 \ldots n$, o vetor
+
+$$\gamma'(t) = (\gamma'_1 (t), \ldots, \gamma'_n (t))$$
+
+é chamado \textbf{vetor tangente de $\gamma$} em t
+\end{definition}
+
+\begin{definition}[Curvas regulares]
+Seja $\gamma (t): I \rightarrow \mathbb{R}^n$ uma curva parametrizada diferenciável. Diz-se que \textbf{$\gamma$ é regular}, quando $\gamma'(t) \neq 0,\ \forall t \in I$. 
+\end{definition}
+
+\begin{definition}[Reta tangente]
+Seja $\gamma$ uma curva regular, então a \textbf{reta tangente de $\gamma$} no ponto $t_0 \in I$ é aquela que contém o ponto $\gamma(t)$ e é paralela ao vetor $\gamma'(t)$, ou seja
+
+$$r(\lambda) = \gamma(t_0) + \lambda \gamma'(t_0)$$
+\end{definition}
+
+\begin{definition}[Comprimento de arco]
+O \textbf{comprimento de arco de $\alpha$}, de $\alpha(a)$ até $\alpha(b)$ definido por $L_a^b (\alpha)$ é  
+
+$$L_a^b (\alpha) = \int_a^b \| \alpha'(t) \| d t$$
+\end{definition}
+
+\begin{definition}
+Se $\gamma: (a, b) \rightarrow \mathbb{R}^n$ é uma c.p.\footnote{curva parametrizada}, sua \textbf{velocidade no ponto} $\gamma(t)$ é $\| \gamma'(t) \|$, e a curva é dita com \textbf{velocidade unitária} se $\| \gamma'(t) \| = 1,\ \forall t \in (a, b)$ e é parametrizada por comprimento de arco.
+\end{definition}
+
+\begin{theorem}
+Toda \textbf{curva regular} pode ser reparametrizada por \textbf{comprimento de arco}.
+\end{theorem}
+
+\end{document}
