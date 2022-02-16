@@ -3,7 +3,7 @@
 </div> -->
 
 # 📚💻 Resumos EMAP-FGV
-Meu respositorio de resumos do curso de matemática aplicada.
+Meu respositrio de resumos do curso de matemática aplicada.
 
 Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para [mim](https://github.com/wellington36) 😉.
 
@@ -46,4 +46,4 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para
 
 ### 📒 Quinto período
   - [Curvas e Superfícies](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/5%20periodo/Curvas_e_superficies.pdf)
-  - Cálculo em Uma Varivel complexa
+  - Cálculo em Uma Varivel Complexa
