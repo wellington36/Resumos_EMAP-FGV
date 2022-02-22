@@ -1,0 +1,142 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    urlcolor=cyan}
+
+\parindent0in
+\pagestyle{plain}
+\thispagestyle{plain}
+
+\newtheorem{prop}{Proposition}
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Corolário}[theorem]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}{Definição}
+
+\newcommand{\assignment}{Abstract of calculus in a complex variable}
+\newcommand{\duedate}{February 22, 2021}
+
+
+% \renewcommand\thesubsection{\arabic{subsection}}
+
+\title{Resumo de Cálculo em uma Variável Complexa}
+\author{}
+\date{}
+
+\begin{document}
+
+Fundação Getúlio Vargas\hfill\\
+Cálculo em uma Variável Complexa\hfill\textbf{\assignment}\\
+Wellington Silva\hfill\textbf{Due:} \duedate\\
+\smallskip\hrule\bigskip
+
+{\let\newpage\relax\maketitle}
+\maketitle
+
+\section*{Sumário}
+
+\textbf{\nameref{s1}}
+\vspace{4.0mm}
+
+\newpage
+
+\section*{Semana 1}
+\label{s1}
+
+\begin{prop} As seguintes propriedades valem para quaisquer $z, w, t \in \mathbb{C}$:
+
+\begin{enumerate}[label=(\alph*)]
+    \item $z + (w + t) = (z + w) + t$
+    \item $z + w = w + z$
+    \item $0 + z = z$
+    \item $z + (-z) = 0$
+    \item $z \cdot (w \cdot t) = (z \cdot w) \cdot t$
+    \item $zw = wz$
+    \item $1 \cdot z = z$
+    \item $z \cdot z^{-1} = 1$ se $z \neq 0$
+    \item $z \cdot (w + t) = z \cdot w + z \cdot t$
+\end{enumerate}
+\end{prop}
+
+\begin{definition}
+Um número complexo z é da forma $z = x + iy, \ x,y \in \mathbb{R}$ e $i = \sqrt{-1}$, que podemos escrever como um par de variáveis de $\mathbb{R}^2$ de forma que $z = (x, y)$.
+\end{definition}
+
+\begin{definition}[Soma e produto nos complexos]
+Seja $z = (x, y)$ e $w = (a, b),\ x,y,a,b, \in \mathbb{R}$, definimos soma e produto, de forma a manter consistência com as propriedades acima, da seguinte forma
+
+\begin{align}
+    &z + w = (x + a, y + b) \nonumber \\
+    &z \cdot w = (xa - yb, xb + ya) \nonumber
+\end{align}
+\end{definition}
+
+\begin{definition}[O Módulo]
+Seja $z = x + iy$ um complexo, então o \textbf{módulo} ("tamanho") de um número complexo é definido por
+
+$$\mid z \mid = \sqrt{x^2 + y^2}$$
+\end{definition}
+
+\begin{definition}[O Conjugado]
+Seja $z = x + iy$ um complexo, então o \textbf{conjurado} de um número complexo é definido por
+
+$$\overline{z} = x - i y$$
+\end{definition}
+
+\begin{prop}[Propriedades do conjugado] As seguintes propriedades valem para quaisquer $z, w \in \mathbb{C}$:
+
+\begin{enumerate}[label=(\alph*)]
+    \item $\overline{\overline{z}} = z$, $\overline{z \pm w} = \overline{z} \pm \overline{w}$ e $\overline{z w} = \overline{z} \overline{w}$
+    
+    \item $\overline{z/w} = \overline{z}/\overline{w}$ se $w \neq 0$
+    
+    \item $z + \overline{z} = 2 Re(z)$ e $z - \overline{z} = 2i Img(z)$
+    
+    \item $z \in \mathbb{R}$ se e somente se $\overline{z} = z$
+    
+    \item z é imaginário puro se e somente se $\overline{z} = z$
+\end{enumerate}
+\end{prop}
+
+\begin{definition}[A Forma Polar]
+Seja $z = x + iy$ com $z \neq 0$, então podemos escrever z como
+
+$$z = r(cos(\theta) + sen(\theta))$$
+
+Com as seguintes propriedades
+
+\begin{enumerate}
+    \item $r = \mid z \mid $
+    
+    \item $cos(\theta) = \frac{x}{\mid r \mid}$
+    
+    \item $sen(\theta) = \frac{y}{\mid x \mid}$
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+Seja $n \in \mathbb{Z}_{++}$ e $z = r(cos(\theta) + i sen(\theta))$. Então
+
+$$z^n = r^n (cos(n\theta) + i sen(n\theta))$$
+\end{theorem}
+
+%\section*{Semana 2}
+%\label{s2}
+
+\end{document}
