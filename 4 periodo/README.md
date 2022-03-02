@@ -1,5 +1,5 @@
 #### Resumos gerais:
 
 - Inferência estatistica (seguindo as aulas)
-- nalise real (na pasta do [2 periodo](https://github.com/wellington36/Resumos_EMAP-FGV/tree/main/2%20periodo))
+- Anlise real (na pasta do [2 periodo](https://github.com/wellington36/Resumos_EMAP-FGV/tree/main/2%20periodo))
 - Notas para prova A2 inferênca estantistica
