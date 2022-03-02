@@ -10,7 +10,6 @@
 \usepackage{mathrsfs}
 \usepackage{amssymb}
 \usepackage{hyperref}
-\usepackage{amsmath}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
 
@@ -23,26 +22,25 @@
 \pagestyle{plain}
 \thispagestyle{plain}
 
-\newtheorem{prop}{Proposition}
 \newtheorem{theorem}{Teorema}
 \newtheorem{corollary}{Corolário}[theorem]
 \newtheorem{lemma}[theorem]{Lema}
 \newtheorem{definition}{Definição}
 
-\newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{March 2, 2022}
+\newcommand{\assignment}{Abstract of surves and surfaces}
+\newcommand{\duedate}{February 15, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
 
-\title{Resumo de Cálculo em uma Variável Complexa}
+\title{Resumo de Curvas e Superfícies}
 \author{}
 \date{}
 
 \begin{document}
 
 Fundação Getúlio Vargas\hfill\\
-Cálculo em uma Variável Complexa\hfill\textbf{\assignment}\\
+Curvas e Superfícies\hfill\textbf{\assignment}\\
 Wellington Silva\hfill\textbf{Due:} \duedate\\
 \smallskip\hrule\bigskip
 
@@ -57,161 +55,69 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \textbf{\nameref{s2}}
 \vspace{4.0mm}
 
-%\textbf{\nameref{s3}}
-%\vspace{4.0mm}
-
 \newpage
 
-\section*{Números Complexos e propriedades (Week 1)}
+\section*{Curvas, Reta tangente e Comprimento de arco (Aula 2)}
 \label{s1}
 
-\begin{prop} As seguintes propriedades valem para quaisquer $z, w, t \in \mathbb{C}$:
-
-\begin{enumerate}[label=(\alph*)]
-    \item $z + (w + t) = (z + w) + t$
-    \item $z + w = w + z$
-    \item $0 + z = z$
-    \item $z + (-z) = 0$
-    \item $z \cdot (w \cdot t) = (z \cdot w) \cdot t$
-    \item $zw = wz$
-    \item $1 \cdot z = z$
-    \item $z \cdot z^{-1} = 1$ se $z \neq 0$
-    \item $z \cdot (w + t) = z \cdot w + z \cdot t$
-\end{enumerate}
-\end{prop}
+\begin{definition}
+Uma \textbf{curva parametrizada} em $\mathbb{R}^n$ é uma aplicação $\gamma: I \rightarrow \mathbb{R}^n$ sendo $I \subset \mathbb{R}$ aberto.
+\end{definition}
 
 \begin{definition}
-Um número complexo z é da forma $z = x + iy, \ x,y \in \mathbb{R}$ e $i = \sqrt{-1}$, que podemos escrever como um par de variáveis de $\mathbb{R}^2$ de forma que $z = (x, y)$.
+O conjunto imagem de $\gamma$, $\gamma(I) \subset \mathbb{R}^n$ é dito o \textbf{traço} de $\gamma$.
 \end{definition}
 
-\begin{definition}[Soma e produto nos complexos]
-Seja $z = (x, y)$ e $w = (a, b),\ x,y,a,b, \in \mathbb{R}$, definimos soma e produto, para manter consistência com as propriedades acima, da seguinte forma
+\begin{definition}[Vetor tangente]
+Seja $\gamma: I \rightarrow \mathbb{R}^n$ com $\gamma(t) = (\gamma_1 (t), \ldots, \gamma_n (t))$ com $\gamma_i (y)$ diferenciáveis $\forall i, i = 1 \ldots n$, o vetor
 
-\begin{align}
-    &z + w = (x + a, y + b) \nonumber \\
-    &z \cdot w = (xa - yb, xb + ya) \nonumber
-\end{align}
+$$\gamma'(t) = (\gamma'_1 (t), \ldots, \gamma'_n (t))$$
+
+é chamado \textbf{vetor tangente de $\gamma$} em t
 \end{definition}
 
-\begin{definition}[O Módulo]
-Seja $z = x + iy$ um complexo, então o \textbf{módulo} ("tamanho") de um número complexo é definido por
-
-$$\mid z \mid = \sqrt{x^2 + y^2}$$
+\begin{definition}[Curvas regulares]
+Seja $\gamma (t): I \rightarrow \mathbb{R}^n$ uma curva parametrizada diferenciável. Diz-se que \textbf{$\gamma$ é regular}, quando $\gamma'(t) \neq 0,\ \forall t \in I$. 
 \end{definition}
 
-\begin{definition}[O Conjugado]
-Seja $z = x + iy$ um complexo, então o \textbf{conjurado} de um número complexo é definido por
+\begin{definition}[Reta tangente]
+Seja $\gamma$ uma curva regular, então a \textbf{reta tangente de $\gamma$} no ponto $t_0 \in I$ é aquela que contém o ponto $\gamma(t)$ e é paralela ao vetor $\gamma'(t)$, ou seja
 
-$$\overline{z} = x - i y$$
+$$r(\lambda) = \gamma(t_0) + \lambda \gamma'(t_0)$$
 \end{definition}
 
-\begin{prop}[Propriedades do conjugado] As seguintes propriedades valem para quaisquer $z, w \in \mathbb{C}$:
+\begin{definition}[Comprimento de arco]
+O \textbf{comprimento de arco de $\alpha$}, de $\alpha(a)$ até $\alpha(b)$ definido por $L_a^b (\alpha)$ é  
 
-\begin{enumerate}[label=(\alph*)]
-    \item $\overline{\overline{z}} = z$, $\overline{z \pm w} = \overline{z} \pm \overline{w}$ e $\overline{z w} = \overline{z} \overline{w}$
-    
-    \item $\overline{z/w} = \overline{z}/\overline{w}$ se $w \neq 0$
-    
-    \item $z + \overline{z} = 2 Re(z)$ e $z - \overline{z} = 2i Img(z)$
-    
-    \item $z \in \mathbb{R}$ se e somente se $\overline{z} = z$
-    
-    \item z é imaginário puro se e somente se $\overline{z} = z$
-\end{enumerate}
-\end{prop}
+$$L_a^b (\alpha) = \int_a^b \| \alpha'(t) \| d t$$
+\end{definition}
 
-\begin{definition}[A Forma Polar]
-Seja $z = x + iy$ com $z \neq 0$, então podemos escrever z como
-
-$$z = r(cos(\theta) + sen(\theta))$$
-
-Com as seguintes propriedades
-
-\begin{enumerate}
-    \item $r = \mid z \mid $
-    
-    \item $cos(\theta) = \frac{x}{\mid r \mid}$
-    
-    \item $sen(\theta) = \frac{y}{\mid x \mid}$
-\end{enumerate}
+\begin{definition}
+Se $\gamma: (a, b) \rightarrow \mathbb{R}^n$ é uma c.p.\footnote{curva parametrizada}, sua \textbf{velocidade no ponto} $\gamma(t)$ é $\| \gamma'(t) \|$, e a curva é dita com \textbf{velocidade unitária} se $\| \gamma'(t) \| = 1,\ \forall t \in (a, b)$ e é parametrizada por comprimento de arco.
 \end{definition}
 
 \begin{theorem}
-Seja $n \in \mathbb{Z}_{++}$ e $z = r(cos(\theta) + i sen(\theta))$. Então
-
-$$z^n = r^n (cos(n\theta) + i sen(n\theta))$$
+Toda \textbf{curva regular} pode ser reparametrizada por \textbf{comprimento de arco}.
 \end{theorem}
 
-\section*{Exponencial, Limite e Derivada (Week 2)}
+\section*{Difeomorfismo e Reparametrização (Aula 3)}
 \label{s2}
-\begin{definition}[Função exponencial]
-Seja $z \in \mathbb{C}$ com $z = x + iy,\ x,y \in \mathbb{R}$, então 
 
-$$e^z := e^x(cos(y) + i sen(y))$$
+\begin{definition}[Difeomorfismo]
+Dado os conjuntos abertos $U \subset \mathbb{R}^n$ e $V \subset \mathbb{R}^n$. Uma bijeção $f: U \rightarrow V$ é dita \textbf{difeomorfismo} quando f e $f^{-1}$ são diferenciáveis.
 \end{definition}
 
-\begin{definition}[Cosseno e seno complexo]
-Para $z \in \mathbb{C}$, vamos definir
-
-$$cos(z) = \frac{1}{2}(e^{iz} + e^{- iz}$$
-
-$$sen(z) = \frac{1}{2 i}(e^{- iz} - e^{- iz}$$
+\begin{definition}[Reparametrização]
+A curva $\beta(s)$ é dita uma \textbf{reparametrização} de $\alpha(t): I \subset \mathbb{R} \rightarrow \mathbb{R}^2$ regular quando dados $I_0 \subset \mathbb{R}$ e $\phi: I_0 \rightarrow I$ difeomorfismo. Temos $\beta(S) = \alpha(\phi(S)))$.
 \end{definition}
 
+\begin{definition}
+Seja $\alpha(t): (a, b) \rightarrow \mathbb{R}^2$ r $\beta(S): (c, d) \rightarrow \mathbb{R}^2$. Então
 
-\begin{prop}[Cos e sen]
-Seja $z = x + iz,\ x, y \in \mathbb{R}$. Então
-
-\begin{enumerate}[label=(\alph*)]
-    \item $cos(z) = cos(x) cosh(y) - i sen(x) senh(y)$
-    
-    \item $sen(z) = sen(x) cosh(y) + i cos(x) senh(y)$
-    
-    \item $\mid cos z \mid^2 = cos^2(x) + senh^2(y)$
-    
-    \item $\mid sen z \mid^2 = sen^2(x) + senh^2(y)$
-\end{enumerate}
-\end{prop}
-
-\begin{definition}[Função logaritmo]
-Seja $z \in \mathbb{C},\ z \neq 0$
-
-$$Ln(z) = ln \mid z \mid + i Arg(z) \text{\footnote{Arg(z) = \theta,\ \theta \in (-\pi,\pi]}}$$
-
-$$ln(z) = ln \mid z \mid + i arg(z) \text{\footnote{Arg(z) = \theta}}$$
+\begin{itemize}
+    \item $\beta(S)$ é uma reparametrização positiva de $\alpha$ se $\phi'(S) > 0,\ \forall S$
+    \item $\beta(S)$ é uma reparametrização negativa de $\alpha$ se $\phi'(S) < 0,\ \forall S$
+\end{itemize}
 \end{definition}
-
-\begin{definition}[Limite]
-Seja $z_0 \in \mathbb{C}$ um ponto de acumulação de $D \subset \mathbb{C}$ e seja $f: D \rightarrow \mathbb{C}$. Dizemos que
-
-$$lim_{z \rightarrow z_0} f(z) = l$$
-
-Quando para todo $\varepsilon > 0$, $\exists \delta > 0$ tal que 
-
-$$z \in D - \{z_0\} \text{ e } \mid z - z_0 \mid < \delta \Longrightarrow{} \mid f(z) - l \mid < \varepsilon$$
-\end{definition}
-
-\begin{definition}[Continuidade]
-Seja $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$ e $z_0 \in D$. Dizemos que f é \textbf{contínua} em $z_0$ se para todo $\varepsilon > 0$, $\exists \delta > 0$ tal que
-
-$$z \in D - \{z_0\} \text{ e } \mid z - z_0 \mid < \delta \Longrightarrow{} \mid f(z) - f(z_0) \mid < \varepsilon$$
-\end{definition}
-
-\begin{definition}[Diferencíabilidade]
-Seja $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$ e $z_0 \in D$ ponto de acumulação de D. Se existe o limite
-
-$$lim_{z \rightarrow z_0} \frac{f(z) - f(z_0)}{z - z_0}$$
-
-dizemos que f é diferenciável em $z_0$ (ou derivável) e denotamos o limite acima por $f'(z_0)$.
-\end{definition}
-
-\begin{definition}[Funções Analiticas]
-Seja $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$, f é dita \textbf{analítica} no domínio D se f é diferenciável em todos os pontos de D. E também é dita \textbf{analítica em um ponto} $z_0 \in D$ se f é analítica em uma vizinhança de $z_0$.
-\end{definition}
-
-
-%\section*{... (Week 3)}
-%\label{s3}
-
 
 \end{document}
