@@ -29,7 +29,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of surves and surfaces}
-\newcommand{\duedate}{February 15, 2021}
+\newcommand{\duedate}{March 6, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -61,7 +61,7 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 
 \newpage
 
-\section*{Curvas, Reta tangente e Comprimento de arco (Aula 2)}
+\section*{Curvas, Reta tangente e Comprimento de arco (Week 1)}
 \label{s1}
 
 \begin{definition}
@@ -104,7 +104,7 @@ Se $\gamma: (a, b) \rightarrow \mathbb{R}^n$ é uma c.p.\footnote{curva parametr
 Toda \textbf{curva regular} pode ser reparametrizada por \textbf{comprimento de arco}.
 \end{theorem}
 
-\section*{Difeomorfismo e Reparametrização (Aula 3)}
+\section*{Difeomorfismo e Reparametrização (Week 2)}
 \label{s2}
 
 \begin{definition}[Difeomorfismo]
@@ -124,8 +124,6 @@ Seja $\alpha(t): (a, b) \rightarrow \mathbb{R}^2$ r $\beta(S): (c, d) \rightarro
 \end{itemize}
 \end{definition}
 
-\section*{Reparametrização (Aula 4)}
-\label{s3}
 \begin{definition}
 Qualquer reparametrização de uma c.p. regular é regular (i.e. difeomorfismos preservam regularidade).
 \end{definition}
@@ -136,6 +134,29 @@ A função L (comprimento de arco) é um difeomorfismo.
 
 \begin{definition}
 Toda curva regular $\alpha: I \rightarrow \mathbb{R}^2$ admite reparametrização por comprimento de arco.
+\end{definition}
+
+\section*{Ângulo (Week 3)}
+\label{s3}
+
+\begin{definition}[Função Ângulo]
+Dada uma curva diferenciável $\gamma: I \rightarrow S^1$, onde $S^1$ é o círculo de $\mathbb{R}^2$ com centro na origem e raio 1, diz-se que $\theta: I \rightarrow \mathbb{R}$ é uma \textbf{função-ângulo} de $\gamma$, quando
+
+$$\gamma(s) = (cos(\theta(s)), sen(\theta(s)),\ \forall s \in I$$
+\end{definition}
+
+\begin{definition}[Curvatura]
+Seja $\alpha: I \rightarrow \mathbb{R}$ unit-speed. Designando-se o vetor tangente de $\alpha$ em $s \in I$ por $T(s)$, podemos afirmar que a curva $T(s) = I \rightarrow S^1$ admite função ângulo
+
+$$T(s) = (cos(\theta(s)), sen(\theta(s)),\ \forall s \in I$$
+
+Daí a curvatura de $\alpha$ em $s \in I$ é definida por
+
+$$K(s) = \theta'(s)$$
+\end{definition}
+
+\begin{definition}[Função-ângulo diferenciável]
+Seja $\gamma: I \rightarrow S^1$ uma curva diferenciável. Então, $\gamma$ admite uma função ângulo $\theta: I \rightarrow \mathbb{R}$, a qual é diferenciável. Além disso, toda função-ângulo de $\gamma$, a qual é diferenciável, difere de $\theta$ por uma constante.
 \end{definition}
 
 \end{document}
