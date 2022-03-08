@@ -30,7 +30,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{February 22, 2021}
+\newcommand{\duedate}{March 2, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -54,9 +54,15 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \textbf{\nameref{s1}}
 \vspace{4.0mm}
 
+\textbf{\nameref{s2}}
+\vspace{4.0mm}
+
+%\textbf{\nameref{s3}}
+%\vspace{4.0mm}
+
 \newpage
 
-\section*{Semana 1}
+\section*{Números Complexos e propriedades (Week 1)}
 \label{s1}
 
 \begin{prop} As seguintes propriedades valem para quaisquer $z, w, t \in \mathbb{C}$:
@@ -79,7 +85,7 @@ Um número complexo z é da forma $z = x + iy, \ x,y \in \mathbb{R}$ e $i = \sqr
 \end{definition}
 
 \begin{definition}[Soma e produto nos complexos]
-Seja $z = (x, y)$ e $w = (a, b),\ x,y,a,b, \in \mathbb{R}$, definimos soma e produto, de forma a manter consistência com as propriedades acima, da seguinte forma
+Seja $z = (x, y)$ e $w = (a, b),\ x,y,a,b, \in \mathbb{R}$, definimos soma e produto, para manter consistência com as propriedades acima, da seguinte forma
 
 \begin{align}
     &z + w = (x + a, y + b) \nonumber \\
@@ -136,7 +142,76 @@ Seja $n \in \mathbb{Z}_{++}$ e $z = r(cos(\theta) + i sen(\theta))$. Então
 $$z^n = r^n (cos(n\theta) + i sen(n\theta))$$
 \end{theorem}
 
-%\section*{Semana 2}
-%\label{s2}
+\section*{Exponencial, Limite e Derivada (Week 2)}
+\label{s2}
+\begin{definition}[Função exponencial]
+Seja $z \in \mathbb{C}$ com $z = x + iy,\ x,y \in \mathbb{R}$, então 
+
+$$e^z := e^x(cos(y) + i sen(y))$$
+\end{definition}
+
+\begin{definition}[Cosseno e seno complexo]
+Para $z \in \mathbb{C}$, vamos definir
+
+$$cos(z) = \frac{1}{2}(e^{iz} + e^{- iz})$$
+
+$$sen(z) = \frac{1}{2 i}(e^{- iz} - e^{- iz})$$
+\end{definition}
+
+
+\begin{prop}[Cos e sen]
+Seja $z = x + iz,\ x, y \in \mathbb{R}$. Então
+
+\begin{enumerate}[label=(\alph*)]
+    \item $cos(z) = cos(x) cosh(y) - i sen(x) senh(y)$
+    
+    \item $sen(z) = sen(x) cosh(y) + i cos(x) senh(y)$
+    
+    \item $\mid cos z \mid^2 = cos^2(x) + senh^2(y)$
+    
+    \item $\mid sen z \mid^2 = sen^2(x) + senh^2(y)$
+\end{enumerate}
+\end{prop}
+
+\begin{definition}[Função logaritmo]
+Seja $z \in \mathbb{C},\ z \neq 0$\footnote{Aqui: $Arg(z) = \theta,\ \theta \in (-\pi,\pi]$ e $Arg(z) = \theta$}
+
+$$Ln(z) = ln \mid z \mid + i Arg(z)$$
+
+$$ln(z) = ln \mid z \mid + i arg(z)$$
+\end{definition}
+
+\begin{definition}[Limite]
+Seja $z_0 \in \mathbb{C}$ um ponto de acumulação de $D \subset \mathbb{C}$ e seja $f: D \rightarrow \mathbb{C}$. Dizemos que
+
+$$lim_{z \rightarrow z_0} f(z) = l$$
+
+Quando para todo $\varepsilon > 0$, $\exists \delta > 0$ tal que 
+
+$$z \in D - \{z_0\} \text{ e } \mid z - z_0 \mid < \delta \Longrightarrow{} \mid f(z) - l \mid < \varepsilon$$
+\end{definition}
+
+\begin{definition}[Continuidade]
+Seja $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$ e $z_0 \in D$. Dizemos que f é \textbf{contínua} em $z_0$ se para todo $\varepsilon > 0$, $\exists \delta > 0$ tal que
+
+$$z \in D - \{z_0\} \text{ e } \mid z - z_0 \mid < \delta \Longrightarrow{} \mid f(z) - f(z_0) \mid < \varepsilon$$
+\end{definition}
+
+\begin{definition}[Diferencíabilidade]
+Seja $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$ e $z_0 \in D$ ponto de acumulação de D. Se existe o limite
+
+$$lim_{z \rightarrow z_0} \frac{f(z) - f(z_0)}{z - z_0}$$
+
+dizemos que f é diferenciável em $z_0$ (ou derivável) e denotamos o limite acima por $f'(z_0)$.
+\end{definition}
+
+\begin{definition}[Funções Analiticas]
+Seja $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$, f é dita \textbf{analítica} no domínio D se f é diferenciável em todos os pontos de D. E também é dita \textbf{analítica em um ponto} $z_0 \in D$ se f é analítica em uma vizinhança de $z_0$.
+\end{definition}
+
+
+%\section*{... (Week 3)}
+%\label{s3}
+
 
 \end{document}
