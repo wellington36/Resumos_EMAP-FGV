@@ -29,7 +29,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of surves and surfaces}
-\newcommand{\duedate}{March 6, 2021}
+\newcommand{\duedate}{March 14, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -57,6 +57,9 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \vspace{4.0mm}
 
 \textbf{\nameref{s3}}
+\vspace{4.0mm}
+
+\textbf{\nameref{s4}}
 \vspace{4.0mm}
 
 \newpage
@@ -136,7 +139,7 @@ A função L (comprimento de arco) é um difeomorfismo.
 Toda curva regular $\alpha: I \rightarrow \mathbb{R}^2$ admite reparametrização por comprimento de arco.
 \end{definition}
 
-\section*{Ângulo (Week 3)}
+\section*{Ângulo e curvatura (Week 3)}
 \label{s3}
 
 \begin{definition}[Função Ângulo]
@@ -152,11 +155,20 @@ $$T(s) = (cos(\theta(s)), sen(\theta(s)),\ \forall s \in I$$
 
 Daí a curvatura de $\alpha$ em $s \in I$ é definida por
 
-$$K(s) = \theta'(s)$$
+$$K(s) = \theta'(s) = det(\alpha'(s), \alpha''(s))$$
 \end{definition}
 
-\begin{definition}[Função-ângulo diferenciável]
+\section*{Ângulo (Week 4)}
+\label{s4}
+
+\begin{theorem}[Função-ângulo diferenciável]
 Seja $\gamma: I \rightarrow S^1$ uma curva diferenciável. Então, $\gamma$ admite uma função ângulo $\theta: I \rightarrow \mathbb{R}$, a qual é diferenciável. Além disso, toda função-ângulo de $\gamma$, a qual é diferenciável, difere de $\theta$ por uma constante.
-\end{definition}
+\end{theorem}
+
+\begin{corollary}
+Seja $\alpha : I \subset \mathbb{R} \rightarrow \mathbb{R}$ e seja $\beta(s) = \alpha(\theta(s))$ a parametrização por comprimento de arco de $\alpha$, a curvatura de $\alpha$ em $t \in I$ é $K_\alpha(t)$, e, por definição é a curvatura de $\beta$ em $\theta^{-1}(t)$, isto é
+
+$$K_\alpha := K_\beta(\theta^{-1}(t))$$
+\end{corollary}
 
 \end{document}
