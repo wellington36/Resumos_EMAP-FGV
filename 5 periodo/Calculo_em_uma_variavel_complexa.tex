@@ -30,7 +30,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{March 9, 2022}
+\newcommand{\duedate}{March 16, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -213,22 +213,24 @@ Seja $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$, f é dita \textbf{analít
 \section*{Equações de Cauchy-Riemann (Week 3)}
 \label{s3}
 
-\begin{definition}[Cauchy-Riemann (ida)]
+\begin{theorem}[Cauchy-Riemann (ida)]
 Seja $f(z) = u(x, v) + i v(x, y)$ definida e continua em alguma vizinhança de $z = x + i y$ e suponha f diferenciável em z. Então, as derivadas parciais de u e v existem e satisfazem\footnote{Chamadas aqui de \textbf{Equações de Cauchy-Riemann}}
 
 $$u_x(z) = v_y(z)\quad\text{e}\quad u_y(z) = - v_x(z)$$
-\end{definition}
+\end{theorem}
 
 \begin{corollary}
-Se f é analítica em um domínio D, então ad derivadas parciais de u e v existem em D e
+Se f é analítica em um domínio D, então as derivadas parciais de u e v existem em D e
 
 $$u_x(z) = v_y(z)\quad \text{e} \quad u_y(z) = - v_x(z)$$
 
 $$f' = u_x + i v_x\quad \text{e} \quad f' = v_y - i u_y$$
 \end{corollary}
 
-\begin{definition}[Volta do CR]
+\begin{theorem}[Cauchy-Riemann (volta)]
 Se as funções reais $u(x, y)$ e $v(x, y)$ de variáveis $x, y \in \mathbb{R}$ tiverem derivadas parciais contínuas satisfazem as equações de Cauchy-Riemann em algum domínio D, então a função complexa $f(z) = u(x, y) + i v(x, y)$ é analítica em D, com $z = x + iy$.
-\end{definition}
+\end{theorem}
 
-\end{document}
+\end{document}\end{document}
+
+
