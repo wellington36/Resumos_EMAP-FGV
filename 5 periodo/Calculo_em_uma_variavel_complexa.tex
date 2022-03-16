@@ -60,6 +60,9 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \textbf{\nameref{s3}}
 \vspace{4.0mm}
 
+\textbf{\nameref{s4}}
+\vspace{4.0mm}
+
 \newpage
 
 \section*{Números Complexos e propriedades (Week 1)}
@@ -197,7 +200,7 @@ Seja $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$ e $z_0 \in D$. Dizemos que
 $$z \in D - \{z_0\} \text{ e } \mid z - z_0 \mid < \delta \Longrightarrow{} \mid f(z) - f(z_0) \mid < \varepsilon$$
 \end{definition}
 
-\begin{definition}[Diferencíabilidade]
+\begin{definition}[Diferenciabilidade]
 Seja $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$ e $z_0 \in D$ ponto de acumulação de D. Se existe o limite
 
 $$lim_{z \rightarrow z_0} \frac{f(z) - f(z_0)}{z - z_0}$$
@@ -205,7 +208,7 @@ $$lim_{z \rightarrow z_0} \frac{f(z) - f(z_0)}{z - z_0}$$
 dizemos que f é diferenciável em $z_0$ (ou derivável) e denotamos o limite acima por $f'(z_0)$.
 \end{definition}
 
-\begin{definition}[Funções Analiticas]
+\begin{definition}[Funções Analíticas]
 Seja $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$, f é dita \textbf{analítica} no domínio D se f é diferenciável em todos os pontos de D. E também é dita \textbf{analítica em um ponto} $z_0 \in D$ se f é analítica em uma vizinhança de $z_0$.
 \end{definition}
 
@@ -231,6 +234,25 @@ $$f' = u_x + i v_x\quad \text{e} \quad f' = v_y - i u_y$$
 Se as funções reais $u(x, y)$ e $v(x, y)$ de variáveis $x, y \in \mathbb{R}$ tiverem derivadas parciais contínuas satisfazem as equações de Cauchy-Riemann em algum domínio D, então a função complexa $f(z) = u(x, y) + i v(x, y)$ é analítica em D, com $z = x + iy$.
 \end{theorem}
 
-\end{document}\end{document}
+\section*{Cauchy-Riemann e Eq. de Laplace (Week 4)}
+\label{s4}
+\begin{theorem}[Eq. de Laplace]
+Se $f(z) = u(x, y) + i v(x, y)$ é analítica em um domínio D, (e as derivadas segundas de u e v existem e são continuas)\footnote{Mais adiante, veremos que a parte em parenteses não é necessária.}, então ambas u e v satisfazem a equação de Laplace.
 
+$$\nabla u = u_{xx} + u_{yy} = 0$$
+
+$$\nabla v = v_{xx} + v_{yy} = 0$$
+\end{theorem}
+
+\begin{theorem}[Trigonométricas e logaritmo]
+Seja $z_1 \in \mathbb{C}$ e $z_2 \in \mathbb{C} - \{ 0 \}$, temos que vale que
+
+$$\sin'(z_1) = \cos(z_1)$$
+
+$$\cos'(z_1) = - \sin(z_1)$$
+
+$$Ln'(z_2) = \frac{1}{z_2}$$
+\end{theorem}
+
+\end{document}
 
