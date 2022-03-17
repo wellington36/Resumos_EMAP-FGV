@@ -220,7 +220,10 @@ $$P(A \cap B) = P(B|A) \cdot P(A) = P(B|A) \cdot P(B)$$
 \begin{corollary}[Lei da Probabilidade Total]
 Suponha que $B_1, B_2, \dots, B_n$ formam uma partição de S. Então
 
-% $$P(A) = P(A \cap B_1) + \dotsb + P(A \cap B_n)$$
+\begin{align}
+    P(A) &= P(A \cap B_1) + \dotsb + P(A \cap B_n) \nonumber \\
+    &= P(A \mid B_1) P(B_1) + \dotsb + P(A \mid B_n) P(B_n) \nonumber
+\end{align}
 
 \end{corollary}
 
