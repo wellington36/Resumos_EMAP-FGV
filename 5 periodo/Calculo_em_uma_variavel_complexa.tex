@@ -23,14 +23,14 @@
 \pagestyle{plain}
 \thispagestyle{plain}
 
-\newtheorem{prop}{Proposition}
+\newtheorem{prop}{Propriedades}
 \newtheorem{theorem}{Teorema}
 \newtheorem{corollary}{Corolário}[theorem]
 \newtheorem{lemma}[theorem]{Lema}
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{March 16, 2022}
+\newcommand{\duedate}{March 18, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -234,7 +234,7 @@ $$f' = u_x + i v_x\quad \text{e} \quad f' = v_y - i u_y$$
 Se as funções reais $u(x, y)$ e $v(x, y)$ de variáveis $x, y \in \mathbb{R}$ tiverem derivadas parciais contínuas satisfazem as equações de Cauchy-Riemann em algum domínio D, então a função complexa $f(z) = u(x, y) + i v(x, y)$ é analítica em D, com $z = x + iy$.
 \end{theorem}
 
-\section*{Cauchy-Riemann e Eq. de Laplace (Week 4)}
+\section*{Cauchy-Riemann, Eq. de Laplace e Integral (Week 4)}
 \label{s4}
 \begin{theorem}[Eq. de Laplace]
 Se $f(z) = u(x, y) + i v(x, y)$ é analítica em um domínio D, (e as derivadas segundas de u e v existem e são continuas)\footnote{Mais adiante, veremos que a parte em parenteses não é necessária.}, então ambas u e v satisfazem a equação de Laplace.
@@ -253,6 +253,37 @@ $$\cos'(z_1) = - \sin(z_1)$$
 
 $$Ln'(z_2) = \frac{1}{z_2}$$
 \end{theorem}
+
+\begin{definition}[Integral]
+Seja $C \in \mathbb{C}$ uma curva e $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$ com D contendo a curva C, então a integral de f na curva C é definida por
+
+$$\int_C f(z) d z := \lim_{n \rightarrow \infty} \sum_{m=1}^n f(w_m) \Delta z_m$$
+
+Onde $\Delta z_m = z_m - z_{m - 1}$ e $w_m$ um ponto de C no arco que liga $z_m$ a $z_{m - 1}$. Em particular quando $z(a) = z(b)$ temos uma curva fechada e denotamos a integral como
+
+$$\oint_C f(z) d z$$
+\end{definition}
+
+\begin{prop}[Propriedades da Integral] Consequências diretas da definição de integral
+
+\begin{enumerate}
+    \item \textbf{Linearidade}:
+    
+    $$\int_C \alpha  f_1(z) + \beta f_2(z) d z = \alpha \int_C f_1(z) d z + \beta \int_C f_2(z) d z$$
+    
+    \item \textbf{Caminho inverso}:
+    
+    $$\int_{-C} f(z) d z = - \int_{C} f(z) d z$$
+    
+    Em que $-C$ é a curva parametrizada no sentido contrário a C.
+    
+    \item \textbf{Partição da Curva}:
+    
+    $$\int_C f(z) d z = \int_{C_1} f(z) d z + \int_{C_2} f(z) d z$$
+    
+    Onde $C = C_1 \cup C_2$
+\end{enumerate}
+\end{prop}
 
 \end{document}
 
