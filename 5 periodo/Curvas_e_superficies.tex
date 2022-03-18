@@ -29,7 +29,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of surves and surfaces}
-\newcommand{\duedate}{March 14, 2021}
+\newcommand{\duedate}{March 18, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -139,7 +139,7 @@ A função L (comprimento de arco) é um difeomorfismo.
 Toda curva regular $\alpha: I \rightarrow \mathbb{R}^2$ admite reparametrização por comprimento de arco.
 \end{definition}
 
-\section*{Ângulo e curvatura (Week 3)}
+\section*{Ângulo e Curvatura (Week 3)}
 \label{s3}
 
 \begin{definition}[Função Ângulo]
@@ -158,7 +158,7 @@ Daí a curvatura de $\alpha$ em $s \in I$ é definida por
 $$K(s) = \theta'(s) = det(\alpha'(s), \alpha''(s))$$
 \end{definition}
 
-\section*{Ângulo (Week 4)}
+\section*{Movimento Rígido e Teorema Fundamental (Week 4)}
 \label{s4}
 
 \begin{theorem}[Função-ângulo diferenciável]
@@ -170,5 +170,31 @@ Seja $\alpha : I \subset \mathbb{R} \rightarrow \mathbb{R}$ e seja $\beta(s) = \
 
 $$K_\alpha := K_\beta(\theta^{-1}(t))$$
 \end{corollary}
+
+\begin{definition}[Diedro de Frenet]
+Seja $\alpha: I \subset \mathbb{R} \rightarrow \mathbb{R}^2$ uma curva regular parametrizada por comprimento de arco. Dado $s \in I$, o vetor $N(s) = JT(s)$ é dito o vetor normal de $\alpha$ em $s \in I$. A base ortonormal de $\mathbb{R}^2$ formado por $T(s)$ e $N(s)$ é chamada \textbf{Dietro de Frenet} em s.
+\end{definition}
+
+\begin{definition}[Movimento Rígido]
+$\Phi: \mathbb{R}^2 \rightarrow \mathbb{R}^2$ é dita \textbf{movimento rígido}, quando preserva distancia, isto é, para quaisquer $p, q \in \mathbb{R}^2$
+
+$$\| \Phi(p) - \Phi(q) \| = \| p - q \|$$
+\end{definition}
+
+\begin{theorem}
+Seja $\Phi: A + p_0$ um movimento rígido direto de $\mathbb{R}^2$ e $\alpha: I \rightarrow \mathbb{R}^2$ uma curva regular parametrizada por comprimento de arco. Então, $\beta = \Phi \circ \alpha: I \rightarrow \mathbb{R}^2$ é uma curva regular de $\mathbb{R}^2$, parametrizada por comprimento de arco, tal que
+
+$$K_\alpha(s) = K_\beta(s) \ \forall s \in I$$
+\end{theorem}
+
+\begin{theorem}[Teorema Fundamental da Teoria Local das Curvas Planas]
+Sejam I um intervalo aberto da reta e $K: I \rightarrow \mathbb{R}$ uma função diferenciável.
+
+\begin{enumerate}
+    \item Então existe uma curva diferenciavel $\alpha: I \rightarrow \mathbb{R}^2$, unit-speed, cuja função curvatura coincide com K.
+    
+    \item Além disso, para toda $\beta: I \rightarrow \mathbb{R}^2$, unit-speed, que cumpre $K_\beta = K$, existe um movimento rígido $\Phi: \mathbb{R}^2 \rightarrow \mathbb{R}^2$ tal que $\alpha = \Phi \circ \beta$
+\end{enumerate}
+\end{theorem}
 
 \end{document}
