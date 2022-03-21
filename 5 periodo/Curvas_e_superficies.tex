@@ -22,14 +22,14 @@
 \pagestyle{plain}
 \thispagestyle{plain}
 
-\newtheorem{prop}{Proposition}
+\newtheorem{prop}{Proposições}
 \newtheorem{theorem}{Teorema}
 \newtheorem{corollary}{Corolário}[theorem]
 \newtheorem{lemma}[theorem]{Lema}
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of surves and surfaces}
-\newcommand{\duedate}{March 18, 2021}
+\newcommand{\duedate}{March 21, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -62,9 +62,12 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \textbf{\nameref{s4}}
 \vspace{4.0mm}
 
+\textbf{\nameref{s5}}
+\vspace{4.0mm}
+
 \newpage
 
-\section*{Curvas, Reta tangente e Comprimento de arco (Week 1)}
+\section*{Curvas, Reta tangente e Comprimento de arco}
 \label{s1}
 
 \begin{definition}
@@ -107,7 +110,7 @@ Se $\gamma: (a, b) \rightarrow \mathbb{R}^n$ é uma c.p.\footnote{curva parametr
 Toda \textbf{curva regular} pode ser reparametrizada por \textbf{comprimento de arco}.
 \end{theorem}
 
-\section*{Difeomorfismo e Reparametrização (Week 2)}
+\section*{Difeomorfismo e Reparametrização}
 \label{s2}
 
 \begin{definition}[Difeomorfismo]
@@ -139,7 +142,7 @@ A função L (comprimento de arco) é um difeomorfismo.
 Toda curva regular $\alpha: I \rightarrow \mathbb{R}^2$ admite reparametrização por comprimento de arco.
 \end{definition}
 
-\section*{Ângulo e Curvatura (Week 3)}
+\section*{Ângulo e Curvatura}
 \label{s3}
 
 \begin{definition}[Função Ângulo]
@@ -158,7 +161,7 @@ Daí a curvatura de $\alpha$ em $s \in I$ é definida por
 $$K(s) = \theta'(s) = det(\alpha'(s), \alpha''(s))$$
 \end{definition}
 
-\section*{Movimento Rígido e Teorema Fundamental (Week 4)}
+\section*{Diedro de Frenet e Teorema Fundamental}
 \label{s4}
 
 \begin{theorem}[Função-ângulo diferenciável]
@@ -196,5 +199,48 @@ Sejam I um intervalo aberto da reta e $K: I \rightarrow \mathbb{R}$ uma função
     \item Além disso, para toda $\beta: I \rightarrow \mathbb{R}^2$, unit-speed, que cumpre $K_\beta = K$, existe um movimento rígido $\Phi: \mathbb{R}^2 \rightarrow \mathbb{R}^2$ tal que $\alpha = \Phi \circ \beta$
 \end{enumerate}
 \end{theorem}
+
+\section*{Curvas Regulares no $\mathbb{R}^3$}
+\label{s5}
+
+\begin{definition}[Curvas no $\mathbb{R}^3$]
+As curvas diferenciáveis no $\mathbb{R}^3$, são definidas de forma análoga ao $\mathbb{R}^2$, isto é, uma \textbf{curva no $\mathbb{R}^3$} é uma aplicação diferenciável de um intervalo I (aberto) em $\mathbb{R}^3$, da forma
+
+$$\alpha(t) = (x(t), y(t), z(t)),\ t \in I$$
+
+Onde x, y e z são diferenciáveis, e a curva é dita \textbf{regular} quando
+
+$$\alpha'(t) = (x'(t), y'(t), z'(t)) \neq (0, 0, 0),\ t \in I$$
+\end{definition}
+
+\begin{prop} De forma análoga vale para $\mathbb{R}^3$ que
+\begin{itemize}
+    \item Comprimento de arco é invariável por reparametrização.
+    
+    \item Toda curva regular admite reparametrização \textit{unit-speed} $(\| \alpha'(t) \| = 1)$.
+\end{itemize}
+\end{prop}
+
+\begin{definition}(Curvatura no $\mathbb{R}^3$
+Dada uma curva $\alpha: I \rightarrow \mathbb{R}$ regular parametrizada por comprimento de arco, a \textbf{curvatura} de $\alpha$ em $s \in I$ é definida como
+
+$$K_\alpha(s) = \| \alpha''(s) \|$$
+\end{definition}
+
+\begin{definition}[2-regular]
+Seja uma curva regular $\alpha: I \rightarrow \mathbb{R}^3$ \textit{unit-speed}, e $K_\alpha(s) > 0, \forall s$, ou seja, $\alpha''(s) \neq 0,\ \forall s$. ENtão dizemos que $\alpha$ é \textbf{2-regular}.
+\end{definition}
+
+\begin{definition}[Triedro de Frenet]
+Para $\alpha$ 2-regular, seja $T(s) = \alpha'(s)$ (vetor tangente), $N(s) = \frac{\alpha''(s)}{\| \alpha''(s) \|}$ (vetor normal) e $B(s) = T(s) \times N(s)$ (vetor binormal). Desse modo estabelecemos um referencial chamado \textbf{Triedro de Frenet} formado pelos vetores $\{ T(s), N(s), B(s) \}$, onde,
+
+$$ \left \{
+\begin{array}{lll}
+    B(s) = T(s) \times N(s) \\
+    N(s) = B(s) \times T(s) \\
+    T(s) = N(s) \times B(s)
+\end{array} \right .
+$$
+\end{definition}
 
 \end{document}
