@@ -63,6 +63,9 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \textbf{\nameref{s4}}
 \vspace{4.0mm}
 
+\textbf{\nameref{s5}}
+\vspace{4.0mm}
+
 \newpage
 
 \section*{Números Complexos e propriedades (Week 1)}
@@ -299,7 +302,27 @@ Em que $G,H: D \subset \mathbb{R}^2 \rightarrow \mathbb{R}^2$ com
     H(x, y) &:= (v(x, y), u(x, y))
 \end{align*}
 
-e D contém a curva C, por Cauchy-Riemann os jacobianos $J_G$ e $J_H$ são simétricos i.e. G e H são conservativos e as integrais da Equação~\ref{eq.1} são indeprendentes de caminho.
+e D contém a curva C, por Cauchy-Riemann os jacobianos $J_G$ e $J_H$ são simétricos i.e. G e H são conservativos e as integrais da Equação~\ref{eq.1} são independentes de caminho.
+\end{theorem}
+
+\section*{Teorema da integral de Cauchy (Week 5)}
+\label{s5}
+\begin{theorem}
+Seja $f: D \subset \mathbb{C} \to \mathbb{C}$ analítica com derivada contínua e seja C uma curva contida em D com início $z_0$ e fim $z_1$. Dada uma parametrização "crescente" $z(t)$ de $C,\ t \in [t_0, t_1]$, temos
+
+$$\int_C f(z) d z = \int_{t_0}^{t_1} f(z(t)) . z'(t) d t$$
+\end{theorem}
+
+\begin{theorem}[Integral de Cauchy]
+Seja $f: D \subset \mathbb{C} \to \mathbb{C}$ analítica com derivada contínua e seja C uma curva contida em D com início e fim iguais. Então
+
+$$\oint_C f(z) d z = 0$$
+\end{theorem}
+
+\begin{theorem}
+Seja C e \~C curvas em $D \subset \mathbb{C}$ com pontos inicial $z_0$ e final $z_1$. Então
+
+$$\int_C f(z) d z = \int_{\tilde{C}} f(z) d z$$
 \end{theorem}
 
 \end{document}
