@@ -30,7 +30,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{March 18, 2022}
+\newcommand{\duedate}{March 23, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -191,13 +191,13 @@ $$lim_{z \rightarrow z_0} f(z) = l$$
 
 Quando para todo $\varepsilon > 0$, $\exists \delta > 0$ tal que 
 
-$$z \in D - \{z_0\} \text{ e } \mid z - z_0 \mid < \delta \Longrightarrow{} \mid f(z) - l \mid < \varepsilon$$
+$$z \in D - \{z_0\} \text{ e } | z - z_0| < \delta \Longrightarrow{} | f(z) - l | < \varepsilon$$
 \end{definition}
 
 \begin{definition}[Continuidade]
 Seja $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$ e $z_0 \in D$. Dizemos que f é \textbf{contínua} em $z_0$ se para todo $\varepsilon > 0$, $\exists \delta > 0$ tal que
 
-$$z \in D - \{z_0\} \text{ e } \mid z - z_0 \mid < \delta \Longrightarrow{} \mid f(z) - f(z_0) \mid < \varepsilon$$
+$$z \in D - \{z_0\} \text{ e } | z - z_0 | < \delta \Longrightarrow{} | f(z) - f(z_0) | < \varepsilon$$
 \end{definition}
 
 \begin{definition}[Diferenciabilidade]
@@ -284,6 +284,23 @@ $$\oint_C f(z) d z$$
     Onde $C = C_1 \cup C_2$
 \end{enumerate}
 \end{prop}
+
+\begin{theorem}
+Seja $f(z) = u(z) + i v(z)$ uma função analítica em torno da curva C. Podemos escrever
+
+\begin{equation}\label{eq.1}
+    \int_C f(z) dz = \int_C G + i \int_C H
+\end{equation}
+
+Em que $G,H: D \subset \mathbb{R}^2 \rightarrow \mathbb{R}^2$ com
+
+\begin{align*}
+    G(x, y) &:= (u(x, y), - v(x, y)) \\
+    H(x, y) &:= (v(x, y), u(x, y))
+\end{align*}
+
+e D contém a curva C, por Cauchy-Riemann os jacobianos $J_G$ e $J_H$ são simétricos i.e. G e H são conservativos e as integrais da Equação~\ref{eq.1} são indeprendentes de caminho.
+\end{theorem}
 
 \end{document}
 
