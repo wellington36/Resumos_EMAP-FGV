@@ -29,7 +29,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of surves and surfaces}
-\newcommand{\duedate}{March 21, 2021}
+\newcommand{\duedate}{March 26, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -42,7 +42,7 @@
 
 Fundação Getúlio Vargas\hfill\\
 Curvas e Superfícies\hfill\textbf{\assignment}\\
-Wellington Silva\hfill\textbf{Due:} \duedate\\
+Wellington Silva\hfill\textbf{Last update:} \duedate\\
 \smallskip\hrule\bigskip
 
 {\let\newpage\relax\maketitle}
@@ -221,14 +221,14 @@ $$\alpha'(t) = (x'(t), y'(t), z'(t)) \neq (0, 0, 0),\ t \in I$$
 \end{itemize}
 \end{prop}
 
-\begin{definition}(Curvatura no $\mathbb{R}^3$
+\begin{definition}[Curvatura no $\mathbb{R}^3$]
 Dada uma curva $\alpha: I \rightarrow \mathbb{R}$ regular parametrizada por comprimento de arco, a \textbf{curvatura} de $\alpha$ em $s \in I$ é definida como
 
 $$K_\alpha(s) = \| \alpha''(s) \|$$
 \end{definition}
 
 \begin{definition}[2-regular]
-Seja uma curva regular $\alpha: I \rightarrow \mathbb{R}^3$ \textit{unit-speed}, e $K_\alpha(s) > 0, \forall s$, ou seja, $\alpha''(s) \neq 0,\ \forall s$. ENtão dizemos que $\alpha$ é \textbf{2-regular}.
+Seja uma curva regular $\alpha: I \rightarrow \mathbb{R}^3$ \textit{unit-speed}, e $K_\alpha(s) > 0, \forall s$, ou seja, $\alpha''(s) \neq 0,\ \forall s$. Então dizemos que $\alpha$ é \textbf{2-regular}.
 \end{definition}
 
 \begin{definition}[Triedro de Frenet]
@@ -242,5 +242,19 @@ $$ \left \{
 \end{array} \right .
 $$
 \end{definition}
+
+\begin{definition}[Curvatura e Torção]
+Seja uma curva $\alpha$ 2-regular em $\mathbb{R}^3$ não necessariamente parametrizada por comprimento de arco, então a \textbf{curvatura e a torção} de $\alpha$ são definidas respectivamente como
+
+$$K_\alpha(t) = \frac{\| \alpha''(t) \times \alpha'(t) \|}{\| \alpha'(t) \|^3}$$
+
+$$\mathcal{T}(t) = \frac{\langle (\alpha'(t) \times \alpha''(t)), \alpha'''(t) \rangle}{\| \alpha'(t) \times \alpha''(t) \|^2}$$
+\end{definition}
+
+\begin{theorem}
+Seja $\alpha: I \rightarrow \mathbb{R}^3$ uma curva 2-regular \textit{unit-speed}, então
+
+$$\alpha \textit{ é plana} \Longleftrightarrow \mathcal{T}(s) \equiv 0,\ \forall s \in I$$
+\end{theorem}
 
 \end{document}
