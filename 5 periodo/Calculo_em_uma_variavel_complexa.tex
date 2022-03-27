@@ -30,7 +30,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{March 26, 2022}
+\newcommand{\duedate}{March 27, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -331,9 +331,15 @@ Seja f contida num domínio D contendo a curva C. Suponha $M \geq 0$ t.q. $| f(z
 $$\left | \int_C f(z) d z \right | \leq M L$$
 \end{lemma}
 
-%\begin{theorem}[]
-%
-%\end{theorem}
+\begin{theorem}[TFC complexo]
+Seja $D \subset \mathbb{C}$ um domínio (aberto simplesmente conexo) e $f: D \rightarrow \mathbb{C}$ analítica com derivada contínua. Sejam $z_0, z_1 \in D$ e C uma curva contida em D com ponto inicial $z_0$ e final $z_1$. Seja $F: D \rightarrow \mathbb{C}$ tal que $F'(z) = f(z),\ \forall z \in D$. Então
+
+$$\int_C f(z) d z = F(z_1) - F(z_0)$$
+\end{theorem}
+
+\begin{theorem}[Integral indefinida]
+Se f é analítica em um aberto simplesmente conexo D, então existe F definida em D tal que $F' = f$ em D.
+\end{theorem}
 
 \end{document}
 
