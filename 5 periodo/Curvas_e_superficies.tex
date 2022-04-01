@@ -22,14 +22,14 @@
 \pagestyle{plain}
 \thispagestyle{plain}
 
-\newtheorem{prop}{Proposições}
+\newtheorem{prop}{Proposição}
 \newtheorem{theorem}{Teorema}
 \newtheorem{corollary}{Corolário}[theorem]
 \newtheorem{lemma}[theorem]{Lema}
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of surves and surfaces}
-\newcommand{\duedate}{March 26, 2021}
+\newcommand{\duedate}{April 1, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -63,6 +63,9 @@ Wellington Silva\hfill\textbf{Last update:} \duedate\\
 \vspace{4.0mm}
 
 \textbf{\nameref{s5}}
+\vspace{4.0mm}
+
+\textbf{\nameref{s6}}
 \vspace{4.0mm}
 
 \newpage
@@ -156,12 +159,12 @@ Seja $\alpha: I \rightarrow \mathbb{R}$ unit-speed. Designando-se o vetor tangen
 
 $$T(s) = (cos(\theta(s)), sen(\theta(s)),\ \forall s \in I$$
 
-Daí a curvatura de $\alpha$ em $s \in I$ é definida por
+Daí a \textbf{curvatura} de $\alpha$ em $s \in I$ é definida por
 
 $$K(s) = \theta'(s) = det(\alpha'(s), \alpha''(s))$$
 \end{definition}
 
-\section*{Diedro de Frenet e Teorema Fundamental}
+\section*{Teorema Fundamental das Curvas Planas}
 \label{s4}
 
 \begin{theorem}[Função-ângulo diferenciável]
@@ -255,6 +258,19 @@ $$\mathcal{T}(t) = \frac{\langle (\alpha'(t) \times \alpha''(t)), \alpha'''(t) \
 Seja $\alpha: I \rightarrow \mathbb{R}^3$ uma curva 2-regular \textit{unit-speed}, então
 
 $$\alpha \textit{ é plana} \Longleftrightarrow \mathcal{T}(s) \equiv 0,\ \forall s \in I$$
+\end{theorem}
+
+\section*{Teorema Fundamental das Curvas Espaciais}
+\label{s6}
+
+\begin{theorem}[Teorema Fundamental da Teoria Local das Curvas Espaciais]
+Sejam I um intervalo aberto, $K: I \rightarrow \mathbb{R}$ uma função positiva diferenciável e $\mathcal{T}: I \rightarrow \mathbb{R}$ uma função diferenciável
+
+\begin{enumerate}
+    \item Então existe uma curva diferenciavel $\alpha: I \rightarrow \mathbb{R}^3$, unit-speed, tal que K e $\mathcal{T}$ concedem com a curvatura e torção de $\alpha$ respectivamente
+    
+    \item Além disso, $\forall \beta: I \rightarrow \mathbb{R}^3$, unit-speed, que cumpre $K_\beta = K$ e $\mathcal{T}_\beta = \mathcal{T}$ existe um movimento rígido $\Phi: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ tal que $\alpha(s) = \Phi(\beta(s))$ 
+\end{enumerate}
 \end{theorem}
 
 \end{document}
