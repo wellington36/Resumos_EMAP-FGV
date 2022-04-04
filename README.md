@@ -41,7 +41,7 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no matrial para 
       - [A2 de Inferência Estatística](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/4%20periodo/notas_A2_Inferencia_estatistica.pdf)
 
 <div style="display: inline_block"><br>
-  <img align="right" alt="Welly-Boy" height="180" width="260" src="https://media.giphy.com/media/WRQBXSCnEFJIuxktnw/giphy.gif">
+  <img align="right" alt="Welly-MemeBr" height="180" width="260" src="https://media.giphy.com/media/WRQBXSCnEFJIuxktnw/giphy.gif">
 </div>
 
 ### 📒 Quinto período
