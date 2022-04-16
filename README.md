@@ -47,5 +47,5 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no matrial para 
 ### 📒 Quinto período
   - [Curvas e Superfícies](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/5%20periodo/Curvas_e_superficies.pdf)
   - [Cálculo em Uma Variável Complexa](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/5%20periodo/Calculo_em_uma_variavel_complexa.pdf)
-  - Material adicional:
-      - [Curvas e Superfícies](https://github.com/wellington36/curvas-e-superficies)
+  - Material adicional de Curvas com código ([Repositório original](https://github.com/wellington36/curvas-e-superficies)):
+      - [Curvas e Superfícies Part1](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/5%20periodo/Curvas_e_Superficies_Part_I.pdf)
