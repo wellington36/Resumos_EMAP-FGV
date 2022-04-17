@@ -30,7 +30,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{April 10, 2022}
+\newcommand{\duedate}{April 17, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -66,9 +66,12 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \textbf{\nameref{s5}}
 \vspace{4.0mm}
 
+\textbf{\nameref{s6}}
+\vspace{4.0mm}
+
 \newpage
 
-\section*{Números Complexos e propriedades (Week 1)}
+\section*{Números Complexos e propriedades}
 \label{s1}
 
 \begin{prop} As seguintes propriedades valem para quaisquer $z, w, t \in \mathbb{C}$:
@@ -148,7 +151,7 @@ Seja $n \in \mathbb{Z}_{++}$ e $z = r(cos(\theta) + i sen(\theta))$. Então
 $$z^n = r^n (cos(n\theta) + i sen(n\theta))$$
 \end{theorem}
 
-\section*{Exponencial, Limite e Derivada (Week 2)}
+\section*{Exponencial, Limite e Derivada}
 \label{s2}
 \begin{definition}[Função exponencial]
 Seja $z \in \mathbb{C}$ com $z = x + iy,\ x,y \in \mathbb{R}$, então 
@@ -216,7 +219,7 @@ Seja $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$, f é dita \textbf{analít
 \end{definition}
 
 
-\section*{Equações de Cauchy-Riemann (Week 3)}
+\section*{Equações de Cauchy-Riemann}
 \label{s3}
 
 \begin{theorem}[Cauchy-Riemann (ida)]
@@ -237,7 +240,7 @@ $$f' = u_x + i v_x\quad \text{e} \quad f' = v_y - i u_y$$
 Se as funções reais $u(x, y)$ e $v(x, y)$ de variáveis $x, y \in \mathbb{R}$ tiverem derivadas parciais contínuas satisfazem as equações de Cauchy-Riemann em algum domínio D, então a função complexa $f(z) = u(x, y) + i v(x, y)$ é analítica em D, com $z = x + iy$.
 \end{theorem}
 
-\section*{Cauchy-Riemann, Eq. de Laplace e Integral (Week 4)}
+\section*{Cauchy-Riemann, Eq. de Laplace e Integral}
 \label{s4}
 \begin{theorem}[Eq. de Laplace]
 Se $f(z) = u(x, y) + i v(x, y)$ é analítica em um domínio D, (e as derivadas segundas de u e v existem e são continuas)\footnote{Mais adiante, veremos que a parte em parenteses não é necessária.}, então ambas u e v satisfazem a equação de Laplace.
@@ -305,7 +308,7 @@ Em que $G,H: D \subset \mathbb{R}^2 \rightarrow \mathbb{R}^2$ com
 e D contém a curva C, por Cauchy-Riemann os jacobianos $J_G$ e $J_H$ são simétricos i.e. G e H são conservativos e as integrais da Equação~\ref{eq.1} são independentes de caminho.
 \end{theorem}
 
-\section*{Teorema da integral de Cauchy (Week 5)}
+\section*{Teorema da integral de Cauchy}
 \label{s5}
 \begin{theorem}
 Seja $f: D \subset \mathbb{C} \to \mathbb{C}$ analítica com derivada contínua e seja C uma curva contida em D com início $z_0$ e fim $z_1$. Dada uma parametrização "crescente" $z(t)$ de $C,\ t \in [t_0, t_1]$, temos
@@ -339,6 +342,21 @@ $$\int_C f(z) d z = F(z_1) - F(z_0)$$
 
 \begin{theorem}[Integral indefinida]
 Se f é analítica em um aberto simplesmente conexo D, então existe F definida em D tal que $F' = f$ em D.
+\end{theorem}
+
+\section*{Teorema da integral de Cauchy para domínios multi-conexos}
+\label{s6}
+
+\begin{theorem}[Duplamente Conexo]
+Seja $D \subset \mathbb{C}$ duplamente conexo com $C_1$ ``borda exterior'' e $C_2$ ``borda interior'' com ambas as curvas orientadas no sentido anti-horário. Suponha $D^\star$ aberto contendo D e $f: D^\star \rightarrow \mathbb{C}$ analítica. Então
+
+$$\int_{C_1} f(z) d z = \int_{C_2} f(z) d z$$
+\end{theorem}
+
+\begin{theorem}[Multi-conexo (generalização do caso anterior)]
+Se $f$ for analítica em $D^\star$ multi-conexo com $C_1, \ldots, C_n$ ``borda interior'' e C ``borda exterior'', onde todas são orientedas no sentido anti-horário. Então
+
+$$\int_C f(z) d z = \sum_{j = 1}^n \int_{C_j} f(z) d z$$
 \end{theorem}
 
 \end{document}
