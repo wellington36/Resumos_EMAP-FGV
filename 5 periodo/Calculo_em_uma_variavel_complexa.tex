@@ -30,7 +30,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{April 17, 2022}
+\newcommand{\duedate}{April 22, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -354,9 +354,25 @@ $$\int_{C_1} f(z) d z = \int_{C_2} f(z) d z$$
 \end{theorem}
 
 \begin{theorem}[Multi-conexo (generalização do caso anterior)]
-Se $f$ for analítica em $D^\star$ multi-conexo com $C_1, \ldots, C_n$ ``borda interior'' e C ``borda exterior'', onde todas são orientedas no sentido anti-horário. Então
+Se $f$ for analítica em $D^\star$ multi-conexo com $C_1, \ldots, C_n$ ``borda interior'' e C ``borda exterior'', onde todas são orientadas no sentido anti-horário. Então
 
 $$\int_C f(z) d z = \sum_{j = 1}^n \int_{C_j} f(z) d z$$
+\end{theorem}
+
+\begin{theorem}[Teorema da Integral de Cauchy]
+Suponha f analítica em um domínio simplesmente conexo D. Então, $\forall z_0 \in D$ e qualquer curva simples $C \subset D$ que contorna $z_0$ no sentido anti-horário, temos
+
+$$\oint_C \frac{f(z)}{z - z_0} dz = 2 \pi i f(z_0)$$
+
+ou de maneira equivalente,
+
+$$f(z_0) = \frac{1}{2 \pi i} \oint_C \frac{f(z)}{z - z_0} d z$$
+\end{theorem}
+
+\begin{theorem}[Teorema da Integral de Cauchy para derivada]
+Suponha f analítica em um domínio simplesmente conexo D. Então, $\forall z_0 \in D$ e qualquer curva simples $C \subset D$ que contorna $z_0$ no sentido anti-horário, a n-ésima derivada de $f(z_0)$ é
+
+$$f^{(n)}(z_0) = \frac{n!}{2 \pi i} \oint_C \frac{f(z)}{(z - z_0)^{n + 1}} d z$$
 \end{theorem}
 
 \end{document}
