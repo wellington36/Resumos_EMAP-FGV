@@ -30,7 +30,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{April 22, 2022}
+\newcommand{\duedate}{April 25, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -103,7 +103,7 @@ Seja $z = (x, y)$ e $w = (a, b),\ x,y,a,b, \in \mathbb{R}$, definimos soma e pro
 \end{definition}
 
 \begin{definition}[O Módulo]
-Seja $z = x + iy$ um complexo, então o \textbf{módulo} ("tamanho") de um número complexo é definido por
+Seja $z = x + iy$ um complexo, então o \textbf{módulo} (``tamanho'') de um número complexo é definido por
 
 $$\mid z \mid = \sqrt{x^2 + y^2}$$
 \end{definition}
@@ -237,7 +237,7 @@ $$f' = u_x + i v_x\quad \text{e} \quad f' = v_y - i u_y$$
 \end{corollary}
 
 \begin{theorem}[Cauchy-Riemann (volta)]
-Se as funções reais $u(x, y)$ e $v(x, y)$ de variáveis $x, y \in \mathbb{R}$ tiverem derivadas parciais contínuas satisfazem as equações de Cauchy-Riemann em algum domínio D, então a função complexa $f(z) = u(x, y) + i v(x, y)$ é analítica em D, com $z = x + iy$.
+Se as funções reais $u(x, y)$ e $v(x, y)$ de variáveis $x, y \in \mathbb{R}$ tiverem derivadas parciais contínuas que satisfazem as equações de Cauchy-Riemann em algum domínio D, então a função complexa $f(z) = u(x, y) + i v(x, y)$ é analítica em D, com $z = x + iy$.
 \end{theorem}
 
 \section*{Cauchy-Riemann, Eq. de Laplace e Integral}
@@ -265,7 +265,7 @@ Seja $C \in \mathbb{C}$ uma curva e $f: D \subset \mathbb{C} \rightarrow \mathbb
 
 $$\int_C f(z) d z := \lim_{n \rightarrow \infty} \sum_{m=1}^n f(w_m) \Delta z_m$$
 
-Onde $\Delta z_m = z_m - z_{m - 1}$ e $w_m$ um ponto de C no arco que liga $z_m$ a $z_{m - 1}$. Em particular quando $z(a) = z(b)$ temos uma curva fechada e denotamos a integral como
+Onde $\Delta z_m = z_m - z_{m - 1}$ e $w_m$ é um ponto de C no arco que liga $z_m$ a $z_{m - 1}$. Em particular quando $z(a) = z(b)$ temos uma curva fechada e denotamos a integral como
 
 $$\oint_C f(z) d z$$
 \end{definition}
@@ -295,7 +295,7 @@ $$\oint_C f(z) d z$$
 Seja $f(z) = u(z) + i v(z)$ uma função analítica em torno da curva C. Podemos escrever
 
 \begin{equation}\label{eq.1}
-    \int_C f(z) dz = \int_C G + i \int_C H \nonumber
+    \int_C f(z) dz = \int_C G + i \int_C H
 \end{equation}
 
 Em que $G,H: D \subset \mathbb{R}^2 \rightarrow \mathbb{R}^2$ com
@@ -311,7 +311,7 @@ e D contém a curva C, por Cauchy-Riemann os jacobianos $J_G$ e $J_H$ são simé
 \section*{Teorema da integral de Cauchy}
 \label{s5}
 \begin{theorem}
-Seja $f: D \subset \mathbb{C} \to \mathbb{C}$ analítica com derivada contínua e seja C uma curva contida em D com início $z_0$ e fim $z_1$. Dada uma parametrização "crescente" $z(t)$ de $C,\ t \in [t_0, t_1]$, temos
+Seja $f: D \subset \mathbb{C} \to \mathbb{C}$ analítica com derivada contínua e seja C uma curva contida em D com início $z_0$ e fim $z_1$. Dada uma parametrização ``crescente'' $z(t)$ de $C,\ t \in [t_0, t_1]$, temos
 
 $$\int_C f(z) d z = \int_{t_0}^{t_1} f(z(t)) . z'(t) d t$$
 \end{theorem}
@@ -323,7 +323,7 @@ $$\oint_C f(z) d z = 0$$
 \end{theorem}
 
 \begin{theorem}
-Seja C e \~C curvas em $D \subset \mathbb{C}$ com pontos inicial $z_0$ e final $z_1$. Então
+Seja $f: D \subset \mathbb{C} \to \mathbb{C}$ analítica com derivada contínua e sejam C e \~C curvas em $D \subset \mathbb{C}$ com pontos inicial $z_0$ e final $z_1$. Então
 
 $$\int_C f(z) d z = \int_{\tilde{C}} f(z) d z$$
 \end{theorem}
