@@ -22,14 +22,14 @@
 \pagestyle{plain}
 \thispagestyle{plain}
 
-\newtheorem{prop}{Proposição}
+\newtheorem{prop}{Propriedade}
 \newtheorem{theorem}{Teorema}
 \newtheorem{corollary}{Corolário}[theorem]
 \newtheorem{lemma}[theorem]{Lema}
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of surves and surfaces}
-\newcommand{\duedate}{April 1, 2021}
+\newcommand{\duedate}{April 26, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -66,6 +66,9 @@ Wellington Silva\hfill\textbf{Last update:} \duedate\\
 \vspace{4.0mm}
 
 \textbf{\nameref{s6}}
+\vspace{4.0mm}
+
+\textbf{\nameref{s7}}
 \vspace{4.0mm}
 
 \newpage
@@ -272,5 +275,41 @@ Sejam I um intervalo aberto, $K: I \rightarrow \mathbb{R}$ uma função positiva
     \item Além disso, $\forall \beta: I \rightarrow \mathbb{R}^3$, unit-speed, que cumpre $K_\beta = K$ e $\mathcal{T}_\beta = \mathcal{T}$ existe um movimento rígido $\Phi: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ tal que $\alpha(s) = \Phi(\beta(s))$ 
 \end{enumerate}
 \end{theorem}
+
+\section*{Superfícies Regulares}
+\label{s7}
+
+\begin{definition}[Superfícies Regulares]
+Um conjunto $S \subset \mathbb{R}^3$ é dito uma \textbf{superfície regular}, quando é localmente difeomorfo a $\mathbb{R}^2$. Mais precisamente, quando, $\forall p \in S$, exite um difeomorfismo
+
+$$X: U \subset \mathbb{R}^2 \rightarrow V \subset S$$
+
+onde U é um aberto de $\mathbb{R}^2$ e V é um aberto relativo de S. A aplicação X é dita, então uma parametrização local de S em p.
+\end{definition}
+
+\begin{definition}
+Sendo o difeomorfismo de uma superfície da forma
+
+$$X(u, v) = (x(u, v), y(u, v), z(u, v)),\ (u,v) \in V$$
+
+definimos as \textbf{derivadas parciais} de X como sendo
+
+$$X_u(u, v) = \left( \frac{\partial x}{\partial u}(u, v), \frac{\partial y}{\partial u}(u, v), \frac{\partial z}{\partial u}(u, v) \right)$$
+
+$$X_v(u, v) = \left( \frac{\partial x}{\partial v}(u, v), \frac{\partial y}{\partial v}(u, v), \frac{\partial z}{\partial v}(u, v) \right)$$
+
+e se $X_u$ e $X_v$ são L.I. então produzem um plano tangente no ponto p.
+\end{definition}
+
+\begin{prop}
+Se S é uma superfície regular temos que:
+
+\begin{enumerate}[label=(\alph*)]
+    \item A aplicação $X(u, v) = (x(u, v), y(u, v), z(u, v))$ é diferenciável de $C^\infty$ quando x, y e z tem derivadas parciais de todas as ordens.
+    
+    \item Para todo $q: (u, v) \in U$, a diferencial de X em q, $dX_q: \mathbb{R}^2 \rightarrow \mathbb{R}^3$ é injetiva, nesse caso, garante-se a existência do plano tangente $T_p S$.
+\end{enumerate}
+\end{prop}
+
 
 \end{document}
