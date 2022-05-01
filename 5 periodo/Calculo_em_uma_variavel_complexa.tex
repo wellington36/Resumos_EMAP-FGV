@@ -30,7 +30,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{April 25, 2022}
+\newcommand{\duedate}{May 1, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -67,6 +67,9 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \vspace{4.0mm}
 
 \textbf{\nameref{s6}}
+\vspace{4.0mm}
+
+\textbf{\nameref{s7}}
 \vspace{4.0mm}
 
 \newpage
@@ -344,7 +347,7 @@ $$\int_C f(z) d z = F(z_1) - F(z_0)$$
 Se f é analítica em um aberto simplesmente conexo D, então existe F definida em D tal que $F' = f$ em D.
 \end{theorem}
 
-\section*{Teorema da integral de Cauchy para domínios multi-conexos}
+\section*{Formulas da integral de Cauchy para domínios multi-conexos}
 \label{s6}
 
 \begin{theorem}[Duplamente Conexo]
@@ -373,6 +376,32 @@ $$f(z_0) = \frac{1}{2 \pi i} \oint_C \frac{f(z)}{z - z_0} d z$$
 Suponha f analítica em um domínio simplesmente conexo D. Então, $\forall z_0 \in D$ e qualquer curva simples $C \subset D$ que contorna $z_0$ no sentido anti-horário, a n-ésima derivada de $f(z_0)$ é
 
 $$f^{(n)}(z_0) = \frac{n!}{2 \pi i} \oint_C \frac{f(z)}{(z - z_0)^{n + 1}} d z$$
+\end{theorem}
+
+\section*{Cauchy, Liouville e Morera}
+\label{s7}
+
+\begin{theorem}[Desigualdade de Cauchy]
+Suponha f analítica num domínio simplesmente conexo contendo C (fechado simples) com $z_0$ no ``interior''. Seja $M \geq 1,\ n \in \mathbb{N}$, temos
+
+\begin{align*}
+    \left| f^{(n)}(z_0) \right| &= \frac{n!}{2 \pi} \left| \oint_C \frac{f(z_0)}{(z - z_0)^{n+1}} d z \right| \\
+    &\leq n! \frac{M}{r^n}
+\end{align*}
+
+Onde, M é cota superior para $|f(z)|$ no círculo $\hat{C}$ centrada em $z_0$ de raio $r > 0$ e que esteja ``dentro'' de C.
+\end{theorem}
+
+\begin{theorem}[Teorema de Liouville]
+Se uma função inteira (analítica em todo $\mathbb{C}$ é limitada em valor absoluto de $\mathbb{C}$, então essa função é constante.
+\end{theorem}
+
+\begin{theorem}[Teorema de Morera (reciproca de Cauchy)]
+Se f é contínua em um domínio simplesmente conexo D e se
+
+$$\oint_C f(z) d z = 0$$
+
+para cada curva fechada simples em D, então f é analítica em D.
 \end{theorem}
 
 \end{document}
