@@ -29,7 +29,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of surves and surfaces}
-\newcommand{\duedate}{April 26, 2021}
+\newcommand{\duedate}{May 08, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -311,5 +311,30 @@ Se S é uma superfície regular temos que:
 \end{enumerate}
 \end{prop}
 
+\begin{theorem}[Função Inversa]
+Seja F diferenciável e $p \in A$ tal que $dF_p$ é injetora. Então existe uma vizinhança $U \subset A$ de p. Tal que $F(U)$ é aberto em $\mathbb{R}^n$ e a restrição $F_U$ é um difeomorfismo de U sobre $F(U)$.
+\end{theorem}
+
+\section*{...}
+\label{s8}
+\begin{definition}[Definição de Superfície]
+O subconjunto S de $\mathbb{R}^3$ é uma \textbf{superfície} se $\forall p \in S$, existe um aberto U em $\mathbb{R}^2$ e um aberto W em $\mathbb{R}^3$ contendo p tal que $S \cap W$ é \textbf{homeomorfo} a U.
+\end{definition}
+
+\begin{definition}[Atlas]
+Uma coleção de parametrizações que cobrem S é dita \textbf{atlas de S} e cada uma das parametrizações é dita uma \textbf{carta}.
+\end{definition}
+
+\begin{definition}[Curvas regulares enquanto subconjuntos]
+Diz-se que um subconjunto $C \subset \mathbb{R}^3$ é uma \textbf{curva regular}, quando para cada $p \in C$, existe um intervalo aberto $I \subset \mathbb{R}$ e um difeomorfismo $\alpha: I \rightarrow \alpha(I) \subset C$ em que $\alpha(I)$ é um aberto relativo de C.
+\end{definition}
+
+\begin{definition}[Valor Regular]
+Dados um aberto $O \subset \mathbb{R}^3$ e uma função diferenciável $\varphi: O \rightarrow \mathbb{R}^3$. Dizemos que $q \in \mathbb{R}$ é \textbf{valor regular} de $\varphi$ quando $\forall p \in \varphi^-1(q) \subset O$ a derivada
+
+$$d\varphi_p: \mathbb{R}^3 \rightarrow \mathbb{R}$$
+
+é não nula, isto é, $\nabla \varphi(p) \neq 0$
+\end{definition}
 
 \end{document}
