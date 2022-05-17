@@ -12,7 +12,6 @@
 \usepackage{hyperref}
 \usepackage{amsmath}
 
-\definecolor{mygreen}{rgb}{0,0.6,0}
 
 \hypersetup{
     colorlinks=true,
@@ -30,7 +29,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{May 1, 2022}
+\newcommand{\duedate}{May 17, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -43,11 +42,10 @@
 
 Fundação Getúlio Vargas\hfill\\
 Cálculo em uma Variável Complexa\hfill\textbf{\assignment}\\
-Wellington Silva\hfill\textbf{Due:} \duedate\\
+Wellington Silva\hfill\textbf{Last update:} \duedate\\
 \smallskip\hrule\bigskip
 
 {\let\newpage\relax\maketitle}
-\maketitle
 
 \section*{Sumário}
 
@@ -70,6 +68,9 @@ Wellington Silva\hfill\textbf{Due:} \duedate\\
 \vspace{4.0mm}
 
 \textbf{\nameref{s7}}
+\vspace{4.0mm}
+
+\textbf{\nameref{s8}}
 \vspace{4.0mm}
 
 \newpage
@@ -226,7 +227,7 @@ Seja $f: D \subset \mathbb{C} \rightarrow \mathbb{C}$, f é dita \textbf{analít
 \label{s3}
 
 \begin{theorem}[Cauchy-Riemann (ida)]
-Seja $f(z) = u(x, y) + i v(x, y)$ definida e continua em alguma vizinhança de $z = x + i y$ e suponha f diferenciável em z. Então, as derivadas parciais de u e v existem e satisfazem\footnote{Chamadas aqui de \textbf{Equações de Cauchy-Riemann}}
+Seja $f(z) = u(x, y) + i v(x, y)$ definida e contínua em alguma vizinhança de $z = x + i y$ e suponha f diferenciável em z. Então, as derivadas parciais de u e v existem e satisfazem\footnote{Chamadas aqui de \textbf{Equações de Cauchy-Riemann}}
 
 $$u_x(z) = v_y(z)\quad\text{e}\quad u_y(z) = - v_x(z)$$
 \end{theorem}
@@ -347,7 +348,7 @@ $$\int_C f(z) d z = F(z_1) - F(z_0)$$
 Se f é analítica em um aberto simplesmente conexo D, então existe F definida em D tal que $F' = f$ em D.
 \end{theorem}
 
-\section*{Formulas da integral de Cauchy para domínios multi-conexos}
+\section*{Fórmulas da integral de Cauchy para domínios multi-conexos}
 \label{s6}
 
 \begin{theorem}[Duplamente Conexo]
@@ -396,13 +397,34 @@ Onde, M é cota superior para $|f(z)|$ no círculo $\hat{C}$ centrada em $z_0$ d
 Se uma função inteira (analítica em todo $\mathbb{C}$ é limitada em valor absoluto de $\mathbb{C}$, então essa função é constante.
 \end{theorem}
 
-\begin{theorem}[Teorema de Morera (reciproca de Cauchy)]
+\begin{theorem}[Teorema de Morera (recíproca de Cauchy)]
 Se f é contínua em um domínio simplesmente conexo D e se
 
 $$\oint_C f(z) d z = 0$$
 
 para cada curva fechada simples em D, então f é analítica em D.
 \end{theorem}
+
+
+\section*{Teorema de Laurent}
+\label{s8}
+\begin{theorem}[Teorema de Laurent]
+Seja f(z) analítica em um domínio entre dois círculos concêntricos $C_1$ e $C_2$ com centro $z_0$. Então, f(z) pode ser representado pela \textbf{série de Laurent}
+
+$$f(z) = \sum_{n = 0}^\infty a_n (z - z_0) + \sum_{m = 1} \frac{b_n}{(z - z_0)^m}$$
+
+para z no anel definido por $C_1$ e $C_2$ em que
+
+$$a_n = \frac{1}{2 \pi i} \oint_C \frac{f(z)}{(z - z_0)^{n + 1}} d z,\ n \geq 0,\ n \in \mathbb{Z}$$
+
+$$b_m = \frac{1}{2 \pi i} \oint_C f(z) (z - z_0)^{m - 1} d z,\ m \geq 1,\ m \in \mathbb{Z}$$
+
+Com C qualquer curva fechada simples orientada no sentido anti-horário contida no anel $C_1$, $C_2$
+\end{theorem}
+
+\begin{definition}[Singularidade]
+Dizemos que $z_0$ é uma \textbf{singularidade} de uma função complexa f se f não está definida em $z_0$ ou não é analítica em $z_0$
+\end{definition}
 
 \end{document}
 
