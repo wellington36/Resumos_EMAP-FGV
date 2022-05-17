@@ -73,6 +73,9 @@ Wellington Silva\hfill\textbf{Last update:} \duedate\\
 \textbf{\nameref{s8}}
 \vspace{4.0mm}
 
+\textbf{\nameref{s9}}
+\vspace{4.0mm}
+
 \newpage
 
 \section*{Números Complexos e propriedades}
@@ -405,9 +408,9 @@ $$\oint_C f(z) d z = 0$$
 para cada curva fechada simples em D, então f é analítica em D.
 \end{theorem}
 
-
 \section*{Teorema de Laurent}
 \label{s8}
+
 \begin{theorem}[Teorema de Laurent]
 Seja f(z) analítica em um domínio entre dois círculos concêntricos $C_1$ e $C_2$ com centro $z_0$. Então, f(z) pode ser representado pela \textbf{série de Laurent}
 
@@ -425,6 +428,49 @@ Com C qualquer curva fechada simples orientada no sentido anti-horário contida 
 \begin{definition}[Singularidade]
 Dizemos que $z_0$ é uma \textbf{singularidade} de uma função complexa f se f não está definida em $z_0$ ou não é analítica em $z_0$
 \end{definition}
+
+\section*{Resíduos}
+\label{s9}
+\begin{definition}[Polo]
+Um \textbf{polo} é uma singularidade na qual os coeficientes não nulos da parte principal da série de Laurent são finitos.
+\end{definition}
+
+\begin{definition}[Singularidade essencial] Uma \textbf{singularidade essencial} é uma singularidade que não é um polo.
+\end{definition}
+
+\begin{theorem}
+Seja f uma função complexa e $z_0$ um polo de f. Então,
+
+$$\lim_{z \rightarrow z_0} |f(z)| = \infty$$
+\end{theorem}
+
+\begin{theorem}
+Seja $z_0$ uma singularidade (isolada) essencial de uma função complexa f. Então, f toma todos os valores, com um valor excepcional no máximo, numa vizinhança arbitrariamente pequena de $z_0$.
+\end{theorem}
+
+\begin{theorem}[Resíduos em polos]
+Suponha $z_0$ um polo simples de f, i.e., $z_0$ é um polo de ordem $m=1$. Então, localmente para $z \neq z_0$ podemos \textbf{calcular o resíduo} de $z_0$ em f como
+
+$$Res_{z = z_0} f(z) = b_1 = \lim_{z \rightarrow z_0} (z - z_0) f(z)$$
+
+Ou se f é da forma $f(z) = \frac{p(z)}{q(z)}$ com p e q analíticas em $z_0$ em que $z_0$ é rais simples de q (ou seja, $q'(z_0) \neq 0$, mas $q(z_0) = 0$) $\forall z \neq z_0$ numa vizinhança de $z_0$, então
+
+$$Res_{z = z_0} f(z) = b_1 = \frac{p(z_0)}{q'(z_0)}$$
+\end{theorem}
+
+\begin{theorem}
+Zeros de funções analíticas são isolados.
+\end{theorem}
+
+\begin{theorem}
+Se q é analítica e $z_0$ é raiz de ordem m de q, i.e., $q(z_0) = 0, \ldots, q^{(m - 1)}(z_0) = 0$ mas $q^{(m)}(z_0) \neq 0$, então $z_0$ é polo de ordem m de $\frac{1}{q}$.
+\end{theorem}
+
+\begin{theorem}[Teorema dos Resíduos]
+Seja C uma curva fechada simples orientada no sentido anti-horário contornando uma quantidade finita de singularidades $z_1, \ldots, z_m$ de uma função complexa f. Então
+
+$$\oint_C f(z) d z = 2 \pi i \sum_{j = 1}^m Res_{z = z_0} f(z)$$
+\end{theorem}
 
 \end{document}
 
