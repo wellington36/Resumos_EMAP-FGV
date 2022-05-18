@@ -29,7 +29,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of surves and surfaces}
-\newcommand{\duedate}{May 08, 2021}
+\newcommand{\duedate}{May 18, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -69,6 +69,15 @@ Wellington Silva\hfill\textbf{Last update:} \duedate\\
 \vspace{4.0mm}
 
 \textbf{\nameref{s7}}
+\vspace{4.0mm}
+
+\textbf{\nameref{s8}}
+\vspace{4.0mm}
+
+\textbf{\nameref{s9}}
+\vspace{4.0mm}
+
+\textbf{\nameref{s10}}
 \vspace{4.0mm}
 
 \newpage
@@ -315,7 +324,7 @@ Se S é uma superfície regular temos que:
 Seja F diferenciável e $p \in A$ tal que $dF_p$ é injetora. Então existe uma vizinhança $U \subset A$ de p. Tal que $F(U)$ é aberto em $\mathbb{R}^n$ e a restrição $F_U$ é um difeomorfismo de U sobre $F(U)$.
 \end{theorem}
 
-\section*{...}
+\section*{Superfícies e Atlas}
 \label{s8}
 \begin{definition}[Definição de Superfície]
 O subconjunto S de $\mathbb{R}^3$ é uma \textbf{superfície} se $\forall p \in S$, existe um aberto U em $\mathbb{R}^2$ e um aberto W em $\mathbb{R}^3$ contendo p tal que $S \cap W$ é \textbf{homeomorfo} a U.
@@ -330,11 +339,104 @@ Diz-se que um subconjunto $C \subset \mathbb{R}^3$ é uma \textbf{curva regular}
 \end{definition}
 
 \begin{definition}[Valor Regular]
-Dados um aberto $O \subset \mathbb{R}^3$ e uma função diferenciável $\varphi: O \rightarrow \mathbb{R}^3$. Dizemos que $q \in \mathbb{R}$ é \textbf{valor regular} de $\varphi$ quando $\forall p \in \varphi^-1(q) \subset O$ a derivada
+Dados um aberto $O \subset \mathbb{R}^3$ e uma função diferenciável $\varphi: O \rightarrow \mathbb{R}$. Dizemos que $q \in \mathbb{R}$ é \textbf{valor regular} de $\varphi$ quando $\forall p \in \varphi^-1(\{q\}) \subset O$ a derivada
 
 $$d\varphi_p: \mathbb{R}^3 \rightarrow \mathbb{R}$$
 
 é não nula, isto é, $\nabla \varphi(p) \neq 0$
 \end{definition}
+
+\begin{prop}
+A \textbf{imagem inversa} de um valor regular de uma função diferenciável definida em um aberto do $\mathbb{R}^3$, quando não vazia, é uma superfície regular.
+\end{prop}
+
+\section*{Espaços topológicos $\mathbb{R}^n$ Parte I}
+\label{s9}
+\begin{definition}[Bola aberta]
+Dado $a \in \mathbb{R}^n$ e um número real $r > 0$, a \textbf{bola aberta} de centro a e raio r em $\mathbb{R}^n$ é o conjunto
+
+$$B(a, r) = \{ x \in \mathbb{R}^n\ |\ \| x - a \| \leq r \}$$
+
+e respectivamente definimos \textbf{bola fechada} como
+
+$$B(a, r) = \{ x \in \mathbb{R}^n\ |\ \| x - a \| \geq r \}$$
+\end{definition}
+
+\begin{definition}[Conjunto Limitado]
+Um conjunto é dito \textbf{limitado} quando existe uma bola que o contém, ou seja,
+
+$$\exists a \in \mathbb{R}^n\ \mathrm{e}\ r>0\ \mathrm{t.q.}\ X \subset B(a, r)$$
+\end{definition}
+
+\begin{definition}[Aplicação limitada]
+Dado um conjunto A uma \textbf{aplicação} $f: A \rightarrow \mathbb{R}^n$ é dita limitada quando seu conjunto imagem é limitada.
+\end{definition}
+
+\begin{definition}[Conjunto aberto]
+Um conjunto $A \subset \mathbb{R}^n$ é dito \textbf{aberto} quando $\forall a \in A \exists r > 0$ tal que $B(a, r) \subset A$ (e a é dito ponto interior de A).
+\end{definition}
+
+\begin{definition}[Aplicação aberta]
+Diz-se que uma aplicação $f: \mathbb{R}^n \rightarrow \mathbb{R}^m$ é \textbf{aberta} quando $\forall A \subset \mathbb{R}^n\ \mathrm{aberto}, f(A) \subset \mathbb{R}^m$ é aberto.
+\end{definition}
+
+\begin{prop}[Propriedades dos abertos]
+Propriedades fundamentais dos conjuntos abertos
+
+\begin{enumerate}
+    \item O conjunto vazio e o espaço $\mathbb{R}^n$ são abertos.
+    
+    \item A \textbf{intersecção} de uma família finita de abertos é aberta.
+    
+    \item A \textbf{união} de uma família qualquer de abertos é aberta.
+\end{enumerate}
+\end{prop}
+
+\begin{definition}[Espaço topológico]
+Um espaço topológico é um par $(X, T)$ em que X é um conjunto e T é uma família de subconjuntos de X, chamados abertos, que satisfazem as propriedades acima. Diz-se, então, que a família T define uma topologia
+\end{definition}
+
+\begin{theorem}
+Uma sequência $(X_k)$ em $\mathbb{R}^n$ converge para $a \in \mathbb{R}^n$ se, e somente se, $\forall r > 0,\ \exists k_0 \in \mathbb{N}$ tal que se $k \geq k_0$ então $x_k \in B(a, r)$.
+\end{theorem}
+
+\begin{definition}[Conjunto fechado]
+Um conjunto $F \subset \mathbb{R}^n$ é dito \textbf{fechado} quando seu complementar é aberto.
+\end{definition}
+
+\begin{prop}[Propriedades dos fechados]
+Propriedades fundamentais dos conjuntos fechados
+
+\begin{enumerate}
+    \item O conjunto vazio e o espaço $\mathbb{R}^n$ são fechados.
+    
+    \item A \textbf{intersecção} de uma família qualquer de fechados é um conjunto fechado.
+    
+    \item A \textbf{união} de uma família finita de fechados é fechado.
+\end{enumerate}
+\end{prop}
+
+\begin{definition}[Aplicação fechada]
+Diz-se que uma aplicação $f: \mathbb{R}^n \rightarrow \mathbb{R}^m$ é \textbf{fechada} quando leva fechados de $\mathbb{R}^n$ em fechados de $\mathbb{R}^m$.
+\end{definition}
+
+\begin{definition}[Aderência]
+Um ponto $a \in \mathbb{R}^n$ é dito \textbf{aderente} a um conjunto $X \subset \mathbb{R}^n$ se existe uma sequência de pontos de X que convergem para a.
+\end{definition}
+
+\begin{definition}[Fecho]
+O \textbf{fecho} de X, denotado por $\overline{X}$, é o conjunto formado por todos os pontos de $\mathbb{R}^n$ que são aderentes a X.
+\end{definition}
+
+\begin{theorem}
+$F \subset \mathbb{R}^n$ é fechado $\Longleftrightarrow \overline{F} = F$.
+\end{theorem}
+
+\begin{definition}[Bordo]
+A fronteira (ou bordo) de um conjunto $X \subset \mathbb{R}^n$ é o conjunto $\partial X = \overline{X} \cap \overline{\mathbb{R}^n - X}$.
+\end{definition}
+
+\section*{Espaços topológicos $\mathbb{R}^n$ Parte II}
+\label{s10}
 
 \end{document}
