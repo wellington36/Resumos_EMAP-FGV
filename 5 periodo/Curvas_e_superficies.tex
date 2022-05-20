@@ -29,7 +29,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of surves and surfaces}
-\newcommand{\duedate}{May 18, 2021}
+\newcommand{\duedate}{May 20, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -438,5 +438,37 @@ A fronteira (ou bordo) de um conjunto $X \subset \mathbb{R}^n$ é o conjunto $\p
 
 \section*{Espaços topológicos $\mathbb{R}^n$ Parte II}
 \label{s10}
+\begin{definition}[Aberto relativo]
+Sejam X subconjunto de $\mathbb{R}^n$ e $A \subset X$. Diz-se que A é \textbf{aberto relativo} a X ou \textbf{aberto relativamente} à X quando existe um aberto $U \subset \mathbb{R}^n$ tal que $A = U \cap C$.
+\end{definition}
+
+\begin{definition}[Cisão]
+Uma \textbf{cisão} de um conjunto $X \subset \mathbb{R}^n$ é uma decomposição do mesmo em dois conjuntos disjuntos que são ambos, abertos em X, isto é, $A, B \subset \mathbb{R}^n$ tais que
+
+\begin{itemize}
+    \item $X = A \cup B$
+    
+    \item $A \cap B = \O$
+    
+    \item A e B abertos em X
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Conexidade]
+Um conjunto $X \subset \mathbb{R}^n$ é dito \textbf{conexo} se a única cisão que admite é a trivial ($X = X \cup \O$) caso contrario é dito desconexo.
+\end{definition}
+
+\begin{definition}[Homeomorfismo]
+Diz-se que dois espaços $(X_1, T_1)$ e $(X_2, T_2)$. São \textbf{homeomorfos} quando existe bijeção $\varphi: X_1 \rightarrow X_2$ tal que para quaisquer abertos $A_1 \in T_1$ e $A_2 \in T_2$ tem-se que $\varphi(A_1) \in T_2$ e $\varphi^{-1}(A_2) = T_1$. Logo $\varphi$ é dito \textbf{homeomorfismo}.
+\end{definition}
+
+\begin{definition}[Continuidade]
+Dados $X, Y \subset \mathbb{R}^n$, $f: X \rightarrow Y$ é \textbf{contínua} em $a \in X$ se $\forall \varepsilon > 0,\ \exists \delta > 0$ tal que $x \in X$ e $\| x - a \| < \delta \Rightarrow \| f(x) - f(a) \| < \varepsilon$.
+\end{definition}
+
+\begin{theorem}
+Dados $X \subset \mathbb{R}^n$ e $Y \subset \mathbb{R}^m$ uma bijeção $f: X \rightarrow Y$ é um homeomorfismo se e só se f e $f^{-1}$ são continuas.
+\end{theorem}
+
 
 \end{document}
