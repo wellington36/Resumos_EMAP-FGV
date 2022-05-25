@@ -1,7 +1,3 @@
-<!-- <div style="display: inline_block"><br>
-  <img align="right" alt="Welly-Yodinha" height="200" width="300" src="https://media.giphy.com/media/YFFGUPTPTRqIhwepA4/giphy.gif?cid=ecf05e47z7ju22xylp0rbziar6ty3n1e81kbokf4mz2rhp0l&rid=giphy.gif&ct=g">
-</div> -->
-
 # 📚💻 Resumos EMAP-FGV
 Meu repositório de resumos do curso de matemática aplicada.
 
