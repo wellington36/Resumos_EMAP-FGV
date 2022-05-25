@@ -8,6 +8,7 @@
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 \usepackage{enumitem}
 \usepackage{mathrsfs}
+\usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
 
@@ -29,7 +30,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of surves and surfaces}
-\newcommand{\duedate}{May 20, 2021}
+\newcommand{\duedate}{May 25, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -78,6 +79,9 @@ Wellington Silva\hfill\textbf{Last update:} \duedate\\
 \vspace{4.0mm}
 
 \textbf{\nameref{s10}}
+\vspace{4.0mm}
+
+\textbf{\nameref{s11}}
 \vspace{4.0mm}
 
 \newpage
@@ -331,7 +335,7 @@ O subconjunto S de $\mathbb{R}^3$ é uma \textbf{superfície} se $\forall p \in 
 \end{definition}
 
 \begin{definition}[Atlas]
-Uma coleção de parametrizações que cobrem S é dita \textbf{atlas de S} e cada uma das parametrizações é dita uma \textbf{carta}.
+Uma coleção de parametrizações que cobrem uma superfície S é dita \textbf{atlas de S} e cada uma das parametrizações é dita uma \textbf{carta}.
 \end{definition}
 
 \begin{definition}[Curvas regulares enquanto subconjuntos]
@@ -470,5 +474,56 @@ Dados $X, Y \subset \mathbb{R}^n$, $f: X \rightarrow Y$ é \textbf{contínua} em
 Dados $X \subset \mathbb{R}^n$ e $Y \subset \mathbb{R}^m$ uma bijeção $f: X \rightarrow Y$ é um homeomorfismo se e só se f e $f^{-1}$ são continuas.
 \end{theorem}
 
+\begin{definition}[Isomorfismo]
+É uma aplicação que preserva uma estrutura e pode ser revertida com uma aplicação inversa.
+\end{definition}
+
+\section*{Primeira forma fundamental}
+\label{s11}
+\begin{theorem}[Teorema da função inversa]
+Seja $F: U \subset \mathbb{R}^n \rightarrow \mathbb{R}^m$ diferenciável e $dF_p : \mathbb{R}^n \rightarrow \mathbb{R}^m$ isomorfismo. Então, existem abertos $V \subset U$ e $W \subset F(U)$, tais que se $p \in V$, então $F(p) \in W$ e $F|_v : V \rightarrow W$ é um difeomorfismo.
+\end{theorem}
+
+\begin{definition}[Vetor tangente]
+Dado um ponto p de uma superfície regular S, diz-se que $w \in \mathbb{R}^n$ é um \textbf{vetor tangente} a S em p, se existe uma curva $\alpha: (- \varepsilon, \varepsilon) \rightarrow S,\ \varepsilon > 0$, tal que, $\alpha(0) = p$ e $\alpha'(0) = w$.
+\end{definition}
+
+\begin{theorem}[Primeira forma fundamental]
+Seja S uma superfície regular e $p \in S$. A \textbf{primeira forma fundamental} de S em p
+
+$$I_p : T_p S \rightarrow \mathbb{R}$$
+
+é a forma quadrática associada à restrição do produto interno canônico de $\mathbb{R}^3$ ao plano tangente de S em p, $T_p S$, isto é
+
+$$I_p(w) = \langle w,w \rangle^2 = \| w \|^2,\ w \in T_p S$$
+
+Dada uma parametrização $X: U \subset \mathbb{R}^2 \rightarrow X(U) \subset S$ de S, as funções
+
+
+\begin{equation*}
+    E(u, v) = \langle X_u(u, v), X_u(u, v) \rangle
+\end{equation*}
+
+\begin{equation*}
+    F(u, v) = \langle X_u(u, v), X_v(u, v) \rangle
+\end{equation*}
+
+\begin{equation*}
+    G(u, v) = \langle X_v(u, v), X_v(u, v) \rangle
+\end{equation*}
+
+São os coeficientes da primeira forma fundamental de S relativos a X, isto é, a matriz de $I_{X(u, v)}$ com respeito a base $\{X_u, X_v\}$, de $T_{X(u, v)} S$
+
+$$
+\begin{bmatrix}
+E & F\\
+F & G
+\end{bmatrix}
+$$
+
+E $\forall w = a X_u(u, v) + b X_v(u, v) \in T_{X_(u, v)} S$ tem-se
+
+$$I_{X_(u, v)}(w) = a^2 E(u, v) + 2 a b F(u, v) + b^2 G(u, v)$$
+\end{theorem}
 
 \end{document}
