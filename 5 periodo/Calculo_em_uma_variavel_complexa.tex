@@ -26,10 +26,11 @@
 \newtheorem{theorem}{Teorema}
 \newtheorem{corollary}{Corolário}[theorem]
 \newtheorem{lemma}[theorem]{Lema}
+\newtheorem{ex}{Exemplo}
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{May 18, 2022}
+\newcommand{\duedate}{May 30, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -74,6 +75,9 @@ Wellington Silva\hfill\textbf{Last update:} \duedate\\
 \vspace{4.0mm}
 
 \textbf{\nameref{s9}}
+\vspace{4.0mm}
+
+\textbf{\nameref{s10}}
 \vspace{4.0mm}
 
 \newpage
@@ -393,11 +397,11 @@ Suponha f analítica num domínio simplesmente conexo contendo C (fechado simple
     &\leq n! \frac{M}{r^n}
 \end{align*}
 
-Onde, M é cota superior para $|f(z)|$ no círculo $\hat{C}$ centrada em $z_0$ de raio $r > 0$ e que esteja ``dentro'' de C.
+Onde, M é cota superior para $|f(z)|$ no círculo $\hat{C}$ centrado em $z_0$ de raio $r > 0$ e que esteja ``dentro'' de C.
 \end{theorem}
 
 \begin{theorem}[Teorema de Liouville]
-Se uma função inteira (analítica em todo $\mathbb{C}$ é limitada em valor absoluto de $\mathbb{C}$, então essa função é constante.
+Se uma função inteira (analítica em todo $\mathbb{C}$) é limitada em valor absoluto de $\mathbb{C}$, então essa função é constante.
 \end{theorem}
 
 \begin{theorem}[Teorema de Morera (recíproca de Cauchy)]
@@ -412,9 +416,9 @@ para cada curva fechada simples em D, então f é analítica em D.
 \label{s8}
 
 \begin{theorem}[Teorema de Laurent]
-Seja f(z) analítica em um domínio entre dois círculos concêntricos $C_1$ e $C_2$ com centro $z_0$. Então, f(z) pode ser representado pela \textbf{série de Laurent}
+Seja f(z) analítica num domínio entre dois círculos concêntricos $C_1$ e $C_2$ com centro $z_0$. Então, f(z) pode ser representado pela \textbf{série de Laurent}
 
-$$f(z) = \sum_{n = 0}^\infty a_n (z - z_0) + \sum_{m = 1} \frac{b_n}{(z - z_0)^m}$$
+$$f(z) = \sum_{n = 0}^\infty a_n (z - z_0) + \sum_{m = 1}^\infty \frac{b_n}{(z - z_0)^m}$$
 
 para z no anel definido por $C_1$ e $C_2$ em que
 
@@ -422,11 +426,11 @@ $$a_n = \frac{1}{2 \pi i} \oint_C \frac{f(z)}{(z - z_0)^{n + 1}} d z,\ n \geq 0,
 
 $$b_m = \frac{1}{2 \pi i} \oint_C f(z) (z - z_0)^{m - 1} d z,\ m \geq 1,\ m \in \mathbb{Z}$$
 
-Com C qualquer curva fechada simples orientada no sentido anti-horário contida no anel $C_1$, $C_2$
+Com C qualquer curva fechada simples orientada no sentido anti-horário contida no anel $C_1$, $C_2$.
 \end{theorem}
 
 \begin{definition}[Singularidade]
-Dizemos que $z_0$ é uma \textbf{singularidade} de uma função complexa f se f não está definida em $z_0$ ou não é analítica em $z_0$
+Dizemos que $z_0$ é uma \textbf{singularidade} de uma função complexa f, se f não está definida em $z_0$ ou não é analítica em $z_0$.
 \end{definition}
 
 \section*{Resíduos}
@@ -453,7 +457,7 @@ Suponha $z_0$ um polo simples de f, i.e., $z_0$ é um polo de ordem $m=1$. Entã
 
 $$Res_{z = z_0} f(z) = b_1 = \lim_{z \rightarrow z_0} (z - z_0) f(z)$$
 
-Ou se f é da forma $f(z) = \frac{p(z)}{q(z)}$ com p e q analíticas em $z_0$ em que $z_0$ é rais simples de q (ou seja, $q'(z_0) \neq 0$, mas $q(z_0) = 0$) $\forall z \neq z_0$ numa vizinhança de $z_0$, então
+Ou se f é da forma $f(z) = \frac{p(z)}{q(z)}$ com p e q analíticas em $z_0$, em que $z_0$ é raiz simples de q (ou seja, $q'(z_0) \neq 0$, mas $q(z_0) = 0$) $\forall z \neq z_0$ numa vizinhança de $z_0$, então
 
 $$Res_{z = z_0} f(z) = b_1 = \frac{p(z_0)}{q'(z_0)}$$
 \end{theorem}
@@ -463,7 +467,7 @@ Zeros de funções analíticas complexas não identicamente nulas são isolados.
 \end{theorem}
 
 \begin{theorem}
-Se q é analítica e $z_0$ é raiz de ordem m de q, i.e., $q(z_0) = 0, \ldots, q^{(m - 1)}(z_0) = 0$ mas $q^{(m)}(z_0) \neq 0$, então $z_0$ é polo de ordem m de $\frac{1}{q}$.
+Se q é analítica e $z_0$ é raiz de ordem m de q, i.e., $q(z_0) = 0, \ldots, q^{(m - 1)}(z_0) = 0$ mas $q^{(m)}(z_0) \neq 0$, então $z_0$ é \textbf{polo de ordem m} de $\frac{1}{q}$.
 \end{theorem}
 
 \begin{theorem}[Teorema dos Resíduos]
@@ -471,6 +475,99 @@ Seja C uma curva fechada simples orientada no sentido anti-horário contornando 
 
 $$\oint_C f(z) d z = 2 \pi i \sum_{j = 1}^m Res_{z = z_0} f(z)$$
 \end{theorem}
+
+\section*{Métodos de resoluções de integrais reais}
+\label{s10}
+\begin{definition}[Valor principal]
+Se f é uma função continua em $(- \infty, \infty)$. Então, o \textbf{valor principal de Cauchy} da integral de f em $(- \infty, \infty)$ é definido como
+
+$$\mathrm{p.v.} \int_{-\infty}^\infty f(x) d x := \lim_{R \to \infty} \int_{-R}^R f(x) d x$$
+\end{definition}
+
+\subsection*{Integrais Trigonométricas}
+Se queremos calcular uma integral da forma
+
+$$I = \int_0^{2\pi} f(\cos(\theta), \sin(\theta)) d \theta $$
+
+Podemos parametrizar no círculo unitário com a parametrização
+
+\begin{align*}
+    z(\theta) &= e^{i \theta},\ 0 \leq \theta \leq 2 \pi \\
+    d \theta &= \frac{d z}{i z}
+\end{align*}
+
+e pela parametrização podemos reescrever 
+
+\begin{align*}
+    \cos(\theta) &= \frac{1}{2} (e^{i \theta} + e^{ - i \theta}) = \frac{1}{2 i} \left(z + \frac{1}{z} \right) \\
+    \sin(\theta) &= \frac{1}{2} (e^{i \theta} - e^{ - i \theta}) = \frac{1}{2 i} \left(z - \frac{1}{z} \right)
+\end{align*}
+
+\begin{ex}
+Calcule
+
+\begin{equation*}
+    I = \int_0^{2 \pi} \frac{1}{5 + 4 \cos(\theta)} d \theta
+\end{equation*}
+
+Podemos parametrizar como descrito acima de forma que
+
+\begin{align*}
+    I &= \int_0^{2 \pi} \frac{1}{5 + 4 \cos(\theta)} d \theta \\
+    &= \int_\alpha \frac{1}{5 + 4 \cdot \frac{1}{2} (z + \frac{1}{z})} \frac{d z}{i z} \\
+    &= \frac{1}{2 i} \int_\alpha \frac{1}{(z + 2) (z + \frac{1}{2})} d z
+\end{align*}
+
+Temos 2 polos $z_1 = -2$ e $z_2 = - \frac{1}{2}$, mas só $z_1$ está na curva, então
+
+\begin{align*}
+    I &= \frac{1}{2 i} \int_\alpha \frac{1}{(z + 2) (z + \frac{1}{2})} d z \\
+    &= \frac{1}{2 i} \cdot 2 \pi i \cdot \mathrm{Res}_{z = - \frac{1}{2}} f(z) \\
+    &= \pi \cdot \lim_{z \to - \frac{1}{2}} \left(z + \frac{1}{2} \right) \cdot \frac{1}{(z + 2) (z + \frac{1}{2})} \\
+    &= \pi \cdot \lim_{z \to - \frac{1}{2}} \frac{1}{z + 2} \\
+    &= \frac{2 \pi}{3}
+\end{align*}
+\end{ex}
+
+\begin{ex}
+Calcule
+
+\begin{equation*}
+    I = \int_0^\pi \frac{1}{2 - \cos(\theta)} d \theta
+\end{equation*}
+
+Aqui temos um problema, o intervalo não é $(0, 2 \pi)$, então temos que reescrever a integral de forma que fique o intervalo desejado. Note que, usando $\cos(\theta) = \cos(2 \pi - \theta)$, e tomando $t = 2 \pi - \theta$ podemos reescrever a integral de forma que
+
+\begin{equation*}
+    \int_0^\pi \frac{1}{2 - \cos(\theta)} d \theta = - \int_\pi^{2 \pi} \frac{1}{2 - \cos(t)} d t = \int_\pi^{2 \pi} \frac{1}{2 - \cos(t)} d t
+\end{equation*}
+
+Ou seja,
+
+\begin{equation*}
+    \int_0^{2 \pi} \frac{1}{2 - \cos(\theta)} d \theta = 2 I
+\end{equation*}
+
+Agora podemos seguir o método acima,
+
+\begin{align*}
+    2 I &=  \int_0^{2 \pi} \frac{1}{2 - \cos(\theta)} d \theta \\
+    &= \int_\alpha \frac{1}{2 - \frac{1}{2} \cdot (z - \frac{1}{z})} \frac{d z}{i z} \\
+    &= - \frac{2}{i} \int_\alpha \frac{1}{z^2 - 4z - 1} dz
+\end{align*}
+
+Que tem polos $z_1 = 2 - \sqrt{3}$ e $z_2 = 2 + \sqrt{3}$, mas só $z_1$ está na curva $\alpha$
+
+\begin{align*}
+    2 I &= - \frac{2}{i} \int_\alpha \frac{1}{(z - 2 + \sqrt{3})(z - 2 - \sqrt{3})} d z \\
+    &= - \frac{2}{i} \cdot 2 \pi i \cdot \mathrm{Res}_{z = 2 - \sqrt{3}} f(z) \\
+    &= - 4 \pi \cdot \lim_{z \to 2 - \sqrt{3}} (z - 2 + \sqrt{3}) \frac{1}{(z - 2 + \sqrt{3}) (z - 2 - \sqrt{3})} \\
+    &= - 4 \pi \cdot \lim_{z \to 2 - \sqrt{3}} \frac{1}{z - 2 - \sqrt{3}} \\
+    &= \frac{2 \pi}{\sqrt{3}}
+\end{align*}
+
+Logo, $I = \frac{\pi}{\sqrt{3}}$
+\end{ex}
 
 \end{document}
 
