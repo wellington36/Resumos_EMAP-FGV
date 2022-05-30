@@ -11,6 +11,7 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{float}
 
 
 \hypersetup{
@@ -484,7 +485,7 @@ Se f é uma função continua em $(- \infty, \infty)$. Então, o \textbf{valor p
 $$\mathrm{p.v.} \int_{-\infty}^\infty f(x) d x := \lim_{R \to \infty} \int_{-R}^R f(x) d x$$
 \end{definition}
 
-\subsection*{Integrais Trigonométricas}
+\subsection*{1. Integrais Trigonométricas}
 Se queremos calcular uma integral da forma
 
 $$I = \int_0^{2\pi} f(\cos(\theta), \sin(\theta)) d \theta $$
@@ -567,6 +568,88 @@ Que tem polos $z_1 = 2 - \sqrt{3}$ e $z_2 = 2 + \sqrt{3}$, mas só $z_1$ está n
 \end{align*}
 
 Logo, $I = \frac{\pi}{\sqrt{3}}$
+\end{ex}
+
+\subsection*{2. Integrais Improprias de funções racionais}
+Seja uma integral da forma
+
+\begin{equation*}
+    I = \int_{-\infty}^\infty f(x) d x
+\end{equation*}
+
+Onde f é uma função racional, então
+
+\begin{align*}
+    I &= \int_{-\infty}^\infty f(x) d x \\
+    &= \int_{- \infty}^0 f(x) d x + \int_0^\infty f(x) d x \\
+    &= \lim_{R \to \infty} \int_{- \infty}^0 f(x) d x + \lim_{R \to \infty} \int_0^\infty f(x) d x 
+\end{align*}
+
+Se os 2 limites existem então
+
+\begin{equation*}
+    I = \mathrm{p.v.} \int_{- \infty}^\infty f(x) d x
+\end{equation*}
+
+\begin{ex}
+Calcule
+
+\begin{equation*}
+    I = \int_{- \infty}^\infty \frac{1}{x^4 + 4} d x
+\end{equation*}
+
+Seguindo o método acima
+
+\begin{align*}
+    I &= \lim_{R \to \infty} \int_{-R}^0 f(x) d x + \lim_{R \to \infty} \int_0^R f(x) d x \\
+    &= \mathrm{p.v.} \int_{- \infty}^\infty f(x) d x \\
+    &= \lim_{R \to \infty} \int_{- R}^R \frac{1}{x^4 + 4} d x
+\end{align*}
+
+Que vale, pois os limites existem. Então, podemos reparametrizar num semi-circulo de forma que mantemos uma curva nos $\mathbb{R}$ que é a desejada
+
+\begin{equation*}
+    \int_\alpha \frac{1}{z^4 + 4} d z = \int_{\alpha_1} \frac{1}{z^4 + 4} d z + \int_{\alpha_2} \frac{1}{z^4 + 4} d z
+\end{equation*}
+
+Onde $\alpha = \alpha_1 + \alpha_2$, como na figura
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.4]{exemplo3.png}
+    \caption{Curvas no semi-circulo}
+    \label{fig:ex3}
+\end{figure}
+
+Como $z = x + yi,\ x, y \in \mathbb{R}$, em $\alpha_1$ temos $y = 0$. Assim tomando $R \to \infty$
+
+\begin{equation*}
+    \lim_{R \to \infty} \int_\alpha \frac{1}{z^4 + 4} d z = \lim_{R \to \infty} \int_{-R}^R \frac{1}{x^4 + 4} d x + \lim_{R \to \infty} \int_{\alpha_2} \frac{1}{z^4 + 4} d z
+\end{equation*}
+
+Temos 3 limites e um deles é o que queremos, então vamos calcular os outros 2
+
+\begin{align*}
+    \lim_{R \to \infty} \int_\alpha \frac{1}{z^4 + 4} d z &= \lim_{R \to \infty} \int_\alpha \frac{1}{(z - 1 -i)(z +1 - i)(z + 1 + i)(z - 1 + i)}d z \\
+    &= \lim_{R \to \infty} \left( 2 \pi i \cdot \left( \mathrm{Res}_{z = 1 + i} f(z) + \mathrm{Res}_{z = - 1 + i} f(z) \right) \right) \\
+    &= \lim_{R \to \infty} \left( 2 \pi i \cdot \left( \frac{- 1 - i}{16} + \frac{1 - i}{16} \right) \right) \\
+    &= \lim_{R \to \infty} \left( \frac{\pi}{4} \right) = \frac{\pi}{4}
+\end{align*}
+
+E para o outro limite parametrizamos por $z(t) = R \cdot e^{i t}\ (0 \leq t \leq t)$
+
+\begin{align*}
+    \lim_{R \to \infty} \left| \int_{\alpha_2} \frac{1}{z^4 + 4}d z \right| &\leq \lim_{R \to \infty} \int_{\alpha_2} \frac{1}{R^4 + 4}d z \\
+    &= \lim_{R \to \infty} \left( \frac{1}{R^4 + 4} \int_{\alpha_2} d z \right) \\
+    &= \lim_{R \to \infty} \left( \frac{1}{R^4 + 4} \pi R \right) \\
+    &= 0
+\end{align*}
+
+Ou seja,
+
+$$\frac{\pi}{4} = I + 0$$
+
+Logo, $I = \frac{\pi}{4}$
 \end{ex}
 
 \end{document}
