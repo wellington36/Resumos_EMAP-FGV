@@ -31,7 +31,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{May 30, 2022}
+\newcommand{\duedate}{June 01, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -570,7 +570,7 @@ Que tem polos $z_1 = 2 - \sqrt{3}$ e $z_2 = 2 + \sqrt{3}$, mas só $z_1$ está n
 Logo, $I = \frac{\pi}{\sqrt{3}}$
 \end{ex}
 
-\subsection*{2. Integrais Improprias de funções racionais}
+\subsection*{2. Integrais Improprias de Funções Racionais}
 Seja uma integral da forma
 
 \begin{equation*}
@@ -616,9 +616,9 @@ Onde $\alpha = \alpha_1 + \alpha_2$, como na figura
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=.4]{exemplo3.png}
+    \includegraphics[scale=.35]{exemplo2.png}
     \caption{Curvas no semi-circulo}
-    \label{fig:ex3}
+    \label{fig:ex2}
 \end{figure}
 
 Como $z = x + yi,\ x, y \in \mathbb{R}$, em $\alpha_1$ temos $y = 0$. Assim tomando $R \to \infty$
@@ -650,6 +650,81 @@ Ou seja,
 $$\frac{\pi}{4} = I + 0$$
 
 Logo, $I = \frac{\pi}{4}$
+\end{ex}
+
+\subsection*{3. Integrais Improprias de Funções Racionais com Trigonométrica}
+Sendo uma integral da forma (podendo ser $\cos$ em vez de $\sin$)
+
+\begin{equation*}
+    I = \int_{- \infty}^\infty f(x) \sin(m x) d x
+\end{equation*}
+
+Usando a mesma parametrização do semi-circulo 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.35]{exemplo2.png}
+    \caption{Curvas no semi-circulo}
+    \label{fig:ex2}
+\end{figure}
+
+e usando que
+
+\begin{equation*}
+    e^{i m z} = \cos(m z) + i \sin(m z)
+\end{equation*}
+
+temos
+
+\begin{align*}
+    \int_\alpha f(z) e^{imz} d z &= \int_{\alpha_1} f(z) e^{imz} d z + \int_{\alpha_2} f(z) e^{imz} d z \\
+    &= \int_{\alpha_1} f(z) \cdot \cos(mz) d z + i \int_{\alpha_1} f(z) \cdot \sin(mz) d z + \int_{\alpha_2} f(z) e^{imz} d z
+\end{align*}
+
+Ficando com 4 integrais e uma é a desejada, assim podemos calcular as outras 3 e achar o resultado.
+
+\begin{ex}
+Determine o valor principal de 
+
+\begin{equation*}
+    \int_{- \infty}^\infty \frac{\cos(3 x)}{x^2 + 4} d x
+\end{equation*}
+
+Por definição,
+
+\begin{equation*}
+    I = \mathrm{p.v.} \int_{- \infty}^\infty \frac{\cos(3 x)}{x^2 + 4} d x = \lim_{R \to \infty} \int_{- R}^R \frac{1}{x^2 + 4} \cdot \cos(3x) d x
+\end{equation*}
+
+Usando o método
+
+\begin{equation*}
+    \lim_{R \to \infty} \int_\alpha \frac{1}{z^2 + 4} e^{i3z} d z = \lim_{R \to \infty} \int_{- R}^R \frac{1}{x^2 + 4} \cdot \cos(3x) d x + \lim_{R \to \infty} i \int_{- R}^R \frac{1}{x^2 + 4} \cdot \sin(3x) d x + \lim_{R \to \infty} \int_{\alpha_2} \frac{1}{z^2 + 4} e^{i3z} d z
+\end{equation*}
+
+Então, tem 4 limites e um é o que queremos, então vamos encontrar o valor dos 3 que estão faltando
+
+\begin{align*}
+    \lim_{R \to \infty} \int_\alpha \frac{1}{z^2 + 4} e^{i3z} d z &= \lim_{R \to \infty} \int_\alpha \frac{e^{i3z}}{(z - 2i)(z + 2i)} d z \\
+    &= \lim_{R \to \infty} 2 \pi i \cdot \mathrm{Res}_ {z = 2i} f(z) \\
+    &= \frac{\pi}{2 e^6}
+\end{align*}
+
+seguindo para a próxima
+
+\begin{equation*}
+    \lim_{R \to \infty} i \int_{- R}^R \frac{1}{x^2 + 4} \cdot \sin(3 x) d x = 0
+\end{equation*}
+
+pois, é o produto de uma função par com uma impar que é uma impar no instarvalo $(-R, R)$. Então, para a última, usamos a parametrização com $z(t) = R e^{i t}\ (0 \leq t \leq \pi)$
+
+\begin{align*}
+    \lim_{R \to \infty} \int_{\alpha_2} \frac{1}{z^2 + 4} \cdot e^{i3z} d z &\leq \lim_{R \to \infty} \int_{\alpha_2} \frac{1}{R^2 - 4} d z \\
+    &= \lim_{R \to \infty} \frac{1}{R^2 - 4} \int_{\alpha_2} d z \\
+    &= \lim_{R \to \infty} \frac{\pi R}{R^2 - 4} = 0
+\end{align*}
+
+Logo, $I = \frac{\pi}{2 e^6}$.
 \end{ex}
 
 \end{document}
