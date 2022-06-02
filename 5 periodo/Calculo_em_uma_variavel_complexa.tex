@@ -31,7 +31,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of calculus in a complex variable}
-\newcommand{\duedate}{June 01, 2022}
+\newcommand{\duedate}{June 02, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -488,21 +488,23 @@ $$\mathrm{p.v.} \int_{-\infty}^\infty f(x) d x := \lim_{R \to \infty} \int_{-R}^
 \subsection*{1. Integrais Trigonométricas}
 Se queremos calcular uma integral da forma
 
-$$I = \int_0^{2\pi} f(\cos(\theta), \sin(\theta)) d \theta $$
+$$I = \int_0^{2\pi} F(\cos(\theta), \sin(\theta)) d \theta $$
 
-Podemos parametrizar no círculo unitário com a parametrização
+Onde F é uma função racional, podemos parametrizar no círculo unitário com a parametrização
 
 \begin{align*}
     z(\theta) &= e^{i \theta},\ 0 \leq \theta \leq 2 \pi \\
     d \theta &= \frac{d z}{i z}
 \end{align*}
 
-e pela parametrização podemos reescrever 
+e pela parametrização podemos escrever $\sin$ e $\cos$ em função de z  
 
 \begin{align*}
     \cos(\theta) &= \frac{1}{2} (e^{i \theta} + e^{ - i \theta}) = \frac{1}{2} \left(z + \frac{1}{z} \right) \\
     \sin(\theta) &= \frac{1}{2i} (e^{i \theta} - e^{ - i \theta}) = \frac{1}{2 i} \left(z - \frac{1}{z} \right)
 \end{align*}
+
+Podendo assim simplificar a integral.
 
 \begin{ex}
 Calcule
@@ -582,7 +584,7 @@ Onde f é uma função racional, então
 \begin{align*}
     I &= \int_{-\infty}^\infty f(x) d x \\
     &= \int_{- \infty}^0 f(x) d x + \int_0^\infty f(x) d x \\
-    &= \lim_{R \to \infty} \int_{- \infty}^0 f(x) d x + \lim_{R \to \infty} \int_0^\infty f(x) d x 
+    &= \lim_{R \to \infty} \int_{- R}^0 f(x) d x + \lim_{R \to \infty} \int_0^R f(x) d x 
 \end{align*}
 
 Se os 2 limites existem então
