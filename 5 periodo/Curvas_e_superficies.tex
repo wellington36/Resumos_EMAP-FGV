@@ -30,7 +30,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of surves and surfaces}
-\newcommand{\duedate}{May 25, 2021}
+\newcommand{\duedate}{June 07, 2021}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -524,6 +524,91 @@ $$
 E $\forall w = a X_u(u, v) + b X_v(u, v) \in T_{X_(u, v)} S$ tem-se
 
 $$I_{X_(u, v)}(w) = a^2 E(u, v) + 2 a b F(u, v) + b^2 G(u, v)$$
+\end{theorem}
+
+\begin{theorem}[Área]
+Seguindo a primeira forma fundamental a área de uma superfície S um certo conjunto D é dada por
+
+\begin{equation*}
+    A_S(D) = \int_D \sqrt{E G - F^2} d u d v
+\end{equation*}
+\end{theorem}
+
+\section*{Segunda forma fundamental}\label{s12}
+\begin{definition}[Campo]
+Dada uma parametrização regular S, chama-se \textbf{campo} em S toda aplicação $f: S \to \mathbb{R}^3$
+\end{definition}
+
+\begin{prop} Um campo é dito:
+\begin{itemize}
+    \item unitário, se $\| f(p) \| = 1,\ \forall p \in S$.
+    
+    \item tangente, se $f(p) \in T_p S,\ \forall p \in S$.
+    
+    \item normal, se $f(p) \in T_p S^\perp,\ \forall p \in S$.
+\end{itemize}
+\end{prop}
+
+\begin{definition}[vetor normal]
+Sendo S uma superfície, seja 
+
+$$X: U \subset \mathbb{R}^2 \to X(U) \subset S$$
+
+$\forall p \in S$ seja $q = X^{-1}(p)$, podemos então definir o vetor normal em S no ponto p como $N: X(U) \to \mathbb{R}^2$, como
+
+\begin{equation*}
+    N(p) = \frac{X_u (q) \times X_v (q)}{\| X_u (q) \times X_v (q) \|}
+\end{equation*}
+\end{definition}
+
+\begin{definition}[Superfície orientável]
+Uma superfície regular S é \textbf{orientável} quando se pode definir um campo normal unitário e diferenciável.
+\end{definition}
+
+\begin{definition}[Atlas coerente]
+Dada duas parametrizações de A, X e Y e p no conjunto imagem de ambas, então $Y^{-1} \circ X$ tem determinante jacobiano maior que 0 em $X^{-1}(p)$.
+\end{definition}
+
+\begin{theorem}
+Uma superfície regular S é \textbf{orientável} se, e só se, admite um atlas coerente.
+\end{theorem}
+
+\begin{definition}[Aplicação normal de Gauss]
+Seja S uma superfície regular orientável, N campo normal unitário diferenciável em S, isto é, $\| N(p)\| = 1, \forall p \in S$
+
+\begin{equation*}
+    N: S \text{(superfície)} \to E_1 \text{(esfera de raio 1)}
+\end{equation*}
+
+é dita uma \textbf{aplicação normal de Gauss}, $\forall p \in S,\ T_p S = \{ N(p) \}^\perp = T_{N(p)} E_1$, temos $dN_p$ é um operador linear de $T_p S$. 
+\end{definition}
+
+\begin{theorem}[Segunda forma fundamental]
+Seja S uma superfície regular orientável, N aplicação normal de Gauss de S
+
+\begin{equation*}
+    I_p(w) \langle - dN_p w, w \rangle,\ w \in T_p S
+\end{equation*}
+
+Dado uma parametrização
+
+\begin{equation*}
+    \alpha: (- \varepsilon, \varepsilon) \to V \subset S
+\end{equation*}
+
+tal que $\alpha(0) = p$ e $\alpha'(0) = w$, temos que, $\forall s \in (- \varepsilon, \varepsilon),\ \langle N(\alpha(s)), \alpha'(s) \rangle = 0$, então
+
+\begin{equation*}
+    \langle -d N_p w, w \rangle = \langle N(p), \alpha''(0) \rangle
+\end{equation*}
+
+e os coeficientes da segunda forma são
+
+\begin{align*}
+    e(u, v) &= \langle - dN_p X_u, X_u \rangle = \langle N \circ X, X_uu \rangle \\
+    f(u, v) &= \langle - dN_p X_u, X_v \rangle = \langle N \circ X, X_uv \rangle \\
+    g(u, v) &= \langle - dN_p X_v, X_v \rangle = \langle N \circ X, X_vv \rangle
+\end{align*}
 \end{theorem}
 
 \end{document}
