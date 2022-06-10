@@ -46,3 +46,11 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no matrial para 
   - Material adicional de Curvas com código ([Repositório original](https://github.com/wellington36/curvas-e-superficies)):
       - [Curvas e Superfícies Part1](https://github.com/wellington36/Resumos_EMAP-FGV/blob/main/5%20periodo/Curvas_e_Superficies_Part_I.pdf)
       - [Curvas e Superfícies Part2](https://github.com/wellington36/curvas-e-superficies/blob/main/Curvas_e_Superficies_Part_II.pdf)
+
+# 🖥️ Mestrado
+  - [Álgebra Linear](https://github.com/wellington36/Resumos_EMAP-FGV/blob/newtopic_AlgLinMS/Mestrado/Algebra_linear.pdf)
+ 
+# 💕 Contribuidores diretos
+  - [Wellington J. Silva](https://github.com/wellington36)
+  - [Andre Ribeiro](https://github.com/andrerg02)
+  - [Rener Oliveira](https://github.com/reneroliveira)
