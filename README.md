@@ -50,3 +50,7 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no matrial para 
 # 🖥️ Mestrado
   - [Álgebra Linear](https://github.com/wellington36/Resumos_EMAP-FGV/blob/newtopic_AlgLinMS/Mestrado/Algebra_linear.pdf)
  
+# 💕 Contribuidores diretos
+  - [Wellington J. Silva](https://github.com/wellington36)
+  - [Andre Ribeiro](https://github.com/andrerg02)
+  - [Rener Oliveira](https://github.com/reneroliveira)
