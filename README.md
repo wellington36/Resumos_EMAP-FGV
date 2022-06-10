@@ -48,4 +48,5 @@ Por favor 🕵️‍♂️, comunique qualquer problema ou erro no matrial para 
       - [Curvas e Superfícies Part2](https://github.com/wellington36/curvas-e-superficies/blob/main/Curvas_e_Superficies_Part_II.pdf)
 
 # 🖥️ Mestrado
-  - materia x
+  - [Álgebra Linear](https://github.com/wellington36/Resumos_EMAP-FGV/blob/newtopic_AlgLinMS/Mestrado/Algebra_linear.pdf)
+ 
