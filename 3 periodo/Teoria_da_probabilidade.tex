@@ -164,6 +164,8 @@
 \vspace{3mm}
 
 \textbf{\nameref{s40}}
+\vspace{3mm}\\
+\textbf{\nameref{s41}}
 
 \newpage
 
@@ -248,7 +250,7 @@ $$P(B|A) = P(B)$$
 \label{s5}
 
 \begin{definition}
-Se X é uma variáveis aleatórias discretas, definimos a \textbf{função de probabilidade de X} por
+Se X é uma variável aleatória discreta, definimos a \textbf{função de probabilidade de X} por
 
 $$p_{X} (x) = P(X = x)$$
 \end{definition}
@@ -275,7 +277,6 @@ $$P(X = i | Y = j) = \dfrac{P(X = i \text{ e }}{P(Y = j} = P(X = i)$$
 \subsection*{2.2 Função de Probabilidade Acumulada}
 \label{s6}
 
-\subsubsection*{Definição}
 \begin{definition}
 A \textbf{função de distribuição} (ou \textbf{função de probabilidade acumulada}) de X é definida por
 
@@ -305,7 +306,7 @@ O q-quantil de uma variável aleatória X é qualquer valor $x_q$ onde a funçã
 $$F(x_q -) \leq q \leq F(x_q)$$
 \end{definition}
 
-\subsection*{2.3 Valor Esperança}
+\subsection*{2.3 Valor Esperado}
 \label{s7}
 
 \subsubsection*{Intuição e Definição}
@@ -352,8 +353,6 @@ Se X e Y são independentes, então $E(X Y) = E(X) E(Y)$.
 \subsection*{2.4 Variância e Outras Medidas de Dispersão}
 \label{s8}
 
-\subsubsection*{Definição}
-
 \begin{definition}
     Duas medidas de dispersão comuns são o \textbf{desvio médio}, definidos por
     
@@ -384,9 +383,8 @@ Se X e Y são independentes, então $E(X Y) = E(X) E(Y)$.
     Se X e Y são independentes, $Var(X + Y) = Var(X) + Var(Y)$
 \end{corollary}
 
-\subsubsection*{Desigualdade de Chebyshev}
 \begin{theorem}[Desigualdade de Chebyshev]
-    Seja X uma variavel aleatória com valor esperado $\mu = E(X)$ e desvio-padrão $\sigma = \sigma(X)$. Seja $P = \{ x \in \mathbb{R} | \ |x-\mu| < k \sigma \}$ (isto é, P é o intervalo aberto $(x - k \sigma, x + k \sigma)$, um conjunto de vlores de x que estão "perto da média" pelo menos k desvios-padrão). Então, para qualquer $k > 0$, tem-se
+    Seja X uma variável aleatória com valor esperado $\mu = E(X)$ e desvio-padrão $\sigma = \sigma(X)$. Seja $P = \{ x \in \mathbb{R} | \ |x-\mu| < k \sigma \}$ (isto é, P é o intervalo aberto $(x - k \sigma, x + k \sigma)$, um conjunto de valores de x que estão "perto da média" pelo menos k desvios-padrão). Então, para qualquer $k > 0$, tem-se
     
     $$P(X \notin P) \leq \dfrac{1}{k^2}$$
     
@@ -425,7 +423,7 @@ Se X e Y são independentes, então $E(X Y) = E(X) E(Y)$.
     
     $$Var(X + Y) = Var(X) + Var(Y) + 2 Cov (X, Y)$$
     
-    E se X e Y são independentes vale que $Var(X + Y) = Var(X) + Var(Y)$.
+    E se X e Y são independentes, vale que $Var(X + Y) = Var(X) + Var(Y)$.
 \end{corollary}
 
 \begin{corollary}
@@ -444,14 +442,14 @@ Se X e Y são independentes, então $E(X Y) = E(X) E(Y)$.
 \subsubsection*{Distribuição}
 Se os valores assumidos por uma certa variável aleatória X são equiprováveis dizemos que X tem um \textbf{distribuição uniforme}.
 
-\subsubsection*{Brevíssima Revisão de Analise Combinatória}
-Aqui trata-se de conteúdo do ensino médio em caso de dúvida \href{https://pt.wikipedia.org/wiki/Combinat\%C3\%B3ria}{see}.
+\subsubsection*{Revisão de Análise Combinatória}
+Aqui trata-se de conteúdo do ensino médio em caso de dúvida \href{https://pt.wikipedia.org/wiki/Combinat\%C3\%B3ria}{consulte}.
 
 \subsection*{3.1 Processo de Bernoulli}
 \label{s11}
 
 \begin{definition}
-    Um \textbf{processo de Bernoulli} é uma sequencia de experimentos com as seguintes características:
+    Um \textbf{processo de Bernoulli} é uma sequência de experimentos com as seguintes características:
     
     \begin{enumerate}
         \item Cada experimento tem apenas dois resultados possíveis, denominados \textbf{sucesso} e \textbf{falha}
@@ -464,7 +462,7 @@ Aqui trata-se de conteúdo do ensino médio em caso de dúvida \href{https://pt.
 \label{s12}
 
 \begin{definition}
-    Suponha que o número de experimentos a serem feitos é determinado digamos, n experimentos. Seja X a variável aleatória que representa o numero de sucessos obtidos nestes n experimentos. Dizemos que X tem uma \textbf{distribuição binomial de parâmetros n e p} (e escrevemos X $\backsim$ Bin(n, p)). Nesse caso a função de probabilidade de X passa a se chamar: BinomialDen.
+    Suponha que o número de experimentos a serem feitos é determinado dígamos, n experimentos. Seja X a variável aleatória que representa o número de sucessos obtidos nestes n experimentos. Dizemos que X tem uma \textbf{distribuição binomial de parâmetros n e p} (e escrevemos X $\backsim$ Bin(n, p)). Nesse caso a função de probabilidade de X passa a se chamar: BinomialDen.
     
     $$P(X = k) = BinomialDen (k; n, p)$$
     
@@ -563,8 +561,6 @@ Aqui trata-se de conteúdo do ensino médio em caso de dúvida \href{https://pt.
 
 \subsection*{4.1 Distribuições Contínuas}
 \label{s18}
-
-\subsubsection*{Função de Distribuição Acumulada}
 
 \begin{definition}
     A \textbf{função de distribuição acumulada (função de distribuição; fda)} de uma variável aleatória X é
@@ -907,10 +903,10 @@ $$P(Z \leq t) = 1 - P(X < n) = 1 - e^{- \lambda t} \sum_{k = 0}^{n-1} \frac{(\la
 \section*{7 Somas e Médias de Variáveis Aleatórias}
 \label{s30}
 
-\subsection*{7.0 Motivação}
+\subsection*{7.1 Motivação}
 Se motive... e continue.
 
-\subsection*{7.1 Somas das Principais Distribuições Aleatórias}
+\subsection*{7.2 Somas das Principais Distribuições Aleatórias}
 \label{s31}
 
 \begin{definition}
@@ -941,7 +937,7 @@ Se motive... e continue.
     $$\frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \backsim N(0, 1)$$
 \end{theorem}
 
-\subsection*{7.2 Lei dos Grandes Números}
+\subsection*{7.3 Lei dos Grandes Números}
 \label{s32}
 
 \begin{lemma}
@@ -963,7 +959,7 @@ $$P(|\overline{X} - \mu| < \varepsilon) \rightarrow 1$$
 
 \end{theorem}
 
-\subsection*{7.3 Teorema Central do Limite (TCL)}
+\subsection*{7.4 Teorema Central do Limite (TCL)}
 \label{s33}
 
 \subsubsection*{TCL para Distribuição Binomial}
@@ -1000,7 +996,7 @@ $$\lim_{n \rightarrow \infty} P(a \leq X^* \leq b) = \int_a^b \phi(x) d x$$
 isto é, a distribuição $X^*$ se aproxima (em áreas) da distribuição normal padrão.
 \end{theorem}
 
-\subsection*{7.4 Aplicação á Estatística: Distribuição Amostral de uma Proporção}
+\subsection*{7.5 Aplicação á Estatística: Distribuição Amostral de uma Proporção}
 \label{s34}
 
 Não tem nada aqui (só aplicações) pode seguir...
@@ -1034,7 +1030,7 @@ Não tem nada aqui (só aplicações) pode seguir...
 \end{definition}
 
 \begin{definition}
-    Um(a sequencia de) estimador(es) $\hat{\theta}$ é dito \textbf{consistente} quando, $\forall \varepsilon > 0$ fixo,
+    Um(a sequência de) estimador(es) $\hat{\theta}$ é dito \textbf{consistente} quando, $\forall \varepsilon > 0$ fixo,
     
     $$\lim_{n \rightarrow \infty} P(|\hat{\theta} - \theta| > \varepsilon) = 0$$
 \end{definition}
@@ -1160,6 +1156,7 @@ Este é um estimador não-viesado.
 \end{theorem}
 
 \section*{Dado em aula}
+\label{s41}
 \subsection*{Gerar variável aleatória}
 \begin{theorem}
     Seja F uma função de distribuição cumulativa continua e estritamente crescente.
