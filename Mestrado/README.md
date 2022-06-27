@@ -1,4 +1,0 @@
-#### Resumos gerais:
-
-- Algebra Linear
-
