@@ -10,6 +10,7 @@
 \usepackage{mathrsfs}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage{mathtools}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
 
@@ -28,7 +29,7 @@
 \newtheorem{definition}{Definição}
 
 \newcommand{\assignment}{Abstract of statistical inference}
-\newcommand{\duedate}{November 18, 2021}
+\newcommand{\duedate}{August 01, 2022}
 
 
 % \renewcommand\thesubsection{\arabic{subsection}}
@@ -41,80 +42,150 @@
 
 Fundação Getúlio Vargas\hfill\\
 Inferência Estatística\hfill\textbf{\assignment}\\
-Wellington Silva\hfill\textbf{Due:} \duedate\\
+Wellington Silva\hfill\textbf{Last Update:} \duedate\\
 \smallskip\hrule\bigskip
 
 {\let\newpage\relax\maketitle}
 \maketitle
 
-\section*{Sumário}
+\section*{Content}
+
+\textbf{\nameref{s0}}
+\vspace{2.6mm}
 
 \textbf{\nameref{s1}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s2}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s3}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s4}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s5}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s6}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s7}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s8}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s9}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s10}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s11}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s12}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s13}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s14}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s15}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s16}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s17}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s18}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s19}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s20}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s21}}
-\vspace{2.9mm}
+\vspace{2.6mm}
 
 \textbf{\nameref{s22}}
 
 \newpage
+
+%%%%%%%% Revisão de Probabilidade.
+\section*{Aula 0: Revisão de Probabilidade}
+\label{s0}
+
+\begin{theorem}[Desigualdade de Marvok]
+Seja X uma variável aleatória não-negativa e $t > 0$. Então
+
+\begin{equation}
+    P(X \geq t) \leq \frac{E[X^n]}{t^n}.
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Desigualdade de Chebychev]
+Seja uma variável aleatória com média $E[Y] := \mu$ e variância $Var(Y) := \sigma^2$, ambas finitas. Mas uma vez, $t > 0$. Então
+
+\begin{equation}
+    P(|Y - \mu| \geq t) \leq \frac{Var(Y)}{t^2}.
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Média e variância em uma amostra i.i.d.]
+Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias i.i.d., com média $\mu$ e variância $\sigma^2$. Temos que
+
+\begin{enumerate}
+    \item[(i)] $E[\bar{X}_n] = \mu$
+    \item[(ii)] $Var(\bar{X}_n) = \frac{\sigma^2}{n}$
+\end{enumerate}
+\end{theorem}
+
+\begin{definition}[Convergência em probabilidade]
+Dizemos que uma sequência de variáveis aleatórias converge em probabilidade para b se, $\forall \varepsilon > 0$, temos
+
+$$\lim_{n \to \infty} P(|Z_n - b| < \varepsilon) = 1$$
+
+Neste caso, escrevemos $Z_n \xrightarrow{p} b$.
+\end{definition}
+
+\begin{theorem}[Lei Fraca dos Grandes Números]
+Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias i.i.d., com média $\mu$ e variância $\sigma^2$. Então
+
+$$\bar{X}_n \xrightarrow{p} b$$
+\end{theorem}
+
+\begin{definition}[Convergência quase certa]
+Dizemos que uma sequência de variáveis aleatórias $(Z_n)_{n \leq 1}$ converge quase certamente para b se
+
+$$P(\lim_{n \to \infty} Z_n = b) = 1$$
+\end{definition}
+
+\begin{theorem}[Lei Forte dos Grandes Números]
+Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias i.i.d., com média $\mu$. Então
+
+$$P(\lim_{n \to \infty} \bar{X}_n = \mu) = 1$$
+\end{theorem}
+
+\begin{theorem}[Teorema Central do Limite (Lindenberg e Lévy)]
+Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias i.i.d., com média $\mu$ e variância $\sigma^2$. Então, para cada x, temos
+
+$$\lim_{n \to \infty} P \left ( \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} \leq x \right ) = \Phi(x),$$
+
+onde,
+
+$$\Phi(x) := \frac{1}{\sqrt{2 \pi}} \int_0^x exp \left(- \frac{t^2}{2} \right) d t$$
+
+é a função de distribuição (cumulativa) normal padrão.
+\end{theorem}
 
 \section*{Aula 1: O que é e para que serve Inferência Estatística?}
 \label{s1}
