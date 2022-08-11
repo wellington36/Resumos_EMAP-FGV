@@ -1,7 +1,7 @@
 # 📚💻 Resumos EMAP-FGV
 Repositório de resumos do curso de matemática aplicada, também pode acessar pelo site [ResumosFGV-Emap](https://wellington36.github.io/ResumosFGV-Emap).
 
-Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para [mim](https://github.com/wellington36) 😉.
+Por favor 🕵️‍♂️, comunique qualquer problema ou erro no material para [mim](https://wellington36.github.io/portfolio/) 😉.
 
 # 🔗 Links para os resumos
 
