@@ -15,9 +15,9 @@
 \definecolor{mygreen}{rgb}{0,0.6,0}
 
 \hypersetup{
-	colorlinks=true,
-	linkcolor=cyan,
-	urlcolor=cyan}
+    colorlinks=true,
+    linkcolor=cyan,
+    urlcolor=cyan}
 
 \parindent0in
 \pagestyle{plain}
@@ -39,963 +39,963 @@
 \date{}
 
 \begin{document}
-	
-	Fundação Getúlio Vargas\hfill\\
-	Inferência Estatística\hfill\textbf{\assignment}\\
-	Wellington Silva\hfill\textbf{Last Update:} \duedate\\
-	\smallskip\hrule\bigskip
-	
-	{\let\newpage\relax\maketitle}
-	\maketitle
-	
-	\section*{Content}
-	
-	\textbf{\nameref{s0}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s1}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s2}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s3}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s4}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s5}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s6}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s7}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s8}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s9}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s10}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s11}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s12}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s13}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s14}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s15}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s16}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s17}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s18}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s19}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s20}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s21}}
-	\vspace{2.6mm}
-	
-	\textbf{\nameref{s22}}
-	
-	\newpage
-	
-	%%%%%%%% Revisão de Probabilidade.
-	\section*{Aula 0: Revisão de Probabilidade}
-	\label{s0}
-	
-	\begin{theorem}[Desigualdade de Marvok]
-		Seja X uma variável aleatória não-negativa e $t > 0$. Então
-		
-		\begin{equation}
-			P(X \geq t) \leq \frac{E[X^n]}{t^n}.
-		\end{equation}
-	\end{theorem}
-	
-	\begin{theorem}[Desigualdade de Chebychev]
-		Seja uma variável aleatória com média $E[Y] := \mu$ e variância $Var(Y) := \sigma^2$, ambas finitas. Mas uma vez, $t > 0$. Então
-		
-		\begin{equation}
-			P(|Y - \mu| \geq t) \leq \frac{Var(Y)}{t^2}.
-		\end{equation}
-	\end{theorem}
-	
-	\begin{theorem}[Média e variância em uma amostra i.i.d.]
-		Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias i.i.d., com média $\mu$ e variância $\sigma^2$. Temos que
-		
-		\begin{enumerate}
-			\item[(i)] $E[\bar{X}_n] = \mu$
-			\item[(ii)] $Var(\bar{X}_n) = \frac{\sigma^2}{n}$
-		\end{enumerate}
-	\end{theorem}
-	
-	\begin{definition}[Convergência em probabilidade]
-		Dizemos que uma sequência de variáveis aleatórias converge em probabilidade para b se, $\forall \varepsilon > 0$, temos
-		
-		$$\lim_{n \to \infty} P(|Z_n - b| < \varepsilon) = 1$$
-		
-		Neste caso, escrevemos $Z_n \xrightarrow{p} b$.
-	\end{definition}
-	
-	\begin{theorem}[Lei Fraca dos Grandes Números]
-		Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias i.i.d., com média $\mu$ e variância $\sigma^2$. Então
-		
-		$$\bar{X}_n \xrightarrow{p} \mu$$
-	\end{theorem}
-	
-	\begin{definition}[Convergência quase certa]
-		Dizemos que uma sequência de variáveis aleatórias $(Z_n)_{n \leq 1}$ converge quase certamente para b se
-		
-		$$P(\lim_{n \to \infty} Z_n = b) = 1$$
-	\end{definition}
-	
-	\begin{theorem}[Lei Forte dos Grandes Números]
-		Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias i.i.d., com média $\mu$. Então
-		
-		$$P(\lim_{n \to \infty} \bar{X}_n = \mu) = 1$$
-	\end{theorem}
-	
-	\begin{theorem}[Teorema Central do Limite (Lindenberg e Lévy)]
-		Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias i.i.d., com média $\mu$ e variância $\sigma^2$. Então, para cada x, temos
-		
-		$$\lim_{n \to \infty} P \left ( \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} \leq x \right ) = \Phi(x),$$
-		
-		onde,
-		
-		$$\Phi(x) := \frac{1}{\sqrt{2 \pi}} \int_0^x exp \left(- \frac{t^2}{2} \right) d t$$
-		
-		é a função de distribuição (cumulativa) normal padrão.
-	\end{theorem}
-	
-	\section*{Aula 1: O que é e para que serve Inferência Estatística?}
-	\label{s1}
-	
-	\begin{definition}[Modelo estatístico: informal]
-		Um \textbf{modelo estatístico} consiste na identificação de variáveis aleatórias de interesse (observáveis e potencialmente observáveis), na especificação de uma distribuição conjunta para as variáveis aleatórias observáveis e na identificação dos parâmetros $(\theta)$ desta distribuição conjunta. Às vezes é conveniente assumir que os parâmetros são variáveis aleatórias também, mas para isso é preciso especificar uma distribuição conjunta para $\theta$.
-	\end{definition}
-	
-	\begin{definition}[Modelo estatístico: formal]
-		Seja $\mathcal{X}$ um espaço amostral qualquer, $\Theta$ um conjunto não-vazio arbitrário e $\mathcal{P(X)}$ o conjunto de todas as distribuições de probabilidade em $\mathcal{X}$. Um modelo estatístico \textbf{paramétrico} é uma função $P: \Theta \rightarrow \mathcal{P(X)}$ que associa a cada $\theta \in \Theta$ uma distribuição de probabilidade $P_\theta$ em $\mathcal{X}$.
-	\end{definition}
-	
-	\begin{definition}[Afirmação probabilística]
-		Dizemos que uma afirmação é \textbf{probabilística} quando ela utiliza conceitos da teoria de probabilidade para falar de um objeto.
-	\end{definition}
-	
-	\begin{definition}[Inferência Estatística]
-		Uma \textbf{inferência estatística} é uma \textbf{afirmação probabilística} sobre uma ou mais partes de um modelo estatístico.
-	\end{definition}
-	
-	\begin{definition}[Estatística]
-		Suponha que temos uma coleção de variáveis aleatórias $X_1, X_2, \ldots, X_n \subseteq \mathbf{R}^n$ e uma função $r: \mathbf{X} \rightarrow R^m$. Dizemos que a variável aleatória $T = r(X_1, X_2, \ldots, X_n)$ é uma \textbf{estatística}.
-	\end{definition}
-	
-	\begin{definition}[Permutabilidade]
-		Uma coleção finita de variáveis aleatórias $X_1, X_2, \ldots, X_n$ com densidade conjunta f é dita \textbf{permutável} se
-		
-		\begin{equation}
-			f(x_1, x_2, \ldots, x_n) = f(x_{\pi(1)}, x_{\pi(2)}, \ldots, x_{\pi(n)})
-		\end{equation}
-		
-		para qualquer permutação $\pi = \{\pi(1), \pi(2), \ldots, \pi(n)\}$ dos seus elementos. Uma coleção finita é permutável se qualquer subconjunto finito é permutável.
-	\end{definition}
-	
-	\section*{Aula 2:  Distribuição a priori e a posteriori}
-	\label{s2}
-	\begin{definition}[Distribuição a priori]
-		Se tratamos o parâmetro $\theta$ como uma variável aleatória, então a \textbf{distribuição a priori} é a distribuição que damos a $\theta$ antes de observarmos as outras variáveis aleatórias de interesse. Vamos denotar a função de densidade/massa de probabilidade da priori por $\xi(\theta)$.
-	\end{definition}
-	
-	\begin{definition}[Distribuição a posteriori]
-		Considere o problema estatístico com parâmetros $\theta$ e variáveis aleatórias observáveis $X_1, X_2, \ldots, X_n$. A distribuição condicional de $\theta$ dados os valores observados das variáveis aleatórias, $\textbf{x} := \{x_1, x_2, \ldots, x_n\}$ é a \textbf{distribuição a posteriori} de $\theta$, denotamos por $\xi(\theta \mid \textbf{x})$ a f.d.p./f.m.p. condicional a $X_1 = x_1, X_2 = x_2, \ldots, X_n = x_n$.
-	\end{definition}
-	
-	\begin{theorem}[Distribuição a posteriori: derivação]
-		Considere a amostra aleatória $X_1, X_2, \ldots, X_n$ de uma distribuição com f.d.p./f.m.p. $f(x \mid \theta)$. Se a distribuição a priori é $\xi(\theta)$, temos
-		
-		\begin{equation}
-			\xi(\theta \mid x) = \frac{\xi(\theta) \Pi_{i = 1}^{n} f(x_i \mid \theta)}{g_n(x)}, \ \theta \in \Omega
-		\end{equation}
-		
-		Chamamos $g_n(x)$ de distribuição marginal de $X_1, X_2, \ldots, X_n$.
-	\end{theorem}
-	
-	\begin{definition}[Função de verossimilhança]
-		Quando encaramos a f.d.p./f.m.p. $f(x_1, x_2, \ldots, x_n \mid \theta)$ como uma função do parâmetro $\theta$, chamamos esta função de \textbf{função de verossimilhança}, e podemos denotá-la como $L(\theta; x)$ ou, quando a notação não criar ambiguidade, simplesmente $L(\theta)$.
-	\end{definition}
-	
-	\section*{Aula 3: Prioris conjugadas e função de perda}
-	\label{s3}
-	\begin{definition}[Hiper-parâmetros]
-		Seja $\xi(\theta \mid \phi)$ a distribuição a priori para o parâmetro $\theta$, indexada por $\phi \in \Phi$. Dizemos que $\phi$ é(são) o(s) \textbf{hiper-parâmetro(s)} da priori de $\theta$.
-	\end{definition}
-	
-	\begin{definition}[Priori conjugada]
-		Suponha que $X_1, X_2, \ldots$ sejam condicionalmente independentes dado $\theta$, com f.d.p./f.m.p. $f(x\mid\theta)$. Defina
-		
-		\begin{equation}
-			\Psi = \left \{ f: \Omega \rightarrow (0, \infty), \int_\Omega f dx = 1 \right \}
-		\end{equation}
-		
-		onde $\Omega$ é o espaço de parâmetros. Dizemos que $\Psi$ é uma \textbf{família de distribuições conjugadas} para $f(x \mid \theta)$ se $\forall f \in \Psi$ e toda realização \textbf{x} de $X = X_1, X_2, \ldots, X_n$
-		
-		\begin{equation}
-			\frac{f(\textbf{x} \mid \theta) f(\theta)}{\int_\Omega f(\textbf{x} \mid \theta)f(\theta) d \theta} \in \Psi
-		\end{equation}
-	\end{definition}
-	
-	\begin{theorem}[Distribuição a posteriori da média de uma normal]
-		Suponha que $X_1, X_2, \ldots, X_n$ formam uma amostra aleatória com distribuição normal e com média desconhecida $\theta$ e variância $\sigma^2 > 0$, conhecida e fixa. Suponha que $\theta \sim Normal(\mu_0, v_0^2)$ a priori. Então
-		
-		\begin{equation}
-			\xi (\theta \mid x, \sigma^2) = \frac{1}{\sqrt{2 \pi \sigma^2}} exp \left (\frac{(\theta - \mu_1)^2}{2v_1^2}\right ),
-		\end{equation}
-		
-		onde
-		
-		\begin{equation}
-			\mu_1 := \frac{\sigma^2 \mu_0 + n v_0^2 \overline{x}_n}{\sigma^2 + n v_ 0^2} \ \mathrm{e} \ v_1^2 := \frac{\sigma^2 v_0^2}{\sigma^2 + n v_0^2}
-		\end{equation}
-	\end{theorem}
-	
-	\begin{definition}[Priori imprópria]
-		Seja $\xi : \Lambda \rightarrow (0, \infty), \Omega \subseteq \Lambda$, uma função tal que $\int_\Omega \xi(\theta) d \theta = \infty$. Se utilizamos $\xi$ como uma p.d.f.~\footnote{p.d.f. - ``probability density function'' ou função de densidade de probabilidade} para $\theta$, dizemos que $\xi$ é uma \textbf{priori imprópria} para $\theta$.
-	\end{definition}
-	
-	\begin{definition}[Estimador]
-		Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias com distribuição conjunta indexada por $\theta$. Um \textbf{estimador} de $\theta$ é qualquer função real $\delta$: $X_1, X_2, \ldots, X_n \rightarrow \mathbb{R}^d, d \geq 1$.
-	\end{definition}
-	
-	\begin{definition}[Estimativa]
-		Dizemos que o valor de $\delta$ avaliado nas realizações de $X_1, X_2, \ldots, X_n$, $\textbf{x} = \{x_1, x_2, \ldots, x_n\}, \ \delta(\textbf{x})\}$ é uma \textbf{estimativa} de $\theta$.
-	\end{definition}
-	
-	\begin{definition}[Função de perda]
-		Uma função de perda é uma função real em duas variáveis 
-		\begin{equation}
-			L: \Omega \times \mathbb{R}^d \rightarrow \mathbb{R},
-		\end{equation}
-		
-		em que dizemos que o estatístico \textit{perde} $L(\theta, a)$ se o parâmetro vale $\theta$ e a estimativa dada vale a.
-	\end{definition}
-	
-	\subsection*{Famílias Conjugadas}
-	
-	Se $X_1,\ldots,X_n$ são iid e seguem a distribuição da coluna ``Dados'' na tabela~\ref{tab:1}.
-	
-	\textbf{Notações}: $\bar {x}_n= \frac{1}{n}\sum_{i=1}^n x_i;~~~
-	y=\sum_{i=1}^nx_i$
-	\begin{table}[!htb]
-		\centering
-		\begin{tabular}{|c|c|c|}
-			\hline \textbf{Dados} & \textbf{Priori} & \textbf{Posteriori}\\ \hline
-			$\mathrm{Bernoulli}(\theta)$&$\mathrm{Beta}(\alpha,\beta)$ & $\mathrm{Beta}(\alpha+y,\beta+n-y)$ \\ \hline
-			$\mathrm{Poisson}(\theta)$&$\mathrm{Gama}(\alpha,\beta)$&$\mathrm{Gama}(\alpha+y,\beta+n)$\\ \hline 
-			$\mathrm{Normal}(\mu,\sigma^2)$ & $\mathrm{Normal}(\mu_0,v_0^2)$& $\mathrm{Normal}\left(\frac{\sigma^2\mu_0+nv_0^2\bar{x}_n}{\sigma^2+nv_0^2},\frac{\sigma^2v_0^2}{\sigma^2+nv_0^2}\right)$ \\ \hline
-			$\mathrm{Exp}(\theta)$ &$\mathrm{Gama(\alpha,\beta)}$ & $\mathrm{Gama}(\alpha+n,\beta+y)$ \\ \hline
-			
-		\end{tabular}
-		\caption{Famílias Conjugadas}\label{tab:1}
-	\end{table}
-	
-	\section*{Aula 4: Estimadores de Bayes e EMV}
-	\label{s4}
-	\begin{definition}[Estimador de Bayes]
-		Considere a perda esperada a posteriori:
-		
-		\begin{equation}
-			E_{\theta \mid x} [L(\theta, a)] = E[L(\theta, a) \mid x] = \int_\Omega L(\theta, a) \xi (\theta \mid x) d \theta
-		\end{equation}
-		
-		Dizemos que $\delta^*$ é um \textbf{estimador de Bayes} se, para toda realização $X = x$,
-		
-		\begin{equation}
-			E[L(\theta, \delta^*(x)) \mid x] = \min_{a \in A} E[L(\theta, a) \mid x].
-		\end{equation}
-		
-		Em outras palavras, um estimador de Bayes é uma função real dos dados que minimiza a perda esperada com respeito à posteriori dos parâmetros.
-	\end{definition}
-	
-	\begin{theorem}[$\delta^*$ sob perda quadrática]
-		Seja $\theta$ um parâmetro tomando valores reais. Sob perda quadrática,
-		
-		\begin{equation}
-			\delta^*(x) = E[\theta \mid X = x] = \int_\Omega \theta \xi(\theta \mid x) d \theta
-		\end{equation}
-	\end{theorem}
-	
-	\begin{theorem}[$\delta^*$ sob perda absoluta]
-		Suponha que a função de perda é dada por
-		
-		\begin{equation}
-			L(\theta, \delta^*) = | \theta - \delta^*|.
-		\end{equation}
-		
-		Dizemos que a função de perda é \textbf{absoluta}.
-		Seja $\theta$ um parâmetro tomando valores na reta. Sob perda absoluta, $\delta^*(x)$ é a \textbf{mediana} a posteriori, isto é,
-		
-		\begin{equation}
-			\int_{\infty}^{\delta^*(x)} \xi(\theta \mid x) d \theta = \frac{1}{2}
-		\end{equation}
-	\end{theorem}
-	
-	\begin{definition}[Estimador consistente]
-		Seja $\delta_1, \delta_2, \ldots, \delta_n$ uma sequência de estimadores de $\theta$. Se quando $n \rightarrow \infty$ a sequência convergente para $\theta$, dizemos que esta é uma \textbf{sequência consistente de estimadores}.
-	\end{definition}
-	
-	\begin{definition}[Estimador de máxima verossimilhança]
-		Para cada possível vetor (de observações) x, seja $\delta(x) \in \Omega$ um valor de $\theta \in \Omega$ de modo que a função de verossimilhança, $L(\theta) \propto f(x \mid \theta)$~\footnote{$\propto$ - é um operador matemático binário que indica que o valor esquerdo é proporcional ao valor direito.}, atinge o máximo.
-		Dizemos que $\hat\theta = \delta(\textbf{X})$ é o \textbf{estimador de máximo verossimilhança} de $\theta$ (Fisher, 1922)\footnote{Ronald Aylmer Fisher (1890-1962), biólogo e estatístico inglês.}. Quando observamos $\textbf{X} = x$, dizemos que $\delta(x)$ é uma estimativa de $\theta$. Dito de outra forma:
-		
-		\begin{equation}
-			\max_{\theta \in \Omega} f(\textbf{X} \mid \theta) = f(\textbf{X} \mid \hat\theta).
-		\end{equation}
-	\end{definition}
-	
-	
-	\section*{Aula 5: EMV}
-	\label{s5}
-	\begin{theorem}[Invariância do EMV]
-		Considere uma função $\phi: \Omega \rightarrow \mathbb{R}$. Se $\hat{\theta}$ é um EMV para $\theta$, então $\phi(\hat{\theta})$ é um EMV para $\omega = \phi(\theta)$.
-	\end{theorem}
-	
-	\begin{theorem}[Consistência do EMV]
-		Defina $l(\theta) := \log f_n(x \mid \theta)$ e assuma que $X_1, \ldots, X_n \sim f(\theta_0)$, isto é, que $\theta_0$ é o valor verdadeiro do parâmetro.
-		Denote $E_{\theta_0}[g] := \int_{\mathcal{X}} g(x, \theta_0) f(x \mid \theta_0)\, dx$. Suponha que
-		
-		\begin{itemize}
-			\item $f(x_i \mid \theta)$ tem o mesmo suporte;
-			\item $\theta_0$ é o ponto inferior de $\Omega$;
-			\item $I(\theta)$ é diferenciável;
-			\item $\hat{\theta}_{EMV}$ é única solução de $I'(\theta) = 0$.
-		\end{itemize}
-		
-		Então
-		
-		$$\hat{\theta}_{EMV} \rightarrow \theta$$
-		
-	\end{theorem}
-	
-	\section*{Aula 6: Método dos momentos e suficiência}
-	\label{s6}
-	\begin{definition}[Método dos momentos]
-		Suponha que $X_1, \ldots, X_n$ formam uma sequência aleatória com distribuição conjunta $f_n (X_1, \ldots, X_n \mid \theta), \theta \in \Omega \subseteq \mathbb{R}^k$ e que o k-ésimo momento existe. Defina $\mu_j (\theta) = E[X_1^j \mid \theta]$ e suponha que $\mu: \Omega \rightarrow \mathbb{R}^k$ é biunívoca, de modo que sua inversa é
-		
-		$$\theta = M(\mu_1(\theta), \ldots, \mu_k(\theta)).$$
-		
-		Dados os momentos amostrais $m_j := \frac{1}{n} \sum_{i=1}^n X_i^j, j = 1, \ldots, k$ o \textbf{estimador de momentos} (EMM) de $\theta$ é
-		
-		$$\hat{\theta}_{EMM} = M(m_1, \ldots, m_k).$$
-	\end{definition}
-	
-	\begin{theorem}[Consistência do EMM]
-		Suponha que $X_1, \ldots, X_n$ formam uma amostra aleatória com distribuição conjunta  $f_n (X_1, \ldots, X_n \mid \theta), \theta \in \Omega \subseteq \mathbb{R}^k$ e que o k-ésimo momento existe. Suponha que a inversa M existe e é continua. Então o EMM é \textbf{consistente} para $\theta$.
-	\end{theorem}
-	
-	\begin{definition}[Estatística suficiente]
-		Seja $X_1, \ldots, X_n$ uma amostra aleatória de uma distribuição indexada pelo parâmetro $\theta$. Seja $T = r(X_1, \ldots, X_n)$ uma estatística. Dizemos que T é uma \textbf{estatística suficiente} para $\theta$ se e somente se
-		
-		\begin{equation}
-			f(X_1, \ldots, X_n \mid T = t, \theta) = f(X_1, \ldots, X_n \mid T = t, \theta'), \forall \theta, \theta' \in \Omega,
-		\end{equation}
-		
-		isto é, se a distribuição condicional da amostra dado o valor da estatística não depende de $\theta$.
-	\end{definition}
-	
-	\begin{definition}[Aleatorização auxiliar]
-		Suponha que T é suficiente para $\theta$. O processo de simular $X_1', \ldots, X_n'$ dado que $T = r(X_1, \ldots, X_n)$ de modo que 
-		
-		\begin{equation}
-			f(X_1, \ldots, X_n \mid \theta) = f(X_1', \ldots, X_n' \mid \theta), \forall \theta \in \Omega,
-		\end{equation}
-		
-		é chamado de \textbf{aleatorização auxiliar} (em inglês, auxiliary randomisation).
-	\end{definition}
-	
-	\begin{theorem}[Teorema de fatorização]\label{teo:fatorizacao}
-		Suponha que $X_1, \ldots, X_n$ perfazem uma amostra aleatória com f.d.p./f.m.p. $f(x \mid \theta), \theta \in \Omega$. Uma estatística $T = r(X_1, \ldots, X_n)$ é suficiente para $\theta$ se, e somente se, para todo $x \in \mathcal{X}$ e $\theta \in \Omega$ existem u e v não negativos tal que
-		
-		\begin{equation}
-			f_n(x \mid \theta) = u(x) v[r(x), \theta].
-		\end{equation}
-	\end{theorem}
-	
-	\begin{definition}[Suficiência conjunta]
-		Dizemos que um conjunto de estatísticas $T = \{T_1, \ldots, T_n\}$ é \textbf{suficiente} (conjuntamente) se que a distribuição condicional conjunta de $X_1, \ldots, X_n$ dado $T_1 = t_1, \ldots, T_n = t_n$ não dependentes de $\theta$.
-	\end{definition}
-	
-	\section*{Aula 7: Suficiência conjunta e mínima, teorema de Rao-Blackwell}
-	\label{s7}
-	\begin{definition}[Estatísticas de ordem]
-		Seja $\textbf{X} = X_1, \ldots, X_n$ uma amostra aleatória. Dizemos que $Y_1, \ldots, Y_n$ são \textbf{estatísticas de ordem} se $Y_1$ é o menor valor de \textbf{X}, $Y_2$ é o segundo menor valor e assim sucessivamente.
-	\end{definition}
-	
-	\begin{theorem}[Estatísticas de ordem são suficientes conjuntas]
-		Seja $X_1, \ldots, X_n$ uma amostra aleatória com f.d.p./f.m.p. $f(x \mid \theta)$. As estatísticas de ordem $Y_1, \ldots, Y_n$ são suficientes conjuntas para $\theta$.
-	\end{theorem}
-	
-	\begin{definition}[Suficiência mínima]
-		Uma estatística \textbf{T} é dita \textbf{mínima suficiente} se \textbf{T} é suficiente e é função de qualquer outra estatística suficiente. Um vetor $\textbf{T} = \{ T_1, \ldots, T_n \}$ é dito \textbf{minimamente suficiente conjunto} se é função de qualquer outro valor de estatísticas suficientes conjuntas.
-	\end{definition}
-	
-	\begin{theorem}[EMV e Bayes são suficientes]
-		Se a função de verossimilhança admite fatorização pelo Teorema~\ref{teo:fatorizacao}, os estimadores de Bayes e de máxima verossimilhança são estatísticas minimamente suficientes.
-	\end{theorem}
-	
-	\begin{definition}[Notação conveniente]
-		É conveniente definir que para $g : \mathcal{X}^n \rightarrow \mathbb{R}$, escrevemos
-		
-		\begin{equation}
-			E_\theta [g] = \int_\mathcal{X} \cdots \int_\mathcal{X} g(\textbf{x}) f_n (\textbf{x} \mid \theta) d x_1 \cdots d x_n = \int_\mathcal{X} g(\textbf{x}) f_n (\textbf{x} \mid \theta) d \textbf{x} 
-		\end{equation}
-	\end{definition}
-	
-	\begin{definition}[Erro quadrático médio]
-		\begin{equation}
-			R(\theta, \delta) := E_\theta \left [ \{ \delta(\textbf{X}) - \theta \}^2 \right ].
-		\end{equation}
-	\end{definition}
-	
-	\begin{definition}[Estimador condicionado]\label{def:est. cond.}
-		\begin{equation}
-			\delta_0 (\textbf{T}) := E_\theta \left [ \delta(\textbf{X}) \mid \textbf{T} \right ].
-		\end{equation}
-	\end{definition}
-	
-	\begin{theorem}[Teorema de Rao-Blackwell]
-		Seja $\delta(\textbf{X})$ um estimador, \textbf{T} uma estatística suficiente para $\theta$ e seja $\delta_0(\textbf{T})$ como na Definição~\ref{def:est. cond.}. Então vale que
-		
-		$$R(\theta, \delta_0) \leq R(\theta, \delta)$$
-		
-		Além disso, se $R(\theta, \delta) < \infty$ e $\delta (\textbf{X})$ não é função de $\textbf{T}$, vale a desigualdade estrita:
-		
-		$$R(\theta, \delta_0) < R(\theta, \delta)$$
-	\end{theorem}
-	
-	\section*{Aula 8: Admissibilidade e viés}
-	\label{s8}
-	\begin{definition}[Admissibilidade]
-		Um estimador $\delta$ é dito \textbf{inadmissível} se existe outro estimador $\delta_0$ tal que $R(\theta, \delta_0) \leq R(\theta, \delta), \forall \theta \in \Omega$ e existe $\theta' \in \Omega$ tal que $R(\theta', \delta_0) < R(\theta', \delta)$. Nesse caso, dizemos que $\delta_0$ domina $\delta$. O estimador $\delta_0$ é \textbf{admissível} se (e somente se) não há nenhum estimador que o domine.
-	\end{definition}
-	
-	\begin{definition}[Estimador não-viesado]
-		Um estimador $\delta(\textbf{X})$ de uma função $g(\theta)$ é dito \textbf{não-viesado} se $E_\theta[\delta(\textbf{X})] = g(\theta), \ \forall \theta \in \Omega$. Um estimador que não atende a essa condição é dito viesado. E o \textbf{víes} de $\delta$ é definido como $B_\delta(\theta) := E_\theta[\delta(\textbf{X})] - g(\theta)$.
-	\end{definition}
-	
-	\begin{theorem}[Estimador não-viesado da variância]
-		Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória, com $E[X_1] = m$ e $Var(X_1) = v < \infty$. Então
-		
-		$$\delta_1(\textbf{X}) = \frac{1}{n - 1}\sum_{i = 1}^n (X_i - \overline{X}_n)^2$$
-		
-		é um estimador não-viesado de v.
-	\end{theorem}
-	
-	\section*{Aula 9: Eficiência}
-	\label{s9}
-	\begin{definition}[Informação de Fisher]\label{def:fis}
-		Seja X uma variável aleatória com f.d.p./f.m.p. $f(x \mid \theta), \ \theta \in \Omega \subseteq \mathbb{R}$. Suponha que $f(x \mid \theta)$ é duas vezes diferenciável com respeito a $\theta$. Defina $\lambda (x \mid \theta) = \log f(x \mid \theta)$ e
-		
-		\begin{equation}
-			\lambda' (x \mid \theta) = \frac{\partial \lambda (x \mid \theta)}{\partial \theta} \quad \mathrm{e} \quad \lambda'' (x \mid \theta) = \frac{\partial^2 \lambda(x \mid \theta)}{\partial \theta^2}
-		\end{equation}
-		
-		Definimos a \textbf{informação de Fisher} como
-		
-		\begin{equation}
-			I(\theta) = E_\theta \left [ \{ \lambda'(x \mid \theta) \}^2 \right ] \stackrel{\mathrm{(1)}}{=} -E_\theta\left[\lambda^{\prime\prime}(x \mid \theta)\right] = Var_\theta\left(\lambda^{\prime}(x\mid \theta) \right).
-		\end{equation}
-	\end{definition}
-	
-	\begin{theorem}[Informação de Fisher em uma amostra aleatória]
-		Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória e seja $I_n = E_\theta [- \lambda''_n (\textbf{X} \mid \theta)]$ a \textbf{informação de Fisher} da amostra. Então
-		
-		$$I_n(\theta) = n I(\theta)$$
-	\end{theorem}
-	
-	\begin{theorem}[Teorema de Cramér-Rao]
-		Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória, onde f.d.p./f.m.p. tem as mesmas premissas da Definição~\ref{def:fis}. Supondo que $T = r(\textbf{X})$ é uma estatística com variância finita. Seja $m(\theta) = E_\theta(T)$ uma função diferenciável de $\theta$. Então,
-		
-		\begin{equation}
-			Var_\theta(T) \geq \frac{[m'(\theta)]^2}{n I(\theta)},
-		\end{equation}
-		
-		com igualdade apenas se existem u e v tal que
-		
-		$$T = u(\theta) \lambda'_n (\textbf{X} \mid \theta) + v(\theta).$$
-	\end{theorem}
-	
-	\begin{definition}[Estimador eficiente]
-		Um estimador $\delta(\textbf{X})$ é dito \textbf{eficiente} de (sua esperança) $m(\theta)$ se
-		
-		$$Var_\theta(\delta) = \frac{[m'(\theta)]^2}{n I(\theta)}.$$
-	\end{definition}
-	
-	\section*{Aula 10: Distribuição de uma estatística amostral e qui-quadrado}
-	\label{s10}
-	\begin{definition}[Distribuição qui-quadrado]
-		Dizemos que uma variável aleatória Y tem distribuição \textbf{qui-quadrado} com m graus de liberdade quando
-		
-		\begin{equation}
-			f_Y(y) = \frac{1}{2^{m/2} \Gamma(m/2)} y^{m/2 - 1} e^{-y/2}, y > 0
-		\end{equation}
-		
-		Vemos que Y tem função geradora de momentos:
-		
-		$$\psi (t) = \left ( \frac{1}{1 - 2t} \right )^{m/2}, t < 1/2.$$
-	\end{definition}
-	
-	\begin{theorem}[Soma de variáveis aleatórias qui-quadrado]
-		Se $X_1, \ldots, X_n$ são variáveis aleatórias independentes com graus de liberdade $m_i$, então $W = \sum_{i = 1}^n X_i$ tem distribuição qui-quadrado com graus de liberdade $m = \sum_{i = 1}^n m_i$.
-	\end{theorem}
-	
-	\begin{theorem}[Distribuição do quadrado de uma variável aleatória Normal padrão]
-		Se 
-		
-		$$X \sim Normal(0, 1), Y = X^2$$ 
-		
-		então, tem distribuição qui-quadrado com $m = 1$.
-	\end{theorem}
-	
-	\section*{Aula 11: Distribuição da média e variância amostrais}
-	\label{s11}
-	\begin{theorem}[Independência da média e variância amostrais na Normal]
-		Seja $X_1, \ldots, X_n$ uma amostra aleatória de uma distribuição Normal com parâmetros $\mu$ e $\sigma^2$, $\overline{X}_n$ e a variância amostral $\overline{S}_n^2$, são independentes. Ademais, $\overline{X}_n \sim Normal \left ( \mu, \sigma^2 \right )$ e $\overline{S}_n^2 \sim Gama \left ( \frac{n - 1}{2}, \frac{n}{2 n^2} \right )$
-	\end{theorem}
-	
-	\section*{Aula 12: Distribuição t de Student  e intervalos de confiança}
-	\label{s12}
-	\begin{definition}[A distribuição t de Student]
-		Tome, $Y \sim \mathrm{Qui-quadrado}(m)$ e $Z \sim \mathrm{Normal}(0, 1)$ e defina a variável aleatória
-		
-		$$X = \frac{Z}{\sqrt{\frac{Y}{m}}}.$$
-		
-		Dizemos que X tem distribuição \textbf{t de Student com m graus de liberdade}. E sabemos que
-		
-		$$f_X = \frac{\Gamma(\frac{m + 1}{2})}{\sqrt{m \pi} \Gamma(\frac{m}{2})} \left ( 1 + \frac{x^2}{m} \right )^{-\frac{m + 1}{2}}, \quad x \in (-\infty, + \infty).$$
-	\end{definition}
-	
-	\begin{theorem}[Distribuição amostral do estimador não-viesado da variância]
-		
-		Considere o estimador
-		
-		$$\hat{\sigma}' = \sqrt{\frac{\Delta^2}{n - 1}},$$
-		
-		onde $\Delta^2 = \sum_{i = 1}^n (X_i - \overline{X}_n)^2$. Então, vale que
-		
-		$$\frac{\sqrt{n} (\overline{X}_n - \mu)}{\hat{\sigma}'} \sim \mathrm{Student}(n - 1)$$
-	\end{theorem}
-	
-	\begin{theorem}[Intervalo de confiança]
-		Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória, onde cada uma tem p.d.f. $f(x \mid \theta)$, e considere uma função real $g(\theta)$. Sejam $A(\textbf{X})$ e $B(\textbf{X})$ duas estatísticas de modo de valha
-		
-		\begin{equation}
-			P(A(\textbf{X}) < g(\theta) < B(\textbf{X})) \geq \gamma.
-		\end{equation}
-		
-		Dizemos que $I(\textbf{X}) = (A(\textbf{X},B(\textbf{X}))$ é um \textbf{intervalo de confiança} de $100 \gamma \%$ para $g(\theta)$. Se a desigualdade for uma igualdade para todo $\theta \in \Omega$, dizemos que o intervalo é \textbf{exato}.
-	\end{theorem}
-	
-	\section*{Aula 13: Intervalos de confiança e Quantidades Pivotais}
-	\label{s13}
-	\begin{definition}[Intervalo de confiança unilateral]
-		Seja $\textbf{X} = \{ X_1. \ldots, X_n \}$ uma amostra aleatória, onde cada uma tem p.d.f. $f(x \mid \theta)$, e considere uma função real $g(\theta)$. Seja $A( \textbf{X})$ uma estatística que
-		
-		$$P(A(\textbf{X}) < g(\theta)) \geq \gamma, \quad \forall \theta \in \Omega$$
-		
-		dizemos que o intervalo aleatório $( A(\textbf{X}), \infty)$ é chamado de intervalo de confiança \textbf{unilateral} de $100\gamma \%$ para $g(\theta)$ (ou ainda, de intervalo de confiança \textbf{inferior} de $100\gamma \%$ para $g(\theta)$). O intervalo $(-\infty, B(\textbf{X}))$, com
-		
-		$$P(g(\theta) < B(\textbf{X})) \geq \gamma, \quad \forall \theta \in \Omega$$
-		
-		é definido de forma análoga, e é chamado de intervalo de confiança \textbf{superior} de $100\gamma \%$ para $g(\theta)$. Se a desigualdade é uma igualdade para todo $\theta \in \Omega$, os intervalos são chamados \textbf{exatos}.
-	\end{definition}
-	
-	\begin{definition}[Quantidade pivotal]
-		Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória com p.d.f. $f(x \mid \theta)$. Seja $V(\textbf{X}, \theta)$ uma variável aleatória cuja distribuição é a mesma para todo $\theta \in \Omega$. Dizemos que $V(\textbf{X}, \theta)$ é uma \textbf{quantidade pivotal}.
-	\end{definition}
-	
-	\begin{theorem}[Intervalo de confiança unilateral]
-		Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória com p.d.f. $f(x \mid \theta)$. Suponha que existe uma quantidade pivotal V, com c.d.f.~\footnote{c.d.f. - cumulative distribution function} continua G. Assuma que existe $r(v, \textbf{x})$ estritamente crescente em v para todo $\textbf{x}$. Finalmente, tome $0 < \gamma < 1$ e $\gamma_1 < \gamma_2$ de modo que $\gamma_2 - \gamma_1 = \gamma$. Então as estatísticas
-		
-		$$A(\textbf{X}) = r(G^{-1}(\gamma_1), \textbf{X}),$$
-		
-		$$B(\textbf{X}) = r(G^{-1}(\gamma_2), \textbf{X}),$$
-		
-		são os limites de um intervalo de confiança de $100\gamma \%$ para $g(\theta)$.
-	\end{theorem}
-	
-	
-	\section*{Aula 14: Testes de hipótese I}
-	\label{s14}
-	\begin{definition}[Hipótese nula e hipótese alternativa]
-		Considere o espaço de parâmetros $\Omega$ e defina $\Omega_0, \Omega_1 \subset \Omega$ de modo que $\Omega_0 \cup \Omega_1 = \Omega$ e $\Omega_0 \cap \Omega_1 = \emptyset$. Definimos
-		
-		$$H_0 := \theta \in \Omega_0,$$
-		$$H_1 := \theta \in \Omega_1,$$
-		
-		E dizemos que $H_0$ é a \textbf{hipótese nula} e $H_1$ é a \textbf{hipótese alternativa}.
-		Se $\theta \in \Omega_1$, então dizemos que rejeitamos a hipótese nula. Por outro lado, se $\theta \in \Omega_0$, então dizemos que não rejeitamos ou falhamos em rejeitar $H_0$.
-	\end{definition}
-	
-	\begin{definition}[Hipótese simples e hipótese composta]
-		Dizemos que uma hipótese $H_i$, é \textbf{simples}, se $\Omega_i = \{ \theta_i \}$, isto é, se a partição correspondente é um único ponto. Uma hipótese é dita \textbf{composta} se não é simples.
-	\end{definition}
-	
-	\begin{definition}[Hipótese unilateral e hipótese bilateral]
-		Uma hipótese da forma $H_0 : \theta \leq \theta_0$ ou $H_0 : \theta \geq \theta_0$ é dita \textbf{unilateral} (``one-sided''), enquanto hipóteses da forma $H_0 : \theta \neq \theta_0$ são ditas \textbf{bilaterais} (``two-sided'').
-	\end{definition}
-	
-	\section*{Aula 15: Testes de hipótese II}
-	\label{s15}
-	\begin{definition}[Região crítica]
-		O conjunto
-		
-		$$S_1 := \{ \textbf{x} : | \overline{X}_n - \mu_0 | \geq c \}$$
-		
-		é chamado de \textbf{região crítica} do teste.
-	\end{definition}
-	
-	\begin{definition}[Região de rejeição]
-		Se $R \subseteq \mathbb{R}$ é tal que ``rejeitamos $H_0$ se $T \in R$'', então R é chamada uma \textbf{região de rejeição} para a estatística T e o teste associado.
-	\end{definition}
-	
-	\begin{definition}[Função poder]
-		Seja $\delta$ um procedimento de aceitação/rejeição como visto anteriormente. A \textbf{função poder} é definida como
-		
-		\begin{equation}
-			\pi(\theta \mid \delta) := P(\textbf{X} \in S_1 \mid \theta) = P(T \in R \mid \theta), \ \theta \in \Omega
-		\end{equation}
-	\end{definition}
-	
-	\begin{definition}[Tipos de erros]
-		Tipos de erros que podem ser cometidos
-		
-		$$
-		\begin{tabular}{c|c}
-			Nome & Erro cometido\\
-			\hline
-			Erro tipo I & Rejeitar $H_0$ quando ela é~\textbf{verdadeira}.\\
-			Erro tipo II & Falhar em rejeitar $H_0$ quando ela é~\textbf{falsa}.\\
-		\end{tabular}
-		$$
-	\end{definition}
-	
-	\begin{definition}[Tamanho/nível de um teste]
-		Dizemos que um teste, $\delta$, tem \textbf{tamanho} ou \textbf{nível de significância} $\alpha(\delta)$, com 
-		
-		$$\alpha(\delta) := \mathrm{sup}_{\theta \in \Omega_0} \pi (\theta \mid \delta).$$
-	\end{definition}
-	
-	\section*{Aula 16: Testes de hipótese III}
-	\label{s16}
-	\begin{definition}[O p-valor]
-		Para cada t, seja $\delta_t$ o teste que rejeita $H_0$ se $T \geq t$. Então, quando $T = t$, o \textbf{p-valor} vale
-		
-		\begin{equation}
-			p(t) := \sup_{\theta \in \Omega_0} \pi (\theta \mid \delta_t) = \sup_{\theta \in \Omega_0} P (T \geq t \mid \theta)
-		\end{equation}
-		
-		ou seja, o \textbf{p-valor} é o tamanho do teste $\delta_t$.
-	\end{definition}
-	
-	\section*{Aula 17: Testes e conjuntos de confiança}
-	\label{s17}
-	\begin{definition}[Intervalos de confiança e testes são equivalentes]
-		
-		Suponha que dispomos de dados $\textbf{X} = \{ X_1, \ldots, X_n \}$ com f.d.p. comum $f(x \mid \theta)$, e estamos interessados em testar as hipóteses:
-		
-		$$H_0 : g(\theta) = g_0,$$
-		$$H_1 : g(\theta) \neq g_0,$$
-		
-		de modo que existe um teste $\delta_{g_0}$ com nível $\alpha_0$ destas hipóteses. Para cada $\textbf{X} = \textbf{x}$, defina
-		
-		$$w(\textbf{x}) = \left\{g_0: \delta_{g_0} \:n\tilde{a}o\:rejeita\: H_0 \:dado\:que\: \textbf{X} = \textbf{x} \right\}.$$
-		
-		Fazendo o nível de confiança do intervalo $\gamma = 1 - \alpha_0$, temos
-		
-		$$P(g(\theta_0) \in w(\textbf{X}) \mid \theta = \theta_0) \geq \gamma, \ \forall \theta_0 \in \Omega.$$
-	\end{definition}
-	
-	\begin{definition}[Conjunto de confiança]
-		Se um conjunto aleatório $w(\textbf{X})$ satisfaz
-		
-		$$P(g(\theta_0) \in w(\textbf{X}) \mid \theta = \theta_0) \geq \gamma,$$
-		
-		para todo $\theta_0 \in \Omega$, então chamamos $w(\textbf{X})$ de um \textbf{conjunto de confiança} para $g(\theta)$.
-	\end{definition}
-	
-	\begin{theorem}[Testando hipóteses a partir de conjuntos de confiança]
-		Suponha que dispomos de dados $\textbf{X} = \{ X_1, \ldots. X_n \}$ com f.d.p. comum $f(x \mid \theta)$ e que $w(\textbf{X})$ é um conjunto de confiança para uma função de interesse $g(\theta)$. Então para todo valor $g_0$ assumido por $g(\theta)$ existe um teste $\delta_{g_0}$, de nível $\alpha_0$ que rejeita $H_0 : g(\theta) = g_0$ se e somente se $g(\theta_0) = g_0 \notin w(\textbf{X})$.
-	\end{theorem}
-	
-	\begin{theorem}[Teste de razão de verossimilhanças (para o Teo. de Wilks)]
-		A estatística
-		
-		$$\wedge(\textbf{x}) = \frac{\sup_{\theta \in \Omega_0 f_n (\textbf{x} \mid \theta)}}{\sup_{\theta \in \Omega f_n (\textbf{x} \mid \theta)}}$$
-		
-		é chamada um \textbf{estatística de razão de verossimilhanças}. Um \textbf{teste de razão de verossimilhanças}, $\delta_k$, é um teste que rejeita $H_0$ se $\wedge(\textbf{x}) \leq k$ para uma constante k.
-	\end{theorem}
-	
-	\begin{theorem}[Teorema de Wilks]
-		Suponha que temos um espaço de parâmetros com k coordenadas, $\theta = (\theta_1, \ldots, \theta_n)$ e desejamos testar a hipótese (simples) da forma
-		
-		$$H_0 : \theta_j = \theta_0^j, \ j = 1, \ldots, k,$$
-		$$H_1 : \theta_j \neq \theta_0^j, \ j = 1, \ldots, k.$$
-		
-		Então, sob condições de regularidade, temos que, à medida que $n \rightarrow \infty$,
-		
-		$$-2 \log \wedge(\textbf{x}) \stackrel{\mathrm{d}}{\rightarrow} X^2 (k)$$
-	\end{theorem}
-	
-	\section*{Aula 18: Teste t I}\label{s18}
-	\begin{definition}[Teste não viesado]
-		Suponha que desejamos testar a hipótese
-		
-		$$H_0 : \theta \in \Omega_0,$$
-		$$H_1 : \theta \in \Omega_1,$$
-		
-		através do teste $\delta$. Dizemos que $\delta$ é \textbf{não-viesado} se (e somente se) para $\theta \in \Omega_0$ e $\theta' \in \Omega_1$, vale
-		
-		$$\pi (\theta \mid \delta) \leq \pi (\theta' \mid \delta),$$
-		
-		ou seja, se a função poder é pelo menos tão grande no espaço onde $H_0$ é falsa ($\Omega_1$) quando no espaço em que $H_0$ é verdadeira ($\Omega_0$).
-	\end{definition}
-	
-	\begin{definition}[Teste t]
-		Um teste $\delta_c$ que rejeita $H_0$ se $U \geq c$ (equiv. $U \leq c$), com $c = T^{-1}(1 - \alpha_0; n - 1)$ é chamado de um \textbf{teste t} (unicaudal) de tamanho $\alpha_0$.
-	\end{definition}
-	
-	\begin{theorem}[Propriedades do teste t]
-		Suponha que $\delta_c$ rejeita $H_0$ se $U \geq c$. Então
-		
-		\begin{itemize}
-			\item $\mu = \mu_0 \Longrightarrow \pi(\mu, \sigma^2 \mid \delta_c) = \alpha_0$
-			
-			\item $\mu < \mu_0 \Longrightarrow \pi(\mu, \sigma^2 \mid \delta_c) < \alpha_0$
-			
-			\item $\mu > \mu_0 \Longrightarrow \pi(\mu, \sigma^2 \mid \delta_c) > \alpha_0$
-			
-			\item $\lim_{\mu \rightarrow -\infty} \pi(\mu, \sigma^2 \mid \delta_c) = 0$
-			
-			\item $\lim_{\mu \rightarrow +\infty} \pi(\mu, \sigma^2 \mid \delta_c) = 1$
-			
-			\item $\delta_c$ é não-viesado e tem tamanho $\alpha_0$.
-		\end{itemize}
-	\end{theorem}
-	
-	\begin{theorem}[P-valor para um teste t unicaudal]
-		Suponha que observarmos $U = u$ e seja $T(\cdot. n - 1)$ a f.d.a. de uma distribuição t de Student com n - 1 graus de liberdade. Para a hipótese
-		
-		$$H_0 : \mu \geq \mu_0,$$
-		$$H_1 : \mu < \mu_0,$$
-		
-		o p-valor vale $T(u; n-1)$, enquanto para a hipótese
-		
-		$$H_0 : \mu \leq \mu_0,$$
-		$$H_1 : \mu > \mu_0,$$
-		
-		o p-valor vale $1 - T(u; n-1)$.
-	\end{theorem}
-	
-	\section*{Aula 19: Teste t II}\label{s19}
-	\begin{theorem}[Teste pareado]
-		Sejam amostras \textbf{X} e \textbf{Y} (antes e depois), tais que $X_i \sim \mathrm{Normal}(\mu_1, \sigma^2)$ e $Y_i \sim \mathrm{Normal}(\mu_2, \sigma^2)$, a hipótese
-		
-		$$H_0 : \mu_1 \leq \mu_2$$
-		$$H_1 : \mu_1 > \mu_2$$
-		
-		Pode ser modelada com a variável $Z_i = X_i - Y_i$ ($Z_i \sim \mathrm{Normal}(\mu_Z = \mu_1 - \mu_2, 2 \sigma^2)$), então podemos testar hipóteses sobre $\mu_Z$ a partir de \textbf{Z}
-		
-		$$H_0 : \mu_Z \leq 0$$
-		$$H_1 : \mu_Z > 0$$
-	\end{theorem}
-	
-	\begin{theorem}[Teste t para duas amostras]
-		Considere $\textbf{X} = \{ X_1, \ldots, X_m \}$ e $\textbf{Y} = \{ Y_1, \ldots, Y_n \}$, queremos estudar a diferença das médias. Modelando em distribuição normal $X_i \sim \mathrm{Normal}(\mu_1, \sigma_1^2), \ i = 1, \ldots, m$ e $Y_j \sim \mathrm{Normal}(\mu_2, \sigma_2^2), \ j = 1, \ldots, n$. Sob a premissa de homogeneidade $\sigma_1^2 = \sigma_2^2 = \sigma^2$, podemos testar a hipótese
-		
-		$$H_0 : \mu_1 \leq \mu2$$
-		$$H_1 : \mu_1 > \mu_2$$
-		
-		computando a estatística
-		
-		$$U = \frac{\sqrt{m + n - 2} (\overline{X}_m - \overline{Y}_n)}{\sqrt{(\frac{1}{m} + \frac{1}{n})(S_X^2 + S_Y^2)}}$$
-		
-		onde $\overline{X}_m$ e $\overline{X}_m$ são as médias e $S_X^2$ e $S_X^2$ são a soma das variâncias.
-	\end{theorem}
-	
-	\begin{theorem}[Relaxando a premissa de homogeneidade]
-		Do teorema acima, podemos relaxar a premissa de igualdade das variâncias assumindo que $\sigma_2^2 = k \sigma_1^2$, então a estatística teste vale
-		
-		$$U = \frac{\sqrt{m + n - 2} (\overline{X}_m - \overline{Y}_n)}{\sqrt{(\frac{1}{m} + \frac{k}{n})(S_X^2 + \frac{S_Y^2}{n})}}$$
-	\end{theorem}
-	
-	\section*{Aula 20: Teste f}\label{s20}
-	\begin{definition}[A distribuição F]
-		Sejam $Y \sim \mathrm{Qui-quadrado}(m)$ e $W \sim \mathrm{Qui-quadrado}(n)$. Então
-		
-		$$X = \frac{Y / m}{W / n},$$
-		
-		tem distribuição F com m e n graus de liberdade, com f.d.p.
-		
-		$$f_X (x) = \frac{\Gamma(\frac{m + n}{2}) m^{m/2} n^{n/2}}{\Gamma(\frac{n}{2}) \Gamma(\frac{m}{2})} \cdot \frac{x^{m / 2 - 1}}{(mx + n)^{(m + n)/2}}, \ x > 0,$$
-	\end{definition}
-	
-	\begin{theorem}[Propriedades da distribuição F] Propriedades para a distribuição F:
-		
-		\begin{enumerate}
-			\item Se $X \sim F(m, n)$, então $\frac{1}{X} \sim F(m, n)$;
-			
-			\item Se $Y \sim \mathrm{Student}(n)$, então $Y^2 \sim F(1, n)$.
-		\end{enumerate}
-	\end{theorem}
-	
-	\begin{theorem}[Igualdade de duas variâncias]
-		Suponha $X_i \sim \mathrm{Normal}(\mu_1, \sigma_1^2), \ i = 1, \ldots, m$ e $Y_j \sim \mathrm{Normal}(\mu_2, \sigma_2^2), \ j = 1, \ldots, n$. Queremos testar
-		
-		$$H_0 : \sigma_1^2 \leq \sigma_2^2$$
-		$$H_1 : \sigma_1^2 > \sigma_2^2$$
-		
-		Para isso, vamos computar a estatística de teste
-		
-		$$V = \frac{S_X^2 / (m - 1)}{S_Y^2 / (n - 1)}$$
-		
-		onde $S_X^2 = \sum_{i = 1}^m (X_i - \overline{X}_m)^2$ e $S_Y^2 = \sum_{j = 1}^m (Y_j - \overline{Y}_m)^2$
-	\end{theorem}
-	
-	\begin{definition}[O teste F]
-		O teste F de homogeneidade (igualdade de variâncias) é o teste $\delta_c$ que rejeita $H_0$ de $V \geq c$, para uma constante positiva c.
-	\end{definition}
-	
-	\begin{theorem}[A distribuição de V]
-		Seja $V = \frac{S_X^2 / (m - 1)}{S_Y^2 / (n - 1)}$, então:
-		
-		$$\frac{\sigma_2^2}{\sigma_1^2} V \sim F(m - 1, n - 1).$$
-		
-		Além disso, se $\sigma_1^2 = \sigma_2^2$, $V \sim F(m - 1, n - 1)$.
-	\end{theorem}
-	
-	\section*{Aula 21: Regressão Linear I}\label{s21}
-	\begin{theorem}[A linha de mínimos quadrados]
-		Sejam $(x_1, y_1), \ldots, (x_n, y_n)$ uma coleção de n pontos. Suponha que estamos interessados na reta
-		
-		\begin{equation}
-			y_i = \beta_0 + \beta_1 x_i.
-		\end{equation}
-		
-		Os valores dos coeficientes que minimizam a  soma de quadrados são
-		
-		$$\hat{\beta}_0 = \overline{y} - \hat{\beta}_1 \overline{x},$$
-		
-		$$\hat{\beta}_1 = \frac{\sum_{i = 1}^n (y_i - \overline{y}) (x_i - \overline{x})}{\sum_{i = 1}^n (x_i - \overline{x})^2}.$$
-	\end{theorem}
-	
-	\begin{definition}[Modelo linear]
-		Podemos construir um modelo estatístico explícito para a relação entre as variáveis X e Y:
-		
-		\begin{equation}
-			E[Y \mid X = x_1, \ldots, x_P] = \beta_0 + \beta_1 x_1 + \ldots + \beta_P x_P
-		\end{equation}
-		
-		Podemos então idealizar o seguinte modelo
-		
-		$$Y_i = \beta_0 \sum_{j = 1}^P \beta_j x_{ij} + \varepsilon_i, \ \varepsilon \sim \mathrm{Normal}(0, \sigma^2).$$
-	\end{definition}
-	
-	\section*{Aula 22: Regressão Linear II}\label{s22}
-	\begin{theorem}[EMV para os coeficientes de uma regressão linear (simples)]
-		Sob as premissas já listadas, os estimadores de máxima verossimilhança para $\theta = (\beta_0, \beta_1, \sigma^2)$ são
-		
-		$$\hat{\beta}_{0 EMV} = \overline{y} - \hat{\beta}_{1 EMV} \overline{x},$$
-		
-		$$\hat{\beta}_{1 EMV} = \frac{\sum_{i = 1}^n (y_i - \overline{y})(x_i - \overline{x})}{\sum_{i = 1}^n (x_i - \overline{x})^2},$$
-		
-		$$\hat{\sigma^2}_{EMV} = \frac{1}{n} \sum_{i = 1}^n \left ( y_i - (\hat{\beta}_{0 EMV} + \hat{\beta}_{1 EMV} x_i) \right )^2,$$
-		
-		ou seja, os estimadores de máxima verossimilhança dos coeficientes minimizam a soma de quadrados da reta estimada.
-	\end{theorem}
-	
-	\begin{theorem}[Distribuição amostral dos estimadores dos coeficientes]
-		$$\hat{\beta}_{0 EMV} \sim \mathrm{Normal} \left ( \beta_0, \sigma^2 \left ( \frac{1}{n} + \frac{\overline{x}^2}{s_X^2} \right ) \right ),$$
-		
-		$$\hat{\beta}_{1 EMV} \sim \mathrm{Normal} \left ( \beta_0, \frac{\sigma^ 2}{s_X^2} \right ),$$
-		
-		$$\mathrm{Cov} (\hat{\beta}_{0 EMV}, \hat{\beta}_{1 EMV}) = - \frac{\overline{x} \sigma^2}{s_X^2},$$
-		
-		onde $s_x = \sqrt{\sum_{i = 1}^n (x_i - \overline{x})^2}.$
-	\end{theorem}
-	
-	\begin{theorem}[Intervalos de confiança para os coeficientes de uma regressão linear]
-		Podemos computar intervalos de confiança para os coeficientes da regressão linear
-		de maneira muito similar ao que já vimos para o caso da média da Normal
-		
-		$$\hat{\beta_0} \pm \hat{\sigma}' c\sqrt{\frac{1}{n} + \frac{\bar{x}^2}{s_x^2}}\quad \mathrm{e}\quad \hat{\beta_1} \pm c\frac{\hat{\sigma}'}{s_x},$$
-		
-		$$\hat{\beta_0} + \hat{\beta_1}x_{pred} \pm c \hat{\sigma}' \sqrt{\frac{1}{n} + \frac{\left(x_{pred}-\bar{x}\right)^2}{s_x^2} }$$
-		
-		onde $c = T^{-1}(1-\frac{\alpha_0}{2}; n-2)$ e 
-		
-		$$\hat{\sigma}' := \sqrt{\frac{\sum_{i=1}^n \left(Y_i - \hat{\beta_0} - \hat{\beta_1}x_i \right)^2}{n-2}}.
-		$$
-	\end{theorem}
-	
-	\begin{definition}[Testes de hipóteses para o coeficiente angular]
-		Em geral, estamos interessados em testar a hipótese
-		$$H_0 : \beta_1 = \beta^\star,$$
-		$$H_1 : \beta_1 \neq \beta^\star.$$
-		
-		Para tanto, podemos computar a estatística
-		
-		\begin{equation}
-			U_1 = s_x \frac{\hat{\beta_1}-\beta^\star}{\hat{\sigma}'},
-		\end{equation}
-		
-		e computar o p-valor como 
-		
-		\begin{equation}
-			P(U_1 \geq |u_1|) + P(U_1 \leq -|u_1|).
-		\end{equation}
-		Notando que $U_1$ tem distribuição t de Student com $n-2$ graus de liberdade sob $H_0$, podemos computar o p-valor exatamente.
-		
-		Resultados bem similares valem para testar hipóteses sobre $\beta_0$ ou $\hat{Y}$.
-	\end{definition}
-	
-	\begin{theorem}[Predição pontual]
-		Suponha que queremos prever o valor de Y para um certo $x_{pred}$ que não foi observado no experimento. Podemos compor nossa predição (pontual) como
-		
-		\begin{equation}
-			\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 x_{pred}.
-		\end{equation}
-		
-		Onde a predição tem erro quadrático médio (EQM) igual a
-		
-		$$E \left [ (\hat{Y} - Y)^2 \right ] = \sigma^2 \left ( 1 + \frac{1}{n} + \frac{(x_{pred} - \overline{x})^2}{s_X^2} \right ).$$
-	\end{theorem}
-	
-	\begin{theorem}[Intervalos de \textbf{predição} para $\hat{Y}$]
-		A probabilidade de $\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 x_{pred}$ estar no intervalo
-		
-		$$\hat{Y} \pm T^{-1} (1 - \frac{\alpha_0}{2}; n - 2) \hat{\sigma}' \sqrt{\left [ 1 + \frac{1}{n} + \frac{(x_{pred} - \overline{x})^2}{s_X^2} \right ]},$$
-		
-		é $1 - \alpha_0$.
-	\end{theorem}
-	
+
+Fundação Getúlio Vargas\hfill\\
+Inferência Estatística\hfill\textbf{\assignment}\\
+Wellington Silva\hfill\textbf{Last Update:} \duedate\\
+\smallskip\hrule\bigskip
+
+{\let\newpage\relax\maketitle}
+\maketitle
+
+\section*{Content}
+
+\textbf{\nameref{s0}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s1}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s2}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s3}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s4}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s5}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s6}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s7}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s8}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s9}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s10}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s11}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s12}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s13}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s14}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s15}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s16}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s17}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s18}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s19}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s20}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s21}}
+\vspace{2.6mm}
+
+\textbf{\nameref{s22}}
+
+\newpage
+
+%%%%%%%% Revisão de Probabilidade.
+\section*{Aula 0: Revisão de Probabilidade}
+\label{s0}
+
+\begin{theorem}[Desigualdade de Marvok]
+Seja X uma variável aleatória não-negativa e $t > 0$. Então
+
+\begin{equation}
+    P(X \geq t) \leq \frac{E[X^n]}{t^n}.
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Desigualdade de Chebychev]
+Seja uma variável aleatória com média $E[Y] := \mu$ e variância $Var(Y) := \sigma^2$, ambas finitas. Mas uma vez, $t > 0$. Então
+
+\begin{equation}
+    P(|Y - \mu| \geq t) \leq \frac{Var(Y)}{t^2}.
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Média e variância em uma amostra i.i.d.]
+Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias i.i.d., com média $\mu$ e variância $\sigma^2$. Temos que
+
+\begin{enumerate}
+    \item[(i)] $E[\bar{X}_n] = \mu$
+    \item[(ii)] $Var(\bar{X}_n) = \frac{\sigma^2}{n}$
+\end{enumerate}
+\end{theorem}
+
+\begin{definition}[Convergência em probabilidade]
+Dizemos que uma sequência de variáveis aleatórias converge em probabilidade para b se, $\forall \varepsilon > 0$, temos
+
+$$\lim_{n \to \infty} P(|Z_n - b| < \varepsilon) = 1$$
+
+Neste caso, escrevemos $Z_n \xrightarrow{p} b$.
+\end{definition}
+
+\begin{theorem}[Lei Fraca dos Grandes Números]
+Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias i.i.d., com média $\mu$ e variância $\sigma^2$. Então
+
+$$\bar{X}_n \xrightarrow{p} \mu$$
+\end{theorem}
+
+\begin{definition}[Convergência quase certa]
+Dizemos que uma sequência de variáveis aleatórias $(Z_n)_{n \leq 1}$ converge quase certamente para b se
+
+$$P(\lim_{n \to \infty} Z_n = b) = 1$$
+\end{definition}
+
+\begin{theorem}[Lei Forte dos Grandes Números]
+Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias i.i.d., com média $\mu$. Então
+
+$$P(\lim_{n \to \infty} \bar{X}_n = \mu) = 1$$
+\end{theorem}
+
+\begin{theorem}[Teorema Central do Limite (Lindenberg e Lévy)]
+Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias i.i.d., com média $\mu$ e variância $\sigma^2$. Então, para cada x, temos
+
+$$\lim_{n \to \infty} P \left ( \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} \leq x \right ) = \Phi(x),$$
+
+onde,
+
+$$\Phi(x) := \frac{1}{\sqrt{2 \pi}} \int_0^x exp \left(- \frac{t^2}{2} \right) d t$$
+
+é a função de distribuição (cumulativa) normal padrão.
+\end{theorem}
+
+\section*{Aula 1: O que é e para que serve Inferência Estatística?}
+\label{s1}
+
+\begin{definition}[Modelo estatístico: informal]
+Um \textbf{modelo estatístico} consiste na identificação de variáveis aleatórias de interesse (observáveis e potencialmente observáveis), na especificação de uma distribuição conjunta para as variáveis aleatórias observáveis e na identificação dos parâmetros $(\theta)$ desta distribuição conjunta. Às vezes é conveniente assumir que os parâmetros são variáveis aleatórias também, mas para isso é preciso especificar uma distribuição conjunta para $\theta$.
+\end{definition}
+
+\begin{definition}[Modelo estatístico: formal]
+Seja $\mathcal{X}$ um espaço amostral qualquer, $\Theta$ um conjunto não-vazio arbitrário e $\mathcal{P(X)}$ o conjunto de todas as distribuições de probabilidade em $\mathcal{X}$. Um modelo estatístico \textbf{paramétrico} é uma função $P: \Theta \rightarrow \mathcal{P(X)}$ que associa a cada $\theta \in \Theta$ uma distribuição de probabilidade $P_\theta$ em $\mathcal{X}$.
+\end{definition}
+
+\begin{definition}[Afirmação probabilística]
+Dizemos que uma afirmação é \textbf{probabilística} quando ela utiliza conceitos da teoria de probabilidade para falar de um objeto.
+\end{definition}
+
+\begin{definition}[Inferência Estatística]
+Uma \textbf{inferência estatística} é uma \textbf{afirmação probabilística} sobre uma ou mais partes de um modelo estatístico.
+\end{definition}
+
+\begin{definition}[Estatística]
+Suponha que temos uma coleção de variáveis aleatórias $X_1, X_2, \ldots, X_n \subseteq \mathbf{R}^n$ e uma função $r: \mathbf{X} \rightarrow R^m$. Dizemos que a variável aleatória $T = r(X_1, X_2, \ldots, X_n)$ é uma \textbf{estatística}.
+\end{definition}
+
+\begin{definition}[Permutabilidade]
+Uma coleção finita de variáveis aleatórias $X_1, X_2, \ldots, X_n$ com densidade conjunta f é dita \textbf{permutável} se
+
+\begin{equation}
+f(x_1, x_2, \ldots, x_n) = f(x_{\pi(1)}, x_{\pi(2)}, \ldots, x_{\pi(n)})
+\end{equation}
+
+para qualquer permutação $\pi = \{\pi(1), \pi(2), \ldots, \pi(n)\}$ dos seus elementos. Uma coleção finita é permutável se qualquer subconjunto finito é permutável.
+\end{definition}
+
+\section*{Aula 2:  Distribuição a priori e a posteriori}
+\label{s2}
+\begin{definition}[Distribuição a priori]
+Se tratamos o parâmetro $\theta$ como uma variável aleatória, então a \textbf{distribuição a priori} é a distribuição que damos a $\theta$ antes de observarmos as outras variáveis aleatórias de interesse. Vamos denotar a função de densidade/massa de probabilidade da priori por $\xi(\theta)$.
+\end{definition}
+
+\begin{definition}[Distribuição a posteriori]
+Considere o problema estatístico com parâmetros $\theta$ e variáveis aleatórias observáveis $X_1, X_2, \ldots, X_n$. A distribuição condicional de $\theta$ dados os valores observados das variáveis aleatórias, $\textbf{x} := \{x_1, x_2, \ldots, x_n\}$ é a \textbf{distribuição a posteriori} de $\theta$, denotamos por $\xi(\theta \mid \textbf{x})$ a f.d.p./f.m.p. condicional a $X_1 = x_1, X_2 = x_2, \ldots, X_n = x_n$.
+\end{definition}
+
+\begin{theorem}[Distribuição a posteriori: derivação]
+Considere a amostra aleatória $X_1, X_2, \ldots, X_n$ de uma distribuição com f.d.p./f.m.p. $f(x \mid \theta)$. Se a distribuição a priori é $\xi(\theta)$, temos
+
+\begin{equation}
+\xi(\theta \mid x) = \frac{\xi(\theta) \Pi_{i = 1}^{n} f(x_i \mid \theta)}{g_n(x)}, \ \theta \in \Omega
+\end{equation}
+
+Chamamos $g_n(x)$ de distribuição marginal de $X_1, X_2, \ldots, X_n$.
+\end{theorem}
+
+\begin{definition}[Função de verossimilhança]
+Quando encaramos a f.d.p./f.m.p. $f(x_1, x_2, \ldots, x_n \mid \theta)$ como uma função do parâmetro $\theta$, chamamos esta função de \textbf{função de verossimilhança}, e podemos denotá-la como $L(\theta; x)$ ou, quando a notação não criar ambiguidade, simplesmente $L(\theta)$.
+\end{definition}
+
+\section*{Aula 3: Prioris conjugadas e função de perda}
+\label{s3}
+\begin{definition}[Hiper-parâmetros]
+Seja $\xi(\theta \mid \phi)$ a distribuição a priori para o parâmetro $\theta$, indexada por $\phi \in \Phi$. Dizemos que $\phi$ é(são) o(s) \textbf{hiper-parâmetro(s)} da priori de $\theta$.
+\end{definition}
+
+\begin{definition}[Priori conjugada]
+Suponha que $X_1, X_2, \ldots$ sejam condicionalmente independentes dado $\theta$, com f.d.p./f.m.p. $f(x\mid\theta)$. Defina
+
+\begin{equation}
+\Psi = \left \{ f: \Omega \rightarrow (0, \infty), \int_\Omega f dx = 1 \right \}
+\end{equation}
+
+onde $\Omega$ é o espaço de parâmetros. Dizemos que $\Psi$ é uma \textbf{família de distribuições conjugadas} para $f(x \mid \theta)$ se $\forall f \in \Psi$ e toda realização \textbf{x} de $X = X_1, X_2, \ldots, X_n$
+
+\begin{equation}
+\frac{f(\textbf{x} \mid \theta) f(\theta)}{\int_\Omega f(\textbf{x} \mid \theta)f(\theta) d \theta} \in \Psi
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Distribuição a posteriori da média de uma normal]
+Suponha que $X_1, X_2, \ldots, X_n$ formam uma amostra aleatória com distribuição normal e com média desconhecida $\theta$ e variância $\sigma^2 > 0$, conhecida e fixa. Suponha que $\theta \sim Normal(\mu_0, v_0^2)$ a priori. Então
+
+\begin{equation}
+\xi (\theta \mid x, \sigma^2) = \frac{1}{\sqrt{2 \pi \sigma^2}} exp \left (\frac{(\theta - \mu_1)^2}{2v_1^2}\right ),
+\end{equation}
+
+onde
+
+\begin{equation}
+\mu_1 := \frac{\sigma^2 \mu_0 + n v_0^2 \overline{x}_n}{\sigma^2 + n v_ 0^2} \ \mathrm{e} \ v_1^2 := \frac{\sigma^2 v_0^2}{\sigma^2 + n v_0^2}
+\end{equation}
+\end{theorem}
+
+\begin{definition}[Priori imprópria]
+Seja $\xi : \Lambda \rightarrow (0, \infty), \Omega \subseteq \Lambda$, uma função tal que $\int_\Omega \xi(\theta) d \theta = \infty$. Se utilizamos $\xi$ como uma p.d.f.~\footnote{p.d.f. - ``probability density function'' ou função de densidade de probabilidade} para $\theta$, dizemos que $\xi$ é uma \textbf{priori imprópria} para $\theta$.
+\end{definition}
+
+\begin{definition}[Estimador]
+Sejam $X_1, X_2, \ldots, X_n$ variáveis aleatórias com distribuição conjunta indexada por $\theta$. Um \textbf{estimador} de $\theta$ é qualquer função real $\delta$: $X_1, X_2, \ldots, X_n \rightarrow \mathbb{R}^d, d \geq 1$.
+\end{definition}
+
+\begin{definition}[Estimativa]
+Dizemos que o valor de $\delta$ avaliado nas realizações de $X_1, X_2, \ldots, X_n$, $\textbf{x} = \{x_1, x_2, \ldots, x_n\}, \ \delta(\textbf{x})\}$ é uma \textbf{estimativa} de $\theta$.
+\end{definition}
+
+\begin{definition}[Função de perda]
+Uma função de perda é uma função real em duas variáveis 
+\begin{equation}
+L: \Omega \times \mathbb{R}^d \rightarrow \mathbb{R},
+\end{equation}
+
+em que dizemos que o estatístico \textit{perde} $L(\theta, a)$ se o parâmetro vale $\theta$ e a estimativa dada vale a.
+\end{definition}
+
+\subsection*{Famílias Conjugadas}
+
+Se $X_1,\ldots,X_n$ são iid e seguem a distribuição da coluna ``Dados'' na tabela~\ref{tab:1}.
+
+\textbf{Notações}: $\bar {x}_n= \frac{1}{n}\sum_{i=1}^n x_i;~~~
+y=\sum_{i=1}^nx_i$
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline \textbf{Dados} & \textbf{Priori} & \textbf{Posteriori}\\ \hline
+         $\mathrm{Bernoulli}(\theta)$&$\mathrm{Beta}(\alpha,\beta)$ & $\mathrm{Beta}(\alpha+y,\beta+n-y)$ \\ \hline
+         $\mathrm{Poisson}(\theta)$&$\mathrm{Gama}(\alpha,\beta)$&$\mathrm{Gama}(\alpha+y,\beta+n)$\\ \hline 
+         $\mathrm{Normal}(\mu,\sigma^2)$ & $\mathrm{Normal}(\mu_0,v_0^2)$& $\mathrm{Normal}\left(\frac{\sigma^2\mu_0+nv_0^2\bar{x}_n}{\sigma^2+nv_0^2},\frac{\sigma^2v_0^2}{\sigma^2+nv_0^2}\right)$ \\ \hline
+         $\mathrm{Exp}(\theta)$ &$\mathrm{Gama(\alpha,\beta)}$ & $\mathrm{Gama}(\alpha+n,\beta+y)$ \\ \hline
+
+    \end{tabular}
+    \caption{Famílias Conjugadas}\label{tab:1}
+\end{table}
+
+\section*{Aula 4: Estimadores de Bayes e EMV}
+\label{s4}
+\begin{definition}[Estimador de Bayes]
+Considere a perda esperada a posteriori:
+
+\begin{equation}
+E_{\theta \mid x} [L(\theta, a)] = E[L(\theta, a) \mid x] = \int_\Omega L(\theta, a) \xi (\theta \mid x) d \theta
+\end{equation}
+
+Dizemos que $\delta^*$ é um \textbf{estimador de Bayes} se, para toda realização $X = x$,
+
+\begin{equation}
+E[L(\theta, \delta^*(x)) \mid x] = \min_{a \in A} E[L(\theta, a) \mid x].
+\end{equation}
+
+Em outras palavras, um estimador de Bayes é uma função real dos dados que minimiza a perda esperada com respeito à posteriori dos parâmetros.
+\end{definition}
+
+\begin{theorem}[$\delta^*$ sob perda quadrática]
+Seja $\theta$ um parâmetro tomando valores reais. Sob perda quadrática,
+
+\begin{equation}
+\delta^*(x) = E[\theta \mid X = x] = \int_\Omega \theta \xi(\theta \mid x) d \theta
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[$\delta^*$ sob perda absoluta]
+Suponha que a função de perda é dada por
+
+\begin{equation}
+    L(\theta, \delta^*) = | \theta - \delta^*|.
+\end{equation}
+
+Dizemos que a função de perda é \textbf{absoluta}.
+Seja $\theta$ um parâmetro tomando valores na reta. Sob perda absoluta, $\delta^*(x)$ é a \textbf{mediana} a posteriori, isto é,
+
+\begin{equation}
+    \int_{\infty}^{\delta^*(x)} \xi(\theta \mid x) d \theta = \frac{1}{2}
+\end{equation}
+\end{theorem}
+
+\begin{definition}[Estimador consistente]
+Seja $\delta_1, \delta_2, \ldots, \delta_n$ uma sequência de estimadores de $\theta$. Se quando $n \rightarrow \infty$ a sequência convergente para $\theta$, dizemos que esta é uma \textbf{sequência consistente de estimadores}.
+\end{definition}
+
+\begin{definition}[Estimador de máxima verossimilhança]
+Para cada possível vetor (de observações) x, seja $\delta(x) \in \Omega$ um valor de $\theta \in \Omega$ de modo que a função de verossimilhança, $L(\theta) \propto f(x \mid \theta)$~\footnote{$\propto$ - é um operador matemático binário que indica que o valor esquerdo é proporcional ao valor direito.}, atinge o máximo.
+Dizemos que $\hat\theta = \delta(\textbf{X})$ é o \textbf{estimador de máximo verossimilhança} de $\theta$ (Fisher, 1922)\footnote{Ronald Aylmer Fisher (1890-1962), biólogo e estatístico inglês.}. Quando observamos $\textbf{X} = x$, dizemos que $\delta(x)$ é uma estimativa de $\theta$. Dito de outra forma:
+
+\begin{equation}
+    \max_{\theta \in \Omega} f(\textbf{X} \mid \theta) = f(\textbf{X} \mid \hat\theta).
+\end{equation}
+\end{definition}
+
+
+\section*{Aula 5: EMV}
+\label{s5}
+\begin{theorem}[Invariância do EMV]
+Considere uma função $\phi: \Omega \rightarrow \mathbb{R}$. Se $\hat{\theta}$ é um EMV para $\theta$, então $\phi(\hat{\theta})$ é um EMV para $\omega = \phi(\theta)$.
+\end{theorem}
+
+\begin{theorem}[Consistência do EMV]
+Defina $l(\theta) := \log f_n(x \mid \theta)$ e assuma que $X_1, \ldots, X_n \sim f(\theta_0)$, isto é, que $\theta_0$ é o valor verdadeiro do parâmetro.
+Denote $E_{\theta_0}[g] := \int_{\mathcal{X}} g(x, \theta_0) f(x \mid \theta_0)\, dx$. Suponha que
+
+\begin{itemize}
+    \item $f(x_i \mid \theta)$ tem o mesmo suporte;
+    \item $\theta_0$ é o ponto inferior de $\Omega$;
+    \item $I(\theta)$ é diferenciável;
+    \item $\hat{\theta}_{EMV}$ é única solução de $I'(\theta) = 0$.
+\end{itemize}
+
+Então
+
+$$\hat{\theta}_{EMV} \rightarrow \theta$$
+
+\end{theorem}
+
+\section*{Aula 6: Método dos momentos e suficiência}
+\label{s6}
+\begin{definition}[Método dos momentos]
+Suponha que $X_1, \ldots, X_n$ formam uma sequência aleatória com distribuição conjunta $f_n (X_1, \ldots, X_n \mid \theta), \theta \in \Omega \subseteq \mathbb{R}^k$ e que o k-ésimo momento existe. Defina $\mu_j (\theta) = E[X_1^j \mid \theta]$ e suponha que $\mu: \Omega \rightarrow \mathbb{R}^k$ é biunívoca, de modo que sua inversa é
+
+$$\theta = M(\mu_1(\theta), \ldots, \mu_k(\theta)).$$
+
+Dados os momentos amostrais $m_j := \frac{1}{n} \sum_{i=1}^n X_i^j, j = 1, \ldots, k$ o \textbf{estimador de momentos} (EMM) de $\theta$ é
+
+$$\hat{\theta}_{EMM} = M(m_1, \ldots, m_k).$$
+\end{definition}
+
+\begin{theorem}[Consistência do EMM]
+Suponha que $X_1, \ldots, X_n$ formam uma amostra aleatória com distribuição conjunta  $f_n (X_1, \ldots, X_n \mid \theta), \theta \in \Omega \subseteq \mathbb{R}^k$ e que o k-ésimo momento existe. Suponha que a inversa M existe e é continua. Então o EMM é \textbf{consistente} para $\theta$.
+\end{theorem}
+
+\begin{definition}[Estatística suficiente]
+Seja $X_1, \ldots, X_n$ uma amostra aleatória de uma distribuição indexada pelo parâmetro $\theta$. Seja $T = r(X_1, \ldots, X_n)$ uma estatística. Dizemos que T é uma \textbf{estatística suficiente} para $\theta$ se e somente se
+
+\begin{equation}
+    f(X_1, \ldots, X_n \mid T = t, \theta) = f(X_1, \ldots, X_n \mid T = t, \theta'), \forall \theta, \theta' \in \Omega,
+\end{equation}
+
+isto é, se a distribuição condicional da amostra dado o valor da estatística não depende de $\theta$.
+\end{definition}
+
+\begin{definition}[Aleatorização auxiliar]
+ Suponha que T é suficiente para $\theta$. O processo de simular $X_1', \ldots, X_n'$ dado que $T = r(X_1, \ldots, X_n)$ de modo que 
+ 
+ \begin{equation}
+     f(X_1, \ldots, X_n \mid \theta) = f(X_1', \ldots, X_n' \mid \theta), \forall \theta \in \Omega,
+ \end{equation}
+ 
+ é chamado de \textbf{aleatorização auxiliar} (em inglês, auxiliary randomisation).
+\end{definition}
+
+\begin{theorem}[Teorema de fatorização]\label{teo:fatorizacao}
+Suponha que $X_1, \ldots, X_n$ perfazem uma amostra aleatória com f.d.p./f.m.p. $f(x \mid \theta), \theta \in \Omega$. Uma estatística $T = r(X_1, \ldots, X_n)$ é suficiente para $\theta$ se, e somente se, para todo $x \in \mathcal{X}$ e $\theta \in \Omega$ existem u e v não negativos tal que
+
+\begin{equation}
+    f_n(x \mid \theta) = u(x) v[r(x), \theta].
+\end{equation}
+\end{theorem}
+
+\begin{definition}[Suficiência conjunta]
+Dizemos que um conjunto de estatísticas $T = \{T_1, \ldots, T_n\}$ é \textbf{suficiente} (conjuntamente) se que a distribuição condicional conjunta de $X_1, \ldots, X_n$ dado $T_1 = t_1, \ldots, T_n = t_n$ não dependentes de $\theta$.
+\end{definition}
+
+\section*{Aula 7: Suficiência conjunta e mínima, teorema de Rao-Blackwell}
+\label{s7}
+\begin{definition}[Estatísticas de ordem]
+Seja $\textbf{X} = X_1, \ldots, X_n$ uma amostra aleatória. Dizemos que $Y_1, \ldots, Y_n$ são \textbf{estatísticas de ordem} se $Y_1$ é o menor valor de \textbf{X}, $Y_2$ é o segundo menor valor e assim sucessivamente.
+\end{definition}
+
+\begin{theorem}[Estatísticas de ordem são suficientes conjuntas]
+Seja $X_1, \ldots, X_n$ uma amostra aleatória com f.d.p./f.m.p. $f(x \mid \theta)$. As estatísticas de ordem $Y_1, \ldots, Y_n$ são suficientes conjuntas para $\theta$.
+\end{theorem}
+
+\begin{definition}[Suficiência mínima]
+Uma estatística \textbf{T} é dita \textbf{mínima suficiente} se \textbf{T} é suficiente e é função de qualquer outra estatística suficiente. Um vetor $\textbf{T} = \{ T_1, \ldots, T_n \}$ é dito \textbf{minimamente suficiente conjunto} se é função de qualquer outro valor de estatísticas suficientes conjuntas.
+\end{definition}
+
+\begin{theorem}[EMV e Bayes são suficientes]
+Se a função de verossimilhança admite fatorização pelo Teorema~\ref{teo:fatorizacao}, os estimadores de Bayes e de máxima verossimilhança são estatísticas minimamente suficientes.
+\end{theorem}
+
+\begin{definition}[Notação conveniente]
+É conveniente definir que para $g : \mathcal{X}^n \rightarrow \mathbb{R}$, escrevemos
+
+\begin{equation}
+    E_\theta [g] = \int_\mathcal{X} \cdots \int_\mathcal{X} g(\textbf{x}) f_n (\textbf{x} \mid \theta) d x_1 \cdots d x_n = \int_\mathcal{X} g(\textbf{x}) f_n (\textbf{x} \mid \theta) d \textbf{x} 
+\end{equation}
+\end{definition}
+
+\begin{definition}[Erro quadrático médio]
+\begin{equation}
+    R(\theta, \delta) := E_\theta \left [ \{ \delta(\textbf{X}) - \theta \}^2 \right ].
+\end{equation}
+\end{definition}
+
+\begin{definition}[Estimador condicionado]\label{def:est. cond.}
+\begin{equation}
+    \delta_0 (\textbf{T}) := E_\theta \left [ \delta(\textbf{X}) \mid \textbf{T} \right ].
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Teorema de Rao-Blackwell]
+Seja $\delta(\textbf{X})$ um estimador, \textbf{T} uma estatística suficiente para $\theta$ e seja $\delta_0(\textbf{T})$ como na Definição~\ref{def:est. cond.}. Então vale que
+
+$$R(\theta, \delta_0) \leq R(\theta, \delta)$$
+
+Além disso, se $R(\theta, \delta) < \infty$ e $\delta (\textbf{X})$ não é função de $\textbf{T}$, vale a desigualdade estrita:
+
+$$R(\theta, \delta_0) < R(\theta, \delta)$$
+\end{theorem}
+
+\section*{Aula 8: Admissibilidade e viés}
+\label{s8}
+\begin{definition}[Admissibilidade]
+Um estimador $\delta$ é dito \textbf{inadmissível} se existe outro estimador $\delta_0$ tal que $R(\theta, \delta_0) \leq R(\theta, \delta), \forall \theta \in \Omega$ e existe $\theta' \in \Omega$ tal que $R(\theta', \delta_0) < R(\theta', \delta)$. Nesse caso, dizemos que $\delta_0$ domina $\delta$. O estimador $\delta_0$ é \textbf{admissível} se (e somente se) não há nenhum estimador que o domine.
+\end{definition}
+
+\begin{definition}[Estimador não-viesado]
+Um estimador $\delta(\textbf{X})$ de uma função $g(\theta)$ é dito \textbf{não-viesado} se $E_\theta[\delta(\textbf{X})] = g(\theta), \ \forall \theta \in \Omega$. Um estimador que não atende a essa condição é dito viesado. E o \textbf{víes} de $\delta$ é definido como $B_\delta(\theta) := E_\theta[\delta(\textbf{X})] - g(\theta)$.
+\end{definition}
+
+\begin{theorem}[Estimador não-viesado da variância]
+Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória, com $E[X_1] = m$ e $Var(X_1) = v < \infty$. Então
+
+$$\delta_1(\textbf{X}) = \frac{1}{n - 1}\sum_{i = 1}^n (X_i - \overline{X}_n)^2$$
+
+é um estimador não-viesado de v.
+\end{theorem}
+
+\section*{Aula 9: Eficiência}
+\label{s9}
+\begin{definition}[Informação de Fisher]\label{def:fis}
+Seja X uma variável aleatória com f.d.p./f.m.p. $f(x \mid \theta), \ \theta \in \Omega \subseteq \mathbb{R}$. Suponha que $f(x \mid \theta)$ é duas vezes diferenciável com respeito a $\theta$. Defina $\lambda (x \mid \theta) = \log f(x \mid \theta)$ e
+
+\begin{equation}
+    \lambda' (x \mid \theta) = \frac{\partial \lambda (x \mid \theta)}{\partial \theta} \quad \mathrm{e} \quad \lambda'' (x \mid \theta) = \frac{\partial^2 \lambda(x \mid \theta)}{\partial \theta^2}
+\end{equation}
+
+Definimos a \textbf{informação de Fisher} como
+
+\begin{equation}
+    I(\theta) = E_\theta \left [ \{ \lambda'(x \mid \theta) \}^2 \right ] \stackrel{\mathrm{(1)}}{=} -E_\theta\left[\lambda^{\prime\prime}(x \mid \theta)\right] = Var_\theta\left(\lambda^{\prime}(x\mid \theta) \right).
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Informação de Fisher em uma amostra aleatória]
+Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória e seja $I_n = E_\theta [- \lambda''_n (\textbf{X} \mid \theta)]$ a \textbf{informação de Fisher} da amostra. Então
+
+$$I_n(\theta) = n I(\theta)$$
+\end{theorem}
+
+\begin{theorem}[Teorema de Cramér-Rao]
+Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória, onde f.d.p./f.m.p. tem as mesmas premissas da Definição~\ref{def:fis}. Supondo que $T = r(\textbf{X})$ é uma estatística com variância finita. Seja $m(\theta) = E_\theta(T)$ uma função diferenciável de $\theta$. Então,
+
+\begin{equation}
+    Var_\theta(T) \geq \frac{[m'(\theta)]^2}{n I(\theta)},
+\end{equation}
+
+com igualdade apenas se existem u e v tal que
+
+$$T = u(\theta) \lambda'_n (\textbf{X} \mid \theta) + v(\theta).$$
+\end{theorem}
+
+\begin{definition}[Estimador eficiente]
+Um estimador $\delta(\textbf{X})$ é dito \textbf{eficiente} de (sua esperança) $m(\theta)$ se
+
+$$Var_\theta(\delta) = \frac{[m'(\theta)]^2}{n I(\theta)}.$$
+\end{definition}
+
+\section*{Aula 10: Distribuição de uma estatística amostral e qui-quadrado}
+\label{s10}
+\begin{definition}[Distribuição qui-quadrado]
+Dizemos que uma variável aleatória Y tem distribuição \textbf{qui-quadrado} com m graus de liberdade quando
+
+\begin{equation}
+    f_Y(y) = \frac{1}{2^{m/2} \Gamma(m/2)} y^{m/2 - 1} e^{-y/2}, y > 0
+\end{equation}
+
+Vemos que Y tem função geradora de momentos:
+
+$$\psi (t) = \left ( \frac{1}{1 - 2t} \right )^{m/2}, t < 1/2.$$
+\end{definition}
+
+\begin{theorem}[Soma de variáveis aleatórias qui-quadrado]
+Se $X_1, \ldots, X_n$ são variáveis aleatórias independentes com graus de liberdade $m_i$, então $W = \sum_{i = 1}^n X_i$ tem distribuição qui-quadrado com graus de liberdade $m = \sum_{i = 1}^n m_i$.
+\end{theorem}
+
+\begin{theorem}[Distribuição do quadrado de uma variável aleatória Normal padrão]
+Se 
+
+$$X \sim Normal(0, 1), Y = X^2$$ 
+
+então, tem distribuição qui-quadrado com $m = 1$.
+\end{theorem}
+
+\section*{Aula 11: Distribuição da média e variância amostrais}
+\label{s11}
+\begin{theorem}[Independência da média e variância amostrais na Normal]
+Seja $X_1, \ldots, X_n$ uma amostra aleatória de uma distribuição Normal com parâmetros $\mu$ e $\sigma^2$, $\overline{X}_n$ e a variância amostral $\overline{S}_n^2$, são independentes. Ademais, $\overline{X}_n \sim Normal \left ( \mu, \sigma^2 \right )$ e $\overline{S}_n^2 \sim Gama \left ( \frac{n - 1}{2}, \frac{n}{2 n^2} \right )$
+\end{theorem}
+
+\section*{Aula 12: Distribuição t de Student  e intervalos de confiança}
+\label{s12}
+\begin{definition}[A distribuição t de Student]
+Tome, $Y \sim \mathrm{Qui-quadrado}(m)$ e $Z \sim \mathrm{Normal}(0, 1)$ e defina a variável aleatória
+
+$$X = \frac{Z}{\sqrt{\frac{Y}{m}}}.$$
+
+Dizemos que X tem distribuição \textbf{t de Student com m graus de liberdade}. E sabemos que
+
+$$f_X = \frac{\Gamma(\frac{m + 1}{2})}{\sqrt{m \pi} \Gamma(\frac{m}{2})} \left ( 1 + \frac{x^2}{m} \right )^{-\frac{m + 1}{2}}, \quad x \in (-\infty, + \infty).$$
+\end{definition}
+
+\begin{theorem}[Distribuição amostral do estimador não-viesado da variância]
+
+Considere o estimador
+
+$$\hat{\sigma}' = \sqrt{\frac{\Delta^2}{n - 1}},$$
+
+onde $\Delta^2 = \sum_{i = 1}^n (X_i - \overline{X}_n)^2$. Então, vale que
+
+$$\frac{\sqrt{n} (\overline{X}_n - \mu)}{\hat{\sigma}'} \sim \mathrm{Student}(n - 1)$$
+\end{theorem}
+
+\begin{theorem}[Intervalo de confiança]
+Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória, onde cada uma tem p.d.f. $f(x \mid \theta)$, e considere uma função real $g(\theta)$. Sejam $A(\textbf{X})$ e $B(\textbf{X})$ duas estatísticas de modo de valha
+
+\begin{equation}
+    P(A(\textbf{X}) < g(\theta) < B(\textbf{X})) \geq \gamma.
+\end{equation}
+
+Dizemos que $I(\textbf{X}) = (A(\textbf{X},B(\textbf{X}))$ é um \textbf{intervalo de confiança} de $100 \gamma \%$ para $g(\theta)$. Se a desigualdade for uma igualdade para todo $\theta \in \Omega$, dizemos que o intervalo é \textbf{exato}.
+\end{theorem}
+
+\section*{Aula 13: Intervalos de confiança e Quantidades Pivotais}
+\label{s13}
+\begin{definition}[Intervalo de confiança unilateral]
+Seja $\textbf{X} = \{ X_1. \ldots, X_n \}$ uma amostra aleatória, onde cada uma tem p.d.f. $f(x \mid \theta)$, e considere uma função real $g(\theta)$. Seja $A( \textbf{X})$ uma estatística que
+
+$$P(A(\textbf{X}) < g(\theta)) \geq \gamma, \quad \forall \theta \in \Omega$$
+
+dizemos que o intervalo aleatório $( A(\textbf{X}), \infty)$ é chamado de intervalo de confiança \textbf{unilateral} de $100\gamma \%$ para $g(\theta)$ (ou ainda, de intervalo de confiança \textbf{inferior} de $100\gamma \%$ para $g(\theta)$). O intervalo $(-\infty, B(\textbf{X}))$, com
+
+$$P(g(\theta) < B(\textbf{X})) \geq \gamma, \quad \forall \theta \in \Omega$$
+
+é definido de forma análoga, e é chamado de intervalo de confiança \textbf{superior} de $100\gamma \%$ para $g(\theta)$. Se a desigualdade é uma igualdade para todo $\theta \in \Omega$, os intervalos são chamados \textbf{exatos}.
+\end{definition}
+
+\begin{definition}[Quantidade pivotal]
+Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória com p.d.f. $f(x \mid \theta)$. Seja $V(\textbf{X}, \theta)$ uma variável aleatória cuja distribuição é a mesma para todo $\theta \in \Omega$. Dizemos que $V(\textbf{X}, \theta)$ é uma \textbf{quantidade pivotal}.
+\end{definition}
+
+\begin{theorem}[Intervalo de confiança unilateral]
+Seja $\textbf{X} = \{ X_1, \ldots, X_n \}$ uma amostra aleatória com p.d.f. $f(x \mid \theta)$. Suponha que existe uma quantidade pivotal V, com c.d.f.~\footnote{c.d.f. - cumulative distribution function} continua G. Assuma que existe $r(v, \textbf{x})$ estritamente crescente em v para todo $\textbf{x}$. Finalmente, tome $0 < \gamma < 1$ e $\gamma_1 < \gamma_2$ de modo que $\gamma_2 - \gamma_1 = \gamma$. Então as estatísticas
+
+$$A(\textbf{X}) = r(G^{-1}(\gamma_1), \textbf{X}),$$
+
+$$B(\textbf{X}) = r(G^{-1}(\gamma_2), \textbf{X}),$$
+
+são os limites de um intervalo de confiança de $100\gamma \%$ para $g(\theta)$.
+\end{theorem}
+
+
+\section*{Aula 14: Testes de hipótese I}
+\label{s14}
+\begin{definition}[Hipótese nula e hipótese alternativa]
+Considere o espaço de parâmetros $\Omega$ e defina $\Omega_0, \Omega_1 \subset \Omega$ de modo que $\Omega_0 \cup \Omega_1 = \Omega$ e $\Omega_0 \cap \Omega_1 = \emptyset$. Definimos
+
+$$H_0 := \theta \in \Omega_0,$$
+$$H_1 := \theta \in \Omega_1,$$
+
+E dizemos que $H_0$ é a \textbf{hipótese nula} e $H_1$ é a \textbf{hipótese alternativa}.
+Se $\theta \in \Omega_1$, então dizemos que rejeitamos a hipótese nula. Por outro lado, se $\theta \in \Omega_0$, então dizemos que não rejeitamos ou falhamos em rejeitar $H_0$.
+\end{definition}
+
+\begin{definition}[Hipótese simples e hipótese composta]
+Dizemos que uma hipótese $H_i$, é \textbf{simples}, se $\Omega_i = \{ \theta_i \}$, isto é, se a partição correspondente é um único ponto. Uma hipótese é dita \textbf{composta} se não é simples.
+\end{definition}
+
+\begin{definition}[Hipótese unilateral e hipótese bilateral]
+Uma hipótese da forma $H_0 : \theta \leq \theta_0$ ou $H_0 : \theta \geq \theta_0$ é dita \textbf{unilateral} (``one-sided''), enquanto hipóteses da forma $H_0 : \theta \neq \theta_0$ são ditas \textbf{bilaterais} (``two-sided'').
+\end{definition}
+
+\section*{Aula 15: Testes de hipótese II}
+\label{s15}
+\begin{definition}[Região crítica]
+O conjunto
+
+$$S_1 := \{ \textbf{x} : | \overline{X}_n - \mu_0 | \geq c \}$$
+
+é chamado de \textbf{região crítica} do teste.
+\end{definition}
+
+\begin{definition}[Região de rejeição]
+Se $R \subseteq \mathbb{R}$ é tal que ``rejeitamos $H_0$ se $T \in R$'', então R é chamada uma \textbf{região de rejeição} para a estatística T e o teste associado.
+\end{definition}
+
+\begin{definition}[Função poder]
+Seja $\delta$ um procedimento de aceitação/rejeição como visto anteriormente. A \textbf{função poder} é definida como
+
+\begin{equation}
+    \pi(\theta \mid \delta) := P(\textbf{X} \in S_1 \mid \theta) = P(T \in R \mid \theta), \ \theta \in \Omega
+\end{equation}
+\end{definition}
+
+\begin{definition}[Tipos de erros]
+Tipos de erros que podem ser cometidos
+
+$$
+\begin{tabular}{c|c}
+   Nome & Erro cometido\\
+   \hline
+   Erro tipo I & Rejeitar $H_0$ quando ela é~\textbf{verdadeira}.\\
+   Erro tipo II & Falhar em rejeitar $H_0$ quando ela é~\textbf{falsa}.\\
+\end{tabular}
+$$
+\end{definition}
+
+\begin{definition}[Tamanho/nível de um teste]
+Dizemos que um teste, $\delta$, tem \textbf{tamanho} ou \textbf{nível de significância} $\alpha(\delta)$, com 
+
+$$\alpha(\delta) := \mathrm{sup}_{\theta \in \Omega_0} \pi (\theta \mid \delta).$$
+\end{definition}
+
+\section*{Aula 16: Testes de hipótese III}
+\label{s16}
+\begin{definition}[O p-valor]
+Para cada t, seja $\delta_t$ o teste que rejeita $H_0$ se $T \geq t$. Então, quando $T = t$, o \textbf{p-valor} vale
+
+\begin{equation}
+    p(t) := \sup_{\theta \in \Omega_0} \pi (\theta \mid \delta_t) = \sup_{\theta \in \Omega_0} P (T \geq t \mid \theta)
+\end{equation}
+
+ou seja, o \textbf{p-valor} é o tamanho do teste $\delta_t$.
+\end{definition}
+
+\section*{Aula 17: Testes e conjuntos de confiança}
+\label{s17}
+\begin{definition}[Intervalos de confiança e testes são equivalentes]
+
+Suponha que dispomos de dados $\textbf{X} = \{ X_1, \ldots, X_n \}$ com f.d.p. comum $f(x \mid \theta)$, e estamos interessados em testar as hipóteses:
+
+$$H_0 : g(\theta) = g_0,$$
+$$H_1 : g(\theta) \neq g_0,$$
+
+de modo que existe um teste $\delta_{g_0}$ com nível $\alpha_0$ destas hipóteses. Para cada $\textbf{X} = \textbf{x}$, defina
+
+$$w(\textbf{x}) = \left\{g_0: \delta_{g_0} \:n\tilde{a}o\:rejeita\: H_0 \:dado\:que\: \textbf{X} = \textbf{x} \right\}.$$
+
+Fazendo o nível de confiança do intervalo $\gamma = 1 - \alpha_0$, temos
+
+$$P(g(\theta_0) \in w(\textbf{X}) \mid \theta = \theta_0) \geq \gamma, \ \forall \theta_0 \in \Omega.$$
+\end{definition}
+
+\begin{definition}[Conjunto de confiança]
+Se um conjunto aleatório $w(\textbf{X})$ satisfaz
+
+$$P(g(\theta_0) \in w(\textbf{X}) \mid \theta = \theta_0) \geq \gamma,$$
+
+para todo $\theta_0 \in \Omega$, então chamamos $w(\textbf{X})$ de um \textbf{conjunto de confiança} para $g(\theta)$.
+\end{definition}
+
+\begin{theorem}[Testando hipóteses a partir de conjuntos de confiança]
+Suponha que dispomos de dados $\textbf{X} = \{ X_1, \ldots. X_n \}$ com f.d.p. comum $f(x \mid \theta)$ e que $w(\textbf{X})$ é um conjunto de confiança para uma função de interesse $g(\theta)$. Então para todo valor $g_0$ assumido por $g(\theta)$ existe um teste $\delta_{g_0}$, de nível $\alpha_0$ que rejeita $H_0 : g(\theta) = g_0$ se e somente se $g(\theta_0) = g_0 \notin w(\textbf{X})$.
+\end{theorem}
+
+\begin{theorem}[Teste de razão de verossimilhanças (para o Teo. de Wilks)]
+A estatística
+
+$$\wedge(\textbf{x}) = \frac{\sup_{\theta \in \Omega_0 f_n (\textbf{x} \mid \theta)}}{\sup_{\theta \in \Omega f_n (\textbf{x} \mid \theta)}}$$
+
+é chamada um \textbf{estatística de razão de verossimilhanças}. Um \textbf{teste de razão de verossimilhanças}, $\delta_k$, é um teste que rejeita $H_0$ se $\wedge(\textbf{x}) \leq k$ para uma constante k.
+\end{theorem}
+
+\begin{theorem}[Teorema de Wilks]
+Suponha que temos um espaço de parâmetros com k coordenadas, $\theta = (\theta_1, \ldots, \theta_n)$ e desejamos testar a hipótese (simples) da forma
+
+$$H_0 : \theta_j = \theta_0^j, \ j = 1, \ldots, k,$$
+$$H_1 : \theta_j \neq \theta_0^j, \ j = 1, \ldots, k.$$
+
+Então, sob condições de regularidade, temos que, à medida que $n \rightarrow \infty$,
+
+$$-2 \log \wedge(\textbf{x}) \stackrel{\mathrm{d}}{\rightarrow} X^2 (k)$$
+\end{theorem}
+
+\section*{Aula 18: Teste t I}\label{s18}
+\begin{definition}[Teste não viesado]
+Suponha que desejamos testar a hipótese
+
+$$H_0 : \theta \in \Omega_0,$$
+$$H_1 : \theta \in \Omega_1,$$
+
+através do teste $\delta$. Dizemos que $\delta$ é \textbf{não-viesado} se (e somente se) para $\theta \in \Omega_0$ e $\theta' \in \Omega_1$, vale
+
+$$\pi (\theta \mid \delta) \leq \pi (\theta' \mid \delta),$$
+
+ou seja, se a função poder é pelo menos tão grande no espaço onde $H_0$ é falsa ($\Omega_1$) quando no espaço em que $H_0$ é verdadeira ($\Omega_0$).
+\end{definition}
+
+\begin{definition}[Teste t]
+Um teste $\delta_c$ que rejeita $H_0$ se $U \geq c$ (equiv. $U \leq c$), com $c = T^{-1}(1 - \alpha_0; n - 1)$ é chamado de um \textbf{teste t} (unicaudal) de tamanho $\alpha_0$.
+\end{definition}
+
+\begin{theorem}[Propriedades do teste t]
+Suponha que $\delta_c$ rejeita $H_0$ se $U \geq c$. Então
+
+\begin{itemize}
+    \item $\mu = \mu_0 \Longrightarrow \pi(\mu, \sigma^2 \mid \delta_c) = \alpha_0$
+    
+    \item $\mu < \mu_0 \Longrightarrow \pi(\mu, \sigma^2 \mid \delta_c) < \alpha_0$
+    
+    \item $\mu > \mu_0 \Longrightarrow \pi(\mu, \sigma^2 \mid \delta_c) > \alpha_0$
+    
+    \item $\lim_{\mu \rightarrow -\infty} \pi(\mu, \sigma^2 \mid \delta_c) = 0$
+    
+    \item $\lim_{\mu \rightarrow +\infty} \pi(\mu, \sigma^2 \mid \delta_c) = 1$
+    
+    \item $\delta_c$ é não-viesado e tem tamanho $\alpha_0$.
+\end{itemize}
+\end{theorem}
+
+\begin{theorem}[P-valor para um teste t unicaudal]
+Suponha que observarmos $U = u$ e seja $T(\cdot. n - 1)$ a f.d.a. de uma distribuição t de Student com n - 1 graus de liberdade. Para a hipótese
+
+$$H_0 : \mu \geq \mu_0,$$
+$$H_1 : \mu < \mu_0,$$
+
+o p-valor vale $T(u; n-1)$, enquanto para a hipótese
+
+$$H_0 : \mu \leq \mu_0,$$
+$$H_1 : \mu > \mu_0,$$
+
+o p-valor vale $1 - T(u; n-1)$.
+\end{theorem}
+
+\section*{Aula 19: Teste t II}\label{s19}
+\begin{theorem}[Teste pareado]
+Sejam amostras \textbf{X} e \textbf{Y} (antes e depois), tais que $X_i \sim \mathrm{Normal}(\mu_1, \sigma^2)$ e $Y_i \sim \mathrm{Normal}(\mu_2, \sigma^2)$, a hipótese
+
+$$H_0 : \mu_1 \leq \mu_2$$
+$$H_1 : \mu_1 > \mu_2$$
+
+Pode ser modelada com a variável $Z_i = X_i - Y_i$ ($Z_i \sim \mathrm{Normal}(\mu_Z = \mu_1 - \mu_2, 2 \sigma^2)$), então podemos testar hipóteses sobre $\mu_Z$ a partir de \textbf{Z}
+
+$$H_0 : \mu_Z \leq 0$$
+$$H_1 : \mu_Z > 0$$
+\end{theorem}
+
+\begin{theorem}[Teste t para duas amostras]
+Considere $\textbf{X} = \{ X_1, \ldots, X_m \}$ e $\textbf{Y} = \{ Y_1, \ldots, Y_n \}$, queremos estudar a diferença das médias. Modelando em distribuição normal $X_i \sim \mathrm{Normal}(\mu_1, \sigma_1^2), \ i = 1, \ldots, m$ e $Y_j \sim \mathrm{Normal}(\mu_2, \sigma_2^2), \ j = 1, \ldots, n$. Sob a premissa de homogeneidade $\sigma_1^2 = \sigma_2^2 = \sigma^2$, podemos testar a hipótese
+
+$$H_0 : \mu_1 \leq \mu2$$
+$$H_1 : \mu_1 > \mu_2$$
+
+computando a estatística
+
+$$U = \frac{\sqrt{m + n - 2} (\overline{X}_m - \overline{Y}_n)}{\sqrt{(\frac{1}{m} + \frac{1}{n})(S_X^2 + S_Y^2)}}$$
+
+onde $\overline{X}_m$ e $\overline{X}_m$ são as médias e $S_X^2$ e $S_X^2$ são a soma das variâncias.
+\end{theorem}
+
+\begin{theorem}[Relaxando a premissa de homogeneidade]
+Do teorema acima, podemos relaxar a premissa de igualdade das variâncias assumindo que $\sigma_2^2 = k \sigma_1^2$, então a estatística teste vale
+
+$$U = \frac{\sqrt{m + n - 2} (\overline{X}_m - \overline{Y}_n)}{\sqrt{(\frac{1}{m} + \frac{k}{n})(S_X^2 + \frac{S_Y^2}{n})}}$$
+\end{theorem}
+
+\section*{Aula 20: Teste f}\label{s20}
+\begin{definition}[A distribuição F]
+Sejam $Y \sim \mathrm{Qui-quadrado}(m)$ e $W \sim \mathrm{Qui-quadrado}(n)$. Então
+
+$$X = \frac{Y / m}{W / n},$$
+
+tem distribuição F com m e n graus de liberdade, com f.d.p.
+
+$$f_X (x) = \frac{\Gamma(\frac{m + n}{2}) m^{m/2} n^{n/2}}{\Gamma(\frac{n}{2}) \Gamma(\frac{m}{2})} \cdot \frac{x^{m / 2 - 1}}{(mx + n)^{(m + n)/2}}, \ x > 0,$$
+\end{definition}
+
+\begin{theorem}[Propriedades da distribuição F] Propriedades para a distribuição F:
+
+\begin{enumerate}
+    \item Se $X \sim F(m, n)$, então $\frac{1}{X} \sim F(m, n)$;
+    
+    \item Se $Y \sim \mathrm{Student}(n)$, então $Y^2 \sim F(1, n)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Igualdade de duas variâncias]
+Suponha $X_i \sim \mathrm{Normal}(\mu_1, \sigma_1^2), \ i = 1, \ldots, m$ e $Y_j \sim \mathrm{Normal}(\mu_2, \sigma_2^2), \ j = 1, \ldots, n$. Queremos testar
+
+$$H_0 : \sigma_1^2 \leq \sigma_2^2$$
+$$H_1 : \sigma_1^2 > \sigma_2^2$$
+
+Para isso, vamos computar a estatística de teste
+
+$$V = \frac{S_X^2 / (m - 1)}{S_Y^2 / (n - 1)}$$
+
+onde $S_X^2 = \sum_{i = 1}^m (X_i - \overline{X}_m)^2$ e $S_Y^2 = \sum_{j = 1}^m (Y_j - \overline{Y}_m)^2$
+\end{theorem}
+
+\begin{definition}[O teste F]
+O teste F de homogeneidade (igualdade de variâncias) é o teste $\delta_c$ que rejeita $H_0$ de $V \geq c$, para uma constante positiva c.
+\end{definition}
+
+\begin{theorem}[A distribuição de V]
+Seja $V = \frac{S_X^2 / (m - 1)}{S_Y^2 / (n - 1)}$, então:
+
+$$\frac{\sigma_2^2}{\sigma_1^2} V \sim F(m - 1, n - 1).$$
+
+Além disso, se $\sigma_1^2 = \sigma_2^2$, $V \sim F(m - 1, n - 1)$.
+\end{theorem}
+
+\section*{Aula 21: Regressão Linear I}\label{s21}
+\begin{theorem}[A linha de mínimos quadrados]
+Sejam $(x_1, y_1), \ldots, (x_n, y_n)$ uma coleção de n pontos. Suponha que estamos interessados na reta
+
+\begin{equation}
+    y_i = \beta_0 + \beta_1 x_i.
+\end{equation}
+
+Os valores dos coeficientes que minimizam a  soma de quadrados são
+
+$$\hat{\beta}_0 = \overline{y} - \hat{\beta}_1 \overline{x},$$
+
+$$\hat{\beta}_1 = \frac{\sum_{i = 1}^n (y_i - \overline{y}) (x_i - \overline{x})}{\sum_{i = 1}^n (x_i - \overline{x})^2}.$$
+\end{theorem}
+
+\begin{definition}[Modelo linear]
+Podemos construir um modelo estatístico explícito para a relação entre as variáveis X e Y:
+
+\begin{equation}
+    E[Y \mid X = x_1, \ldots, x_P] = \beta_0 + \beta_1 x_1 + \ldots + \beta_P x_P
+\end{equation}
+
+Podemos então idealizar o seguinte modelo
+
+$$Y_i = \beta_0 \sum_{j = 1}^P \beta_j x_{ij} + \varepsilon_i, \ \varepsilon \sim \mathrm{Normal}(0, \sigma^2).$$
+\end{definition}
+
+\section*{Aula 22: Regressão Linear II}\label{s22}
+\begin{theorem}[EMV para os coeficientes de uma regressão linear (simples)]
+Sob as premissas já listadas, os estimadores de máxima verossimilhança para $\theta = (\beta_0, \beta_1, \sigma^2)$ são
+
+$$\hat{\beta}_{0 EMV} = \overline{y} - \hat{\beta}_{1 EMV} \overline{x},$$
+
+$$\hat{\beta}_{1 EMV} = \frac{\sum_{i = 1}^n (y_i - \overline{y})(x_i - \overline{x})}{\sum_{i = 1}^n (x_i - \overline{x})^2},$$
+
+$$\hat{\sigma^2}_{EMV} = \frac{1}{n} \sum_{i = 1}^n \left ( y_i - (\hat{\beta}_{0 EMV} + \hat{\beta}_{1 EMV} x_i) \right )^2,$$
+
+ou seja, os estimadores de máxima verossimilhança dos coeficientes minimizam a soma de quadrados da reta estimada.
+\end{theorem}
+
+\begin{theorem}[Distribuição amostral dos estimadores dos coeficientes]
+$$\hat{\beta}_{0 EMV} \sim \mathrm{Normal} \left ( \beta_0, \sigma^2 \left ( \frac{1}{n} + \frac{\overline{x}^2}{s_X^2} \right ) \right ),$$
+
+$$\hat{\beta}_{1 EMV} \sim \mathrm{Normal} \left ( \beta_0, \frac{\sigma^ 2}{s_X^2} \right ),$$
+
+$$\mathrm{Cov} (\hat{\beta}_{0 EMV}, \hat{\beta}_{1 EMV}) = - \frac{\overline{x} \sigma^2}{s_X^2},$$
+
+onde $s_x = \sqrt{\sum_{i = 1}^n (x_i - \overline{x})^2}.$
+\end{theorem}
+
+\begin{theorem}[Intervalos de confiança para os coeficientes de uma regressão linear]
+Podemos computar intervalos de confiança para os coeficientes da regressão linear
+de maneira muito similar ao que já vimos para o caso da média da Normal
+
+$$\hat{\beta_0} \pm \hat{\sigma}' c\sqrt{\frac{1}{n} + \frac{\bar{x}^2}{s_x^2}}\quad \mathrm{e}\quad \hat{\beta_1} \pm c\frac{\hat{\sigma}'}{s_x},$$
+
+$$\hat{\beta_0} + \hat{\beta_1}x_{pred} \pm c \hat{\sigma}' \sqrt{\frac{1}{n} + \frac{\left(x_{pred}-\bar{x}\right)^2}{s_x^2} }$$
+
+onde $c = T^{-1}(1-\frac{\alpha_0}{2}; n-2)$ e 
+
+$$\hat{\sigma}' := \sqrt{\frac{\sum_{i=1}^n \left(Y_i - \hat{\beta_0} - \hat{\beta_1}x_i \right)^2}{n-2}}.
+$$
+\end{theorem}
+
+\begin{definition}[Testes de hipóteses para o coeficiente angular]
+Em geral, estamos interessados em testar a hipótese
+$$H_0 : \beta_1 = \beta^\star,$$
+$$H_1 : \beta_1 \neq \beta^\star.$$
+
+Para tanto, podemos computar a estatística
+
+\begin{equation}
+ U_1 = s_x \frac{\hat{\beta_1}-\beta^\star}{\hat{\sigma}'},
+\end{equation}
+
+e computar o p-valor como 
+
+\begin{equation}
+ P(U_1 \geq |u_1|) + P(U_1 \leq -|u_1|).
+\end{equation}
+Notando que $U_1$ tem distribuição t de Student com $n-2$ graus de liberdade sob $H_0$, podemos computar o p-valor exatamente.
+
+Resultados bem similares valem para testar hipóteses sobre $\beta_0$ ou $\hat{Y}$.
+\end{definition}
+
+\begin{theorem}[Predição pontual]
+Suponha que queremos prever o valor de Y para um certo $x_{pred}$ que não foi observado no experimento. Podemos compor nossa predição (pontual) como
+
+\begin{equation}
+    \hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 x_{pred}.
+\end{equation}
+
+Onde a predição tem erro quadrático médio (EQM) igual a
+
+$$E \left [ (\hat{Y} - Y)^2 \right ] = \sigma^2 \left ( 1 + \frac{1}{n} + \frac{(x_{pred} - \overline{x})^2}{s_X^2} \right ).$$
+\end{theorem}
+
+\begin{theorem}[Intervalos de \textbf{predição} para $\hat{Y}$]
+A probabilidade de $\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 x_{pred}$ estar no intervalo
+
+$$\hat{Y} \pm T^{-1} (1 - \frac{\alpha_0}{2}; n - 2) \hat{\sigma}' \sqrt{\left [ 1 + \frac{1}{n} + \frac{(x_{pred} - \overline{x})^2}{s_X^2} \right ]},$$
+
+é $1 - \alpha_0$.
+\end{theorem}
+
 \end{document}
